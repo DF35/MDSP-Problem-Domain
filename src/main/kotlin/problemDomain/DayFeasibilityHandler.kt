@@ -1,0 +1,4 @@
+package problemDomain
+
+class DayFeasibilityHandler {
+}

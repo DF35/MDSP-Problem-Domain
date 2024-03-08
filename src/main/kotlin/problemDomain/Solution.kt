@@ -1,8 +1,14 @@
 package problemDomain
 
-import java.awt.image.DataBufferUShort
 import java.util.*
 import kotlin.Exception
+
+data class SolutionData(
+    val assignments: List<Assignment>,
+    val shifts: List<Shift>,
+    val days: List<Day>,
+    val doctors: List<MiddleGrade>
+)
 
 // Represents a single solution - interface for the problem domain
 class Solution(
