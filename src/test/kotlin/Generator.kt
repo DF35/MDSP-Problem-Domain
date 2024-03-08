@@ -1,3 +1,5 @@
+import problemDomain.*
+
 class Generator {
     val allDoctors = mutableSetOf(0,1,2,3,4,5)
     val juniors = setOf(0,1,2)
@@ -15,9 +17,29 @@ class Generator {
             val dayShifts48HoursAfter = {i: Int -> arrayOf(i+1, i + 3).filter{j: Int -> j in 0..max}.toSet()}
             val assignmentIds = {i: Int -> intArrayOf(i*2, i*2+1)}
 
-            days.add(Day(day, setOf(idDayShift),  setOf(idNightShift)))
-            shifts.add(DayShift(idDayShift, assignmentIds(idDayShift), shiftsWithin11Hours(idDayShift), nights48HoursBefore(idDayShift), day, allDoctors.toMutableSet(), 10))
-            shifts.add(NightShift(idNightShift, assignmentIds(idNightShift), shiftsWithin11Hours(idNightShift), dayShifts48HoursAfter(idNightShift), day, allDoctors.toMutableSet(), 10))
+            days.add(Day(day, setOf(idDayShift), setOf(idNightShift)))
+            shifts.add(
+                DayShift(
+                    idDayShift,
+                    assignmentIds(idDayShift),
+                    shiftsWithin11Hours(idDayShift),
+                    nights48HoursBefore(idDayShift),
+                    day,
+                    allDoctors.toMutableSet(),
+                    10
+                )
+            )
+            shifts.add(
+                NightShift(
+                    idNightShift,
+                    assignmentIds(idNightShift),
+                    shiftsWithin11Hours(idNightShift),
+                    dayShifts48HoursAfter(idNightShift),
+                    day,
+                    allDoctors.toMutableSet(),
+                    10
+                )
+            )
             recurse(days, shifts, prev - 1)
         }
 

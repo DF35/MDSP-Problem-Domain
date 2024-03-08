@@ -1,61 +1,76 @@
-package problemDomain
-
+import hyperheuristic.acceptance.AcceptanceCriterionType
+import hyperheuristic.hh.GIHH
+import hyperheuristic.selection.SelectionMethodType
+import hyperheuristic.util.WriteInfo
 import javafx.application.Application
+import problemDomain.InstanceGUI
+import problemDomain.MDSP
+import java.io.BufferedWriter
+import java.io.File
+import java.io.FileWriter
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.random.Random
 
 fun main(args: Array<String>) {
     // If "--instance" is passed as an argument, we run the instance input gui
-    if(args.isNotEmpty() && args.first() == "--instance"){
+    if (args.isNotEmpty() && args.first() == "--instance") {
         val gui = InstanceGUI()
         Application.launch(gui::class.java)
         return
     }
 
-    val pd = MDSP(13022024)
-    pd.loadInstance(0)
+    /*val seedGenerator = Random(25022024)
+    val totalExecutionTime: Long = 120000
+    val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
+    val acceptanceType = AcceptanceCriterionType.AdaptiveIterationLimitedListBasedTA
+    val resultFileName = "GIHH_"
+    val today = Date()
+    val dateFormatter = SimpleDateFormat("ddMMyyyyHHmmss")
+    WriteInfo.resultSubFolderName = dateFormatter.format(today)
 
-    pd.initialiseSolution(0)
-    println(pd.solutionMemory[0]!!.objectiveValue)
-    for(doctor in pd.solutionMemory[0]!!.doctors){
-        doctor.debug()
+    for(i in 1..5) {
+        val seed = seedGenerator.nextLong()
+        val problem = MDSP(seed)
+        val hyperHeuristic = GIHH(
+            seed, problem.numberOfHeuristics, totalExecutionTime,
+            resultFileName, selectionType, acceptanceType
+        )
+
+        problem.loadInstance(1)
+        problem.initialiseSolution(0)
+        println(problem.getFunctionValue(0))
+        hyperHeuristic.timeLimit = totalExecutionTime
+        hyperHeuristic.loadProblemDomain(problem)
+        hyperHeuristic.run()
+
+        val writer = BufferedWriter(FileWriter("resultInst1-$i.txt"))
+        writer.write("${problem.bestSolutionValue} \n")
+        writer.write(problem.bestSolutionToString())
+        writer.close()
+    } */
+
+
+    /*val gen = InstanceGenerator(Random(3032024))
+    gen.generateInstance("instance3.txt", 1, 9, 6, 12, 0.4, 0.4)*/
+
+    // Debugging a doctor log file
+    val seedGenerator = Random(25022024)
+    val seed = seedGenerator.nextLong()
+    val problem = MDSP(seed)
+    problem.loadInstance(1)
+    val solution = problem.blankSolution()
+
+    val log = File("src/main/resources/docLog.txt")
+    val scanner = Scanner(log)
+    var lineNum = 0
+    while(scanner.hasNextLine()) {
+        lineNum++
+        val line = scanner.nextLine()
+        val tokens = line.split(" ")
+        when(tokens[0]) {
+            "al" -> solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+            "de" -> solution.deallocateAssignment(tokens[1].toInt())
+        }
     }
-
-    println("\n\n\n")
-
-    println(pd.applyHeuristic(1,0,1))
-    for(doctor in pd.solutionMemory[1]!!.doctors){
-        doctor.debug()
-    }
-
-    println(pd.applyHeuristic(2, 1, 1))
-    for(doctor in pd.solutionMemory[1]!!.doctors){
-        doctor.debug()
-    }
-
-    println(pd.applyHeuristic(3,1,1))
-    for(doctor in pd.solutionMemory[1]!!.doctors){
-        doctor.debug()
-    }
-
-    pd.setMemorySize(3)
-    println(pd.applyHeuristic(4, 0, 1, 2))
-    for(doctor in pd.solutionMemory[2]!!.doctors){
-        doctor.debug()
-    }
-
-    println(pd.applyHeuristic(5, 2, 2))
-    for(doctor in pd.solutionMemory[2]!!.doctors){
-        doctor.debug()
-    }
-
-    println(pd.applyHeuristic(6, 2, 2))
-    for(doctor in pd.solutionMemory[2]!!.doctors){
-        doctor.debug()
-    }
-
-    println(pd.applyHeuristic(8, 2, 2))
-    for(doctor in pd.solutionMemory[2]!!.doctors){
-        doctor.debug()
-    }
-
-    println(pd.getFunctionValue(2))
 }

@@ -1,3 +1,6 @@
+package problemDomain
+
+import hyflex.ProblemDomain
 import java.io.File
 import java.lang.NumberFormatException
 import java.util.Scanner
@@ -25,8 +28,10 @@ class MDSP(
     var searchDepth = 2
     var mutationStrength = 2
 
+    var log = ""
+
     override fun toString(): String {
-        return "MDSP"
+        return "problemDomain.MDSP"
     }
 
     override fun setDepthOfSearch(depthOfSearch: Double) {
@@ -70,6 +75,9 @@ class MDSP(
     override fun loadInstance(instanceID: Int) {
         val fileName = when(instanceID) {
             0 -> "testInstance"
+            1 -> "instance1"
+            2 -> "instance2"
+            3 -> "instance3"
             else -> Exception("loadInstance: Invalid instanceID given")
         }
 
@@ -105,7 +113,7 @@ class MDSP(
              * in order to provide an adjusted measure for average hours worked per week that takes
              * the aforementioned leave into account
              */
-            val averageHoursDenominator = (168 * numWeeks - string.toDouble()) / 168 * numWeeks
+            val averageHoursDenominator = (168 * numWeeks - string.toDouble()) / (168 * numWeeks) * numWeeks
 
             string = scanner.next()
             leave[id] = when(string) {
@@ -152,6 +160,7 @@ class MDSP(
         for(dayID in 0..<numDays) {
             val dayShifts = mutableListOf<Int>()
             val nightShifts = mutableListOf<Int>()
+            val overlappingNights = mutableListOf<Int>()
             var nextDay = false
             while(!nextDay) {
                 val nextLine = scanner.nextLine()
@@ -169,27 +178,43 @@ class MDSP(
                 }
                 val shiftsWithin11Hours = getShiftIDs(scanner)
                 val otherRelevantShifts = getShiftIDs(scanner)
-                val duration = scanner.nextInt()
+                val duration = scanner.nextDouble()
                 scanner.nextLine()
                 shiftTimes[shiftID] = scanner.nextLine()
                 val type = scanner.nextLine()
                 when(type) {
                     "day" -> {
-                        shifts.add(DayShift(
-                            shiftID, shiftAssignments.toIntArray(), shiftsWithin11Hours.toSet(),
-                            otherRelevantShifts.toSet(), dayID, (0..<numDoctors).toMutableSet(), duration))
+                        shifts.add(
+                            DayShift(
+                                shiftID, shiftAssignments.toIntArray(), shiftsWithin11Hours.toSet(),
+                                otherRelevantShifts.toSet(), dayID, (0..<numDoctors).toMutableSet(), duration
+                            )
+                        )
                         dayShifts.add(shiftID)
                     }
                     "night" -> {
-                        shifts.add(NightShift(
+                        shifts.add(
+                            NightShift(
                                 shiftID, shiftAssignments.toIntArray(), shiftsWithin11Hours.toSet(),
-                                otherRelevantShifts.toSet(), dayID, (0..<numDoctors).toMutableSet(), duration))
+                                otherRelevantShifts.toSet(), dayID, (0..<numDoctors).toMutableSet(), duration, false
+                            )
+                        )
                         nightShifts.add(shiftID)
+                    }
+                    "night overlaps" -> {
+                        shifts.add(
+                            NightShift(
+                                shiftID, shiftAssignments.toIntArray(), shiftsWithin11Hours.toSet(),
+                                otherRelevantShifts.toSet(), dayID, (0..<numDoctors).toMutableSet(), duration, true
+                            )
+                        )
+                        nightShifts.add(shiftID)
+                        overlappingNights.add(shiftID)
                     }
                     else -> throw Exception("Invalid shift type given, please limit to \"day\" and \"night\"")
                 }
             }
-            days.add(Day(dayID, dayShifts.toSet(), nightShifts.toSet()))
+            days.add(Day(dayID, dayShifts.toSet(), nightShifts.toSet(), overlappingNights.toSet()))
         }
         this.days = days
         this.shifts = shifts
@@ -220,7 +245,7 @@ class MDSP(
                 shifts[shiftId].createNonRestInfeasibility(doctorID, Cause.LEAVE)
             }
         for((doctorID, trainingShifts) in doctorTraining)
-            for(shiftId in trainingShifts)
+            for(shiftId in trainingShifts.filter { shifts[it].causesOfInfeasibility[doctorID] == null })
                 shifts[shiftId].createNonRestInfeasibility(doctorID, Cause.TRAINING)
     }
 
@@ -252,7 +277,7 @@ class MDSP(
         }
     }
 
-    private fun blankSolution(): Solution {
+    fun blankSolution(): Solution {
         val assignments = mutableListOf<Assignment>()
         val shifts = mutableListOf<Shift>()
         val days = mutableListOf<Day>()
@@ -262,8 +287,10 @@ class MDSP(
         this.days.forEach { days.add(it.copy()) }
         this.doctors.forEach { doctors.add((it.copy())) }
 
-        val solution = Solution (rng, assignments, shifts, days, doctors, averageHours, averageDayShifts,
-            averageNightShifts)
+        val solution = Solution(
+            rng, assignments, shifts, days, doctors, averageHours, averageDayShifts,
+            averageNightShifts
+        )
         solution.unassignedAssignments = assignments.indices.toMutableList()
         return solution
     }
@@ -275,6 +302,8 @@ class MDSP(
     override fun applyHeuristic(heuristicID: Int, solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
         if(solutionSourceIndex !in solutionMemory.indices || solutionDestinationIndex !in solutionMemory.indices)
             throw Exception("applyHeuristic: invalid memory index passed")
+
+        //println(heuristicID)
 
         val startTime = System.currentTimeMillis()
         val objectiveValue = when(heuristicID) {
@@ -293,11 +322,16 @@ class MDSP(
         if(heuristicID == 4)
             solutionMemory[solutionDestinationIndex] = solutionMemory[solutionSourceIndex]!!.copy()
 
+
         heuristicCallTimeRecord[heuristicID] = (System.currentTimeMillis() - startTime).toInt()
         heuristicCallRecord[heuristicID]++
 
-        if(objectiveValue < bestSolutionValue)
+        if(objectiveValue < bestSolutionValue) {
             bestSolution = solutionMemory[solutionDestinationIndex]!!.copy()
+            bestSolutionValue = objectiveValue
+        }
+
+        log += "Heuristic: $heuristicID Source: $solutionSourceIndex Destination: $solutionDestinationIndex Value: $objectiveValue\n"
 
         return objectiveValue
     }
@@ -311,6 +345,8 @@ class MDSP(
         if(solutionSourceIndex1 !in solutionMemory.indices ||
             solutionSourceIndex2 !in solutionMemory.indices || solutionDestinationIndex !in solutionMemory.indices)
             throw Exception("applyHeuristic: invalid memory index passed")
+
+        //println(heuristicID)
 
         val startTime = System.currentTimeMillis()
         val objectiveValue = when(heuristicID) {
@@ -329,9 +365,12 @@ class MDSP(
         heuristicCallTimeRecord[heuristicID] = (System.currentTimeMillis() - startTime).toInt()
         heuristicCallRecord[heuristicID]++
 
-        if(objectiveValue < bestSolutionValue)
+        if(objectiveValue < bestSolutionValue) {
             bestSolution = solutionMemory[solutionDestinationIndex]!!.copy()
+            bestSolutionValue = objectiveValue
+        }
 
+        log += "Heuristic: $heuristicID Sources: $solutionSourceIndex1, $solutionSourceIndex2 Destination: $solutionDestinationIndex Value: $objectiveValue\n"
         return objectiveValue
     }
 
@@ -449,29 +488,36 @@ class MDSP(
         return tempSol.objectiveValue
     }
 
+    // Random Ruin and Recreate - Doctor based
     private fun heuristic5(solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
         val tempSol = solutionMemory[solutionSourceIndex]!!.copy()
         var mutationStrength = this.mutationStrength
-        val numAssignedAssignments = tempSol.assignedAssignments.size
+        val doctor = tempSol.doctors[rng.nextInt(tempSol.doctors.size)]
+        val numAssignedAssignments = doctor.assignedAssignments.size
         if(mutationStrength > numAssignedAssignments)
             mutationStrength = numAssignedAssignments
 
-        IOM@for(x in 1..mutationStrength) {
+        var numUnassigned = 0
+        Ruin@for(x in 1..mutationStrength) {
+            // We attempt to deallocate an assignment 20 times before giving up (might not be feasible to do so)
             for(y in 0..19) {
-                val assignment = tempSol.assignedAssignments[rng.nextInt(tempSol.assignedAssignments.size)]
-                if(tempSol.deallocateAssignment(assignment)) continue@IOM
+                val assignment = doctor.assignedAssignments[rng.nextInt(doctor.assignedAssignments.size)]
+                if(tempSol.deallocateAssignment(assignment)) {
+                    numUnassigned++
+                    continue@Ruin
+                }
             }
             break
         }
 
-        IOM@for(x in 1..mutationStrength) {
+        Recreate@for(x in 1..numUnassigned) {
+            // Give up if fail to find an assignable assignment for the doctor in 20 attempts
             for(y in 0..19) {
                 val assignment = tempSol.unassignedAssignments[rng.nextInt(tempSol.unassignedAssignments.size)]
                 val feasibleDoctors = tempSol.getFeasibleDoctors(assignment).toList()
-                if(feasibleDoctors.isNotEmpty()) {
-                    val doctor = feasibleDoctors[rng.nextInt(feasibleDoctors.size)]
-                    tempSol.allocateAssignment(assignment, doctor)
-                    continue@IOM
+                if(feasibleDoctors.contains(doctor.id)) {
+                    tempSol.allocateAssignment(assignment, doctor.id)
+                    continue@Recreate
                 }
             }
             break
@@ -481,6 +527,7 @@ class MDSP(
         return tempSol.objectiveValue
     }
 
+    // Random Ruin and Recreate - Assignment Based
     private fun heuristic6(solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
         val tempSol = solutionMemory[solutionSourceIndex]!!.copy()
         var mutationStrength = this.mutationStrength
@@ -490,6 +537,7 @@ class MDSP(
 
         val unassignedAssignments = mutableListOf<Int>()
         IOM@for(x in 1..mutationStrength) {
+            // We attempt to deallocate an assignment 20 times before giving up (might not be feasible to do so)
             for(y in 0..19) {
                 val assignment = tempSol.assignedAssignments[rng.nextInt(tempSol.assignedAssignments.size)]
                 if(tempSol.deallocateAssignment(assignment)) {
@@ -519,6 +567,7 @@ class MDSP(
         return tempSol.objectiveValue
     }
 
+    // First Improvement Hill-Climbing
     private fun heuristic7(solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
         val tempSol = solutionMemory[solutionSourceIndex]!!.copy()
         var unassignedIndex = rng.nextInt(tempSol.unassignedAssignments.size)
@@ -553,6 +602,7 @@ class MDSP(
         return tempSol.objectiveValue
     }
 
+    // Steepest Descent Hill Climbing
     private fun heuristic8(solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
         val tempSol = solutionMemory[solutionSourceIndex]!!.copy()
 
@@ -597,7 +647,7 @@ class MDSP(
     }
 
     override fun getNumberOfInstances(): Int {
-        return 1
+        return 4
     }
 
     override fun bestSolutionToString(): String {
@@ -638,7 +688,7 @@ class MDSP(
                 dayID = shift.day
                 string += "\n\nDay: ${findDay(dayID)}"
             }
-            string += "\nTime: ${shiftTimes[shift.id]}"
+            string += "\nShift ${shift.id}\nTime: ${shiftTimes[shift.id]}"
             string += when(shift) {
                 is DayShift -> " (Day Shift)\n"
                 is NightShift -> " (Night Shift)\n"
@@ -649,7 +699,7 @@ class MDSP(
         }
 
         string += "\nDoctors:"
-        for(doctor in doctors)
+        for(doctor in solution.doctors)
             string += doctor
 
         return string

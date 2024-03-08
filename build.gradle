@@ -1,6 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.9.0'
     id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
 }
 
 group = 'org.example'
@@ -11,7 +12,9 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    testImplementation "org.junit.jupiter:junit-jupiter:5.8.0"
+    implementation "com.dlsc.formsfx:formsfx-core:11.3.2"
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 }
 
 test {
@@ -19,9 +22,14 @@ test {
 }
 
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain(11)
 }
 
 application {
     mainClassName = 'MainKt'
+}
+
+javafx {
+    version = "15.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }

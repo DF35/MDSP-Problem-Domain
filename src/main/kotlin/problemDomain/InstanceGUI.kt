@@ -1,3 +1,5 @@
+package problemDomain
+
 import javafx.application.Application
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
@@ -5,7 +7,6 @@ import javafx.fxml.Initializable
 import javafx.scene.Scene
 import javafx.scene.control.*
 import javafx.scene.layout.AnchorPane
-import javafx.scene.layout.HBox
 import javafx.stage.Stage
 import java.net.URL
 import java.util.*

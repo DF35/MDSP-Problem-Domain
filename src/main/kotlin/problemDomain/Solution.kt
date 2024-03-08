@@ -1,3 +1,6 @@
+package problemDomain
+
+import java.awt.image.DataBufferUShort
 import java.util.*
 import kotlin.Exception
 
@@ -16,6 +19,7 @@ class Solution(
     var unassignedAssignments = mutableListOf<Int>()
     var assignedAssignments = mutableListOf<Int>()
     var objectiveValue = Double.MAX_VALUE
+    var iteration = 0
 
     fun copy(): Solution {
         val assignments = mutableListOf<Assignment>()
@@ -32,6 +36,7 @@ class Solution(
         solution.unassignedAssignments = unassignedAssignments.toMutableList()
         solution.assignedAssignments = assignedAssignments.toMutableList()
         solution.objectiveValue = objectiveValue
+        solution.iteration = iteration
         return solution
     }
 
@@ -53,6 +58,7 @@ class Solution(
             val shift = shifts[shiftID]
             val assignmentId = shift.assignmentIDs[0]
             val feasibleDoctors = shift.feasibleDoctors.subtract(assignments[assignmentId].infeasibleDoctors).toList()
+            if(feasibleDoctors.isEmpty()) continue
             val doctor = feasibleDoctors[rand.nextInt(feasibleDoctors.size)]
             allocateAssignment(assignmentId, doctor)
             when(shift) {
@@ -67,11 +73,20 @@ class Solution(
         val remainingDayShifts = remainingShifts.first.toMutableList()
         val remainingNightShifts = remainingShifts.second.toMutableList()
 
+        /*
+         * Assigns random night shifts until either none are unassigned, or all the doctors
+         * have had their required number of night shifts met
+         */
         while(doctorsNeedingNightShifts.isNotEmpty() && remainingNightShifts.isNotEmpty()) {
             val shift = remainingNightShifts[rand.nextInt(remainingNightShifts.size)]
             val assignmentId = shift.assignmentIDs[0]
             val feasibleDoctors = shift.feasibleDoctors.subtract(assignments[assignmentId].infeasibleDoctors)
-            val doctor = feasibleDoctors.firstOrNull { doctorsNeedingNightShifts.contains(it) } ?: continue
+            val doctor = feasibleDoctors.firstOrNull { doctorsNeedingNightShifts.contains(it) }
+
+            if(doctor == null) {
+                remainingNightShifts.remove(shift)
+                continue
+            }
 
             allocateAssignment(assignmentId, doctor)
             if(doctors[doctor].varianceNightShiftsWorked() == 0)
@@ -79,11 +94,20 @@ class Solution(
             remainingNightShifts.remove(shift)
         }
 
+        /*
+         * Assigns random day shifts until either none are unassigned, or all the doctors
+         * have had their required number of day shifts met
+        */
         while(doctorsNeedingDayShifts.isNotEmpty() && remainingDayShifts.isNotEmpty()) {
             val shift = remainingDayShifts[rand.nextInt(remainingDayShifts.size)]
             val assignmentId = shift.assignmentIDs[0]
             val feasibleDoctors = shift.feasibleDoctors.subtract(assignments[assignmentId].infeasibleDoctors)
-            val doctor = feasibleDoctors.firstOrNull { doctorsNeedingDayShifts.contains(it) } ?: continue
+            val doctor = feasibleDoctors.firstOrNull { doctorsNeedingDayShifts.contains(it) }
+
+            if(doctor == null) {
+                remainingDayShifts.remove(shift)
+                continue
+            }
 
             allocateAssignment(assignmentId, doctor)
             if(doctors[doctor].varianceDayShiftsWorked() == 0)
@@ -95,9 +119,17 @@ class Solution(
     fun calculateObjectiveValue() {
         // 10 is added for each assignment without an assignee
         var value = unassignedAssignments.size.toDouble() * 10
-        // Penalises shifts that rely entirely on locum workers
-        for(shift in shifts)
-            if (shift.assignees.isEmpty()) value += 15
+
+        for(day in days) {
+            // Penalises days that are entirely locum dependent
+            if(day.numShiftsWithCoverage == 0)
+                value += 20
+
+            // Penalises shifts that are totally locum dependent
+            val numLocumDependentShifts = day.getShifts().size - day.numShiftsWithCoverage
+            value += 15 * numLocumDependentShifts
+        }
+
         // Impact of each doctor is added to the objective value
         for(doctor in doctors)
             value += calculateDoctorContribution(doctor)
@@ -156,12 +188,30 @@ class Solution(
         objectiveValue -= 10 // One less unassigned assignment
         // Adds new objective contribution value of the doctor
         objectiveValue += calculateDoctorContribution(doctors[doctor])
-        /*
-         * If there is only one assignee, the shift previously depended on locums;
-         * the value penalising this, 15, needs to be subtracted. A value greater than
-         * one means that this should have already happened.
-         */
-        if(shift.assignees.size == 1) objectiveValue -= 15
+        // Checks if the shift was previously without assignees, if so, does the same for the day
+        if(shift.assignees.size == 1) {
+            objectiveValue -= 15
+            days[shift.day].numShiftsWithCoverage++
+            if(days[shift.day].numShiftsWithCoverage == 1)
+                objectiveValue -= 20
+        }
+
+
+        assignments[assignment].iterationAssigned = iteration
+        iteration += 1
+
+        doc.assignmentLog += "al $assignment $doctor\n"
+
+        for(testShift in shifts) {
+            for(assignee in testShift.assignees)
+                if(testShift.causesOfInfeasibility[assignee] != null)
+                    println("Bad news")
+            for(assignmentID in testShift.assignmentIDs) {
+                val a = assignments[assignmentID].assignee
+                if(a != null && !testShift.assignees.contains(a))
+                    println("Dreadful")
+            }
+        }
 
         return true
     }
@@ -171,7 +221,7 @@ class Solution(
         val (doctor, shiftID) = assignments[assignment].unAssign() ?: throw Exception ("deallocateAssignment: No assignee")
 
         /* If the shift is a night shift, we need to check that it can be removed without creating an
-         * infeasible timetable - by removing a night that is not at the end of a block or solitary, it would
+         * infeasible timetable - by removing a night that is neither at the end of a block nor solitary, it would
          * be possible to end up in a situation in which there is not enough rest after a night. e.g. if the
          * second night of a four night block is removed, the first night should then have 48 hours of rest after
          * it, but this would not be the case as the third night would still be allocated.
@@ -181,7 +231,10 @@ class Solution(
             var inMiddleOfBlock = true
             for(dayID in listOf(shift.day - 1, shift.day + 1).filter { it in days.indices })
                 inMiddleOfBlock = inMiddleOfBlock && days[dayID].doctorsWorkingNight.contains(doctor)
-            if(inMiddleOfBlock) return false
+            if(inMiddleOfBlock) {
+                assignments[assignment].assign(doctor)
+                return false
+            }
         }
 
         // Subtracts previous objective value contribution of the doctor
@@ -207,12 +260,31 @@ class Solution(
         objectiveValue += 10 // One extra unassigned assignment
         // Adds new objective contribution value of the doctor
         objectiveValue += calculateDoctorContribution(doctors[doctor])
-        // No assignee means that the shift is totally dependent on locums, must be penalised
-        if(shift.assignees.isEmpty()) objectiveValue += 15
+        // Checks if the shift is without assignees, if so also checks the day
+        if(shift.assignees.isEmpty()) {
+            objectiveValue += 15
+            days[shift.day].numShiftsWithCoverage--
+            if(days[shift.day].numShiftsWithCoverage == 0)
+                objectiveValue += 20
+        }
+
+        doc.assignmentLog += "de $assignment\n"
+
+        for(testShift in shifts) {
+            for(assignee in testShift.assignees)
+                if(testShift.causesOfInfeasibility[assignee] != null)
+                    println("Awful news")
+            for(assignmentID in testShift.assignmentIDs) {
+                val a = assignments[assignmentID].assignee
+                if (a != null && !testShift.assignees.contains(a))
+                    println("God has cursed me")
+            }
+        }
 
         return true
     }
 
+    // Returns the set of feasible doctors for a given shift
     fun getFeasibleDoctors(assignmentID: Int): Set<Int> {
         if(assignmentID !in assignments.indices)
             throw Exception("getFeasibleDoctors: invalid assignmentID given")
@@ -248,8 +320,6 @@ class Solution(
 
     // Updates the feasibility of relevant shifts after a day shift is allocated or deallocated
     private fun updateFeasibilityNightShift(shift: NightShift, doctor: Int, allocate: Boolean) {
-        data class Quadruple(val first: Int, val second: Int, val third: Int, val fourth: Int)
-        val calcDays = { i: Int -> Quadruple(i - 1, i - 2, i + 1, i + 2) }
         /*
          * The conditions for adding or removing feasibility are contingent on the same boolean checks,
          * the actions are merely reversed, depending on the value of [allocate]; defining two lambda
@@ -265,6 +335,9 @@ class Solution(
                 for(shiftID in shift.dayShifts48HoursAfter.union(shift.shiftsWithin11Hours))
                     shifts[shiftID].restInfeasibility(doctor, Source.ShiftWorked(shift.id))
 
+                if(shift.overlaps && shift.day + 1 in days.indices)
+                    days[shift.day + 1].addWorkingDoctor(doctor)
+
                 days[shift.day].doctorsWorkingNight.add(doctor)
                 // Feasibility of relevant night shifts is assessed and updated accordingly
                 consecutiveDayNightCheck(doctor, shift.day, 4, ::doctorWorksNight, ::makeNightInfeasible)
@@ -278,6 +351,9 @@ class Solution(
                 for(shiftID in shift.dayShifts48HoursAfter.union(shift.shiftsWithin11Hours))
                     shifts[shiftID].removeSource(doctor, Source.ShiftWorked(shift.id))
 
+                if(shift.overlaps && shift.day + 1 in days.indices)
+                    days[shift.day + 1].removeWorkingDoctor(doctor)
+
                 days[shift.day].doctorsWorkingNight.remove(doctor)
                 removeNightRowInfeasibility(shift, doctor)
 
@@ -286,8 +362,12 @@ class Solution(
             }
         }
 
+        // Calculates the days that need to be checked
+        data class Quadruple(val first: Int, val second: Int, val third: Int, val fourth: Int)
+        val calcDays = { i: Int -> Quadruple(i - 1, i - 2, i + 1, i + 2) }
         val (prevDay, priorDay, nextDay, subsequentDay) = calcDays(shift.day)
 
+        // Boolean conditions for the feasibility actions to be called
         val prevInIndices = prevDay in days.indices
         val workingPrevNight = if(prevInIndices) days[prevDay].doctorsWorkingNight.contains(doctor) else false
         val priorInIndices = priorDay in days.indices
@@ -316,29 +396,65 @@ class Solution(
                 feasibilityAction2(shifts[shiftID], shift.id)
     }
 
+    /*
+     * If a night contributed to an infeasibility stemming from 4 nights in a row, this
+     * infeasibility can simply be removed
+     */
     private fun removeNightRowInfeasibility(shift: NightShift, doctor: Int) {
         // The infeasibility of other nights that was contributed to by [shift] is assessed and updated accordingly
         val toRemoveMap = mutableMapOf<Int, Set<Int>>()
-        for(dayID in days[shift.day].toCheckNight[doctor] ?: return){
+        for(dayID in days[shift.day].toCheckNight[doctor] ?: return) {
             val causes = days[dayID].causesOfNightInfeasibility[doctor]?.filter { it.sources.contains(shift.day) }
 
             val toRemove = mutableSetOf<Int>()
-            for(cause in causes ?: throw Exception("removeNightRowInfeasibility: Day $dayID is missing infeasibility for $doctor")){
+            for(cause in causes ?: throw Exception("removeNightRowInfeasibility: Day $dayID is missing infeasibility for $doctor")) {
+                /*
+                 * Nights that contributed to this night's infeasibility need to have their
+                 * reference to it in [toCheck] removed
+                 */
                 toRemove.addAll(cause.sources)
-
+                /*
+                 * True if all causes of infeasibility for the night have been removed
+                 * - shifts can be made feasible again
+                 */
                 if(days[dayID].removeNightInfeasibility(doctor, cause))
                     for(shiftID in days[dayID].nightShifts) shifts[shiftID].removeSource(doctor, Source.NightsWorked)
             }
             toRemoveMap[dayID] = toRemove
         }
 
+        /*
+         * Nights that are no longer infeasible have their references removed from [toCheck]
+         * of nights that previously contributed to their infeasibility
+         */
         for(day in toRemoveMap)
             for(dayX in day.value) days[dayX].removeToCheckNight(doctor, day.key)
+    }
+
+    private fun removeOverlappingNightInfeasibility(dayID: Int, doctor: Int) {
+        val toRemoveMap = mutableMapOf<Int, Set<Int>>()
+        for(day in days[dayID].toCheckOverlapping[doctor] ?: return) {
+            val causes = days[day].causesOfOverlappingInfeasibility[doctor]?.filter { it.sources.contains(dayID) }
+
+            val toRemove = mutableSetOf<Int>()
+            for(cause in causes ?: throw Exception("removeOverlappingNightInfeasibility: Day $dayID is missing infeasibility for $doctor")) {
+                toRemove.addAll(cause.sources)
+
+                if(days[day].removeOverlappingInfeasibility(doctor, cause))
+                    for(shift in days[day].overlappingNightShifts) shifts[shift].removeSource(doctor, Source.OverlappingNight)
+            }
+            toRemoveMap[day] = toRemove
+        }
+        for(day in toRemoveMap)
+            for(dayX in day.value) days[dayX].removeToCheckOverlapping(doctor, day.key)
     }
 
     /*
      * Ensures the adherence to labour laws regarding stretches of days worked and weekends worked, is called whenever
      * a shift is allocated, regardless of it being a day shift or night shift
+     * [doctor]: ID of the doctor that has been allocated or deallocated an assignment
+     * [day]: ID of the day on which the assignment has been allocated or deallocated
+     * [allocate]: true if the assignment was allocated, false if it was deallocated
      */
     private fun updateFeasibilityDaysWorked(doctor: Int, day: Int, allocate: Boolean) {
         weekendFeasibility(doctor, day, allocate)
@@ -349,21 +465,60 @@ class Solution(
             }
             false -> {
                 days[day].removeWorkingDoctor(doctor)
-                checkRelatedDayInfeasibility(doctor, day)
+                if(!days[day].doctorsWorkingDay.containsKey(doctor)) {
+                    checkRelatedDayInfeasibility(doctor, day)
+                    removeOverlappingNightInfeasibility(day, doctor)
+                }
             }
         }
     }
 
-    // Checks the feasibility of shifts with regard to the number of days worked
+    /*
+     * Called after a day has been assigned, in order to assess its impact on the feasibility
+     * of shifts with regard to the number of days worked
+     * [doctor]: ID of the doctor working on the day
+     * [day]: ID of the day worked
+     */
     private fun dayFeasibility(doctor: Int, day: Int) {
+        // Returns the block of days that the assigned day is now a part of
         val blockOfDays = consecutiveDayNightCheck(doctor, day, 7, ::doctorWorksDay, ::makeDayInfeasible)
 
         /*
-         * These values will be fed into functions which start at the next available index: we know that these dayss
+         * These values will be fed into functions which start at the next available index: we know that these days
          * are not worked because consecutiveDayNightCheck stops once it reaches an unassigned night
          */
         val rightStart = blockOfDays.max() + 1
         val leftStart = blockOfDays.min() - 1
+
+        /*
+         * If the block is 6 days long, an overlapping night shift could cause a row of 8
+         * days, and therefore needs to be made infeasible, on either side of the block
+         */
+        val sixLong = blockOfDays.size == 6
+        val ovAfter = rightStart in days.indices && days[rightStart].overlappingNightShifts.isNotEmpty()
+        if(sixLong && ovAfter) {
+            makeOverlappingNightInfeasible(rightStart, doctor,
+                DayNightInfeasibility.WouldCauseRowTooLarge(blockOfDays))
+        }
+        val prevOv = leftStart - 1
+        val ovBefore = prevOv in days.indices && days[prevOv].overlappingNightShifts.isNotEmpty()
+        if(sixLong && ovBefore) {
+            makeOverlappingNightInfeasible(prevOv, doctor,
+                DayNightInfeasibility.WouldCauseRowTooLarge(blockOfDays))
+        }
+
+        /*
+         * If the block is five days long, with a gap of three unassigned days, but the
+         * first unassigned day has overlapping nights, those need to be made unfeasible
+         * (would create a row of 7 without the requisite rest)
+         */
+        val fiveLong = blockOfDays.size == 5
+        val relevantDayAfter = rightStart + 3
+        val assignedAfter = relevantDayAfter in days.indices && doctorWorksDay(relevantDayAfter, doctor)
+        if(fiveLong && assignedAfter && ovAfter) {
+            makeOverlappingNightInfeasible(rightStart, doctor,
+                DayNightInfeasibility.InsufficientRest(blockOfDays + relevantDayAfter))
+        }
 
         // true if the day after [rightStart] is worked, false if not
         val secondDayWorked = checkRightBlock(doctor, rightStart, blockOfDays)
@@ -371,12 +526,31 @@ class Solution(
         * If the day after [rightStart] is worked and the block 6 days long, working on the night [leftStart] becomes
         * infeasible as it would cause a stretch of 7 nights without the requisite 48 hours rest
         */
-        if(secondDayWorked && blockOfDays.size == 6 && blockOfDays.min() >0)
-            makeDayInfeasible(leftStart, doctor, DayNightInfeasibility.InsufficientRest(blockOfDays + (blockOfDays.max() + 2)))
+        if(secondDayWorked && blockOfDays.size == 6 && blockOfDays.min() > 0) {
+            makeDayInfeasible(
+                leftStart, doctor,
+                DayNightInfeasibility.InsufficientRest(blockOfDays + (rightStart + 2))
+            )
+        }
+
+        /*
+         * If there is an overlapping night two days before the block of 5 days and the
+         * second shift after the block is worked, the overlapping shifts need to be made
+         * infeasible
+         */
+        if(fiveLong && secondDayWorked && ovBefore) {
+            makeOverlappingNightInfeasible(prevOv, doctor,
+                DayNightInfeasibility.InsufficientRest(blockOfDays + (rightStart + 1)))
+        }
+
         checkLeftBlock(doctor, leftStart, blockOfDays, secondDayWorked)
     }
 
-    // Called after a doctor is removed from working on a day, assesses and updates the feasibility of relevant days
+    /* Called after a doctor is removed from working on a day, assesses and updates the
+     * feasibility of relevant days
+     * [doctor]: ID of the doctor removed from working an assignment on the day
+     * [day]: ID of the day to be checked
+     */
     private fun checkRelatedDayInfeasibility(doctor: Int, dayID: Int) {
         fun processDay(day: Int): Set<Int> {
             // [causes] = causes of infeasibility that need to be removed
@@ -386,24 +560,29 @@ class Solution(
             for(cause in causes) {
                 // If a cause of infeasibility is removed, its sources no longer need to have [day] in toCheck
                 toRemove.addAll(cause.sources)
-                // If a day becomes feasible as a result of the de-allocation, shifts have their infeasibility removed
+                /*
+                 * If a day becomes feasible as a result of the de-allocation, shifts have
+                 * their infeasibility removed
+                 */
                 if(days[day].removeInfeasibility(doctor, cause))
-                    for(shift in days[day].getShifts()) shifts[shift].removeSource(doctor, Source.DaysWorked)
+                    for(shift in days[day].getShifts())
+                        shifts[shift].removeSource(doctor, Source.DaysWorked)
             }
 
             /*
-             * Some sources of removed causes might also be sources for causes of infeasibility for [day] that are still
-             * valid: they need to be left out of toRemove
+             * Some sources of removed causes might also be sources for causes of infeasibility
+             * for [day] that are still valid: they need to be left out of toRemove
              */
             toRemove.removeAll(keepInToCheck)
             return toRemove
         }
 
+        // Could be the case that the day was not part of any further infeasibility for the given doctor
         val toCheck = days[dayID].toCheck[doctor] ?: return
         val toRemoveMap: MutableMap<Int, Set<Int>> = mutableMapOf()
 
         // Finds the set of days that no longer need to hold reference to [day] in their toCheck
-        for(day in toCheck) //days[dayID].toCheck[doctor] ?: throw Exception("checkRelatedDayInfeasibility: Day $dayID is missing toCheck reference for Doctor $doctor"))
+        for(day in toCheck)
             toRemoveMap[day] = processDay(day)
 
         // Removes toCheck entries that are no longer needed - done this way in order to avoid concurrent access exception
@@ -420,8 +599,8 @@ class Solution(
     }
 
     // Used to allow the use of the same code for checking different "directions"
-    private val increment = {i: Int -> i + 1}
-    private val decrement = {i: Int -> i - 1}
+    private val increment = { i: Int -> i + 1 }
+    private val decrement = { i: Int -> i - 1 }
 
     // Used to allow the reuse of code for checking the feasibility of days and nights
     private fun makeDayInfeasible(dayID: Int, doctor: Int, infeasibility: DayNightInfeasibility) {
@@ -438,13 +617,23 @@ class Solution(
         for(source in infeasibility.sources)
             days[source].addToCheckNight(doctor, dayID)
     }
+    private fun makeOverlappingNightInfeasible(dayID: Int, doctor: Int, infeasibility: DayNightInfeasibility) {
+        if(infeasibility is DayNightInfeasibility.RestAfterRow)
+            throw Exception("makeOverlappingNightInfeasible: Rest After row can only applied to full days or nights, " +
+                "this function is for use with overlapping night shifts only (WouldCauseRowTooLarge, InsufficientRest")
+        for(shift in days[dayID].overlappingNightShifts)
+            shifts[shift].restInfeasibility(doctor, Source.OverlappingNight)
+        days[dayID].addOverlappingInfeasibility(doctor, infeasibility)
+        for(source in infeasibility.sources)
+            days[source].addToCheckOverlapping(doctor, dayID)
+    }
 
     // Finds an uninterrupted block of days or nights, and returns a set containing their indexes
     private inline fun checkBlock(index: Int, block: MutableSet<Int>, doctor: Int,
                                   works: (Int, Int) -> Boolean, next:(Int) -> Int) {
         var toCheck = next(index)
 
-        while(toCheck in days.indices){
+        while(toCheck in days.indices) {
             when(works(toCheck, doctor)) {
                 false -> return
                 true -> block.add(toCheck)
@@ -458,7 +647,14 @@ class Solution(
         val nextBlock: MutableSet<Int> = mutableSetOf()
         // index increments as we are "moving to the right"
         checkBlock(startIndex, nextBlock, doctor, ::doctorWorksDay, increment)
-        if(nextBlock.isEmpty()) return false
+        if(nextBlock.isEmpty()) {
+            checkBlock(startIndex+1, nextBlock, doctor, ::doctorWorksDay, increment)
+            if(block.size == 6 && nextBlock.isNotEmpty()) {
+                makeDayInfeasible(startIndex, doctor,
+                    DayNightInfeasibility.InsufficientRest(block + nextBlock.min()))
+            }
+            return false
+        }
 
         // Calculates the size of the stretch if [startIndex] is assigned
         val stretch = nextBlock.size + block.size + 1
@@ -468,11 +664,19 @@ class Solution(
                 // We know that nextBlock.max() + 1 is unassigned due to checkBlock()
                 val rest = nextBlock.max() + 2
                 // If [rest] is worked, it would be infeasible to assign [startIndex] as there would not be enough rest
-                if (rest in days.indices && doctorWorksDay(rest, doctor))
-                    makeDayInfeasible(startIndex, doctor, DayNightInfeasibility.InsufficientRest(nextBlock + block))}
+                if (rest in days.indices && doctorWorksDay(rest, doctor)) {
+                    makeDayInfeasible(
+                        startIndex,
+                        doctor,
+                        DayNightInfeasibility.InsufficientRest(nextBlock + block + rest)
+                    )
+                }
+
+            }
             // If the hypothetical stretch is greater than the maximum allowed size, assigning [startIndex] is infeasible
             stretch > 7 -> makeDayInfeasible(startIndex, doctor,
-                DayNightInfeasibility.WouldCauseRowTooLarge(nextBlock + block))
+                DayNightInfeasibility.WouldCauseRowTooLarge(nextBlock + block)
+            )
         }
         return true
     }
@@ -482,31 +686,59 @@ class Solution(
         val prevBlock = mutableSetOf<Int>()
         // index decrements as we are "moving to the left"
         checkBlock(startIndex, prevBlock, doctor, ::doctorWorksDay, decrement)
-        if(prevBlock.isEmpty()) return
+        if(prevBlock.isEmpty()) {
+            checkBlock(startIndex-1, prevBlock, doctor, ::doctorWorksDay, decrement)
+            if(prevBlock.size == 6) {
+                makeDayInfeasible(
+                    startIndex - 1, doctor,
+                    DayNightInfeasibility.InsufficientRest(prevBlock + block.min())
+                )
+            }
+            return
+        }
+
+        if(prevBlock.size + 1 + block.size == 6 && secondWorked) {
+            makeDayInfeasible(startIndex, doctor,
+                DayNightInfeasibility.InsufficientRest(prevBlock.union(block) + (block.max() + 2)))
+        }
 
         val priorToPrevBlock = prevBlock.min() - 1
         val blockPriorToPrevBlock = mutableSetOf<Int>()
         checkBlock(priorToPrevBlock, blockPriorToPrevBlock, doctor, ::doctorWorksDay, decrement)
 
+        if(blockPriorToPrevBlock.size + prevBlock.size + 1 == 7 && priorToPrevBlock >= 0) {
+            makeDayInfeasible(priorToPrevBlock, doctor,
+                DayNightInfeasibility.InsufficientRest(blockPriorToPrevBlock.union(prevBlock) + block.min())
+            )
+        }
+
         // Calculates the maximum size of a stretch if [startIndex] is assigned
         val stretch = prevBlock.size + block.size + 1
         when {
-            blockPriorToPrevBlock.size + prevBlock.size + 2 > 7 && priorToPrevBlock >= 0 ->
-                makeDayInfeasible(priorToPrevBlock, doctor, DayNightInfeasibility.InsufficientRest(blockPriorToPrevBlock.union(prevBlock.union(block))))
             /*
              * [secondWorked] refers to a second stretch and is the returned value from checkRightBlock, it is true,
              * and the hypothetical stretch is the maximum size allowed, assigning [startIndex] would be infeasible,
              * as there would not be 48 hours of rest afterwards.
              */
-            stretch == 7 -> if(secondWorked) makeDayInfeasible(startIndex, doctor,
-                DayNightInfeasibility.InsufficientRest(prevBlock + block))
+            stretch == 7 -> {
+                if (secondWorked) makeDayInfeasible(
+                    startIndex, doctor,
+                    DayNightInfeasibility.InsufficientRest(prevBlock + block + (block.max() + 2))
+                )
+            }
             // If the hypothetical stretch is greater than the allowed maximum, assigning [startIndex] is infeasible
-            stretch > 7 -> makeDayInfeasible(startIndex, doctor,
-                DayNightInfeasibility.WouldCauseRowTooLarge(prevBlock + block))
+            stretch > 7 -> makeDayInfeasible(
+                    startIndex, doctor,
+                    DayNightInfeasibility.WouldCauseRowTooLarge(prevBlock + block)
+                )
         }
     }
 
-    // Checks if [startIndex] is part of a consecutive block
+    /*
+     * Checks if [startIndex] is part of a consecutive block of days/nights that are worked,
+     * adds necessary infeasibility to relevant shifts if maximum stretch is met, and returns
+     * the found block as a set of IDs
+     */
     private inline fun consecutiveDayNightCheck(doctor: Int, startIndex: Int, max: Int,
                                                 works: (Int, Int) -> Boolean,
                                                 infeasible: (Int, Int, DayNightInfeasibility) -> Unit
@@ -544,21 +776,52 @@ class Solution(
          * be 8 days long: infeasible
          */
         val tooLarge = causes.filterIsInstance<DayNightInfeasibility.WouldCauseRowTooLarge>()
-        if(tooLarge.isNotEmpty()) {
-            val stretch: MutableSet<Int> = mutableSetOf()
-            checkBlock(day, stretch, doctor, ::doctorWorksDay, increment)
-            checkBlock(day, stretch, doctor, ::doctorWorksDay, decrement)
-            // checkBlock would not include [day] as it is the startIndex
-            if(stretch.size > 6) {
-                days[day].addInfeasibility(doctor, DayNightInfeasibility.WouldCauseRowTooLarge(stretch))
-                toKeep.addAll(stretch)
+        if (tooLarge.isNotEmpty()) {
+            run {
+                val stretch: MutableSet<Int> = mutableSetOf()
+                checkBlock(day, stretch, doctor, ::doctorWorksDay, increment)
+                checkBlock(day, stretch, doctor, ::doctorWorksDay, decrement)
+
+                // If the stretch is empty, no further computation is needed
+                if(stretch.isEmpty())
+                    return@run
+
+                // checkBlock would not include [day] as it is the startIndex
+                if(stretch.size > 6) {
+                    days[day].addInfeasibility(doctor, DayNightInfeasibility.WouldCauseRowTooLarge(stretch))
+                    toKeep.addAll(stretch)
+                }
+                /*
+                 * If the day being checked is at the end of the block, it will not be
+                 * included in [stretch], due to the nature of the checkBlock function
+                 */
+                val dayIsEndOfBlock = stretch.max() + 1 == day
+                val subsequentDayToCheck = if(dayIsEndOfBlock) day + 2 else stretch.max() + 2
+                if(stretch.size == 6 && subsequentDayToCheck in days.indices
+                        && doctorWorksDay(subsequentDayToCheck, doctor)) {
+                    makeDayInfeasible(day, doctor, DayNightInfeasibility.InsufficientRest(stretch + subsequentDayToCheck))
+                    toKeep.addAll(stretch + subsequentDayToCheck)
+                }
+            }
+        }
+
+        val row = causes.filterIsInstance<DayNightInfeasibility.RestAfterRow>()
+        if(row.isNotEmpty() && row[0].sources.max() + 1 == day) {
+            val block = mutableSetOf<Int>()
+            checkBlock(day, block, doctor, ::doctorWorksDay, decrement)
+
+            val subsequentDayToCheck = day + 2
+            if(block.size == 6 && subsequentDayToCheck in days.indices &&
+                    doctorWorksDay(subsequentDayToCheck, doctor)) {
+                makeDayInfeasible(day, doctor, DayNightInfeasibility.InsufficientRest(block + subsequentDayToCheck))
+                toKeep.addAll(block + subsequentDayToCheck)
             }
         }
 
         return Pair(toKeep, causes)
     }
 
-    // Maintains feasibility in terms of weekends worked
+    // Needs to be altered (weekend starts after midnight on sunday)
     private fun weekendFeasibility(doctor: Int, day: Int, allocate: Boolean) {
         val addedValues = when {
             //Day is a Sunday

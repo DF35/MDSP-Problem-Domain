@@ -1,3 +1,5 @@
+package hyflex;
+
 import java.util.Random;
 
 /**
@@ -5,7 +7,7 @@ import java.util.Random;
  * for applying heuristics and managing solutions. These methods are used by
  * a hyper-heuristic in order to progress the search.
  *
- * Sub-classes of ProblemDomain provide the representations of the various problem
+ * Sub-classes of Hyflex.ProblemDomain provide the representations of the various problem
  * domains for the competition.
  * @author Antonio Vázquez, Matthew Hyde, Gabriela Ochoa, Tim Curtois. [jav,mvh,gxo,tec]@cs.nott.ac.uk
  */
@@ -50,7 +52,7 @@ public abstract class ProblemDomain {
     /**
      * An enumeration of the different types of low-level heuristics implemented in
      * the software. The set of all heuristics of a certain type can be obtained through
-     * methods in the ProblemDomain class.
+     * methods in the Hyflex.ProblemDomain class.
      */
     public enum HeuristicType
     {
@@ -278,7 +280,7 @@ public abstract class ProblemDomain {
 
     /**
      * Gets the name of the problem domain. For example, "Bin Packing"
-     * @return the name of the ProblemDomain
+     * @return the name of the Hyflex.ProblemDomain
      */
     public abstract String toString();
 

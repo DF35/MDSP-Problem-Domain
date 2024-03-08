@@ -1,3 +1,5 @@
+package problemDomain
+
 import kotlin.Exception
 
 // The cause for a shift's infeasibility for a given doctor
@@ -8,6 +10,7 @@ enum class Cause {
 // The source of a shift's infeasibility for a given doctor
 sealed class Source {
     data object DaysWorked: Source()
+    data object OverlappingNight: Source()
     data class WeekendWorked(val dayID: Int): Source()
     data object NightsWorked: Source()
     data class ShiftWorked(val shiftID: Int): Source()
@@ -28,6 +31,7 @@ class ShiftInfeasibility(val cause : Cause) {
         for(source in sources)
             string += when(source) {
                 Source.DaysWorked -> "Days Worked "
+                Source.OverlappingNight -> "Overlapping Night "
                 Source.NightsWorked -> "Nights Worked "
                 is Source.ShiftWorked -> "Shift Worked ${source.shiftID} "
                 is Source.WeekendWorked -> "Weekend Worked ${source.dayID} "
@@ -39,10 +43,11 @@ class ShiftInfeasibility(val cause : Cause) {
         print("$cause ")
         for(source in sources)
             when(source) {
-                Source.DaysWorked -> println("DaysWorked")
+                Source.DaysWorked -> println("DaysWorked ")
+                Source.OverlappingNight -> println("Overlapping Night ")
                 is Source.ShiftWorked -> println("ShiftWorked: " + source.shiftID)
                 is Source.WeekendWorked -> println("WeekendWorked " + source.dayID)
-                Source.NightsWorked -> println("NightsWorked")
+                Source.NightsWorked -> println("NightsWorked ")
             }
     }
 }
@@ -56,7 +61,7 @@ abstract class Shift(
     val day: Int,
     val feasibleDoctors: MutableSet<Int>,
     // Duration of the shift in hours
-    val duration: Int
+    val duration: Double
 ) {
     // Key = doctor ID, value = reason for infeasibility - used to map doctors to their causes of infeasibility
     val causesOfInfeasibility: MutableMap<Int, ShiftInfeasibility> = mutableMapOf()
@@ -103,7 +108,7 @@ abstract class Shift(
         val infeasibility = ShiftInfeasibility(Cause.REST)
         infeasibility.sources.add(source)
         causesOfInfeasibility[doctor] = infeasibility
-        // [doctor] is guaranteed to be in feasibleDoctors due to code within [Solution]
+        // [doctor] is guaranteed to be in feasibleDoctors due to code within [problemDomain.Solution]
         feasibleDoctors.remove(doctor)
     }
 
@@ -122,7 +127,7 @@ abstract class Shift(
         // Creates a new infeasibility and removes the doctor from feasibleDoctors
         val infeasibility = ShiftInfeasibility(cause)
         causesOfInfeasibility[doctor] = infeasibility
-        // [doctor] is guaranteed to be in feasibleDoctors due to code within [Solution]
+        // [doctor] is guaranteed to be in feasibleDoctors due to code within [problemDomain.Solution]
         feasibleDoctors.remove(doctor)
     }
 
@@ -158,7 +163,7 @@ class DayShift(
     val nightShifts48HoursBefore: Set<Int>,
     day: Int,
     feasibleDoctors: MutableSet<Int>,
-    duration: Int
+    duration: Double
 ) : Shift(id, assignmentIDs, shiftsWithin11Hours, day, feasibleDoctors, duration) {
     override fun copy(): Shift {
         val shift = DayShift(id, assignmentIDs, shiftsWithin11Hours, nightShifts48HoursBefore, day,
@@ -181,12 +186,14 @@ class NightShift(
     val dayShifts48HoursAfter: Set<Int>,
     day: Int,
     feasibleDoctors: MutableSet<Int>,
-    duration: Int
+    duration: Double,
+    // true if night shift overlaps into next day, false if not
+    val overlaps: Boolean
 ) : Shift(id, assignmentIDs, shiftsWithin11Hours, day, feasibleDoctors, duration) {
     override fun copy(): Shift {
         val shift = NightShift(
             id, assignmentIDs, shiftsWithin11Hours, dayShifts48HoursAfter, day,
-            feasibleDoctors.toMutableSet(), duration
+            feasibleDoctors.toMutableSet(), duration, overlaps
         )
         for ((key, value) in causesOfInfeasibility)
             shift.causesOfInfeasibility[key] = value.copy()
@@ -207,10 +214,12 @@ class Assignment(
     val infeasibleDoctors: Set<Int>
 ) {
     var assignee: Int? = null
+    var iterationAssigned = Int.MAX_VALUE
 
     fun copy(): Assignment {
         val assignment = Assignment(id, shift, requiredGrade, infeasibleDoctors)
-        assignment.assignee = this.assignee
+        assignment.assignee = assignee
+        assignment.iterationAssigned = iterationAssigned
         return assignment
     }
 
@@ -245,6 +254,7 @@ class Day(
     val id: Int,
     val dayShifts: Set<Int>,
     val nightShifts: Set<Int>,
+    val overlappingNightShifts: Set<Int>
 ) {
     /*
      * Key = doctor ID, Value = number of shifts worked on day. Keeps track of the number of shifts a doctor is working
@@ -256,12 +266,9 @@ class Day(
     /*
      * IDs of days whose infeasibility was contributed to by this day. If the doctor in question stops working on this
      * day, the feasibility of these days will need to be reevaluated
-     * */
-    val toCheck: MutableMap<Int, MutableSet<Int>> = mutableMapOf()
-    /*
-     * Key = doctor ID, Value = number of night shifts worked on day. Keeps track of the number of night shifts a doctor
-     * is working on a given day
      */
+    val toCheck: MutableMap<Int, MutableSet<Int>> = mutableMapOf()
+    // Keeps track of the doctors working night shifts on that day
     val doctorsWorkingNight: MutableSet<Int> = mutableSetOf()
     // Keeps track of causes of infeasibility of a given doctor that relate to the nights worked
     val causesOfNightInfeasibility: MutableMap<Int, MutableSet<DayNightInfeasibility>> = mutableMapOf()
@@ -270,9 +277,13 @@ class Day(
      * stops working on this day's night shifts, the feasibility of these day's night shifts will need to be reevaluated
      */
     val toCheckNight: MutableMap<Int, MutableSet<Int>> = mutableMapOf()
+    val causesOfOverlappingInfeasibility: MutableMap<Int, MutableSet<DayNightInfeasibility>> = mutableMapOf()
+    val toCheckOverlapping: MutableMap<Int, MutableSet<Int>> = mutableMapOf()
+    // Keeps track of the number of shifts with coverage for use in objective function + delta evaluation
+    var numShiftsWithCoverage = 0
 
     fun copy(): Day {
-        val day = Day(id, dayShifts, nightShifts)
+        val day = Day(id, dayShifts, nightShifts, overlappingNightShifts)
         day.doctorsWorkingDay.putAll(this.doctorsWorkingDay)
         for((key,value) in causesOfInfeasibility)
             day.causesOfInfeasibility[key] = value.toMutableSet()
@@ -283,6 +294,11 @@ class Day(
             day.causesOfNightInfeasibility[key] = value.toMutableSet()
         for((key, value) in toCheckNight)
             day.toCheckNight[key] = value.toMutableSet()
+        for((key, value) in causesOfOverlappingInfeasibility)
+            day.causesOfOverlappingInfeasibility[key] = value.toMutableSet()
+        for((key, value) in toCheckOverlapping)
+            day.toCheckOverlapping[key] = value.toMutableSet()
+        day.numShiftsWithCoverage = numShiftsWithCoverage
 
         return day
     }
@@ -300,7 +316,7 @@ class Day(
     }
 
     private fun debugCause(causes: MutableSet<DayNightInfeasibility>) {
-        for(infeasibility in causes){
+        for(infeasibility in causes) {
             print(infeasibility::class.simpleName + " " + infeasibility.sources + ", ")
         }
         println()
@@ -336,10 +352,10 @@ class Day(
     // Removes a cause of infeasibility, returns true if no causes of infeasibility remain, false if not
     fun removeInfeasibility(doctor: Int, cause: DayNightInfeasibility): Boolean {
         val removed = causesOfInfeasibility[doctor]?.remove(cause)
-            ?: throw Exception("removeToCheck: no infeasibility for doctor $doctor in day $id")
-        if (!removed) throw Exception("removeToCheck: $cause not present in day $id")
+            ?: throw Exception("removeInfeasibility: no infeasibility for doctor $doctor in day $id")
+        if(!removed) throw Exception("removeInfeasibility: $cause not present in day $id")
 
-        if(causesOfInfeasibility[doctor]!!.isEmpty()){
+        if(causesOfInfeasibility[doctor]!!.isEmpty()) {
             causesOfInfeasibility.remove(doctor)
             return true
         }
@@ -411,6 +427,39 @@ class Day(
 
         if(toCheckNight[doctor]!!.isEmpty()) toCheckNight.remove(doctor)
     }
+
+    fun addOverlappingInfeasibility(doctor: Int, cause: DayNightInfeasibility) {
+        when(causesOfOverlappingInfeasibility[doctor]) {
+            null -> causesOfOverlappingInfeasibility[doctor] = mutableSetOf(cause)
+            else -> causesOfOverlappingInfeasibility[doctor]?.add(cause)
+        }
+    }
+
+    fun removeOverlappingInfeasibility(doctor: Int, cause: DayNightInfeasibility): Boolean {
+        val removed = causesOfOverlappingInfeasibility[doctor]?.remove(cause)
+            ?: throw Exception("removeOverlappingInfeasibility: no infeasibility for doctor $doctor in day $id")
+        if(!removed) throw Exception("removeOverlappingInfeasibility: $cause no present in day $id")
+
+        if(causesOfOverlappingInfeasibility[doctor]!!.isEmpty()) {
+            causesOfOverlappingInfeasibility.remove(doctor)
+            return true
+        }
+        return false
+    }
+
+    fun addToCheckOverlapping(doctor: Int, dayID: Int) {
+        when(toCheckOverlapping[doctor]) {
+            null -> toCheckOverlapping[doctor] = mutableSetOf(dayID)
+            else -> toCheckOverlapping[doctor]?.add(dayID)
+        }
+    }
+
+    fun removeToCheckOverlapping(doctor: Int, dayID: Int) {
+        val removed = toCheckOverlapping[doctor]?.remove(dayID)
+            ?: throw Exception("removeToCheckOverlapping: doctor $doctor has no entry in toCheckOverlapping of $id")
+        if(!removed) throw Exception("removeToCheckOverlapping: day $dayID not present in toCheckOverlapping of $id")
+        if(toCheckOverlapping[doctor]!!.isEmpty()) toCheckOverlapping.remove(doctor)
+    }
 }
 
 /*
@@ -438,6 +487,7 @@ class MiddleGrade(
     var dayShiftsWorked = 0
     var nighShiftsWorked = 0
     var assignedAssignments = mutableListOf<Int>()
+    var assignmentLog = ""
 
     fun varianceHoursWorked(): Double { return targetHours - (hoursWorked / averageHoursDenominator) }
 
@@ -451,10 +501,11 @@ class MiddleGrade(
         doctor.dayShiftsWorked = this.dayShiftsWorked
         doctor.nighShiftsWorked = this.nighShiftsWorked
         doctor.assignedAssignments = this.assignedAssignments.toMutableList()
+        doctor.assignmentLog = assignmentLog
         return doctor
     }
 
-    override fun toString(): String { return "\nDoctor: $id\nGrade: $grade\nHours Worked: $averageHoursDenominator\nDay Shifts Worked: $dayShiftsWorked\nNight Shifts Worked: $nighShiftsWorked\n" }
+    override fun toString(): String { return "\nDoctor: $id\nGrade: $grade\nTarget Hours: $targetHours\nTarget Day Shifts: $targetDayShifts\nTarget Night Shifts: $targetNightShifts\nHours Worked: $hoursWorked\nAverage Hours Worked (Adjusted for leave) ${hoursWorked/averageHoursDenominator}\nDay Shifts Worked: $dayShiftsWorked\nNight Shifts Worked: $nighShiftsWorked\n" }
 
     fun debug() {
         println(id)
