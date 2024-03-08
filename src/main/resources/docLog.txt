@@ -1,0 +1,197 @@
+al 174 3
+al 144 3
+al 198 3
+al 2 3
+al 10 3
+al 34 3
+al 62 3
+al 86 3
+al 88 3
+al 166 3
+al 123 3
+al 127 3
+al 155 3
+al 210 3
+al 23 3
+al 95 3
+al 119 3
+al 99 3
+al 141 3
+al 149 3
+al 169 3
+al 177 3
+al 181 3
+al 201 3
+al 205 3
+al 5 3
+al 57 3
+al 65 3
+al 75 3
+al 13 3
+de 13
+al 13 3
+al 41 3
+de 41
+al 41 3
+de 5
+al 5 3
+de 210
+al 210 3
+de 41
+al 41 3
+de 177
+al 177 3
+de 5
+al 5 3
+de 205
+al 205 3
+de 205
+al 205 3
+de 169
+al 169 3
+de 86
+de 5
+al 5 3
+de 205
+al 205 3
+de 174
+al 174 3
+de 62
+de 155
+al 62 3
+al 155 3
+de 177
+al 177 3
+de 155
+al 71 3
+de 144
+al 144 3
+de 169
+al 169 3
+de 198
+al 197 3
+de 197
+al 197 3
+de 34
+al 34 3
+de 144
+al 144 3
+al 113 3
+de 113
+al 113 3
+al 152 3
+de 152
+al 152 3
+de 166
+al 166 3
+de 57
+al 57 3
+de 152
+al 152 3
+al 160 3
+de 160
+de 23
+al 21 3
+de 21
+al 25 3
+de 25
+al 49 3
+de 49
+al 50 3
+de 50
+al 20 3
+de 20
+al 24 3
+de 24
+al 52 3
+de 52
+al 23 3
+de 23
+al 21 3
+al 25 3
+de 25
+al 24 3
+de 24
+al 25 3
+de 25
+al 25 3
+de 25
+al 24 3
+de 24
+al 24 3
+de 24
+al 25 3
+de 25
+al 24 3
+de 24
+al 25 3
+de 25
+al 24 3
+de 24
+al 25 3
+de 25
+al 25 3
+de 25
+al 24 3
+de 24
+al 25 3
+de 25
+al 24 3
+de 24
+al 25 3
+de 25
+al 24 3
+de 24
+al 24 3
+de 24
+al 25 3
+de 25
+al 25 3
+de 25
+al 24 3
+de 24
+al 25 3
+de 25
+al 24 3
+de 24
+al 24 3
+de 24
+al 25 3
+de 25
+al 25 3
+de 25
+al 24 3
+de 24
+al 25 3
+de 25
+al 24 3
+de 24
+al 25 3
+de 25
+al 24 3
+de 24
+al 24 3
+de 24
+al 25 3
+de 25
+al 25 3
+de 25
+al 24 3
+de 24
+al 25 3
+de 25
+al 24 3
+de 24
+al 24 3
+de 24
+de 21
+al 24 3
+al 20 3
+de 20
+al 21 3
+de 21
+al 20 3
+de 20
+al 20 3
+de 20
+de 197

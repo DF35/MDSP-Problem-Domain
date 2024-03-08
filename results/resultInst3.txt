@@ -1,0 +1,4661 @@
+6528.839958603111 
+Shifts:
+
+Day: Monday
+
+Shift 0
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 17]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 0: TRAINING 
+Doctor 4: TRAINING 
+Doctor 7: TRAINING 
+Doctor 11: TRAINING 
+Doctor 12: TRAINING 
+Doctor 13: TRAINING 
+Doctor 10: REST Shift Worked 1 
+Doctor 15: REST Shift Worked 3 
+
+Shift 1
+Time: 14:00-22:00 (Day Shift)
+Assignees: [10]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 2 
+Doctor 17: REST Shift Worked 4 Shift Worked 0 
+Doctor 6: REST Shift Worked 0 
+Doctor 11: REST Shift Worked 3 
+Doctor 8: REST Shift Worked 4 
+Doctor 15: REST Shift Worked 3 
+
+Shift 2
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 6: REST Shift Worked 0 Shift Worked 5 
+Doctor 17: REST Shift Worked 9 Shift Worked 4 Shift Worked 0 
+Doctor 8: REST Shift Worked 4 
+Doctor 11: REST Shift Worked 3 
+Doctor 10: REST Shift Worked 1 
+Doctor 15: REST Shift Worked 3 
+Doctor 2: REST Shift Worked 11 
+Doctor 3: REST Shift Worked 8 
+Doctor 13: REST Shift Worked 8 
+
+Shift 3
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [11, 15]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 2 
+Doctor 6: REST Shift Worked 0 Shift Worked 5 
+Doctor 17: REST Shift Worked 9 Shift Worked 4 Shift Worked 0 
+Doctor 8: REST Shift Worked 4 
+Doctor 10: REST Shift Worked 6 Shift Worked 1 
+Doctor 2: REST Shift Worked 11 
+Doctor 3: REST Shift Worked 8 
+Doctor 13: REST Shift Worked 8 
+
+
+Day: Tuesday
+
+Shift 4
+Time: 08:00-16:00 (Day Shift)
+Assignees: [17, 8]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 7 Shift Worked 2 
+Doctor 10: REST Shift Worked 6 Shift Worked 1 
+Doctor 6: REST Shift Worked 5 
+Doctor 11: REST Shift Worked 3 Shift Worked 7 
+Doctor 15: REST Shift Worked 3 
+
+Shift 5
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 7 Shift Worked 2 
+Doctor 8: REST Shift Worked 4 
+Doctor 17: REST Shift Worked 4 
+Doctor 11: REST Shift Worked 3 Shift Worked 7 
+Doctor 10: REST Shift Worked 6 
+Doctor 15: REST Shift Worked 3 
+Doctor 3: REST Shift Worked 8 
+Doctor 13: REST Shift Worked 8 
+
+Shift 6
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [10]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 6: REST Shift Worked 5 Shift Worked 14 
+Doctor 7: REST Shift Worked 7 
+Doctor 17: REST Shift Worked 9 Shift Worked 4 
+Doctor 8: REST Shift Worked 4 Shift Worked 15 
+Doctor 11: REST Shift Worked 3 Shift Worked 7 
+Doctor 15: REST Shift Worked 3 
+Doctor 0: REST Shift Worked 12 
+Doctor 1: REST Shift Worked 13 
+Doctor 12: REST Shift Worked 15 
+Doctor 3: REST Shift Worked 8 
+Doctor 4: REST Shift Worked 12 
+Doctor 13: REST Shift Worked 8 
+
+Shift 7
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [7, 11]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 6: REST Shift Worked 5 Shift Worked 14 
+Doctor 17: REST Shift Worked 9 Shift Worked 4 
+Doctor 8: REST Shift Worked 4 Shift Worked 15 
+Doctor 10: REST Shift Worked 6 Shift Worked 10 
+Doctor 0: REST Shift Worked 12 
+Doctor 1: REST Shift Worked 13 
+Doctor 12: REST Shift Worked 15 
+Doctor 3: REST Shift Worked 8 
+Doctor 4: REST Shift Worked 12 
+Doctor 13: REST Shift Worked 8 
+
+
+Day: Wednesday
+
+Shift 8
+Time: 08:00-16:00 (Day Shift)
+Assignees: [3, 13]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 7 Shift Worked 2 Shift Worked 11 
+Doctor 17: REST Shift Worked 9 
+Doctor 10: REST Shift Worked 6 Shift Worked 10 
+Doctor 6: REST Shift Worked 5 Days Worked 
+Doctor 11: REST Shift Worked 3 Shift Worked 7 
+Doctor 15: REST Shift Worked 3 
+Doctor 2: REST Shift Worked 11 
+
+Shift 9
+Time: 14:00-22:00 (Day Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 7 Shift Worked 2 Shift Worked 11 
+Doctor 10: REST Shift Worked 6 Shift Worked 10 
+Doctor 11: REST Shift Worked 3 Shift Worked 7 
+Doctor 15: REST Shift Worked 3 
+Doctor 0: REST Shift Worked 12 
+Doctor 6: REST Days Worked 
+Doctor 2: REST Shift Worked 11 
+Doctor 3: REST Shift Worked 8 
+Doctor 4: REST Shift Worked 12 
+Doctor 13: REST Shift Worked 8 
+
+Shift 10
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [10]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 11: REST Shift Worked 7 Shift Worked 16 
+Doctor 7: REST Shift Worked 7 Shift Worked 11 
+Doctor 17: REST Shift Worked 9 
+Doctor 15: REST Shift Worked 3 
+Doctor 0: REST Shift Worked 12 Shift Worked 18 
+Doctor 3: REST Shift Worked 16 Shift Worked 8 
+Doctor 6: REST Days Worked 
+Doctor 1: REST Shift Worked 13 
+Doctor 2: REST Shift Worked 11 
+Doctor 4: REST Shift Worked 17 Shift Worked 12 
+Doctor 13: REST Shift Worked 8 
+
+Shift 11
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [2, 7]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 17: REST Shift Worked 9 
+Doctor 6: REST Shift Worked 14 Days Worked 
+Doctor 15: REST Shift Worked 3 
+Doctor 0: REST Shift Worked 12 Shift Worked 18 
+Doctor 3: REST Shift Worked 16 Shift Worked 8 
+Doctor 1: REST Shift Worked 13 
+Doctor 4: REST Shift Worked 17 Shift Worked 12 
+Doctor 10: REST Shift Worked 10 
+Doctor 13: REST Shift Worked 8 
+Doctor 11: REST Shift Worked 16 
+
+
+Day: Thursday
+
+Shift 12
+Time: 08:00-16:00 (Day Shift)
+Assignees: [0, 4]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 1: TRAINING 
+Doctor 3: TRAINING 
+Doctor 6: TRAINING 
+Doctor 10: TRAINING 
+Doctor 14: TRAINING 
+Doctor 17: TRAINING 
+Doctor 7: REST Shift Worked 7 Shift Worked 11 
+Doctor 11: REST Shift Worked 7 Days Worked 
+Doctor 8: REST Shift Worked 15 
+Doctor 2: REST Shift Worked 11 
+Doctor 12: REST Shift Worked 15 
+
+Shift 13
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 7 Shift Worked 11 
+Doctor 11: REST Shift Worked 7 Shift Worked 16 Days Worked 
+Doctor 10: REST Shift Worked 6 Shift Worked 10 
+Doctor 6: REST Shift Worked 14 
+Doctor 8: REST Shift Worked 15 
+Doctor 0: REST Shift Worked 12 
+Doctor 2: REST Shift Worked 11 
+Doctor 3: REST Shift Worked 16 
+Doctor 12: REST Shift Worked 15 
+Doctor 4: REST Shift Worked 12 
+
+Shift 14
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 11: REST Shift Worked 7 Shift Worked 23 Shift Worked 16 Days Worked 
+Doctor 7: REST Shift Worked 20 Shift Worked 11 
+Doctor 0: REST Shift Worked 12 
+Doctor 8: REST Shift Worked 15 
+Doctor 15: REST Shift Worked 20 
+Doctor 1: REST Shift Worked 13 
+Doctor 2: REST Shift Worked 22 Shift Worked 11 
+Doctor 10: REST Shift Worked 21 
+Doctor 4: REST Shift Worked 17 Shift Worked 12 
+Doctor 3: REST Shift Worked 16 
+Doctor 12: REST Shift Worked 15 
+
+Shift 15
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [8, 12]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 11: REST Shift Worked 7 Shift Worked 23 Shift Worked 16 Days Worked 
+Doctor 0: REST Shift Worked 12 Shift Worked 18 
+Doctor 6: REST Shift Worked 14 
+Doctor 15: REST Shift Worked 20 
+Doctor 7: REST Shift Worked 20 
+Doctor 1: REST Shift Worked 13 
+Doctor 2: REST Shift Worked 22 
+Doctor 10: REST Shift Worked 21 
+Doctor 4: REST Shift Worked 17 Shift Worked 12 
+Doctor 3: REST Shift Worked 16 
+
+
+Day: Friday
+
+Shift 16
+Time: 08:00-16:00 (Day Shift)
+Assignees: [3, 11]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 2: TRAINING 
+Doctor 5: TRAINING 
+Doctor 8: TRAINING 
+Doctor 15: TRAINING 
+Doctor 16: TRAINING 
+Doctor 6: REST Shift Worked 14 Shift Worked 19 
+Doctor 0: REST Shift Worked 18 
+Doctor 1: REST Shift Worked 13 
+Doctor 4: REST Shift Worked 17 
+Doctor 12: REST Shift Worked 15 
+Doctor 10: REST Shift Worked 10 Days Worked 
+Doctor 7: REST Shift Worked 11 Days Worked 
+
+Shift 17
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 20 Shift Worked 11 Days Worked 
+Doctor 6: REST Shift Worked 14 Shift Worked 19 
+Doctor 8: REST Shift Worked 15 Shift Worked 19 
+Doctor 15: REST Shift Worked 20 
+Doctor 0: REST Shift Worked 18 
+Doctor 2: REST Shift Worked 11 
+Doctor 3: REST Shift Worked 16 
+Doctor 12: REST Shift Worked 15 
+Doctor 10: REST Shift Worked 10 Days Worked 
+Doctor 11: REST Shift Worked 16 
+
+Shift 18
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 10: REST Shift Worked 21 Shift Worked 25 Shift Worked 10 Days Worked 
+Doctor 7: REST Shift Worked 24 Shift Worked 20 Shift Worked 11 Days Worked 
+Doctor 15: REST Shift Worked 20 Shift Worked 24 
+Doctor 8: REST Shift Worked 15 Shift Worked 19 
+Doctor 6: REST Shift Worked 19 
+Doctor 2: REST Shift Worked 11 
+Doctor 4: REST Shift Worked 17 
+Doctor 3: REST Shift Worked 16 
+Doctor 12: REST Shift Worked 15 
+Doctor 11: REST Shift Worked 16 
+
+Shift 19
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [8, 6]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 10: REST Shift Worked 21 Shift Worked 25 Shift Worked 10 Days Worked 
+Doctor 7: REST Shift Worked 24 Shift Worked 20 Shift Worked 11 Days Worked 
+Doctor 15: REST Shift Worked 20 Shift Worked 24 
+Doctor 0: REST Shift Worked 18 
+Doctor 2: REST Shift Worked 22 Shift Worked 11 
+Doctor 4: REST Shift Worked 17 
+Doctor 3: REST Shift Worked 16 
+Doctor 11: REST Shift Worked 16 
+
+
+Day: Saturday
+
+Shift 20
+Time: 08:00-16:00 (Day Shift)
+Assignees: [15, 7]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 17: LEAVE 
+Doctor 6: REST Shift Worked 14 Shift Worked 19 Weekend Worked 20 Weekend Worked 19 
+Doctor 8: REST Shift Worked 15 Shift Worked 19 Weekend Worked 19 Weekend Worked 20 
+Doctor 16: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 Shift Worked 17 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 Shift Worked 15 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 3: REST Weekend Worked 13 Weekend Worked 12 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 14: REST Weekend Worked 13 Weekend Worked 12 
+Doctor 0: REST Shift Worked 23 Shift Worked 18 
+Doctor 2: REST Shift Worked 22 
+Doctor 10: REST Shift Worked 21 
+Doctor 11: REST Shift Worked 23 
+
+Shift 21
+Time: 14:00-22:00 (Day Shift)
+Assignees: [10]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 17: LEAVE 
+Doctor 8: REST Shift Worked 15 Shift Worked 19 Weekend Worked 19 Weekend Worked 20 
+Doctor 16: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 6: REST Shift Worked 14 Shift Worked 19 Weekend Worked 20 Weekend Worked 19 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 Shift Worked 15 
+Doctor 3: REST Weekend Worked 13 Weekend Worked 12 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 7: REST Shift Worked 24 Shift Worked 20 
+Doctor 14: REST Weekend Worked 13 Weekend Worked 12 
+Doctor 15: REST Shift Worked 20 Shift Worked 24 
+Doctor 0: REST Shift Worked 23 Shift Worked 18 
+Doctor 2: REST Shift Worked 22 
+Doctor 11: REST Shift Worked 23 
+
+Shift 22
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 17: LEAVE 
+Doctor 8: REST Shift Worked 19 Weekend Worked 19 Weekend Worked 20 
+Doctor 7: REST Shift Worked 29 Shift Worked 24 Shift Worked 20 
+Doctor 10: REST Shift Worked 21 Shift Worked 25 
+Doctor 6: REST Shift Worked 28 Shift Worked 19 Weekend Worked 20 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 12: REST Shift Worked 31 Weekend Worked 20 Weekend Worked 19 Shift Worked 15 
+Doctor 3: REST Weekend Worked 13 Weekend Worked 12 Shift Worked 28 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 Shift Worked 30 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 14: REST Weekend Worked 13 Weekend Worked 12 
+Doctor 15: REST Shift Worked 20 Shift Worked 24 
+Doctor 0: REST Shift Worked 23 
+Doctor 11: REST Shift Worked 23 
+
+Shift 23
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [0, 11]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 17: LEAVE 
+Doctor 7: REST Shift Worked 29 Shift Worked 24 Shift Worked 20 
+Doctor 10: REST Shift Worked 21 Shift Worked 25 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 6: REST Shift Worked 28 Weekend Worked 20 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 12: REST Shift Worked 31 Weekend Worked 20 Weekend Worked 19 Shift Worked 15 
+Doctor 3: REST Weekend Worked 13 Weekend Worked 12 Shift Worked 28 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 Shift Worked 30 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 2: REST Shift Worked 26 Shift Worked 22 
+Doctor 14: REST Weekend Worked 13 Weekend Worked 12 
+Doctor 15: REST Shift Worked 20 Shift Worked 24 
+
+
+Day: Sunday
+
+Shift 24
+Time: 08:00-16:00 (Day Shift)
+Assignees: [15, 7]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 17: LEAVE 
+Doctor 8: REST Shift Worked 19 Weekend Worked 19 Weekend Worked 20 
+Doctor 6: REST Shift Worked 19 Days Worked Weekend Worked 20 Weekend Worked 19 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 10: REST Shift Worked 21 Shift Worked 25 
+Doctor 16: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 13 Weekend Worked 12 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 0: REST Shift Worked 23 Shift Worked 18 Shift Worked 27 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 11: REST Shift Worked 27 Shift Worked 23 
+Doctor 2: REST Shift Worked 26 Shift Worked 22 
+Doctor 14: REST Weekend Worked 13 Weekend Worked 12 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+
+Shift 25
+Time: 14:00-22:00 (Day Shift)
+Assignees: [10]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 17: LEAVE 
+Doctor 8: REST Shift Worked 19 Weekend Worked 19 Weekend Worked 20 
+Doctor 6: REST Shift Worked 28 Shift Worked 19 Days Worked Weekend Worked 20 Weekend Worked 19 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 16: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 13 Weekend Worked 12 Shift Worked 28 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 0: REST Shift Worked 23 Shift Worked 18 Shift Worked 27 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 11: REST Shift Worked 27 Shift Worked 23 
+Doctor 2: REST Shift Worked 26 Shift Worked 22 
+Doctor 14: REST Weekend Worked 13 Weekend Worked 12 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 15: REST Shift Worked 24 
+Doctor 7: REST Shift Worked 24 
+
+Shift 26
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 17: LEAVE 
+Doctor 8: REST Shift Worked 32 Shift Worked 19 Weekend Worked 19 Weekend Worked 20 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 6: REST Shift Worked 28 Shift Worked 32 Shift Worked 19 Days Worked Weekend Worked 20 Weekend Worked 19 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 16: REST Shift Worked 35 Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 13 Weekend Worked 12 Shift Worked 28 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 7: REST Shift Worked 29 Shift Worked 24 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 0: REST Shift Worked 23 Shift Worked 27 
+Doctor 10: REST Shift Worked 34 Shift Worked 25 
+Doctor 11: REST Shift Worked 27 Shift Worked 23 
+Doctor 14: REST Weekend Worked 13 Weekend Worked 12 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 15: REST Shift Worked 35 Shift Worked 24 
+
+Shift 27
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [11, 0]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 17: LEAVE 
+Doctor 8: REST Shift Worked 32 Shift Worked 19 Weekend Worked 19 Weekend Worked 20 
+Doctor 10: REST Shift Worked 34 Shift Worked 25 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 6: REST Shift Worked 28 Shift Worked 32 Shift Worked 19 Days Worked Weekend Worked 20 Weekend Worked 19 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 16: REST Shift Worked 35 Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 13 Weekend Worked 12 Shift Worked 28 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 Shift Worked 30 
+Doctor 7: REST Shift Worked 29 Shift Worked 24 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 14: REST Weekend Worked 13 Weekend Worked 12 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 2: REST Shift Worked 26 
+Doctor 15: REST Shift Worked 35 Shift Worked 24 
+
+
+Day: Monday
+
+Shift 28
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 3]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 0: TRAINING 
+Doctor 4: TRAINING 
+Doctor 7: TRAINING 
+Doctor 11: TRAINING 
+Doctor 12: TRAINING 
+Doctor 13: TRAINING 
+Doctor 2: REST Shift Worked 26 Shift Worked 22 
+Doctor 10: REST Shift Worked 25 Days Worked 
+Doctor 1: REST Shift Worked 30 
+
+Shift 29
+Time: 14:00-22:00 (Day Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 0: REST Shift Worked 23 Shift Worked 27 
+Doctor 6: REST Shift Worked 28 Shift Worked 32 
+Doctor 11: REST Shift Worked 27 Shift Worked 31 Shift Worked 23 
+Doctor 2: REST Shift Worked 26 Shift Worked 22 
+Doctor 8: REST Shift Worked 32 
+Doctor 12: REST Shift Worked 31 
+Doctor 10: REST Days Worked 
+Doctor 1: REST Shift Worked 30 
+Doctor 3: REST Shift Worked 28 
+
+Shift 30
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 36 Shift Worked 29 
+Doctor 6: REST Shift Worked 28 Shift Worked 32 Shift Worked 37 
+Doctor 8: REST Shift Worked 36 Shift Worked 32 
+Doctor 11: REST Shift Worked 27 Shift Worked 31 
+Doctor 17: REST Shift Worked 33 Shift Worked 38 
+Doctor 10: REST Nights Worked Days Worked 
+Doctor 12: REST Shift Worked 31 
+Doctor 0: REST Shift Worked 27 
+Doctor 3: REST Shift Worked 39 Shift Worked 28 
+
+Shift 31
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [12, 11]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 36 Shift Worked 29 
+Doctor 10: REST Shift Worked 34 Nights Worked Days Worked 
+Doctor 6: REST Shift Worked 28 Shift Worked 32 Shift Worked 37 
+Doctor 8: REST Shift Worked 36 Shift Worked 32 
+Doctor 17: REST Shift Worked 33 Shift Worked 38 
+Doctor 3: REST Shift Worked 39 Shift Worked 28 
+Doctor 1: REST Shift Worked 30 
+
+
+Day: Tuesday
+
+Shift 32
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 8]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 11: REST Shift Worked 27 Shift Worked 31 
+Doctor 7: REST Shift Worked 29 Days Worked 
+Doctor 17: REST Shift Worked 33 
+Doctor 16: REST Shift Worked 35 
+Doctor 12: REST Shift Worked 31 
+Doctor 0: REST Shift Worked 27 
+Doctor 2: REST Shift Worked 26 
+Doctor 15: REST Shift Worked 35 
+Doctor 10: REST Shift Worked 34 
+Doctor 1: REST Shift Worked 30 
+
+Shift 33
+Time: 14:00-22:00 (Day Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 36 Days Worked 
+Doctor 11: REST Shift Worked 27 Shift Worked 31 
+Doctor 6: REST Shift Worked 32 
+Doctor 8: REST Shift Worked 36 Shift Worked 32 
+Doctor 16: REST Shift Worked 35 
+Doctor 12: REST Shift Worked 31 
+Doctor 0: REST Shift Worked 27 
+Doctor 2: REST Shift Worked 26 
+Doctor 15: REST Shift Worked 35 
+Doctor 10: REST Shift Worked 34 
+Doctor 1: REST Shift Worked 30 
+
+Shift 34
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [10]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 36 Shift Worked 41 Days Worked 
+Doctor 11: REST Shift Worked 42 Shift Worked 31 
+Doctor 6: REST Shift Worked 32 Shift Worked 37 
+Doctor 17: REST Shift Worked 33 
+Doctor 8: REST Shift Worked 36 Shift Worked 32 Shift Worked 40 
+Doctor 12: REST Shift Worked 31 
+Doctor 16: REST Shift Worked 35 
+Doctor 0: REST Shift Worked 27 
+Doctor 2: REST Shift Worked 26 
+Doctor 13: REST Shift Worked 40 
+Doctor 15: REST Shift Worked 35 
+
+Shift 35
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [16, 15]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 36 Shift Worked 41 Days Worked 
+Doctor 6: REST Shift Worked 32 Shift Worked 37 
+Doctor 11: REST Shift Worked 42 
+Doctor 17: REST Shift Worked 33 Shift Worked 38 
+Doctor 8: REST Shift Worked 36 Shift Worked 32 Shift Worked 40 
+Doctor 0: REST Shift Worked 27 
+Doctor 2: REST Shift Worked 26 
+Doctor 13: REST Shift Worked 40 
+Doctor 10: REST Shift Worked 34 
+
+
+Day: Wednesday
+
+Shift 36
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7, 8]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 10: REST Shift Worked 39 Shift Worked 34 
+Doctor 17: REST Shift Worked 33 Shift Worked 38 
+Doctor 3: REST Shift Worked 39 
+Doctor 16: REST Shift Worked 35 
+Doctor 12: REST Shift Worked 31 
+Doctor 6: REST Shift Worked 37 
+Doctor 11: REST Shift Worked 31 Days Worked 
+Doctor 15: REST Shift Worked 35 
+Doctor 1: REST Shift Worked 30 
+
+Shift 37
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 10: REST Shift Worked 39 Shift Worked 34 
+Doctor 7: REST Shift Worked 36 
+Doctor 8: REST Shift Worked 36 Shift Worked 40 
+Doctor 3: REST Shift Worked 39 
+Doctor 12: REST Shift Worked 31 
+Doctor 16: REST Shift Worked 35 
+Doctor 17: REST Shift Worked 38 
+Doctor 13: REST Shift Worked 40 
+Doctor 11: REST Shift Worked 31 Days Worked 
+Doctor 15: REST Shift Worked 35 
+Doctor 1: REST Shift Worked 30 
+
+Shift 38
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 10: REST Shift Worked 39 
+Doctor 7: REST Shift Worked 36 Shift Worked 41 Shift Worked 47 
+Doctor 6: REST Shift Worked 37 Shift Worked 44 
+Doctor 5: REST Shift Worked 46 
+Doctor 8: REST Shift Worked 36 Shift Worked 45 Shift Worked 40 
+Doctor 3: REST Shift Worked 39 
+Doctor 12: REST Shift Worked 31 Shift Worked 44 
+Doctor 16: REST Shift Worked 35 
+Doctor 13: REST Shift Worked 40 
+Doctor 11: REST Shift Worked 31 Days Worked 
+Doctor 15: REST Shift Worked 35 
+Doctor 1: REST Shift Worked 30 
+
+Shift 39
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [10, 3]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 11: REST Shift Worked 42 Shift Worked 31 Days Worked 
+Doctor 7: REST Shift Worked 36 Shift Worked 41 Shift Worked 47 
+Doctor 6: REST Shift Worked 37 Shift Worked 44 
+Doctor 5: REST Shift Worked 46 
+Doctor 8: REST Shift Worked 36 Shift Worked 45 Shift Worked 40 
+Doctor 12: REST Shift Worked 31 Shift Worked 44 
+Doctor 17: REST Shift Worked 38 
+Doctor 13: REST Shift Worked 40 
+Doctor 1: REST Shift Worked 30 
+
+
+Day: Thursday
+
+Shift 40
+Time: 08:00-16:00 (Day Shift)
+Assignees: [13, 8]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 1: TRAINING 
+Doctor 3: TRAINING 
+Doctor 6: TRAINING 
+Doctor 10: TRAINING 
+Doctor 14: TRAINING 
+Doctor 17: TRAINING 
+Doctor 11: REST Shift Worked 42 
+Doctor 7: REST Shift Worked 41 
+Doctor 16: REST Shift Worked 35 
+Doctor 15: REST Shift Worked 35 
+
+Shift 41
+Time: 14:00-22:00 (Day Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 10: REST Shift Worked 39 Shift Worked 43 Shift Worked 34 
+Doctor 11: REST Shift Worked 42 
+Doctor 3: REST Shift Worked 39 
+Doctor 16: REST Shift Worked 35 
+Doctor 17: REST Shift Worked 38 Shift Worked 43 
+Doctor 13: REST Shift Worked 40 
+Doctor 15: REST Shift Worked 35 
+Doctor 6: REST Shift Worked 44 
+Doctor 12: REST Shift Worked 44 
+Doctor 8: REST Shift Worked 40 
+
+Shift 42
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [11]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 10: REST Shift Worked 39 Shift Worked 43 
+Doctor 16: REST Shift Worked 35 Shift Worked 51 
+Doctor 13: REST Shift Worked 50 Shift Worked 40 
+Doctor 7: REST Shift Worked 41 
+Doctor 3: REST Shift Worked 39 Shift Worked 48 
+Doctor 17: REST Shift Worked 43 
+Doctor 4: REST Shift Worked 48 
+Doctor 15: REST Shift Worked 35 
+Doctor 6: REST Shift Worked 44 
+Doctor 14: REST Shift Worked 49 
+Doctor 12: REST Shift Worked 44 
+Doctor 8: REST Shift Worked 45 Shift Worked 40 
+
+Shift 43
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [10, 17]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 11: REST Shift Worked 42 
+Doctor 13: REST Shift Worked 50 Shift Worked 40 
+Doctor 7: REST Shift Worked 41 
+Doctor 5: REST Shift Worked 46 
+Doctor 16: REST Shift Worked 35 Shift Worked 51 
+Doctor 4: REST Shift Worked 48 
+Doctor 15: REST Shift Worked 35 
+Doctor 6: REST Shift Worked 44 
+Doctor 14: REST Shift Worked 49 
+Doctor 12: REST Shift Worked 44 
+Doctor 3: REST Shift Worked 48 
+Doctor 8: REST Shift Worked 45 Shift Worked 40 
+
+
+Day: Friday
+
+Shift 44
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 12]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 2: TRAINING 
+Doctor 5: TRAINING 
+Doctor 8: TRAINING 
+Doctor 15: TRAINING 
+Doctor 16: TRAINING 
+Doctor 10: REST Shift Worked 39 Shift Worked 43 Shift Worked 47 
+Doctor 7: REST Shift Worked 41 Shift Worked 47 
+Doctor 11: REST Shift Worked 42 
+Doctor 3: REST Shift Worked 39 
+Doctor 17: REST Shift Worked 38 Shift Worked 43 
+
+Shift 45
+Time: 14:00-22:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 10: REST Shift Worked 39 Shift Worked 43 Shift Worked 47 
+Doctor 11: REST Shift Worked 42 
+Doctor 7: REST Shift Worked 47 
+Doctor 5: REST Shift Worked 46 
+Doctor 3: REST Shift Worked 39 Shift Worked 48 
+Doctor 17: REST Shift Worked 38 Shift Worked 43 
+Doctor 4: REST Shift Worked 48 
+Doctor 6: REST Shift Worked 44 
+Doctor 12: REST Shift Worked 44 
+
+Shift 46
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 14: REST Shift Worked 53 Shift Worked 49 
+Doctor 3: REST Shift Worked 39 Shift Worked 52 Shift Worked 48 
+Doctor 4: REST Shift Worked 48 Shift Worked 52 
+Doctor 10: REST Shift Worked 43 Shift Worked 47 
+Doctor 7: REST Shift Worked 47 
+Doctor 17: REST Shift Worked 43 
+Doctor 6: REST Shift Worked 44 
+Doctor 12: REST Shift Worked 44 
+Doctor 8: REST Shift Worked 45 
+
+Shift 47
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [7, 10]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 14: REST Shift Worked 53 Shift Worked 49 
+Doctor 3: REST Shift Worked 39 Shift Worked 52 Shift Worked 48 
+Doctor 4: REST Shift Worked 48 Shift Worked 52 
+Doctor 13: REST Shift Worked 50 
+Doctor 5: REST Shift Worked 46 
+Doctor 6: REST Shift Worked 44 
+Doctor 12: REST Shift Worked 44 
+Doctor 8: REST Shift Worked 45 
+
+
+Day: Saturday
+
+Shift 48
+Time: 08:00-16:00 (Day Shift)
+Assignees: [4, 3]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 47 Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Shift Worked 42 Weekend Worked 6 Weekend Worked 5 
+Doctor 10: REST Shift Worked 43 Shift Worked 47 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 Shift Worked 45 
+Doctor 6: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 17: REST Weekend Worked 26 Shift Worked 43 Weekend Worked 27 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 5: REST Shift Worked 46 Weekend Worked 19 Weekend Worked 20 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 5 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 13: REST Shift Worked 50 
+Doctor 16: REST Shift Worked 51 
+Doctor 14: REST Shift Worked 49 
+
+Shift 49
+Time: 14:00-22:00 (Day Shift)
+Assignees: [14]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 47 Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Shift Worked 42 Weekend Worked 6 Weekend Worked 5 
+Doctor 10: REST Shift Worked 43 Shift Worked 47 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 6: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 3: REST Shift Worked 52 Shift Worked 48 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 4: REST Shift Worked 48 Shift Worked 52 
+Doctor 5: REST Shift Worked 46 Weekend Worked 19 Weekend Worked 20 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 5 
+Doctor 17: REST Weekend Worked 26 Shift Worked 43 Weekend Worked 27 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 13: REST Shift Worked 50 
+Doctor 16: REST Shift Worked 51 
+
+Shift 50
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [13]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 47 Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Shift Worked 42 Weekend Worked 6 Shift Worked 57 Weekend Worked 5 
+Doctor 10: REST Shift Worked 47 Weekend Worked 26 Weekend Worked 5 Nights Worked Weekend Worked 6 Weekend Worked 27 Shift Worked 59 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Shift Worked 56 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 8: REST Weekend Worked 19 Shift Worked 56 Weekend Worked 20 
+Doctor 6: REST Weekend Worked 20 Shift Worked 59 Weekend Worked 19 
+Doctor 3: REST Shift Worked 52 Shift Worked 48 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 4: REST Shift Worked 48 Shift Worked 52 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 5 
+Doctor 14: REST Shift Worked 53 Shift Worked 49 
+Doctor 17: REST Weekend Worked 26 Shift Worked 58 Shift Worked 43 Weekend Worked 27 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 16: REST Shift Worked 51 
+
+Shift 51
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [16]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Shift Worked 42 Weekend Worked 6 Shift Worked 57 Weekend Worked 5 
+Doctor 10: REST Weekend Worked 26 Weekend Worked 5 Nights Worked Weekend Worked 6 Weekend Worked 27 Shift Worked 59 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Shift Worked 56 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 8: REST Weekend Worked 19 Shift Worked 56 Weekend Worked 20 
+Doctor 6: REST Weekend Worked 20 Shift Worked 59 Weekend Worked 19 
+Doctor 3: REST Shift Worked 52 Shift Worked 48 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 13: REST Shift Worked 50 Shift Worked 54 
+Doctor 4: REST Shift Worked 48 Shift Worked 52 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 5 
+Doctor 14: REST Shift Worked 53 Shift Worked 49 
+Doctor 17: REST Weekend Worked 26 Shift Worked 58 Shift Worked 43 Weekend Worked 27 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+
+
+Day: Sunday
+
+Shift 52
+Time: 08:00-16:00 (Day Shift)
+Assignees: [4, 3]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 47 Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 10: REST Shift Worked 47 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Days Worked 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 6: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 16: REST Shift Worked 51 Shift Worked 55 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 13: REST Shift Worked 50 Shift Worked 54 
+Doctor 5: REST Shift Worked 46 Weekend Worked 19 Weekend Worked 20 
+Doctor 11: REST Weekend Worked 6 Weekend Worked 5 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 5 
+Doctor 14: REST Shift Worked 53 Shift Worked 49 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+
+Shift 53
+Time: 14:00-22:00 (Day Shift)
+Assignees: [14]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 47 Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 10: REST Shift Worked 47 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Days Worked 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Shift Worked 56 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 8: REST Weekend Worked 19 Shift Worked 56 Weekend Worked 20 
+Doctor 6: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 16: REST Shift Worked 51 Shift Worked 55 
+Doctor 1: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 13: REST Shift Worked 50 Shift Worked 54 
+Doctor 5: REST Shift Worked 46 Weekend Worked 19 Weekend Worked 20 
+Doctor 11: REST Weekend Worked 6 Weekend Worked 5 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 5 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 3: REST Shift Worked 52 
+Doctor 4: REST Shift Worked 52 
+
+Shift 54
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [13]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 47 Weekend Worked 6 Weekend Worked 5 Shift Worked 60 Weekend Worked 27 Weekend Worked 26 
+Doctor 10: REST Nights Worked Shift Worked 47 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Days Worked 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Shift Worked 56 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 8: REST Weekend Worked 19 Shift Worked 56 Weekend Worked 20 
+Doctor 6: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 1: REST Shift Worked 61 Weekend Worked 20 Weekend Worked 19 
+Doctor 16: REST Shift Worked 51 Shift Worked 55 
+Doctor 5: REST Shift Worked 46 Weekend Worked 19 Weekend Worked 20 
+Doctor 11: REST Weekend Worked 6 Shift Worked 57 Weekend Worked 5 
+Doctor 2: REST Shift Worked 62 Weekend Worked 6 Weekend Worked 5 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 3: REST Shift Worked 52 
+Doctor 4: REST Shift Worked 52 
+Doctor 14: REST Shift Worked 53 
+
+Shift 55
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [16]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 47 Weekend Worked 6 Weekend Worked 5 Shift Worked 60 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Weekend Worked 6 Shift Worked 57 Weekend Worked 5 
+Doctor 10: REST Nights Worked Shift Worked 47 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Days Worked 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Shift Worked 56 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 8: REST Weekend Worked 19 Shift Worked 56 Weekend Worked 20 
+Doctor 6: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 1: REST Shift Worked 61 Weekend Worked 20 Weekend Worked 19 
+Doctor 5: REST Shift Worked 46 Weekend Worked 19 Weekend Worked 20 
+Doctor 2: REST Shift Worked 62 Weekend Worked 6 Weekend Worked 5 
+Doctor 17: REST Weekend Worked 26 Shift Worked 58 Weekend Worked 27 
+Doctor 12: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 3: REST Shift Worked 52 
+Doctor 4: REST Shift Worked 52 
+Doctor 14: REST Shift Worked 53 
+Doctor 13: REST Shift Worked 54 
+
+
+Day: Monday
+
+Shift 56
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8, 15]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 0: TRAINING 
+Doctor 4: TRAINING 
+Doctor 7: TRAINING 
+Doctor 11: TRAINING 
+Doctor 12: TRAINING 
+Doctor 13: TRAINING 
+Doctor 16: REST Shift Worked 51 Shift Worked 55 
+Doctor 17: REST Shift Worked 58 
+Doctor 14: REST Shift Worked 53 
+Doctor 6: REST Shift Worked 59 
+Doctor 10: REST Shift Worked 59 
+
+Shift 57
+Time: 14:00-22:00 (Day Shift)
+Assignees: [11]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 16: REST Shift Worked 51 Shift Worked 55 
+Doctor 13: REST Shift Worked 50 Shift Worked 54 
+Doctor 17: REST Shift Worked 58 
+Doctor 8: REST Shift Worked 56 
+Doctor 6: REST Shift Worked 59 
+Doctor 7: REST Shift Worked 60 
+Doctor 15: REST Shift Worked 56 
+Doctor 10: REST Shift Worked 59 
+
+Shift 58
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 64 Shift Worked 60 
+Doctor 8: REST Shift Worked 65 Shift Worked 56 
+Doctor 1: REST Shift Worked 61 
+Doctor 11: REST Shift Worked 57 
+Doctor 3: REST Shift Worked 64 
+Doctor 6: REST Shift Worked 59 
+Doctor 15: REST Shift Worked 56 
+Doctor 10: REST Shift Worked 59 
+Doctor 16: REST Shift Worked 55 
+
+Shift 59
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [6, 10]
+Doctors that cannot work the shift:
+Doctor 9: LEAVE 
+Doctor 7: REST Shift Worked 64 Shift Worked 60 
+Doctor 2: REST Shift Worked 62 
+Doctor 8: REST Shift Worked 65 Shift Worked 56 
+Doctor 1: REST Shift Worked 61 
+Doctor 17: REST Shift Worked 58 
+Doctor 11: REST Shift Worked 57 
+Doctor 3: REST Shift Worked 64 
+Doctor 15: REST Shift Worked 56 
+
+
+Day: Tuesday
+
+Shift 60
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9, 7]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 63 Shift Worked 59 
+Doctor 6: REST Shift Worked 63 Shift Worked 59 
+Doctor 2: REST Shift Worked 62 
+Doctor 1: REST Shift Worked 61 
+Doctor 17: REST Shift Worked 58 
+Doctor 11: REST Shift Worked 57 
+Doctor 13: REST Shift Worked 54 
+Doctor 16: REST Shift Worked 55 
+
+Shift 61
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 63 Shift Worked 59 
+Doctor 6: REST Shift Worked 63 Shift Worked 59 
+Doctor 7: REST Shift Worked 64 Shift Worked 60 
+Doctor 9: REST Shift Worked 60 
+Doctor 2: REST Shift Worked 62 
+Doctor 17: REST Shift Worked 58 
+Doctor 13: REST Shift Worked 54 
+Doctor 3: REST Shift Worked 64 
+Doctor 16: REST Shift Worked 55 
+
+Shift 62
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 63 Shift Worked 59 
+Doctor 6: REST Shift Worked 63 Shift Worked 59 
+Doctor 7: REST Shift Worked 64 Shift Worked 68 Shift Worked 60 
+Doctor 9: REST Shift Worked 60 
+Doctor 8: REST Shift Worked 65 
+Doctor 11: REST Shift Worked 68 
+Doctor 1: REST Shift Worked 61 
+Doctor 13: REST Shift Worked 54 Shift Worked 69 
+Doctor 14: REST Shift Worked 71 
+Doctor 3: REST Shift Worked 64 
+Doctor 16: REST Shift Worked 55 
+
+Shift 63
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [10, 6]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 64 Shift Worked 68 Shift Worked 60 
+Doctor 9: REST Shift Worked 60 Shift Worked 66 
+Doctor 2: REST Shift Worked 62 
+Doctor 8: REST Shift Worked 65 
+Doctor 11: REST Shift Worked 68 
+Doctor 1: REST Shift Worked 61 
+Doctor 13: REST Shift Worked 54 Shift Worked 69 
+Doctor 14: REST Shift Worked 71 
+Doctor 3: REST Shift Worked 64 
+Doctor 16: REST Shift Worked 55 
+
+
+Day: Wednesday
+
+Shift 64
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7, 3]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 63 Shift Worked 67 Shift Worked 59 
+Doctor 6: REST Shift Worked 63 Shift Worked 67 Shift Worked 59 
+Doctor 2: REST Shift Worked 62 
+Doctor 8: REST Shift Worked 65 
+Doctor 1: REST Shift Worked 61 
+Doctor 17: REST Shift Worked 58 
+Doctor 9: REST Shift Worked 66 
+
+Shift 65
+Time: 14:00-22:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 63 Shift Worked 67 Shift Worked 59 
+Doctor 6: REST Shift Worked 63 Shift Worked 67 Shift Worked 59 
+Doctor 7: REST Shift Worked 64 Shift Worked 68 
+Doctor 11: REST Shift Worked 68 
+Doctor 2: REST Shift Worked 62 
+Doctor 17: REST Shift Worked 58 
+Doctor 9: REST Shift Worked 66 
+Doctor 3: REST Shift Worked 64 
+
+Shift 66
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 64 Shift Worked 68 Shift Worked 73 
+Doctor 10: REST Shift Worked 63 Shift Worked 67 
+Doctor 6: REST Shift Worked 63 Shift Worked 67 
+Doctor 11: REST Shift Worked 68 Shift Worked 72 
+Doctor 16: REST Shift Worked 75 
+Doctor 8: REST Shift Worked 65 
+Doctor 17: REST Shift Worked 58 
+Doctor 1: REST Shift Worked 72 
+Doctor 4: REST Shift Worked 74 
+Doctor 3: REST Shift Worked 64 
+Doctor 13: REST Shift Worked 69 
+
+Shift 67
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [10, 6]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 64 Shift Worked 68 Shift Worked 73 
+Doctor 11: REST Shift Worked 68 Shift Worked 72 
+Doctor 9: REST Shift Worked 70 Shift Worked 66 
+Doctor 16: REST Shift Worked 75 
+Doctor 8: REST Shift Worked 65 
+Doctor 17: REST Shift Worked 58 
+Doctor 1: REST Shift Worked 72 
+Doctor 4: REST Shift Worked 74 
+Doctor 3: REST Shift Worked 64 
+Doctor 13: REST Shift Worked 69 
+
+
+Day: Thursday
+
+Shift 68
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7, 11]
+Doctors that cannot work the shift:
+Doctor 1: TRAINING 
+Doctor 3: TRAINING 
+Doctor 6: TRAINING 
+Doctor 10: TRAINING 
+Doctor 14: TRAINING 
+Doctor 17: TRAINING 
+Doctor 9: REST Shift Worked 70 Shift Worked 66 
+Doctor 2: REST Shift Worked 62 
+Doctor 8: REST Shift Worked 65 
+Doctor 13: REST Shift Worked 69 
+
+Shift 69
+Time: 14:00-22:00 (Day Shift)
+Assignees: [13]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 63 Shift Worked 67 Shift Worked 71 
+Doctor 6: REST Shift Worked 63 Shift Worked 67 
+Doctor 11: REST Shift Worked 68 Shift Worked 72 
+Doctor 9: REST Shift Worked 70 Shift Worked 66 
+Doctor 7: REST Shift Worked 68 
+Doctor 2: REST Shift Worked 62 
+Doctor 14: REST Shift Worked 71 
+Doctor 1: REST Shift Worked 72 
+
+Shift 70
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 67 Shift Worked 77 
+Doctor 10: REST Shift Worked 67 Shift Worked 71 
+Doctor 7: REST Shift Worked 68 Shift Worked 73 
+Doctor 11: REST Shift Worked 68 Shift Worked 72 
+Doctor 2: REST Shift Worked 62 
+Doctor 5: REST Shift Worked 79 
+Doctor 8: REST Shift Worked 76 
+Doctor 14: REST Shift Worked 71 
+Doctor 1: REST Shift Worked 72 Shift Worked 78 
+Doctor 12: REST Shift Worked 76 
+Doctor 13: REST Shift Worked 69 
+
+Shift 71
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [10, 14]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 68 Shift Worked 73 
+Doctor 11: REST Shift Worked 68 Shift Worked 72 
+Doctor 9: REST Shift Worked 70 
+Doctor 2: REST Shift Worked 62 
+Doctor 5: REST Shift Worked 79 
+Doctor 8: REST Shift Worked 76 
+Doctor 1: REST Shift Worked 72 Shift Worked 78 
+Doctor 12: REST Shift Worked 76 
+Doctor 4: REST Shift Worked 74 
+Doctor 13: REST Shift Worked 69 
+Doctor 6: REST Shift Worked 77 
+
+
+Day: Friday
+
+Shift 72
+Time: 08:00-16:00 (Day Shift)
+Assignees: [1, 11]
+Doctors that cannot work the shift:
+Doctor 2: TRAINING 
+Doctor 5: TRAINING 
+Doctor 8: TRAINING 
+Doctor 9: TRAINING 
+Doctor 15: TRAINING 
+Doctor 16: TRAINING 
+Doctor 10: REST Shift Worked 67 Shift Worked 71 
+Doctor 6: REST Shift Worked 67 Days Worked 
+Doctor 7: REST Shift Worked 73 
+Doctor 14: REST Shift Worked 71 
+Doctor 4: REST Shift Worked 74 
+Doctor 13: REST Shift Worked 69 
+
+Shift 73
+Time: 14:00-22:00 (Day Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 70 Shift Worked 75 Shift Worked 66 
+Doctor 10: REST Shift Worked 67 Shift Worked 71 
+Doctor 6: REST Shift Worked 67 Days Worked 
+Doctor 16: REST Shift Worked 75 
+Doctor 8: REST Shift Worked 76 
+Doctor 14: REST Shift Worked 71 
+Doctor 1: REST Shift Worked 72 
+Doctor 12: REST Shift Worked 76 
+Doctor 4: REST Shift Worked 74 
+Doctor 11: REST Shift Worked 72 
+
+Shift 74
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 67 Shift Worked 81 Shift Worked 77 Days Worked 
+Doctor 8: REST Shift Worked 76 Shift Worked 80 
+Doctor 10: REST Shift Worked 71 Nights Worked 
+Doctor 12: REST Shift Worked 80 Shift Worked 76 
+Doctor 9: REST Shift Worked 75 
+Doctor 16: REST Shift Worked 75 
+Doctor 7: REST Shift Worked 73 
+Doctor 14: REST Shift Worked 71 
+Doctor 1: REST Shift Worked 72 
+Doctor 11: REST Shift Worked 72 
+
+Shift 75
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [9, 16]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 67 Shift Worked 81 Shift Worked 77 Days Worked 
+Doctor 8: REST Shift Worked 76 Shift Worked 80 
+Doctor 12: REST Shift Worked 80 Shift Worked 76 
+Doctor 7: REST Shift Worked 73 
+Doctor 1: REST Shift Worked 72 Shift Worked 78 
+Doctor 4: REST Shift Worked 74 
+Doctor 11: REST Shift Worked 72 
+Doctor 10: REST Nights Worked 
+
+
+Day: Saturday
+
+Shift 76
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8, 12]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 73 Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Weekend Worked 6 Weekend Worked 33 Weekend Worked 34 Weekend Worked 5 
+Doctor 10: REST Shift Worked 71 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 34 Weekend Worked 33 Weekend Worked 5 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Shift Worked 71 Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 9: REST Shift Worked 70 Weekend Worked 26 Shift Worked 75 Weekend Worked 27 
+Doctor 16: REST Shift Worked 75 Weekend Worked 12 Weekend Worked 13 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 Shift Worked 74 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 
+Doctor 5: REST Shift Worked 79 
+Doctor 1: REST Shift Worked 78 
+Doctor 6: REST Shift Worked 77 
+
+Shift 77
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 7: REST Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Weekend Worked 6 Weekend Worked 33 Weekend Worked 34 Weekend Worked 5 
+Doctor 10: REST Shift Worked 71 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 34 Weekend Worked 33 Weekend Worked 5 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Shift Worked 71 Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 9: REST Shift Worked 70 Weekend Worked 26 Shift Worked 75 Weekend Worked 27 
+Doctor 8: REST Shift Worked 76 Shift Worked 80 
+Doctor 16: REST Shift Worked 75 Weekend Worked 12 Weekend Worked 13 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 Shift Worked 74 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 
+Doctor 12: REST Shift Worked 80 Shift Worked 76 
+Doctor 5: REST Shift Worked 79 
+Doctor 1: REST Shift Worked 78 
+
+Shift 78
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 86 Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Weekend Worked 6 Weekend Worked 33 Weekend Worked 34 Weekend Worked 5 Shift Worked 87 
+Doctor 10: REST Shift Worked 71 Shift Worked 84 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Nights Worked 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Shift Worked 85 Weekend Worked 6 Weekend Worked 27 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 34 Weekend Worked 33 Weekend Worked 5 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Shift Worked 71 Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 9: REST Weekend Worked 26 Shift Worked 75 Shift Worked 87 Weekend Worked 27 
+Doctor 17: REST Shift Worked 84 Weekend Worked 26 Weekend Worked 27 
+Doctor 8: REST Shift Worked 76 Shift Worked 80 
+Doctor 6: REST Shift Worked 81 Shift Worked 77 
+Doctor 16: REST Shift Worked 75 Weekend Worked 12 Weekend Worked 13 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 12: REST Shift Worked 80 Shift Worked 76 
+Doctor 5: REST Shift Worked 79 
+
+Shift 79
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 86 Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Weekend Worked 6 Weekend Worked 33 Weekend Worked 34 Weekend Worked 5 Shift Worked 87 
+Doctor 10: REST Shift Worked 71 Shift Worked 84 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Nights Worked 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Shift Worked 85 Weekend Worked 6 Weekend Worked 27 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 34 Weekend Worked 33 Weekend Worked 5 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Shift Worked 71 Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 8: REST Shift Worked 76 Shift Worked 80 
+Doctor 9: REST Weekend Worked 26 Shift Worked 87 Weekend Worked 27 
+Doctor 17: REST Shift Worked 84 Weekend Worked 26 Weekend Worked 27 
+Doctor 6: REST Shift Worked 81 Shift Worked 77 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 16: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 1: REST Shift Worked 82 Shift Worked 78 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 
+Doctor 12: REST Shift Worked 80 Shift Worked 76 
+
+
+Day: Sunday
+
+Shift 80
+Time: 08:00-16:00 (Day Shift)
+Assignees: [12, 8]
+Doctors that cannot work the shift:
+Doctor 7: REST Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Weekend Worked 6 Weekend Worked 33 Weekend Worked 34 Weekend Worked 5 
+Doctor 10: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 34 Weekend Worked 33 Weekend Worked 5 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 9: REST Weekend Worked 26 Shift Worked 75 Days Worked Weekend Worked 27 
+Doctor 6: REST Shift Worked 81 Shift Worked 77 
+Doctor 16: REST Shift Worked 75 Weekend Worked 12 Weekend Worked 13 
+Doctor 1: REST Shift Worked 82 Shift Worked 78 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 Shift Worked 74 
+Doctor 5: REST Shift Worked 79 Shift Worked 83 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 
+
+Shift 81
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 7: REST Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Weekend Worked 6 Weekend Worked 33 Weekend Worked 34 Weekend Worked 5 
+Doctor 10: REST Shift Worked 84 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 34 Weekend Worked 33 Weekend Worked 5 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 9: REST Weekend Worked 26 Shift Worked 75 Days Worked Weekend Worked 27 
+Doctor 17: REST Shift Worked 84 Weekend Worked 26 Weekend Worked 27 
+Doctor 16: REST Shift Worked 75 Weekend Worked 12 Weekend Worked 13 
+Doctor 1: REST Shift Worked 82 Shift Worked 78 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 Shift Worked 74 
+Doctor 5: REST Shift Worked 79 Shift Worked 83 
+Doctor 12: REST Shift Worked 80 
+Doctor 8: REST Shift Worked 80 
+
+Shift 82
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 7: REST Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Weekend Worked 6 Weekend Worked 33 Weekend Worked 34 Weekend Worked 5 
+Doctor 10: REST Shift Worked 88 Shift Worked 84 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 15: REST Weekend Worked 26 Shift Worked 91 Weekend Worked 5 Shift Worked 85 Weekend Worked 6 Weekend Worked 27 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 34 Weekend Worked 33 Weekend Worked 5 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 9: REST Weekend Worked 26 Shift Worked 75 Days Worked Weekend Worked 27 
+Doctor 17: REST Shift Worked 84 Weekend Worked 26 Weekend Worked 27 
+Doctor 16: REST Shift Worked 75 Weekend Worked 12 Weekend Worked 13 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 Shift Worked 74 
+Doctor 6: REST Shift Worked 88 Shift Worked 81 
+Doctor 5: REST Shift Worked 79 Shift Worked 83 
+Doctor 12: REST Shift Worked 80 
+Doctor 8: REST Shift Worked 80 Shift Worked 89 
+
+Shift 83
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 86 Weekend Worked 6 Weekend Worked 5 Weekend Worked 27 Weekend Worked 26 
+Doctor 11: REST Weekend Worked 6 Weekend Worked 33 Weekend Worked 34 Weekend Worked 5 
+Doctor 10: REST Shift Worked 88 Shift Worked 84 Weekend Worked 26 Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 
+Doctor 15: REST Weekend Worked 26 Shift Worked 91 Weekend Worked 5 Shift Worked 85 Weekend Worked 6 Weekend Worked 27 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 0: REST Weekend Worked 5 Weekend Worked 6 Weekend Worked 27 Weekend Worked 26 
+Doctor 2: REST Weekend Worked 6 Weekend Worked 34 Weekend Worked 33 Weekend Worked 5 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 9: REST Weekend Worked 26 Shift Worked 75 Days Worked Weekend Worked 27 
+Doctor 17: REST Shift Worked 84 Weekend Worked 26 Weekend Worked 27 
+Doctor 16: REST Shift Worked 75 Weekend Worked 12 Weekend Worked 13 
+Doctor 4: REST Weekend Worked 12 Weekend Worked 13 Shift Worked 74 
+Doctor 6: REST Shift Worked 88 Shift Worked 81 
+Doctor 12: REST Shift Worked 80 
+Doctor 8: REST Shift Worked 80 Shift Worked 89 
+Doctor 1: REST Shift Worked 82 
+
+
+Day: Monday
+
+Shift 84
+Time: 08:00-16:00 (Day Shift)
+Assignees: [10, 17]
+Doctors that cannot work the shift:
+Doctor 0: TRAINING 
+Doctor 4: TRAINING 
+Doctor 7: TRAINING 
+Doctor 11: TRAINING 
+Doctor 12: TRAINING 
+Doctor 13: TRAINING 
+Doctor 1: REST Shift Worked 82 Shift Worked 78 
+Doctor 5: REST Shift Worked 79 Shift Worked 83 
+Doctor 9: REST Shift Worked 87 
+Doctor 15: REST Shift Worked 85 
+Doctor 6: REST Shift Worked 81 
+
+Shift 85
+Time: 14:00-22:00 (Day Shift)
+Assignees: [15]
+Doctors that cannot work the shift:
+Doctor 1: REST Shift Worked 82 Shift Worked 78 
+Doctor 10: REST Shift Worked 88 Shift Worked 84 
+Doctor 5: REST Shift Worked 79 Shift Worked 83 
+Doctor 6: REST Shift Worked 88 
+Doctor 17: REST Shift Worked 84 
+Doctor 7: REST Shift Worked 86 
+Doctor 9: REST Shift Worked 87 
+Doctor 11: REST Shift Worked 87 
+
+Shift 86
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 88 Shift Worked 92 
+Doctor 10: REST Shift Worked 88 Shift Worked 84 Shift Worked 93 
+Doctor 17: REST Shift Worked 84 Shift Worked 95 
+Doctor 5: REST Shift Worked 95 Shift Worked 83 
+Doctor 9: REST Shift Worked 87 
+Doctor 15: REST Shift Worked 85 
+Doctor 4: REST Shift Worked 94 
+Doctor 16: REST Shift Worked 92 
+Doctor 11: REST Shift Worked 87 
+Doctor 8: REST Shift Worked 89 
+
+Shift 87
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [9, 11]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 90 Shift Worked 86 
+Doctor 6: REST Shift Worked 88 Shift Worked 92 
+Doctor 10: REST Shift Worked 88 Shift Worked 84 Shift Worked 93 
+Doctor 17: REST Shift Worked 84 Shift Worked 95 
+Doctor 15: REST Shift Worked 85 
+Doctor 4: REST Shift Worked 94 
+Doctor 5: REST Shift Worked 95 
+Doctor 16: REST Shift Worked 92 
+Doctor 8: REST Shift Worked 89 
+
+
+Day: Tuesday
+
+Shift 88
+Time: 08:00-16:00 (Day Shift)
+Assignees: [10, 6]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 87 Shift Worked 91 
+Doctor 7: REST Shift Worked 90 Shift Worked 86 
+Doctor 15: REST Shift Worked 91 Shift Worked 85 
+Doctor 1: REST Shift Worked 82 
+Doctor 5: REST Shift Worked 83 
+Doctor 11: REST Shift Worked 87 
+Doctor 8: REST Shift Worked 89 
+
+Shift 89
+Time: 14:00-22:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 87 Shift Worked 91 
+Doctor 7: REST Shift Worked 90 Shift Worked 86 
+Doctor 6: REST Shift Worked 88 Shift Worked 92 
+Doctor 10: REST Shift Worked 88 
+Doctor 15: REST Shift Worked 91 
+Doctor 1: REST Shift Worked 82 
+Doctor 5: REST Shift Worked 83 
+Doctor 16: REST Shift Worked 92 
+Doctor 11: REST Shift Worked 87 
+
+Shift 90
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 87 Shift Worked 91 
+Doctor 6: REST Shift Worked 88 Shift Worked 97 Shift Worked 92 
+Doctor 11: REST Shift Worked 99 Shift Worked 87 
+Doctor 10: REST Shift Worked 88 Shift Worked 93 
+Doctor 12: REST Shift Worked 99 
+Doctor 8: REST Shift Worked 96 Shift Worked 89 
+Doctor 1: REST Shift Worked 82 
+Doctor 15: REST Shift Worked 91 
+Doctor 16: REST Shift Worked 92 Shift Worked 96 
+Doctor 5: REST Shift Worked 83 
+Doctor 3: REST Shift Worked 98 
+
+Shift 91
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [15, 9]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 88 Shift Worked 97 Shift Worked 92 
+Doctor 10: REST Shift Worked 88 Shift Worked 93 
+Doctor 7: REST Shift Worked 90 
+Doctor 12: REST Shift Worked 99 
+Doctor 8: REST Shift Worked 96 Shift Worked 89 
+Doctor 1: REST Shift Worked 82 
+Doctor 11: REST Shift Worked 99 
+Doctor 4: REST Shift Worked 94 
+Doctor 16: REST Shift Worked 92 Shift Worked 96 
+Doctor 5: REST Shift Worked 83 
+Doctor 3: REST Shift Worked 98 
+
+
+Day: Wednesday
+
+Shift 92
+Time: 08:00-16:00 (Day Shift)
+Assignees: [16, 6]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 87 Shift Worked 91 
+Doctor 7: REST Shift Worked 90 Shift Worked 86 
+Doctor 15: REST Shift Worked 91 
+Doctor 10: REST Shift Worked 93 
+Doctor 17: REST Shift Worked 95 
+Doctor 4: REST Shift Worked 94 
+Doctor 5: REST Shift Worked 95 
+Doctor 11: REST Shift Worked 87 
+Doctor 8: REST Shift Worked 89 
+
+Shift 93
+Time: 14:00-22:00 (Day Shift)
+Assignees: [10]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 87 Shift Worked 91 
+Doctor 7: REST Shift Worked 90 Shift Worked 86 
+Doctor 8: REST Shift Worked 96 
+Doctor 15: REST Shift Worked 91 
+Doctor 17: REST Shift Worked 95 
+Doctor 4: REST Shift Worked 94 
+Doctor 5: REST Shift Worked 95 
+Doctor 16: REST Shift Worked 92 Shift Worked 96 
+Doctor 11: REST Shift Worked 87 
+Doctor 6: REST Shift Worked 92 
+
+Shift 94
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 103 Shift Worked 91 
+Doctor 6: REST Shift Worked 101 Shift Worked 97 Shift Worked 92 
+Doctor 10: REST Shift Worked 93 Shift Worked 100 
+Doctor 8: REST Shift Worked 102 Shift Worked 96 
+Doctor 15: REST Shift Worked 91 
+Doctor 17: REST Shift Worked 95 
+Doctor 5: REST Shift Worked 95 
+Doctor 16: REST Shift Worked 92 Shift Worked 96 
+Doctor 7: REST Shift Worked 100 
+Doctor 11: REST Shift Worked 87 
+
+Shift 95
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [17, 5]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 101 Shift Worked 97 Shift Worked 92 
+Doctor 8: REST Shift Worked 102 Shift Worked 96 
+Doctor 10: REST Shift Worked 93 Shift Worked 100 
+Doctor 9: REST Shift Worked 103 
+Doctor 4: REST Shift Worked 94 
+Doctor 16: REST Shift Worked 92 Shift Worked 96 
+Doctor 7: REST Shift Worked 100 
+Doctor 11: REST Shift Worked 87 
+Doctor 3: REST Shift Worked 98 
+
+
+Day: Thursday
+
+Shift 96
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8, 16]
+Doctors that cannot work the shift:
+Doctor 1: TRAINING 
+Doctor 3: TRAINING 
+Doctor 6: TRAINING 
+Doctor 10: TRAINING 
+Doctor 14: TRAINING 
+Doctor 17: TRAINING 
+Doctor 7: REST Shift Worked 90 Days Worked 
+Doctor 12: REST Shift Worked 99 
+Doctor 11: REST Shift Worked 99 
+Doctor 15: REST Shift Worked 91 
+Doctor 4: REST Shift Worked 94 
+Doctor 5: REST Shift Worked 95 
+Doctor 9: REST Shift Worked 91 Days Worked 
+
+Shift 97
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 90 Shift Worked 100 Days Worked 
+Doctor 12: REST Shift Worked 99 
+Doctor 8: REST Shift Worked 96 
+Doctor 11: REST Shift Worked 99 
+Doctor 15: REST Shift Worked 91 
+Doctor 17: REST Shift Worked 95 
+Doctor 4: REST Shift Worked 94 
+Doctor 5: REST Shift Worked 95 
+Doctor 9: REST Shift Worked 91 Days Worked 
+Doctor 3: REST Shift Worked 98 
+Doctor 10: REST Shift Worked 100 Days Worked 
+Doctor 16: REST Shift Worked 96 
+
+Shift 98
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 90 Shift Worked 100 Shift Worked 107 Days Worked 
+Doctor 10: REST Shift Worked 104 Shift Worked 100 Days Worked 
+Doctor 6: REST Shift Worked 101 Shift Worked 97 
+Doctor 15: REST Shift Worked 104 Shift Worked 91 
+Doctor 17: REST Shift Worked 105 Shift Worked 95 
+Doctor 12: REST Shift Worked 99 
+Doctor 8: REST Shift Worked 96 
+Doctor 11: REST Shift Worked 99 
+Doctor 5: REST Shift Worked 95 
+Doctor 9: REST Shift Worked 91 Days Worked 
+Doctor 0: REST Shift Worked 106 
+Doctor 16: REST Shift Worked 96 
+
+Shift 99
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [12, 11]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 90 Shift Worked 100 Shift Worked 107 Days Worked 
+Doctor 10: REST Shift Worked 104 Shift Worked 100 Days Worked 
+Doctor 8: REST Shift Worked 102 Shift Worked 96 
+Doctor 6: REST Shift Worked 101 Shift Worked 97 
+Doctor 15: REST Shift Worked 104 Shift Worked 91 
+Doctor 17: REST Shift Worked 105 
+Doctor 9: REST Shift Worked 91 Days Worked 
+Doctor 0: REST Shift Worked 106 
+Doctor 3: REST Shift Worked 98 
+Doctor 16: REST Shift Worked 96 
+
+
+Day: Friday
+
+Shift 100
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7, 10]
+Doctors that cannot work the shift:
+Doctor 2: TRAINING 
+Doctor 5: TRAINING 
+Doctor 8: TRAINING 
+Doctor 9: TRAINING 
+Doctor 15: TRAINING 
+Doctor 16: TRAINING 
+Doctor 11: REST Shift Worked 103 Shift Worked 99 
+Doctor 6: REST Shift Worked 101 Shift Worked 97 
+Doctor 12: REST Shift Worked 99 
+Doctor 17: REST Shift Worked 95 Days Worked 
+Doctor 4: REST Shift Worked 94 
+Doctor 3: REST Shift Worked 98 
+
+Shift 101
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 104 Shift Worked 100 
+Doctor 11: REST Shift Worked 103 Shift Worked 99 
+Doctor 8: REST Shift Worked 102 
+Doctor 9: REST Shift Worked 103 
+Doctor 12: REST Shift Worked 99 
+Doctor 15: REST Shift Worked 104 
+Doctor 17: REST Shift Worked 95 Days Worked 
+Doctor 4: REST Shift Worked 94 
+Doctor 5: REST Shift Worked 95 
+Doctor 7: REST Shift Worked 100 
+Doctor 3: REST Shift Worked 98 
+
+Shift 102
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 104 Shift Worked 108 Shift Worked 100 
+Doctor 15: REST Shift Worked 104 Shift Worked 108 
+Doctor 11: REST Shift Worked 103 Shift Worked 99 
+Doctor 17: REST Shift Worked 105 Shift Worked 95 Shift Worked 109 Days Worked 
+Doctor 6: REST Shift Worked 101 
+Doctor 9: REST Shift Worked 103 
+Doctor 12: REST Shift Worked 99 
+Doctor 4: REST Shift Worked 94 
+Doctor 5: REST Shift Worked 95 
+Doctor 7: REST Shift Worked 100 
+
+Shift 103
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [9, 11]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 104 Shift Worked 108 Shift Worked 100 
+Doctor 15: REST Shift Worked 104 Shift Worked 108 
+Doctor 17: REST Shift Worked 105 Shift Worked 95 Shift Worked 109 Days Worked 
+Doctor 8: REST Shift Worked 102 
+Doctor 6: REST Shift Worked 101 
+Doctor 4: REST Shift Worked 94 
+Doctor 5: REST Shift Worked 95 
+Doctor 7: REST Shift Worked 100 
+Doctor 0: REST Shift Worked 106 
+
+
+Day: Saturday
+
+Shift 104
+Time: 08:00-16:00 (Day Shift)
+Assignees: [15, 10]
+Doctors that cannot work the shift:
+Doctor 11: LEAVE 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Shift Worked 98 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 12 Weekend Worked 40 Weekend Worked 13 
+Doctor 6: REST Shift Worked 101 Weekend Worked 20 Weekend Worked 19 
+Doctor 8: REST Shift Worked 102 Weekend Worked 19 Weekend Worked 20 
+Doctor 12: REST Shift Worked 99 Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 9: REST Shift Worked 107 Shift Worked 103 
+Doctor 17: REST Shift Worked 105 
+Doctor 0: REST Shift Worked 106 
+Doctor 7: REST Shift Worked 107 
+
+Shift 105
+Time: 14:00-22:00 (Day Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 11: LEAVE 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Shift Worked 98 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 12 Weekend Worked 40 Weekend Worked 13 
+Doctor 6: REST Weekend Worked 20 Weekend Worked 19 
+Doctor 8: REST Shift Worked 102 Weekend Worked 19 Weekend Worked 20 
+Doctor 12: REST Shift Worked 99 Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 10: REST Shift Worked 104 Shift Worked 108 
+Doctor 15: REST Shift Worked 104 Shift Worked 108 
+Doctor 9: REST Shift Worked 107 Shift Worked 103 
+Doctor 0: REST Shift Worked 106 
+Doctor 7: REST Shift Worked 107 
+
+Shift 106
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 11: LEAVE 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Shift Worked 98 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 12 Weekend Worked 40 Weekend Worked 13 
+Doctor 6: REST Shift Worked 112 Weekend Worked 20 Weekend Worked 19 
+Doctor 8: REST Shift Worked 112 Weekend Worked 19 Weekend Worked 20 
+Doctor 12: REST Shift Worked 99 Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 5: REST Shift Worked 115 Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 10: REST Shift Worked 114 Shift Worked 104 Shift Worked 108 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Shift Worked 113 Shift Worked 105 Shift Worked 109 
+Doctor 15: REST Shift Worked 104 Shift Worked 108 
+Doctor 9: REST Shift Worked 107 Shift Worked 103 
+Doctor 7: REST Shift Worked 107 
+
+Shift 107
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [9, 7]
+Doctors that cannot work the shift:
+Doctor 11: LEAVE 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Shift Worked 98 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 12 Weekend Worked 40 Weekend Worked 13 
+Doctor 6: REST Shift Worked 112 Weekend Worked 20 Weekend Worked 19 
+Doctor 8: REST Shift Worked 112 Weekend Worked 19 Weekend Worked 20 
+Doctor 10: REST Shift Worked 114 Shift Worked 104 Shift Worked 108 
+Doctor 12: REST Shift Worked 99 Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 5: REST Shift Worked 115 Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 0: REST Shift Worked 110 Shift Worked 106 
+Doctor 17: REST Shift Worked 113 Shift Worked 105 Shift Worked 109 
+Doctor 15: REST Shift Worked 104 Shift Worked 108 
+
+
+Day: Sunday
+
+Shift 108
+Time: 08:00-16:00 (Day Shift)
+Assignees: [15, 10]
+Doctors that cannot work the shift:
+Doctor 8: LEAVE 
+Doctor 11: LEAVE 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 12 Weekend Worked 40 Weekend Worked 13 
+Doctor 6: REST Weekend Worked 20 Weekend Worked 19 Days Worked 
+Doctor 9: REST Shift Worked 107 Shift Worked 103 Shift Worked 111 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 7: REST Shift Worked 111 Shift Worked 107 
+Doctor 0: REST Shift Worked 110 Shift Worked 106 
+Doctor 17: REST Shift Worked 105 Shift Worked 109 
+
+Shift 109
+Time: 14:00-22:00 (Day Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 8: LEAVE 
+Doctor 11: LEAVE 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 12 Weekend Worked 40 Weekend Worked 13 
+Doctor 6: REST Shift Worked 112 Weekend Worked 20 Weekend Worked 19 Days Worked 
+Doctor 9: REST Shift Worked 107 Shift Worked 103 Shift Worked 111 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 7: REST Shift Worked 111 Shift Worked 107 
+Doctor 0: REST Shift Worked 110 Shift Worked 106 
+Doctor 15: REST Shift Worked 108 
+Doctor 10: REST Shift Worked 108 
+
+Shift 110
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 8: LEAVE 
+Doctor 11: LEAVE 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Shift Worked 119 Weekend Worked 12 Weekend Worked 40 Weekend Worked 13 
+Doctor 6: REST Shift Worked 112 Shift Worked 116 Weekend Worked 20 Weekend Worked 19 Days Worked 
+Doctor 9: REST Shift Worked 107 Shift Worked 111 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 Shift Worked 119 
+Doctor 2: REST Shift Worked 117 Weekend Worked 34 Weekend Worked 33 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 7: REST Shift Worked 111 Shift Worked 107 
+Doctor 15: REST Shift Worked 108 
+Doctor 17: REST Shift Worked 113 Shift Worked 109 
+Doctor 10: REST Shift Worked 108 
+
+Shift 111
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [9, 7]
+Doctors that cannot work the shift:
+Doctor 8: LEAVE 
+Doctor 11: LEAVE 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 12 Weekend Worked 13 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 13 Weekend Worked 12 Weekend Worked 34 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 13 Weekend Worked 12 Weekend Worked 33 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Shift Worked 119 Weekend Worked 12 Weekend Worked 40 Weekend Worked 13 
+Doctor 6: REST Shift Worked 112 Shift Worked 116 Weekend Worked 20 Weekend Worked 19 Days Worked 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 Shift Worked 119 
+Doctor 10: REST Shift Worked 114 Shift Worked 108 
+Doctor 2: REST Shift Worked 117 Weekend Worked 34 Weekend Worked 33 
+Doctor 13: REST Weekend Worked 12 Weekend Worked 13 Weekend Worked 33 Weekend Worked 34 
+Doctor 15: REST Shift Worked 108 
+Doctor 17: REST Shift Worked 113 Shift Worked 109 
+Doctor 0: REST Shift Worked 110 
+
+
+Day: Monday
+
+Shift 112
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 8]
+Doctors that cannot work the shift:
+Doctor 0: TRAINING 
+Doctor 4: TRAINING 
+Doctor 7: TRAINING 
+Doctor 11: TRAINING 
+Doctor 12: TRAINING 
+Doctor 13: TRAINING 
+Doctor 9: REST Shift Worked 107 Shift Worked 111 
+Doctor 10: REST Shift Worked 114 
+Doctor 17: REST Shift Worked 113 Shift Worked 109 
+Doctor 5: REST Shift Worked 115 
+
+Shift 113
+Time: 14:00-22:00 (Day Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 107 Shift Worked 111 
+Doctor 6: REST Shift Worked 112 Shift Worked 116 
+Doctor 7: REST Shift Worked 111 Shift Worked 107 
+Doctor 0: REST Shift Worked 110 Shift Worked 106 
+Doctor 10: REST Shift Worked 114 
+Doctor 11: REST Shift Worked 115 
+Doctor 5: REST Shift Worked 115 
+Doctor 8: REST Shift Worked 112 Shift Worked 116 
+
+Shift 114
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [10]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 120 Shift Worked 112 Shift Worked 116 
+Doctor 7: REST Shift Worked 120 Shift Worked 111 
+Doctor 9: REST Shift Worked 123 Shift Worked 111 
+Doctor 11: REST Shift Worked 115 
+Doctor 17: REST Shift Worked 113 Shift Worked 121 
+Doctor 5: REST Shift Worked 115 
+Doctor 4: REST Shift Worked 122 
+Doctor 8: REST Shift Worked 112 Shift Worked 116 
+Doctor 2: REST Shift Worked 117 
+
+Shift 115
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [11, 5]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 120 Shift Worked 112 Shift Worked 116 
+Doctor 10: REST Shift Worked 118 Shift Worked 114 
+Doctor 7: REST Shift Worked 120 
+Doctor 17: REST Shift Worked 113 Shift Worked 121 
+Doctor 4: REST Shift Worked 122 
+Doctor 8: REST Shift Worked 112 Shift Worked 116 
+Doctor 9: REST Shift Worked 123 
+Doctor 2: REST Shift Worked 117 
+
+
+Day: Tuesday
+
+Shift 116
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 8]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 118 Shift Worked 114 
+Doctor 5: REST Shift Worked 115 
+Doctor 11: REST Shift Worked 115 
+Doctor 17: REST Shift Worked 113 
+Doctor 16: REST Shift Worked 119 
+Doctor 2: REST Shift Worked 117 
+Doctor 9: REST Shift Worked 111 Days Worked 
+Doctor 0: REST Shift Worked 110 
+Doctor 12: REST Shift Worked 119 
+Doctor 7: REST Shift Worked 111 Days Worked 
+
+Shift 117
+Time: 14:00-22:00 (Day Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 118 Shift Worked 114 
+Doctor 7: REST Shift Worked 120 Shift Worked 111 Days Worked 
+Doctor 6: REST Shift Worked 120 Shift Worked 116 
+Doctor 5: REST Shift Worked 115 
+Doctor 11: REST Shift Worked 115 
+Doctor 16: REST Shift Worked 119 
+Doctor 9: REST Shift Worked 111 Days Worked 
+Doctor 0: REST Shift Worked 110 
+Doctor 12: REST Shift Worked 119 
+Doctor 8: REST Shift Worked 116 
+
+Shift 118
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [10]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 120 Shift Worked 124 Shift Worked 111 Days Worked 
+Doctor 6: REST Shift Worked 120 Shift Worked 116 Shift Worked 127 
+Doctor 17: REST Shift Worked 121 Shift Worked 126 
+Doctor 5: REST Shift Worked 115 
+Doctor 11: REST Shift Worked 124 Shift Worked 115 
+Doctor 16: REST Shift Worked 119 
+Doctor 2: REST Shift Worked 117 
+Doctor 0: REST Shift Worked 110 
+Doctor 9: REST Shift Worked 111 Days Worked 
+Doctor 12: REST Shift Worked 119 
+Doctor 8: REST Shift Worked 116 
+Doctor 15: REST Shift Worked 125 
+
+Shift 119
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [16, 12]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 120 Shift Worked 124 Shift Worked 111 Days Worked 
+Doctor 6: REST Shift Worked 120 Shift Worked 116 Shift Worked 127 
+Doctor 10: REST Shift Worked 118 
+Doctor 17: REST Shift Worked 121 Shift Worked 126 
+Doctor 11: REST Shift Worked 124 
+Doctor 4: REST Shift Worked 122 
+Doctor 2: REST Shift Worked 117 
+Doctor 0: REST Shift Worked 110 
+Doctor 9: REST Shift Worked 111 Days Worked 
+Doctor 8: REST Shift Worked 116 
+Doctor 15: REST Shift Worked 125 
+
+
+Day: Wednesday
+
+Shift 120
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 7]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 118 Shift Worked 114 Shift Worked 123 
+Doctor 5: REST Shift Worked 115 
+Doctor 11: REST Shift Worked 115 Days Worked 
+Doctor 4: REST Shift Worked 122 
+Doctor 16: REST Shift Worked 119 
+Doctor 9: REST Shift Worked 123 
+Doctor 17: REST Shift Worked 121 
+Doctor 2: REST Shift Worked 117 
+Doctor 12: REST Shift Worked 119 
+
+Shift 121
+Time: 14:00-22:00 (Day Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 120 Shift Worked 124 
+Doctor 10: REST Shift Worked 118 Shift Worked 114 Shift Worked 123 
+Doctor 6: REST Shift Worked 120 
+Doctor 5: REST Shift Worked 115 
+Doctor 11: REST Shift Worked 124 Shift Worked 115 Days Worked 
+Doctor 4: REST Shift Worked 122 
+Doctor 16: REST Shift Worked 119 
+Doctor 9: REST Shift Worked 123 
+Doctor 12: REST Shift Worked 119 
+
+Shift 122
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 120 Shift Worked 124 Shift Worked 128 
+Doctor 11: REST Shift Worked 128 Shift Worked 124 Shift Worked 115 Days Worked 
+Doctor 6: REST Shift Worked 120 
+Doctor 5: REST Shift Worked 115 
+Doctor 16: REST Shift Worked 119 
+Doctor 9: REST Shift Worked 123 
+Doctor 17: REST Shift Worked 121 
+Doctor 1: REST Shift Worked 129 
+Doctor 10: REST Shift Worked 123 
+Doctor 12: REST Shift Worked 119 
+Doctor 14: REST Shift Worked 130 
+Doctor 15: REST Shift Worked 125 
+
+Shift 123
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [9, 10]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 120 Shift Worked 124 Shift Worked 128 
+Doctor 17: REST Shift Worked 121 Shift Worked 126 
+Doctor 11: REST Shift Worked 128 Shift Worked 124 Shift Worked 115 Days Worked 
+Doctor 6: REST Shift Worked 120 
+Doctor 5: REST Shift Worked 115 
+Doctor 4: REST Shift Worked 122 
+Doctor 1: REST Shift Worked 129 
+Doctor 14: REST Shift Worked 130 
+Doctor 15: REST Shift Worked 125 
+
+
+Day: Thursday
+
+Shift 124
+Time: 08:00-16:00 (Day Shift)
+Assignees: [11, 7]
+Doctors that cannot work the shift:
+Doctor 1: TRAINING 
+Doctor 3: TRAINING 
+Doctor 6: TRAINING 
+Doctor 10: TRAINING 
+Doctor 14: TRAINING 
+Doctor 17: TRAINING 
+Doctor 9: REST Shift Worked 127 Shift Worked 123 
+Doctor 4: REST Shift Worked 122 
+Doctor 16: REST Shift Worked 119 
+Doctor 12: REST Shift Worked 119 
+Doctor 15: REST Shift Worked 125 
+
+Shift 125
+Time: 14:00-22:00 (Day Shift)
+Assignees: [15]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 118 Shift Worked 123 
+Doctor 9: REST Shift Worked 127 Shift Worked 123 
+Doctor 7: REST Shift Worked 124 Shift Worked 128 
+Doctor 11: REST Shift Worked 128 Shift Worked 124 
+Doctor 4: REST Shift Worked 122 
+Doctor 16: REST Shift Worked 119 
+Doctor 12: REST Shift Worked 119 
+Doctor 17: REST Shift Worked 126 
+Doctor 6: REST Shift Worked 127 
+
+Shift 126
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 127 Shift Worked 123 
+Doctor 7: REST Shift Worked 124 Shift Worked 128 
+Doctor 11: REST Shift Worked 128 Shift Worked 124 Shift Worked 132 
+Doctor 16: REST Shift Worked 119 
+Doctor 1: REST Shift Worked 129 
+Doctor 10: REST Shift Worked 123 
+Doctor 2: REST Shift Worked 133 
+Doctor 3: REST Shift Worked 135 
+Doctor 12: REST Shift Worked 119 
+Doctor 13: REST Shift Worked 132 
+Doctor 15: REST Shift Worked 125 
+Doctor 6: REST Shift Worked 127 
+
+Shift 127
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [9, 6]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 124 Shift Worked 128 
+Doctor 11: REST Shift Worked 128 Shift Worked 124 Shift Worked 132 
+Doctor 16: REST Shift Worked 119 
+Doctor 1: REST Shift Worked 129 
+Doctor 2: REST Shift Worked 133 
+Doctor 3: REST Shift Worked 135 
+Doctor 12: REST Shift Worked 119 
+Doctor 14: REST Shift Worked 130 
+Doctor 13: REST Shift Worked 132 
+Doctor 17: REST Shift Worked 126 
+Doctor 15: REST Shift Worked 125 
+
+
+Day: Friday
+
+Shift 128
+Time: 08:00-16:00 (Day Shift)
+Assignees: [11, 7]
+Doctors that cannot work the shift:
+Doctor 2: TRAINING 
+Doctor 5: TRAINING 
+Doctor 8: TRAINING 
+Doctor 9: TRAINING 
+Doctor 15: TRAINING 
+Doctor 16: TRAINING 
+Doctor 6: REST Shift Worked 131 Shift Worked 127 
+Doctor 4: REST Shift Worked 122 
+Doctor 1: REST Shift Worked 129 
+Doctor 10: REST Shift Worked 123 Days Worked 
+Doctor 14: REST Shift Worked 130 
+Doctor 17: REST Shift Worked 126 
+
+Shift 129
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 127 Shift Worked 131 Shift Worked 123 
+Doctor 11: REST Shift Worked 128 Shift Worked 132 
+Doctor 6: REST Shift Worked 131 Shift Worked 127 
+Doctor 4: REST Shift Worked 122 
+Doctor 10: REST Shift Worked 123 Days Worked 
+Doctor 7: REST Shift Worked 128 
+Doctor 14: REST Shift Worked 130 
+Doctor 13: REST Shift Worked 132 
+Doctor 17: REST Shift Worked 126 
+
+Shift 130
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [14]
+Doctors that cannot work the shift:
+Doctor 11: REST Shift Worked 128 Shift Worked 132 Shift Worked 136 
+Doctor 2: REST Shift Worked 137 Shift Worked 133 
+Doctor 13: REST Shift Worked 132 Shift Worked 136 
+Doctor 9: REST Shift Worked 127 Shift Worked 131 
+Doctor 6: REST Shift Worked 131 Shift Worked 127 
+Doctor 4: REST Shift Worked 122 
+Doctor 1: REST Shift Worked 129 
+Doctor 10: REST Shift Worked 123 Days Worked 
+Doctor 7: REST Shift Worked 128 
+
+Shift 131
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [9, 6]
+Doctors that cannot work the shift:
+Doctor 11: REST Shift Worked 128 Shift Worked 132 Shift Worked 136 
+Doctor 2: REST Shift Worked 137 Shift Worked 133 
+Doctor 13: REST Shift Worked 132 Shift Worked 136 
+Doctor 4: REST Shift Worked 122 
+Doctor 1: REST Shift Worked 129 
+Doctor 10: REST Shift Worked 123 Days Worked 
+Doctor 7: REST Shift Worked 128 
+Doctor 14: REST Shift Worked 134 Shift Worked 130 
+
+
+Day: Saturday
+
+Shift 132
+Time: 08:00-16:00 (Day Shift)
+Assignees: [11, 13]
+Doctors that cannot work the shift:
+Doctor 6: REST Weekend Worked 47 Shift Worked 131 Weekend Worked 20 Weekend Worked 48 Weekend Worked 19 Shift Worked 127 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 10: REST Weekend Worked 26 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 Days Worked 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Shift Worked 127 Weekend Worked 26 Shift Worked 131 Weekend Worked 27 
+Doctor 7: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 
+Doctor 1: REST Shift Worked 129 Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 40 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 Shift Worked 126 
+Doctor 3: REST Shift Worked 135 
+Doctor 2: REST Shift Worked 133 
+Doctor 14: REST Shift Worked 134 Shift Worked 130 
+
+Shift 133
+Time: 14:00-22:00 (Day Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 6: REST Weekend Worked 47 Shift Worked 131 Weekend Worked 20 Weekend Worked 48 Weekend Worked 19 Shift Worked 127 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 10: REST Weekend Worked 26 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 Days Worked 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Shift Worked 127 Weekend Worked 26 Shift Worked 131 Weekend Worked 27 
+Doctor 7: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 40 
+Doctor 11: REST Shift Worked 132 Shift Worked 136 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 Shift Worked 126 
+Doctor 13: REST Shift Worked 132 Shift Worked 136 
+Doctor 3: REST Shift Worked 135 
+Doctor 14: REST Shift Worked 134 Shift Worked 130 
+
+Shift 134
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [14]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 143 Weekend Worked 47 Shift Worked 131 Weekend Worked 20 Weekend Worked 48 Weekend Worked 19 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 10: REST Shift Worked 140 Weekend Worked 26 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 Days Worked 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Shift Worked 143 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 131 Shift Worked 140 Weekend Worked 27 
+Doctor 7: REST Weekend Worked 47 Shift Worked 141 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 40 
+Doctor 11: REST Shift Worked 142 Shift Worked 132 Shift Worked 136 
+Doctor 2: REST Shift Worked 137 Shift Worked 133 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 Shift Worked 126 
+Doctor 13: REST Shift Worked 132 Shift Worked 136 
+Doctor 3: REST Shift Worked 135 
+
+Shift 135
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 143 Weekend Worked 47 Weekend Worked 20 Weekend Worked 48 Weekend Worked 19 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 10: REST Shift Worked 140 Weekend Worked 26 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 Days Worked 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Shift Worked 143 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 140 Weekend Worked 27 
+Doctor 7: REST Weekend Worked 47 Shift Worked 141 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 40 
+Doctor 11: REST Shift Worked 142 Shift Worked 132 Shift Worked 136 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 
+Doctor 2: REST Shift Worked 137 Shift Worked 133 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 Shift Worked 126 
+Doctor 14: REST Shift Worked 138 Shift Worked 134 
+Doctor 13: REST Shift Worked 132 Shift Worked 136 
+
+
+Day: Sunday
+
+Shift 136
+Time: 08:00-16:00 (Day Shift)
+Assignees: [11, 13]
+Doctors that cannot work the shift:
+Doctor 6: REST Weekend Worked 47 Shift Worked 131 Days Worked Weekend Worked 20 Weekend Worked 48 Weekend Worked 19 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 10: REST Weekend Worked 26 Weekend Worked 47 Days Worked Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 131 Weekend Worked 27 Days Worked 
+Doctor 7: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 40 
+Doctor 2: REST Shift Worked 137 Shift Worked 133 
+Doctor 3: REST Shift Worked 135 Shift Worked 139 
+Doctor 14: REST Shift Worked 138 Shift Worked 134 Shift Worked 130 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 
+
+Shift 137
+Time: 14:00-22:00 (Day Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 6: REST Weekend Worked 47 Shift Worked 131 Days Worked Weekend Worked 20 Weekend Worked 48 Weekend Worked 19 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 10: REST Shift Worked 140 Weekend Worked 26 Weekend Worked 47 Days Worked Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 131 Shift Worked 140 Weekend Worked 27 Days Worked 
+Doctor 7: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 40 
+Doctor 3: REST Shift Worked 135 Shift Worked 139 
+Doctor 14: REST Shift Worked 138 Shift Worked 134 Shift Worked 130 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 
+Doctor 11: REST Shift Worked 136 
+Doctor 13: REST Shift Worked 136 
+
+Shift 138
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [14]
+Doctors that cannot work the shift:
+Doctor 6: REST Nights Worked Weekend Worked 47 Shift Worked 131 Days Worked Weekend Worked 20 Weekend Worked 48 Weekend Worked 19 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 10: REST Shift Worked 144 Shift Worked 140 Weekend Worked 26 Weekend Worked 47 Days Worked Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 131 Shift Worked 140 Weekend Worked 27 Shift Worked 144 Days Worked 
+Doctor 7: REST Weekend Worked 47 Shift Worked 141 Shift Worked 145 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 40 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 17: REST Weekend Worked 26 Shift Worked 146 Weekend Worked 27 
+Doctor 3: REST Shift Worked 135 Shift Worked 139 
+Doctor 2: REST Shift Worked 137 
+Doctor 11: REST Shift Worked 136 
+Doctor 13: REST Shift Worked 136 
+
+Shift 139
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 6: REST Nights Worked Weekend Worked 47 Shift Worked 131 Days Worked Weekend Worked 20 Weekend Worked 48 Weekend Worked 19 
+Doctor 8: REST Weekend Worked 19 Weekend Worked 20 
+Doctor 10: REST Shift Worked 144 Shift Worked 140 Weekend Worked 26 Weekend Worked 47 Days Worked Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 131 Shift Worked 140 Weekend Worked 27 Shift Worked 144 Days Worked 
+Doctor 7: REST Weekend Worked 47 Shift Worked 141 Shift Worked 145 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 5: REST Weekend Worked 19 Weekend Worked 41 Weekend Worked 40 Weekend Worked 20 
+Doctor 12: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 40 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 
+Doctor 1: REST Weekend Worked 40 Weekend Worked 20 Weekend Worked 41 Weekend Worked 19 
+Doctor 17: REST Weekend Worked 26 Shift Worked 146 Weekend Worked 27 
+Doctor 11: REST Shift Worked 142 Shift Worked 136 
+Doctor 14: REST Shift Worked 138 
+Doctor 2: REST Shift Worked 137 
+Doctor 13: REST Shift Worked 136 
+
+
+Day: Monday
+
+Shift 140
+Time: 08:00-16:00 (Day Shift)
+Assignees: [10, 9]
+Doctors that cannot work the shift:
+Doctor 0: TRAINING 
+Doctor 4: TRAINING 
+Doctor 7: TRAINING 
+Doctor 11: TRAINING 
+Doctor 12: TRAINING 
+Doctor 13: TRAINING 
+Doctor 3: REST Shift Worked 135 Shift Worked 139 
+Doctor 14: REST Shift Worked 138 Shift Worked 134 
+Doctor 6: REST Shift Worked 143 
+Doctor 2: REST Shift Worked 137 
+
+Shift 141
+Time: 14:00-22:00 (Day Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 3: REST Shift Worked 135 Shift Worked 139 
+Doctor 14: REST Shift Worked 138 Shift Worked 134 
+Doctor 10: REST Shift Worked 144 Shift Worked 140 
+Doctor 9: REST Shift Worked 140 Shift Worked 144 
+Doctor 6: REST Shift Worked 143 
+Doctor 11: REST Shift Worked 142 
+Doctor 0: REST Shift Worked 143 
+
+Shift 142
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [11]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 144 Shift Worked 140 Shift Worked 148 
+Doctor 9: REST Shift Worked 140 Shift Worked 148 Shift Worked 144 
+Doctor 7: REST Shift Worked 141 Shift Worked 145 
+Doctor 6: REST Shift Worked 143 
+Doctor 0: REST Shift Worked 143 
+Doctor 16: REST Shift Worked 151 
+Doctor 15: REST Shift Worked 149 
+Doctor 3: REST Shift Worked 139 
+
+Shift 143
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [6, 0]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 144 Shift Worked 140 Shift Worked 148 
+Doctor 9: REST Shift Worked 140 Shift Worked 148 Shift Worked 144 
+Doctor 7: REST Shift Worked 141 Shift Worked 145 
+Doctor 11: REST Shift Worked 142 
+Doctor 16: REST Shift Worked 151 
+Doctor 17: REST Shift Worked 146 
+Doctor 15: REST Shift Worked 149 
+
+
+Day: Tuesday
+
+Shift 144
+Time: 08:00-16:00 (Day Shift)
+Assignees: [10, 9]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 141 Shift Worked 145 
+Doctor 6: REST Shift Worked 147 Shift Worked 143 
+Doctor 11: REST Shift Worked 142 Shift Worked 147 
+Doctor 0: REST Shift Worked 143 
+Doctor 14: REST Shift Worked 138 
+Doctor 17: REST Shift Worked 146 
+Doctor 3: REST Shift Worked 139 
+
+Shift 145
+Time: 14:00-22:00 (Day Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 147 Shift Worked 143 
+Doctor 10: REST Shift Worked 144 Shift Worked 148 
+Doctor 9: REST Shift Worked 148 Shift Worked 144 
+Doctor 11: REST Shift Worked 142 Shift Worked 147 
+Doctor 0: REST Shift Worked 143 
+Doctor 14: REST Shift Worked 138 
+Doctor 17: REST Shift Worked 146 
+Doctor 3: REST Shift Worked 139 
+
+Shift 146
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 152 Shift Worked 148 Shift Worked 144 
+Doctor 10: REST Shift Worked 144 Shift Worked 154 Shift Worked 148 
+Doctor 6: REST Shift Worked 147 Shift Worked 143 
+Doctor 7: REST Shift Worked 152 Shift Worked 145 
+Doctor 11: REST Shift Worked 147 
+Doctor 0: REST Shift Worked 143 
+Doctor 14: REST Shift Worked 138 
+Doctor 13: REST Shift Worked 153 
+Doctor 15: REST Shift Worked 149 
+Doctor 3: REST Shift Worked 139 
+
+Shift 147
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [6, 11]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 152 Shift Worked 148 Shift Worked 144 
+Doctor 10: REST Shift Worked 144 Shift Worked 154 Shift Worked 148 
+Doctor 17: REST Shift Worked 150 Shift Worked 146 
+Doctor 7: REST Shift Worked 152 Shift Worked 145 
+Doctor 14: REST Shift Worked 138 
+Doctor 13: REST Shift Worked 153 
+Doctor 15: REST Shift Worked 149 
+Doctor 3: REST Shift Worked 139 
+
+
+Day: Wednesday
+
+Shift 148
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9, 10]
+Doctors that cannot work the shift:
+Doctor 17: REST Shift Worked 150 Shift Worked 146 
+Doctor 6: REST Shift Worked 147 Shift Worked 151 Shift Worked 143 
+Doctor 11: REST Shift Worked 142 Shift Worked 147 
+Doctor 7: REST Shift Worked 145 
+Doctor 0: REST Shift Worked 143 
+Doctor 16: REST Shift Worked 151 
+Doctor 15: REST Shift Worked 149 
+
+Shift 149
+Time: 14:00-22:00 (Day Shift)
+Assignees: [15]
+Doctors that cannot work the shift:
+Doctor 17: REST Shift Worked 150 Shift Worked 146 
+Doctor 6: REST Shift Worked 147 Shift Worked 151 Shift Worked 143 
+Doctor 9: REST Shift Worked 152 Shift Worked 148 
+Doctor 11: REST Shift Worked 142 Shift Worked 147 
+Doctor 7: REST Shift Worked 152 
+Doctor 0: REST Shift Worked 143 
+Doctor 16: REST Shift Worked 151 
+Doctor 10: REST Shift Worked 148 
+
+Shift 150
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 152 Shift Worked 158 
+Doctor 11: REST Shift Worked 156 Shift Worked 147 
+Doctor 6: REST Shift Worked 147 Shift Worked 151 
+Doctor 9: REST Shift Worked 152 Shift Worked 159 Shift Worked 148 
+Doctor 8: REST Shift Worked 157 
+Doctor 4: REST Shift Worked 156 
+Doctor 0: REST Shift Worked 143 
+Doctor 16: REST Shift Worked 151 
+Doctor 13: REST Shift Worked 153 
+Doctor 15: REST Shift Worked 149 
+Doctor 10: REST Shift Worked 148 
+
+Shift 151
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [6, 16]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 154 Shift Worked 148 
+Doctor 11: REST Shift Worked 156 
+Doctor 7: REST Shift Worked 152 Shift Worked 158 
+Doctor 9: REST Shift Worked 152 Shift Worked 159 Shift Worked 148 
+Doctor 17: REST Shift Worked 150 
+Doctor 8: REST Shift Worked 157 
+Doctor 4: REST Shift Worked 156 
+Doctor 0: REST Shift Worked 143 
+Doctor 13: REST Shift Worked 153 
+Doctor 15: REST Shift Worked 149 
+
+
+Day: Thursday
+
+Shift 152
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9, 7]
+Doctors that cannot work the shift:
+Doctor 1: TRAINING 
+Doctor 3: TRAINING 
+Doctor 6: TRAINING 
+Doctor 10: TRAINING 
+Doctor 14: TRAINING 
+Doctor 17: TRAINING 
+Doctor 11: REST Shift Worked 147 Days Worked 
+Doctor 16: REST Shift Worked 151 
+Doctor 13: REST Shift Worked 153 
+Doctor 15: REST Shift Worked 149 
+
+Shift 153
+Time: 14:00-22:00 (Day Shift)
+Assignees: [13]
+Doctors that cannot work the shift:
+Doctor 17: REST Shift Worked 150 Shift Worked 155 Shift Worked 146 
+Doctor 6: REST Shift Worked 147 Shift Worked 151 Shift Worked 155 
+Doctor 9: REST Shift Worked 152 
+Doctor 11: REST Shift Worked 156 Shift Worked 147 Days Worked 
+Doctor 7: REST Shift Worked 152 
+Doctor 4: REST Shift Worked 156 
+Doctor 16: REST Shift Worked 151 
+Doctor 10: REST Shift Worked 154 
+
+Shift 154
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [10]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 151 Shift Worked 155 
+Doctor 4: REST Shift Worked 162 Shift Worked 156 
+Doctor 9: REST Shift Worked 152 
+Doctor 11: REST Shift Worked 156 Shift Worked 147 Days Worked 
+Doctor 7: REST Shift Worked 152 
+Doctor 17: REST Shift Worked 155 
+Doctor 8: REST Shift Worked 157 
+Doctor 12: REST Shift Worked 160 
+Doctor 1: REST Shift Worked 163 
+Doctor 16: REST Shift Worked 151 Shift Worked 160 
+Doctor 5: REST Shift Worked 161 
+Doctor 13: REST Shift Worked 153 
+
+Shift 155
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [6, 17]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 152 Shift Worked 158 
+Doctor 4: REST Shift Worked 162 Shift Worked 156 
+Doctor 9: REST Shift Worked 152 
+Doctor 11: REST Shift Worked 156 Shift Worked 147 Days Worked 
+Doctor 8: REST Shift Worked 157 
+Doctor 12: REST Shift Worked 160 
+Doctor 1: REST Shift Worked 163 
+Doctor 5: REST Shift Worked 161 
+Doctor 10: REST Shift Worked 154 
+Doctor 13: REST Shift Worked 153 
+Doctor 16: REST Shift Worked 160 
+
+
+Day: Friday
+
+Shift 156
+Time: 08:00-16:00 (Day Shift)
+Assignees: [11, 4]
+Doctors that cannot work the shift:
+Doctor 2: TRAINING 
+Doctor 5: TRAINING 
+Doctor 8: TRAINING 
+Doctor 9: TRAINING 
+Doctor 15: TRAINING 
+Doctor 16: TRAINING 
+Doctor 10: REST Shift Worked 159 Shift Worked 154 
+Doctor 6: REST Shift Worked 151 Shift Worked 155 
+Doctor 17: REST Shift Worked 150 Shift Worked 155 
+Doctor 7: REST Shift Worked 158 
+Doctor 13: REST Shift Worked 153 
+Doctor 11: REST Days Worked 
+
+Shift 157
+Time: 14:00-22:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 159 Shift Worked 154 
+Doctor 6: REST Shift Worked 151 Shift Worked 155 
+Doctor 17: REST Shift Worked 150 Shift Worked 155 
+Doctor 11: REST Shift Worked 156 Days Worked 
+Doctor 4: REST Shift Worked 156 
+Doctor 9: REST Shift Worked 159 
+Doctor 7: REST Shift Worked 158 
+Doctor 12: REST Shift Worked 160 
+Doctor 16: REST Shift Worked 151 Shift Worked 160 
+
+Shift 158
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 16: REST Shift Worked 164 Shift Worked 151 Shift Worked 160 
+Doctor 5: REST Shift Worked 165 Shift Worked 161 
+Doctor 12: REST Shift Worked 160 Shift Worked 164 
+Doctor 10: REST Shift Worked 159 
+Doctor 11: REST Shift Worked 156 Days Worked 
+Doctor 6: REST Shift Worked 155 Nights Worked 
+Doctor 17: REST Shift Worked 155 
+Doctor 4: REST Shift Worked 156 
+Doctor 8: REST Shift Worked 157 
+Doctor 9: REST Shift Worked 159 
+
+Shift 159
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [10, 9]
+Doctors that cannot work the shift:
+Doctor 16: REST Shift Worked 164 Shift Worked 151 Shift Worked 160 
+Doctor 5: REST Shift Worked 165 Shift Worked 161 
+Doctor 12: REST Shift Worked 160 Shift Worked 164 
+Doctor 4: REST Shift Worked 162 Shift Worked 156 
+Doctor 11: REST Shift Worked 156 Days Worked 
+Doctor 6: REST Nights Worked 
+Doctor 8: REST Shift Worked 157 
+Doctor 7: REST Shift Worked 158 
+
+
+Day: Saturday
+
+Shift 160
+Time: 08:00-16:00 (Day Shift)
+Assignees: [12, 16]
+Doctors that cannot work the shift:
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 10: REST Shift Worked 159 Weekend Worked 26 Shift Worked 154 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 159 Weekend Worked 54 Weekend Worked 27 Weekend Worked 55 
+Doctor 7: REST Weekend Worked 47 Shift Worked 158 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 6: REST Shift Worked 155 Weekend Worked 47 Weekend Worked 48 
+Doctor 8: REST Shift Worked 157 Weekend Worked 54 Weekend Worked 55 
+Doctor 11: REST Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Shift Worked 155 Weekend Worked 26 Weekend Worked 27 
+Doctor 4: REST Shift Worked 162 
+Doctor 1: REST Shift Worked 163 
+Doctor 5: REST Shift Worked 161 
+
+Shift 161
+Time: 14:00-22:00 (Day Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 10: REST Shift Worked 159 Weekend Worked 26 Shift Worked 154 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 159 Weekend Worked 54 Weekend Worked 27 Weekend Worked 55 
+Doctor 7: REST Weekend Worked 47 Shift Worked 158 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 6: REST Shift Worked 155 Weekend Worked 47 Weekend Worked 48 
+Doctor 8: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 16: REST Shift Worked 164 Shift Worked 160 
+Doctor 11: REST Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Shift Worked 155 Weekend Worked 26 Weekend Worked 27 
+Doctor 12: REST Shift Worked 160 Shift Worked 164 
+Doctor 4: REST Shift Worked 162 
+Doctor 1: REST Shift Worked 163 
+
+Shift 162
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 10: REST Shift Worked 159 Shift Worked 168 Weekend Worked 26 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 159 Weekend Worked 54 Weekend Worked 27 Shift Worked 168 Weekend Worked 55 
+Doctor 7: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 Shift Worked 169 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 6: REST Nights Worked Shift Worked 155 Weekend Worked 47 Weekend Worked 48 
+Doctor 8: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 16: REST Shift Worked 164 Shift Worked 160 
+Doctor 11: REST Weekend Worked 33 Weekend Worked 34 
+Doctor 5: REST Shift Worked 165 Shift Worked 161 
+Doctor 17: REST Shift Worked 170 Shift Worked 155 Weekend Worked 26 Weekend Worked 27 
+Doctor 12: REST Shift Worked 160 Shift Worked 164 
+Doctor 1: REST Shift Worked 163 
+
+Shift 163
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 10: REST Shift Worked 168 Weekend Worked 26 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Weekend Worked 54 Weekend Worked 27 Shift Worked 168 Weekend Worked 55 
+Doctor 7: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 Shift Worked 169 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 6: REST Nights Worked Shift Worked 155 Weekend Worked 47 Weekend Worked 48 
+Doctor 8: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 16: REST Shift Worked 164 Shift Worked 160 
+Doctor 11: REST Weekend Worked 33 Weekend Worked 34 
+Doctor 4: REST Shift Worked 162 Shift Worked 166 
+Doctor 5: REST Shift Worked 165 Shift Worked 161 
+Doctor 17: REST Shift Worked 170 Shift Worked 155 Weekend Worked 26 Weekend Worked 27 
+Doctor 12: REST Shift Worked 160 Shift Worked 164 
+
+
+Day: Sunday
+
+Shift 164
+Time: 08:00-16:00 (Day Shift)
+Assignees: [16, 12]
+Doctors that cannot work the shift:
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 10: REST Shift Worked 159 Days Worked Weekend Worked 26 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 159 Days Worked Weekend Worked 54 Weekend Worked 27 Weekend Worked 55 
+Doctor 7: REST Weekend Worked 47 Shift Worked 158 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 6: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 8: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 11: REST Weekend Worked 33 Weekend Worked 34 
+Doctor 4: REST Shift Worked 162 Shift Worked 166 
+Doctor 5: REST Shift Worked 165 Shift Worked 161 
+Doctor 1: REST Shift Worked 163 Shift Worked 167 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 
+
+Shift 165
+Time: 14:00-22:00 (Day Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 10: REST Shift Worked 159 Days Worked Shift Worked 168 Weekend Worked 26 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 159 Days Worked Weekend Worked 54 Weekend Worked 27 Shift Worked 168 Weekend Worked 55 
+Doctor 7: REST Weekend Worked 47 Shift Worked 158 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 6: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 8: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 11: REST Weekend Worked 33 Weekend Worked 34 
+Doctor 4: REST Shift Worked 162 Shift Worked 166 
+Doctor 1: REST Shift Worked 163 Shift Worked 167 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 
+Doctor 16: REST Shift Worked 164 
+Doctor 12: REST Shift Worked 164 
+
+Shift 166
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 10: REST Shift Worked 159 Days Worked Shift Worked 168 Shift Worked 175 Weekend Worked 26 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Shift Worked 174 Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 159 Days Worked Shift Worked 173 Weekend Worked 54 Weekend Worked 27 Shift Worked 168 Weekend Worked 55 
+Doctor 7: REST Weekend Worked 47 Shift Worked 172 Shift Worked 158 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 Shift Worked 169 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 6: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 8: REST Shift Worked 172 Weekend Worked 54 Weekend Worked 55 
+Doctor 11: REST Weekend Worked 33 Weekend Worked 34 
+Doctor 1: REST Shift Worked 163 Shift Worked 167 
+Doctor 17: REST Weekend Worked 26 Weekend Worked 27 
+Doctor 16: REST Shift Worked 164 
+Doctor 5: REST Shift Worked 165 
+Doctor 12: REST Shift Worked 164 
+
+Shift 167
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 10: REST Shift Worked 159 Days Worked Shift Worked 168 Shift Worked 175 Weekend Worked 26 Weekend Worked 47 Weekend Worked 27 Weekend Worked 48 
+Doctor 0: REST Shift Worked 174 Weekend Worked 47 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 9: REST Weekend Worked 26 Shift Worked 159 Days Worked Shift Worked 173 Weekend Worked 54 Weekend Worked 27 Shift Worked 168 Weekend Worked 55 
+Doctor 7: REST Weekend Worked 47 Shift Worked 172 Shift Worked 158 Weekend Worked 48 Weekend Worked 27 Weekend Worked 26 
+Doctor 15: REST Weekend Worked 26 Weekend Worked 27 Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 Shift Worked 169 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 6: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 8: REST Shift Worked 172 Weekend Worked 54 Weekend Worked 55 
+Doctor 11: REST Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Shift Worked 170 Weekend Worked 26 Weekend Worked 27 
+Doctor 16: REST Shift Worked 164 
+Doctor 4: REST Shift Worked 166 
+Doctor 5: REST Shift Worked 165 
+Doctor 12: REST Shift Worked 164 
+
+
+Day: Monday
+
+Shift 168
+Time: 08:00-16:00 (Day Shift)
+Assignees: [10, 9]
+Doctors that cannot work the shift:
+Doctor 0: TRAINING 
+Doctor 4: TRAINING 
+Doctor 7: TRAINING 
+Doctor 11: TRAINING 
+Doctor 12: TRAINING 
+Doctor 13: TRAINING 
+Doctor 1: REST Shift Worked 163 Shift Worked 167 Shift Worked 171 
+Doctor 17: REST Shift Worked 170 
+Doctor 5: REST Shift Worked 165 
+Doctor 14: REST Shift Worked 169 
+
+Shift 169
+Time: 14:00-22:00 (Day Shift)
+Assignees: [14]
+Doctors that cannot work the shift:
+Doctor 4: REST Shift Worked 162 Shift Worked 166 Shift Worked 171 
+Doctor 1: REST Shift Worked 163 Shift Worked 167 Shift Worked 171 
+Doctor 8: REST Shift Worked 172 
+Doctor 17: REST Shift Worked 170 
+Doctor 7: REST Shift Worked 172 Days Worked 
+Doctor 10: REST Shift Worked 168 
+Doctor 9: REST Shift Worked 168 
+
+Shift 170
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 178 Shift Worked 173 Shift Worked 168 
+Doctor 7: REST Shift Worked 177 Shift Worked 172 Days Worked 
+Doctor 8: REST Shift Worked 172 Shift Worked 176 
+Doctor 2: REST Shift Worked 179 
+Doctor 6: REST Shift Worked 176 
+Doctor 10: REST Shift Worked 168 
+Doctor 4: REST Shift Worked 171 
+Doctor 1: REST Shift Worked 167 Shift Worked 171 
+Doctor 14: REST Shift Worked 169 
+
+Shift 171
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [4, 1]
+Doctors that cannot work the shift:
+Doctor 9: REST Shift Worked 178 Shift Worked 173 Shift Worked 168 
+Doctor 7: REST Shift Worked 177 Shift Worked 172 Days Worked 
+Doctor 8: REST Shift Worked 172 Shift Worked 176 
+Doctor 17: REST Shift Worked 170 
+Doctor 0: REST Shift Worked 174 
+Doctor 2: REST Shift Worked 179 
+Doctor 6: REST Shift Worked 176 
+Doctor 10: REST Shift Worked 168 
+Doctor 14: REST Shift Worked 169 
+
+
+Day: Tuesday
+
+Shift 172
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8, 7]
+Doctors that cannot work the shift:
+Doctor 17: REST Shift Worked 170 Shift Worked 175 
+Doctor 0: REST Shift Worked 174 
+Doctor 4: REST Shift Worked 166 Shift Worked 171 
+Doctor 10: REST Shift Worked 175 
+Doctor 9: REST Shift Worked 173 
+Doctor 1: REST Shift Worked 167 Shift Worked 171 
+Doctor 14: REST Shift Worked 169 
+
+Shift 173
+Time: 14:00-22:00 (Day Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 17: REST Shift Worked 170 Shift Worked 175 
+Doctor 8: REST Shift Worked 172 Shift Worked 176 
+Doctor 7: REST Shift Worked 172 
+Doctor 0: REST Shift Worked 174 
+Doctor 6: REST Shift Worked 176 
+Doctor 4: REST Shift Worked 166 Shift Worked 171 
+Doctor 10: REST Shift Worked 175 
+Doctor 1: REST Shift Worked 167 Shift Worked 171 
+
+Shift 174
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 177 Shift Worked 172 Shift Worked 181 
+Doctor 8: REST Shift Worked 172 Shift Worked 183 Shift Worked 176 
+Doctor 5: REST Shift Worked 182 
+Doctor 6: REST Shift Worked 176 
+Doctor 4: REST Shift Worked 171 Shift Worked 180 
+Doctor 17: REST Shift Worked 175 
+Doctor 10: REST Shift Worked 175 
+Doctor 11: REST Shift Worked 180 
+Doctor 9: REST Shift Worked 173 
+Doctor 1: REST Shift Worked 171 
+
+Shift 175
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [17, 10]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 177 Shift Worked 172 Shift Worked 181 
+Doctor 9: REST Shift Worked 178 Shift Worked 173 
+Doctor 8: REST Shift Worked 172 Shift Worked 183 Shift Worked 176 
+Doctor 0: REST Shift Worked 174 
+Doctor 5: REST Shift Worked 182 
+Doctor 6: REST Shift Worked 176 
+Doctor 11: REST Shift Worked 180 
+Doctor 4: REST Shift Worked 180 
+
+
+Day: Wednesday
+
+Shift 176
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 8]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 175 Shift Worked 179 
+Doctor 17: REST Shift Worked 170 Shift Worked 175 
+Doctor 9: REST Shift Worked 178 Shift Worked 173 
+Doctor 7: REST Shift Worked 177 
+Doctor 0: REST Shift Worked 174 
+Doctor 2: REST Shift Worked 179 
+Doctor 4: REST Shift Worked 171 
+Doctor 1: REST Shift Worked 171 
+
+Shift 177
+Time: 14:00-22:00 (Day Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 175 Shift Worked 179 
+Doctor 17: REST Shift Worked 170 Shift Worked 175 
+Doctor 0: REST Shift Worked 174 
+Doctor 2: REST Shift Worked 179 
+Doctor 6: REST Shift Worked 176 
+Doctor 4: REST Shift Worked 171 Shift Worked 180 
+Doctor 9: REST Shift Worked 178 
+Doctor 11: REST Shift Worked 180 
+Doctor 8: REST Shift Worked 176 
+Doctor 1: REST Shift Worked 171 
+
+Shift 178
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 177 Shift Worked 181 Shift Worked 187 
+Doctor 6: REST Shift Worked 184 Shift Worked 176 
+Doctor 10: REST Shift Worked 175 Shift Worked 179 
+Doctor 11: REST Shift Worked 186 Shift Worked 180 
+Doctor 17: REST Shift Worked 175 Shift Worked 185 
+Doctor 3: REST Shift Worked 187 
+Doctor 2: REST Shift Worked 179 
+Doctor 4: REST Shift Worked 171 Shift Worked 180 
+Doctor 12: REST Shift Worked 184 
+Doctor 8: REST Shift Worked 176 
+Doctor 1: REST Shift Worked 171 
+
+Shift 179
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [2, 10]
+Doctors that cannot work the shift:
+Doctor 7: REST Shift Worked 177 Shift Worked 181 Shift Worked 187 
+Doctor 6: REST Shift Worked 184 Shift Worked 176 
+Doctor 11: REST Shift Worked 186 Shift Worked 180 
+Doctor 5: REST Shift Worked 182 
+Doctor 3: REST Shift Worked 187 
+Doctor 4: REST Shift Worked 171 Shift Worked 180 
+Doctor 17: REST Shift Worked 185 
+Doctor 12: REST Shift Worked 184 
+Doctor 9: REST Shift Worked 178 
+Doctor 8: REST Shift Worked 176 
+Doctor 1: REST Shift Worked 171 
+
+
+Day: Thursday
+
+Shift 180
+Time: 08:00-16:00 (Day Shift)
+Assignees: [11, 4]
+Doctors that cannot work the shift:
+Doctor 1: TRAINING 
+Doctor 3: TRAINING 
+Doctor 6: TRAINING 
+Doctor 10: TRAINING 
+Doctor 14: TRAINING 
+Doctor 17: TRAINING 
+Doctor 7: REST Shift Worked 177 Shift Worked 181 
+Doctor 9: REST Shift Worked 178 Shift Worked 183 
+Doctor 0: REST Shift Worked 174 
+Doctor 2: REST Shift Worked 179 
+Doctor 5: REST Shift Worked 182 
+Doctor 8: REST Shift Worked 183 
+
+Shift 181
+Time: 14:00-22:00 (Day Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 175 Shift Worked 179 
+Doctor 9: REST Shift Worked 178 Shift Worked 183 
+Doctor 0: REST Shift Worked 174 
+Doctor 6: REST Shift Worked 184 
+Doctor 2: REST Shift Worked 179 
+Doctor 5: REST Shift Worked 182 
+Doctor 17: REST Shift Worked 175 
+Doctor 12: REST Shift Worked 184 
+Doctor 11: REST Shift Worked 180 
+Doctor 8: REST Shift Worked 183 
+Doctor 4: REST Shift Worked 180 
+
+Shift 182
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 179 Shift Worked 188 
+Doctor 6: REST Shift Worked 184 Shift Worked 188 
+Doctor 17: REST Shift Worked 175 Shift Worked 185 
+Doctor 0: REST Shift Worked 174 Shift Worked 189 
+Doctor 2: REST Shift Worked 179 
+Doctor 7: REST Shift Worked 181 
+Doctor 12: REST Shift Worked 184 
+Doctor 11: REST Shift Worked 180 
+Doctor 9: REST Shift Worked 183 
+Doctor 8: REST Shift Worked 183 
+Doctor 4: REST Shift Worked 180 
+Doctor 15: REST Shift Worked 190 
+
+Shift 183
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [9, 8]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 184 Shift Worked 188 
+Doctor 17: REST Shift Worked 175 Shift Worked 185 
+Doctor 11: REST Shift Worked 186 Shift Worked 180 
+Doctor 0: REST Shift Worked 174 Shift Worked 189 
+Doctor 5: REST Shift Worked 182 
+Doctor 7: REST Shift Worked 181 
+Doctor 12: REST Shift Worked 184 
+Doctor 4: REST Shift Worked 180 
+Doctor 10: REST Shift Worked 188 
+Doctor 15: REST Shift Worked 190 
+
+
+Day: Friday
+
+Shift 184
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 12]
+Doctors that cannot work the shift:
+Doctor 2: TRAINING 
+Doctor 5: TRAINING 
+Doctor 8: TRAINING 
+Doctor 9: TRAINING 
+Doctor 15: TRAINING 
+Doctor 16: TRAINING 
+Doctor 7: REST Shift Worked 181 Shift Worked 187 
+Doctor 11: REST Shift Worked 186 
+Doctor 3: REST Shift Worked 187 
+Doctor 17: REST Shift Worked 185 
+Doctor 10: REST Shift Worked 179 Days Worked 
+
+Shift 185
+Time: 14:00-22:00 (Day Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 6: REST Shift Worked 184 Shift Worked 188 
+Doctor 10: REST Shift Worked 179 Shift Worked 188 Days Worked 
+Doctor 9: REST Shift Worked 178 Shift Worked 183 
+Doctor 2: REST Shift Worked 179 
+Doctor 5: REST Shift Worked 182 
+Doctor 11: REST Shift Worked 186 
+Doctor 3: REST Shift Worked 187 
+Doctor 12: REST Shift Worked 184 
+Doctor 8: REST Shift Worked 183 
+Doctor 7: REST Shift Worked 187 
+
+Shift 186
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [11]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 179 Shift Worked 188 Shift Worked 192 Days Worked 
+Doctor 6: REST Shift Worked 184 Shift Worked 188 Shift Worked 192 
+Doctor 0: REST Shift Worked 189 Shift Worked 193 
+Doctor 2: REST Shift Worked 179 
+Doctor 3: REST Shift Worked 187 
+Doctor 17: REST Shift Worked 185 
+Doctor 12: REST Shift Worked 184 
+Doctor 9: REST Shift Worked 183 
+Doctor 8: REST Shift Worked 183 
+Doctor 7: REST Shift Worked 187 
+
+Shift 187
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [3, 7]
+Doctors that cannot work the shift:
+Doctor 10: REST Shift Worked 179 Shift Worked 188 Shift Worked 192 Days Worked 
+Doctor 6: REST Shift Worked 184 Shift Worked 188 Shift Worked 192 
+Doctor 0: REST Shift Worked 189 Shift Worked 193 
+Doctor 2: REST Shift Worked 179 
+Doctor 11: REST Shift Worked 186 
+Doctor 17: REST Shift Worked 185 
+Doctor 12: REST Shift Worked 184 
+Doctor 15: REST Shift Worked 190 
+
+
+Day: Saturday
+
+Shift 188
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 10]
+Doctors that cannot work the shift:
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 11: REST Weekend Worked 62 Shift Worked 186 Weekend Worked 33 Weekend Worked 34 Weekend Worked 61 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Shift Worked 187 Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Shift Worked 182 Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 
+Doctor 9: REST Shift Worked 183 Weekend Worked 54 Weekend Worked 55 
+Doctor 7: REST Shift Worked 191 Shift Worked 187 
+Doctor 8: REST Weekend Worked 54 Shift Worked 183 Weekend Worked 55 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Weekend Worked 62 Shift Worked 185 Weekend Worked 61 
+Doctor 0: REST Shift Worked 189 
+Doctor 15: REST Shift Worked 190 
+
+Shift 189
+Time: 14:00-22:00 (Day Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 11: REST Weekend Worked 62 Shift Worked 186 Weekend Worked 33 Weekend Worked 34 Weekend Worked 61 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Shift Worked 187 Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Shift Worked 182 Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 
+Doctor 9: REST Shift Worked 183 Weekend Worked 54 Weekend Worked 55 
+Doctor 7: REST Shift Worked 191 Shift Worked 187 
+Doctor 10: REST Shift Worked 188 Shift Worked 192 
+Doctor 8: REST Weekend Worked 54 Shift Worked 183 Weekend Worked 55 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Weekend Worked 62 Weekend Worked 61 
+Doctor 6: REST Shift Worked 188 Shift Worked 192 
+Doctor 15: REST Shift Worked 190 
+
+Shift 190
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [15]
+Doctors that cannot work the shift:
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 11: REST Weekend Worked 62 Weekend Worked 33 Shift Worked 197 Weekend Worked 34 Weekend Worked 61 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Shift Worked 187 Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Shift Worked 182 Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 
+Doctor 9: REST Shift Worked 199 Shift Worked 183 Weekend Worked 54 Weekend Worked 55 
+Doctor 7: REST Shift Worked 191 Shift Worked 187 
+Doctor 10: REST Shift Worked 196 Shift Worked 188 Shift Worked 192 
+Doctor 8: REST Shift Worked 199 Weekend Worked 54 Shift Worked 183 Weekend Worked 55 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Shift Worked 198 Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Weekend Worked 62 Shift Worked 196 Weekend Worked 61 
+Doctor 6: REST Shift Worked 188 Shift Worked 192 
+Doctor 0: REST Shift Worked 189 Shift Worked 193 
+
+Shift 191
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 11: REST Weekend Worked 62 Weekend Worked 33 Shift Worked 197 Weekend Worked 34 Weekend Worked 61 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Shift Worked 182 Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 
+Doctor 9: REST Shift Worked 199 Shift Worked 183 Weekend Worked 54 Weekend Worked 55 
+Doctor 6: REST Shift Worked 188 Shift Worked 192 
+Doctor 10: REST Shift Worked 196 Shift Worked 188 Shift Worked 192 
+Doctor 8: REST Shift Worked 199 Weekend Worked 54 Shift Worked 183 Weekend Worked 55 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Shift Worked 198 Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Weekend Worked 62 Shift Worked 196 Weekend Worked 61 
+Doctor 0: REST Shift Worked 189 Shift Worked 193 
+Doctor 15: REST Shift Worked 190 Shift Worked 194 
+
+
+Day: Sunday
+
+Shift 192
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 10]
+Doctors that cannot work the shift:
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 11: REST Weekend Worked 62 Shift Worked 186 Weekend Worked 33 Weekend Worked 34 Days Worked Weekend Worked 61 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Shift Worked 187 Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 
+Doctor 7: REST Shift Worked 191 Shift Worked 187 Shift Worked 195 
+Doctor 9: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 8: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Weekend Worked 62 Weekend Worked 61 
+Doctor 0: REST Shift Worked 189 Shift Worked 193 
+Doctor 15: REST Shift Worked 190 Shift Worked 194 
+
+Shift 193
+Time: 14:00-22:00 (Day Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 11: REST Weekend Worked 62 Shift Worked 186 Weekend Worked 33 Weekend Worked 34 Days Worked Weekend Worked 61 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Shift Worked 187 Weekend Worked 33 Weekend Worked 55 Weekend Worked 34 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 
+Doctor 7: REST Shift Worked 191 Shift Worked 187 Shift Worked 195 
+Doctor 9: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 8: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Weekend Worked 62 Shift Worked 196 Weekend Worked 61 
+Doctor 10: REST Shift Worked 196 Shift Worked 192 
+Doctor 15: REST Shift Worked 190 Shift Worked 194 
+Doctor 6: REST Shift Worked 192 
+
+Shift 194
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [15]
+Doctors that cannot work the shift:
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 11: REST Weekend Worked 62 Shift Worked 186 Weekend Worked 33 Shift Worked 197 Weekend Worked 34 Shift Worked 203 Days Worked Weekend Worked 61 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Shift Worked 187 Weekend Worked 33 Shift Worked 201 Weekend Worked 55 Weekend Worked 34 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 61 Shift Worked 200 Weekend Worked 40 
+Doctor 5: REST Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 
+Doctor 9: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 8: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Weekend Worked 62 Shift Worked 196 Weekend Worked 61 
+Doctor 10: REST Shift Worked 196 Shift Worked 192 Shift Worked 200 
+Doctor 7: REST Shift Worked 191 Shift Worked 195 
+Doctor 6: REST Shift Worked 202 Shift Worked 192 
+Doctor 0: REST Shift Worked 193 
+
+Shift 195
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 2: REST Weekend Worked 34 Weekend Worked 33 Weekend Worked 55 Weekend Worked 54 
+Doctor 11: REST Weekend Worked 62 Shift Worked 186 Weekend Worked 33 Shift Worked 197 Weekend Worked 34 Shift Worked 203 Days Worked Weekend Worked 61 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 14: REST Weekend Worked 34 Weekend Worked 54 Weekend Worked 33 Weekend Worked 55 
+Doctor 3: REST Shift Worked 187 Weekend Worked 33 Shift Worked 201 Weekend Worked 55 Weekend Worked 34 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 61 Shift Worked 200 Weekend Worked 40 
+Doctor 5: REST Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 
+Doctor 9: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 8: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 Shift Worked 198 Weekend Worked 33 Weekend Worked 34 
+Doctor 17: REST Weekend Worked 62 Shift Worked 196 Weekend Worked 61 
+Doctor 10: REST Shift Worked 196 Shift Worked 192 Shift Worked 200 
+Doctor 6: REST Shift Worked 202 Shift Worked 192 
+Doctor 0: REST Shift Worked 193 
+Doctor 15: REST Shift Worked 194 
+
+
+Day: Monday
+
+Shift 196
+Time: 08:00-16:00 (Day Shift)
+Assignees: [17, 10]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 0: TRAINING 
+Doctor 4: TRAINING 
+Doctor 11: TRAINING 
+Doctor 12: TRAINING 
+Doctor 13: TRAINING 
+Doctor 15: REST Shift Worked 190 Shift Worked 194 
+Doctor 9: REST Shift Worked 199 
+Doctor 8: REST Shift Worked 199 
+Doctor 6: REST Days Worked 
+
+Shift 197
+Time: 14:00-22:00 (Day Shift)
+Assignees: [11]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: REST Shift Worked 196 Shift Worked 200 
+Doctor 15: REST Shift Worked 190 Shift Worked 194 
+Doctor 17: REST Shift Worked 196 
+Doctor 9: REST Shift Worked 199 
+Doctor 8: REST Shift Worked 199 
+Doctor 13: REST Shift Worked 198 
+Doctor 6: REST Days Worked 
+Doctor 16: REST Shift Worked 200 
+
+Shift 198
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [13]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: REST Shift Worked 196 Shift Worked 200 
+Doctor 17: REST Shift Worked 196 Shift Worked 207 
+Doctor 6: REST Nights Worked Days Worked 
+Doctor 9: REST Shift Worked 199 
+Doctor 8: REST Shift Worked 199 
+Doctor 11: REST Shift Worked 197 
+Doctor 16: REST Shift Worked 200 
+Doctor 14: REST Shift Worked 204 
+Doctor 3: REST Shift Worked 201 
+Doctor 5: REST Shift Worked 204 
+Doctor 2: REST Shift Worked 205 
+
+Shift 199
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [9, 8]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: REST Shift Worked 196 Shift Worked 200 
+Doctor 6: REST Shift Worked 202 Nights Worked Days Worked 
+Doctor 17: REST Shift Worked 196 Shift Worked 207 
+Doctor 11: REST Shift Worked 197 
+Doctor 16: REST Shift Worked 200 
+Doctor 14: REST Shift Worked 204 
+Doctor 3: REST Shift Worked 201 
+Doctor 13: REST Shift Worked 198 
+Doctor 5: REST Shift Worked 204 
+Doctor 2: REST Shift Worked 205 
+
+
+Day: Tuesday
+
+Shift 200
+Time: 08:00-16:00 (Day Shift)
+Assignees: [16, 10]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 9: REST Shift Worked 203 Shift Worked 199 
+Doctor 11: REST Shift Worked 197 Shift Worked 203 
+Doctor 8: REST Shift Worked 199 
+Doctor 6: REST Shift Worked 202 
+Doctor 3: REST Shift Worked 201 
+Doctor 13: REST Shift Worked 198 
+Doctor 15: REST Shift Worked 194 
+
+Shift 201
+Time: 14:00-22:00 (Day Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 9: REST Shift Worked 203 Shift Worked 199 
+Doctor 8: REST Shift Worked 199 
+Doctor 6: REST Shift Worked 202 
+Doctor 14: REST Shift Worked 204 
+Doctor 11: REST Shift Worked 203 
+Doctor 13: REST Shift Worked 198 
+Doctor 16: REST Shift Worked 200 
+Doctor 5: REST Shift Worked 204 
+Doctor 10: REST Shift Worked 200 
+Doctor 15: REST Shift Worked 194 
+
+Shift 202
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 9: REST Shift Worked 203 Shift Worked 199 
+Doctor 8: REST Shift Worked 208 Shift Worked 199 
+Doctor 13: REST Shift Worked 208 
+Doctor 16: REST Shift Worked 200 Shift Worked 209 
+Doctor 3: REST Shift Worked 211 Shift Worked 201 
+Doctor 14: REST Shift Worked 204 
+Doctor 11: REST Shift Worked 203 
+Doctor 5: REST Shift Worked 204 
+Doctor 10: REST Shift Worked 200 
+Doctor 2: REST Shift Worked 205 
+Doctor 15: REST Shift Worked 194 
+
+Shift 203
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [9, 11]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 6: REST Shift Worked 206 Shift Worked 202 
+Doctor 8: REST Shift Worked 208 
+Doctor 13: REST Shift Worked 208 
+Doctor 16: REST Shift Worked 200 Shift Worked 209 
+Doctor 3: REST Shift Worked 211 Shift Worked 201 
+Doctor 14: REST Shift Worked 204 
+Doctor 5: REST Shift Worked 204 
+Doctor 10: REST Shift Worked 200 
+Doctor 2: REST Shift Worked 205 
+Doctor 15: REST Shift Worked 194 
+
+
+Day: Wednesday
+
+Shift 204
+Time: 08:00-16:00 (Day Shift)
+Assignees: [14, 5]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 9: REST Shift Worked 203 Shift Worked 199 Shift Worked 207 
+Doctor 6: REST Shift Worked 206 Shift Worked 202 
+Doctor 8: REST Shift Worked 199 
+Doctor 11: REST Shift Worked 203 
+Doctor 3: REST Shift Worked 201 
+Doctor 13: REST Shift Worked 198 Days Worked 
+Doctor 17: REST Shift Worked 207 
+Doctor 2: REST Shift Worked 205 
+
+Shift 205
+Time: 14:00-22:00 (Day Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 9: REST Shift Worked 203 Shift Worked 199 Shift Worked 207 
+Doctor 6: REST Shift Worked 206 Shift Worked 202 
+Doctor 8: REST Shift Worked 208 Shift Worked 199 
+Doctor 13: REST Shift Worked 208 Shift Worked 198 Days Worked 
+Doctor 14: REST Shift Worked 204 
+Doctor 11: REST Shift Worked 203 
+Doctor 17: REST Shift Worked 207 
+Doctor 5: REST Shift Worked 204 
+
+Shift 206
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 9: REST Shift Worked 203 Shift Worked 207 
+Doctor 11: REST Shift Worked 212 Shift Worked 203 
+Doctor 8: REST Shift Worked 208 Shift Worked 199 
+Doctor 5: REST Shift Worked 215 Shift Worked 204 
+Doctor 13: REST Shift Worked 212 Shift Worked 208 Shift Worked 198 Days Worked 
+Doctor 16: REST Shift Worked 209 
+Doctor 14: REST Shift Worked 204 
+Doctor 17: REST Shift Worked 207 
+Doctor 4: REST Shift Worked 213 
+Doctor 2: REST Shift Worked 205 
+
+Shift 207
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [17, 9]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 6: REST Shift Worked 210 Shift Worked 206 
+Doctor 8: REST Shift Worked 208 Shift Worked 199 
+Doctor 5: REST Shift Worked 215 Shift Worked 204 
+Doctor 13: REST Shift Worked 212 Shift Worked 208 Shift Worked 198 Days Worked 
+Doctor 11: REST Shift Worked 212 
+Doctor 16: REST Shift Worked 209 
+Doctor 14: REST Shift Worked 204 
+Doctor 4: REST Shift Worked 213 
+Doctor 2: REST Shift Worked 205 
+
+
+Day: Thursday
+
+Shift 208
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8, 13]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 1: TRAINING 
+Doctor 3: TRAINING 
+Doctor 6: TRAINING 
+Doctor 14: TRAINING 
+Doctor 17: TRAINING 
+Doctor 9: REST Shift Worked 203 Shift Worked 207 
+Doctor 16: REST Shift Worked 209 
+Doctor 11: REST Shift Worked 203 
+Doctor 2: REST Shift Worked 205 
+
+Shift 209
+Time: 14:00-22:00 (Day Shift)
+Assignees: [16]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 9: REST Shift Worked 203 Shift Worked 207 
+Doctor 6: REST Shift Worked 210 Shift Worked 206 Shift Worked 202 
+Doctor 17: REST Shift Worked 211 Shift Worked 207 
+Doctor 11: REST Shift Worked 212 Shift Worked 203 
+Doctor 8: REST Shift Worked 208 
+Doctor 13: REST Shift Worked 212 Shift Worked 208 
+Doctor 3: REST Shift Worked 211 
+
+Shift 210
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 9: REST Shift Worked 216 Shift Worked 207 
+Doctor 8: REST Shift Worked 208 Shift Worked 217 
+Doctor 17: REST Shift Worked 211 Shift Worked 207 
+Doctor 11: REST Shift Worked 212 Shift Worked 203 
+Doctor 13: REST Shift Worked 212 Shift Worked 208 Shift Worked 218 
+Doctor 3: REST Shift Worked 211 
+Doctor 14: REST Shift Worked 216 
+Doctor 4: REST Shift Worked 213 
+Doctor 2: REST Shift Worked 219 
+Doctor 16: REST Shift Worked 209 
+
+Shift 211
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [17, 3]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 6: REST Shift Worked 210 Shift Worked 214 
+Doctor 8: REST Shift Worked 208 Shift Worked 217 
+Doctor 11: REST Shift Worked 212 Shift Worked 203 
+Doctor 13: REST Shift Worked 212 Shift Worked 208 Shift Worked 218 
+Doctor 9: REST Shift Worked 216 
+Doctor 14: REST Shift Worked 216 
+Doctor 4: REST Shift Worked 213 
+Doctor 2: REST Shift Worked 219 
+Doctor 16: REST Shift Worked 209 
+
+
+Day: Friday
+
+Shift 212
+Time: 08:00-16:00 (Day Shift)
+Assignees: [13, 11]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 2: TRAINING 
+Doctor 5: TRAINING 
+Doctor 8: TRAINING 
+Doctor 9: TRAINING 
+Doctor 15: TRAINING 
+Doctor 16: TRAINING 
+Doctor 6: REST Shift Worked 210 Shift Worked 206 Shift Worked 214 
+Doctor 17: REST Shift Worked 211 Shift Worked 215 Shift Worked 207 
+Doctor 3: REST Shift Worked 211 
+Doctor 4: REST Shift Worked 213 
+
+Shift 213
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 6: REST Shift Worked 210 Shift Worked 206 Shift Worked 214 
+Doctor 9: REST Shift Worked 216 Shift Worked 207 Days Worked 
+Doctor 17: REST Shift Worked 211 Shift Worked 215 Shift Worked 207 
+Doctor 5: REST Shift Worked 215 
+Doctor 13: REST Shift Worked 212 
+Doctor 11: REST Shift Worked 212 
+Doctor 3: REST Shift Worked 211 
+Doctor 14: REST Shift Worked 216 
+
+Shift 214
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 8: REST Shift Worked 217 Shift Worked 223 
+Doctor 9: REST Shift Worked 216 Shift Worked 220 Shift Worked 207 Days Worked 
+Doctor 17: REST Shift Worked 211 Shift Worked 215 
+Doctor 3: REST Shift Worked 211 Shift Worked 220 
+Doctor 14: REST Shift Worked 216 Shift Worked 221 
+Doctor 5: REST Shift Worked 215 
+Doctor 13: REST Shift Worked 212 
+Doctor 11: REST Shift Worked 212 
+Doctor 4: REST Shift Worked 213 
+
+Shift 215
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [5, 17]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 8: REST Shift Worked 217 Shift Worked 223 
+Doctor 9: REST Shift Worked 216 Shift Worked 220 Shift Worked 207 Days Worked 
+Doctor 6: REST Shift Worked 214 
+Doctor 14: REST Shift Worked 216 Shift Worked 221 
+Doctor 13: REST Shift Worked 212 Shift Worked 218 
+Doctor 11: REST Shift Worked 212 
+Doctor 4: REST Shift Worked 213 
+Doctor 3: REST Shift Worked 220 
+
+
+Day: Saturday
+
+Shift 216
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9, 14]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Shift Worked 215 Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 Shift Worked 213 
+Doctor 6: REST Shift Worked 210 Shift Worked 214 Weekend Worked 47 Weekend Worked 48 
+Doctor 17: REST Shift Worked 211 Weekend Worked 62 Weekend Worked 61 Shift Worked 215 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 11: REST Weekend Worked 62 Weekend Worked 61 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 8: REST Shift Worked 217 
+Doctor 13: REST Shift Worked 218 
+Doctor 3: REST Shift Worked 211 
+Doctor 2: REST Shift Worked 219 
+
+Shift 217
+Time: 14:00-22:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Shift Worked 215 Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 
+Doctor 6: REST Shift Worked 210 Shift Worked 214 Weekend Worked 47 Weekend Worked 48 
+Doctor 17: REST Shift Worked 211 Weekend Worked 62 Weekend Worked 61 Shift Worked 215 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 11: REST Weekend Worked 62 Weekend Worked 61 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 9: REST Shift Worked 216 Shift Worked 220 
+Doctor 3: REST Shift Worked 211 Shift Worked 220 
+Doctor 13: REST Shift Worked 218 
+Doctor 14: REST Shift Worked 216 
+Doctor 2: REST Shift Worked 219 
+
+Shift 218
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [13]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Shift Worked 224 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Shift Worked 215 Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 Shift Worked 225 
+Doctor 6: REST Shift Worked 224 Weekend Worked 47 Nights Worked Weekend Worked 48 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 17: REST Weekend Worked 62 Weekend Worked 61 Shift Worked 215 
+Doctor 9: REST Shift Worked 216 Shift Worked 227 Shift Worked 220 
+Doctor 11: REST Weekend Worked 62 Weekend Worked 61 Shift Worked 226 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 3: REST Shift Worked 211 Shift Worked 227 Shift Worked 220 
+Doctor 14: REST Shift Worked 216 Shift Worked 221 
+Doctor 8: REST Shift Worked 217 
+Doctor 2: REST Shift Worked 219 
+
+Shift 219
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Shift Worked 224 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 Shift Worked 225 
+Doctor 6: REST Shift Worked 224 Weekend Worked 47 Nights Worked Weekend Worked 48 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 17: REST Weekend Worked 62 Weekend Worked 61 
+Doctor 9: REST Shift Worked 216 Shift Worked 227 Shift Worked 220 
+Doctor 11: REST Weekend Worked 62 Weekend Worked 61 Shift Worked 226 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 3: REST Shift Worked 211 Shift Worked 227 Shift Worked 220 
+Doctor 14: REST Shift Worked 216 Shift Worked 221 
+Doctor 13: REST Shift Worked 218 Shift Worked 222 
+Doctor 8: REST Shift Worked 217 
+
+
+Day: Sunday
+
+Shift 220
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9, 3]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Shift Worked 215 Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 
+Doctor 6: REST Shift Worked 214 Days Worked Weekend Worked 47 Weekend Worked 48 
+Doctor 17: REST Weekend Worked 62 Weekend Worked 61 Shift Worked 215 
+Doctor 8: REST Shift Worked 217 Shift Worked 223 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 11: REST Weekend Worked 62 Weekend Worked 61 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Shift Worked 223 Shift Worked 219 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 13: REST Shift Worked 218 Shift Worked 222 
+Doctor 14: REST Shift Worked 221 
+
+Shift 221
+Time: 14:00-22:00 (Day Shift)
+Assignees: [14]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Shift Worked 224 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Shift Worked 215 Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 
+Doctor 6: REST Shift Worked 214 Shift Worked 224 Days Worked Weekend Worked 47 Weekend Worked 48 
+Doctor 17: REST Weekend Worked 62 Weekend Worked 61 Shift Worked 215 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 11: REST Weekend Worked 62 Weekend Worked 61 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Shift Worked 223 Shift Worked 219 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 13: REST Shift Worked 218 Shift Worked 222 
+Doctor 8: REST Shift Worked 223 
+Doctor 9: REST Shift Worked 220 
+Doctor 3: REST Shift Worked 220 
+
+Shift 222
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [13]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Shift Worked 224 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Shift Worked 215 Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 Shift Worked 225 
+Doctor 6: REST Shift Worked 214 Shift Worked 224 Days Worked Shift Worked 231 Weekend Worked 47 Nights Worked Weekend Worked 48 
+Doctor 17: REST Shift Worked 229 Weekend Worked 62 Weekend Worked 61 Shift Worked 215 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 11: REST Weekend Worked 62 Weekend Worked 61 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Shift Worked 223 Shift Worked 219 
+Doctor 14: REST Shift Worked 228 Shift Worked 221 
+Doctor 8: REST Shift Worked 223 
+Doctor 9: REST Shift Worked 220 
+Doctor 3: REST Shift Worked 220 
+
+Shift 223
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [8, 2]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 12: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 61 Weekend Worked 41 
+Doctor 16: REST Weekend Worked 41 Shift Worked 224 Weekend Worked 61 Weekend Worked 40 
+Doctor 5: REST Shift Worked 215 Weekend Worked 41 Weekend Worked 40 Weekend Worked 61 Weekend Worked 62 
+Doctor 4: REST Weekend Worked 40 Weekend Worked 41 Weekend Worked 62 Shift Worked 225 
+Doctor 6: REST Shift Worked 214 Shift Worked 224 Days Worked Shift Worked 231 Weekend Worked 47 Nights Worked Weekend Worked 48 
+Doctor 17: REST Shift Worked 229 Weekend Worked 62 Weekend Worked 61 Shift Worked 215 
+Doctor 11: REST Weekend Worked 62 Weekend Worked 61 Shift Worked 226 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 1: REST Weekend Worked 62 Weekend Worked 40 Weekend Worked 41 Weekend Worked 61 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 14: REST Shift Worked 228 Shift Worked 221 
+Doctor 13: REST Shift Worked 222 
+Doctor 9: REST Shift Worked 220 
+Doctor 3: REST Shift Worked 220 
+
+
+Day: Monday
+
+Shift 224
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 16]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 0: TRAINING 
+Doctor 4: TRAINING 
+Doctor 11: TRAINING 
+Doctor 12: TRAINING 
+Doctor 13: TRAINING 
+Doctor 2: REST Shift Worked 223 Shift Worked 219 
+Doctor 8: REST Shift Worked 223 
+Doctor 3: REST Shift Worked 227 
+Doctor 14: REST Shift Worked 221 
+Doctor 9: REST Shift Worked 227 
+
+Shift 225
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 2: REST Shift Worked 223 Shift Worked 219 
+Doctor 13: REST Shift Worked 218 Shift Worked 222 
+Doctor 6: REST Shift Worked 224 
+Doctor 14: REST Shift Worked 228 
+Doctor 16: REST Shift Worked 224 
+Doctor 8: REST Shift Worked 223 
+Doctor 3: REST Shift Worked 227 
+Doctor 9: REST Shift Worked 227 
+Doctor 11: REST Shift Worked 226 
+
+Shift 226
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [11]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 8: REST Shift Worked 232 Shift Worked 223 
+Doctor 17: REST Shift Worked 229 Shift Worked 233 
+Doctor 14: REST Shift Worked 235 Shift Worked 228 
+Doctor 6: REST Shift Worked 224 
+Doctor 16: REST Shift Worked 224 
+Doctor 2: REST Shift Worked 223 
+Doctor 3: REST Shift Worked 227 
+Doctor 9: REST Shift Worked 227 
+Doctor 4: REST Shift Worked 225 
+
+Shift 227
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [3, 9]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: LEAVE 
+Doctor 17: REST Shift Worked 229 Shift Worked 233 
+Doctor 11: REST Shift Worked 230 Shift Worked 226 
+Doctor 14: REST Shift Worked 235 Shift Worked 228 
+Doctor 8: REST Shift Worked 232 
+Doctor 6: REST Shift Worked 224 
+Doctor 16: REST Shift Worked 224 
+Doctor 4: REST Shift Worked 225 
+
+
+Day: Tuesday
+
+Shift 228
+Time: 08:00-16:00 (Day Shift)
+Assignees: [10, 14]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 11: REST Shift Worked 230 Shift Worked 226 
+Doctor 17: REST Shift Worked 229 
+Doctor 3: REST Shift Worked 231 Shift Worked 227 
+Doctor 6: REST Shift Worked 231 
+Doctor 8: REST Shift Worked 223 Days Worked 
+Doctor 13: REST Shift Worked 222 
+Doctor 2: REST Shift Worked 223 
+Doctor 9: REST Shift Worked 227 
+Doctor 4: REST Shift Worked 225 
+
+Shift 229
+Time: 14:00-22:00 (Day Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 8: REST Shift Worked 232 Shift Worked 223 Days Worked 
+Doctor 10: REST Shift Worked 232 Shift Worked 228 
+Doctor 11: REST Shift Worked 230 Shift Worked 226 
+Doctor 3: REST Shift Worked 231 Shift Worked 227 
+Doctor 6: REST Shift Worked 231 
+Doctor 14: REST Shift Worked 228 
+Doctor 13: REST Shift Worked 222 
+Doctor 2: REST Shift Worked 223 
+Doctor 9: REST Shift Worked 227 
+
+Shift 230
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [11]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 8: REST Shift Worked 232 Shift Worked 238 Shift Worked 223 Days Worked 
+Doctor 9: REST Shift Worked 239 Shift Worked 227 
+Doctor 10: REST Shift Worked 232 Shift Worked 228 
+Doctor 17: REST Shift Worked 229 Shift Worked 233 
+Doctor 3: REST Shift Worked 231 Shift Worked 227 
+Doctor 6: REST Shift Worked 231 
+Doctor 14: REST Shift Worked 228 
+Doctor 13: REST Shift Worked 237 Shift Worked 222 
+Doctor 4: REST Shift Worked 239 
+Doctor 15: REST Shift Worked 236 
+Doctor 2: REST Shift Worked 223 
+Doctor 12: REST Shift Worked 236 
+
+Shift 231
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [3, 6]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: REST Shift Worked 232 Shift Worked 228 
+Doctor 8: REST Shift Worked 232 Shift Worked 238 Shift Worked 223 Days Worked 
+Doctor 17: REST Shift Worked 229 Shift Worked 233 
+Doctor 11: REST Shift Worked 230 Shift Worked 234 
+Doctor 14: REST Shift Worked 228 
+Doctor 13: REST Shift Worked 237 Shift Worked 222 
+Doctor 4: REST Shift Worked 239 
+Doctor 15: REST Shift Worked 236 
+Doctor 9: REST Shift Worked 239 
+Doctor 2: REST Shift Worked 223 
+Doctor 12: REST Shift Worked 236 
+
+
+Day: Wednesday
+
+Shift 232
+Time: 08:00-16:00 (Day Shift)
+Assignees: [10, 8]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 17: REST Shift Worked 229 Shift Worked 233 
+Doctor 11: REST Shift Worked 230 Shift Worked 234 Shift Worked 226 
+Doctor 6: REST Shift Worked 235 Shift Worked 231 
+Doctor 14: REST Shift Worked 235 
+Doctor 3: REST Shift Worked 231 Shift Worked 227 
+Doctor 9: REST Shift Worked 227 Days Worked 
+
+Shift 233
+Time: 14:00-22:00 (Day Shift)
+Assignees: [17]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 11: REST Shift Worked 230 Shift Worked 234 Shift Worked 226 
+Doctor 10: REST Shift Worked 232 
+Doctor 6: REST Shift Worked 235 Shift Worked 231 
+Doctor 8: REST Shift Worked 232 
+Doctor 14: REST Shift Worked 235 
+Doctor 3: REST Shift Worked 231 Shift Worked 227 
+Doctor 15: REST Shift Worked 236 
+Doctor 9: REST Shift Worked 227 Days Worked 
+Doctor 12: REST Shift Worked 236 
+
+Shift 234
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [11]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 10: REST Shift Worked 232 Shift Worked 240 
+Doctor 17: REST Shift Worked 240 Shift Worked 233 
+Doctor 6: REST Shift Worked 235 Shift Worked 231 
+Doctor 8: REST Shift Worked 232 
+Doctor 14: REST Shift Worked 235 
+Doctor 13: REST Shift Worked 237 
+Doctor 3: REST Shift Worked 231 
+Doctor 15: REST Shift Worked 236 
+Doctor 0: REST Shift Worked 241 
+Doctor 9: REST Shift Worked 227 Days Worked 
+Doctor 2: REST Shift Worked 242 
+Doctor 12: REST Shift Worked 236 
+
+Shift 235
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [14, 6]
+Doctors that cannot work the shift:
+Doctor 7: LEAVE 
+Doctor 8: REST Shift Worked 232 Shift Worked 238 
+Doctor 10: REST Shift Worked 232 Shift Worked 240 
+Doctor 17: REST Shift Worked 240 Shift Worked 233 
+Doctor 13: REST Shift Worked 237 
+Doctor 15: REST Shift Worked 236 
+Doctor 0: REST Shift Worked 241 
+Doctor 11: REST Shift Worked 234 
+Doctor 9: REST Shift Worked 227 Days Worked 
+Doctor 2: REST Shift Worked 242 
+Doctor 12: REST Shift Worked 236 
+
+
+Day: Thursday
+
+Shift 236
+Time: 08:00-16:00 (Day Shift)
+Assignees: [15, 12]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 1: TRAINING 
+Doctor 3: TRAINING 
+Doctor 10: TRAINING 
+Doctor 14: TRAINING 
+Doctor 17: TRAINING 
+Doctor 11: REST Shift Worked 230 Shift Worked 234 
+Doctor 13: REST Shift Worked 237 
+Doctor 4: REST Shift Worked 239 
+Doctor 8: REST Shift Worked 238 
+Doctor 9: REST Shift Worked 239 
+
+Shift 237
+Time: 14:00-22:00 (Day Shift)
+Assignees: [13]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 11: REST Shift Worked 230 Shift Worked 234 
+Doctor 17: REST Shift Worked 240 
+Doctor 14: REST Shift Worked 235 
+Doctor 3: REST Shift Worked 231 
+Doctor 10: REST Shift Worked 240 
+Doctor 4: REST Shift Worked 239 
+Doctor 15: REST Shift Worked 236 
+Doctor 8: REST Shift Worked 238 
+Doctor 9: REST Shift Worked 239 
+Doctor 12: REST Shift Worked 236 
+
+Shift 238
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 17: REST Shift Worked 240 Shift Worked 244 
+Doctor 5: REST Shift Worked 244 
+Doctor 14: REST Shift Worked 235 
+Doctor 3: REST Shift Worked 231 
+Doctor 13: REST Shift Worked 237 
+Doctor 16: REST Shift Worked 245 
+Doctor 10: REST Shift Worked 240 
+Doctor 4: REST Shift Worked 239 
+Doctor 12: REST Shift Worked 247 Shift Worked 236 
+Doctor 15: REST Shift Worked 236 
+Doctor 9: REST Shift Worked 239 
+Doctor 0: REST Shift Worked 241 
+Doctor 11: REST Shift Worked 246 
+Doctor 1: REST Shift Worked 247 
+
+Shift 239
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [4, 9]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 17: REST Shift Worked 240 Shift Worked 244 
+Doctor 5: REST Shift Worked 244 
+Doctor 13: REST Shift Worked 237 
+Doctor 3: REST Shift Worked 231 
+Doctor 16: REST Shift Worked 245 
+Doctor 10: REST Shift Worked 240 
+Doctor 12: REST Shift Worked 247 Shift Worked 236 
+Doctor 15: REST Shift Worked 236 
+Doctor 8: REST Shift Worked 238 
+Doctor 0: REST Shift Worked 241 
+Doctor 11: REST Shift Worked 246 
+Doctor 2: REST Shift Worked 242 
+Doctor 1: REST Shift Worked 247 
+
+
+Day: Friday
+
+Shift 240
+Time: 08:00-16:00 (Day Shift)
+Assignees: [17, 10]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 2: TRAINING 
+Doctor 5: TRAINING 
+Doctor 8: TRAINING 
+Doctor 9: TRAINING 
+Doctor 15: TRAINING 
+Doctor 16: TRAINING 
+Doctor 14: REST Shift Worked 235 
+Doctor 13: REST Shift Worked 237 
+Doctor 4: REST Shift Worked 239 
+Doctor 0: REST Shift Worked 241 
+Doctor 11: REST Shift Worked 234 
+
+Shift 241
+Time: 14:00-22:00 (Day Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 8: REST Shift Worked 243 Shift Worked 238 
+Doctor 17: REST Shift Worked 240 Shift Worked 244 
+Doctor 9: REST Shift Worked 243 Shift Worked 239 
+Doctor 14: REST Shift Worked 235 
+Doctor 10: REST Shift Worked 240 
+Doctor 4: REST Shift Worked 239 
+Doctor 5: REST Shift Worked 244 
+Doctor 11: REST Shift Worked 234 
+Doctor 2: REST Shift Worked 242 
+
+Shift 242
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 17: REST Shift Worked 240 Shift Worked 248 Shift Worked 244 
+Doctor 4: REST Shift Worked 239 Shift Worked 249 
+Doctor 9: REST Shift Worked 243 Shift Worked 239 
+Doctor 5: REST Shift Worked 244 Shift Worked 248 
+Doctor 16: REST Shift Worked 245 
+Doctor 14: REST Shift Worked 235 
+Doctor 8: REST Shift Worked 243 
+Doctor 10: REST Shift Worked 240 
+Doctor 0: REST Shift Worked 241 
+Doctor 11: REST Shift Worked 234 
+
+Shift 243
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [9, 8]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 17: REST Shift Worked 240 Shift Worked 248 Shift Worked 244 
+Doctor 11: REST Shift Worked 246 Shift Worked 234 
+Doctor 5: REST Shift Worked 244 Shift Worked 248 
+Doctor 16: REST Shift Worked 245 
+Doctor 14: REST Shift Worked 235 
+Doctor 10: REST Shift Worked 240 
+Doctor 0: REST Shift Worked 241 
+Doctor 4: REST Shift Worked 249 
+Doctor 2: REST Shift Worked 242 
+
+
+Day: Saturday
+
+Shift 244
+Time: 08:00-16:00 (Day Shift)
+Assignees: [17, 5]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 10: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 9: REST Shift Worked 243 Weekend Worked 54 Shift Worked 239 Weekend Worked 55 
+Doctor 8: REST Shift Worked 243 Weekend Worked 54 Shift Worked 238 Weekend Worked 55 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 Shift Worked 241 
+Doctor 2: REST Weekend Worked 55 Shift Worked 242 Weekend Worked 54 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 14: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 16: REST Shift Worked 245 
+Doctor 4: REST Shift Worked 239 
+Doctor 12: REST Shift Worked 247 
+Doctor 11: REST Shift Worked 246 
+Doctor 3: REST Weekend Worked 55 
+Doctor 1: REST Shift Worked 247 
+
+Shift 245
+Time: 14:00-22:00 (Day Shift)
+Assignees: [16]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 10: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 9: REST Shift Worked 243 Weekend Worked 54 Shift Worked 239 Weekend Worked 55 
+Doctor 8: REST Shift Worked 243 Weekend Worked 54 Shift Worked 238 Weekend Worked 55 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 55 Shift Worked 242 Weekend Worked 54 
+Doctor 17: REST Shift Worked 248 Shift Worked 244 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 5: REST Shift Worked 244 Shift Worked 248 
+Doctor 14: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 4: REST Shift Worked 239 
+Doctor 12: REST Shift Worked 247 
+Doctor 11: REST Shift Worked 246 
+Doctor 3: REST Weekend Worked 55 
+Doctor 1: REST Shift Worked 247 
+
+Shift 246
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [11]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 10: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 9: REST Shift Worked 243 Weekend Worked 54 Weekend Worked 55 
+Doctor 8: REST Shift Worked 243 Weekend Worked 54 Weekend Worked 55 
+Doctor 17: REST Shift Worked 248 Shift Worked 244 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 55 Weekend Worked 54 
+Doctor 4: REST Shift Worked 239 Shift Worked 249 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 5: REST Shift Worked 244 Shift Worked 248 
+Doctor 14: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 16: REST Shift Worked 245 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 12: REST Shift Worked 247 
+Doctor 3: REST Weekend Worked 55 
+Doctor 1: REST Shift Worked 247 
+
+Shift 247
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [12, 1]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 10: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 8: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 17: REST Shift Worked 248 Shift Worked 244 
+Doctor 11: REST Shift Worked 250 Shift Worked 246 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 55 Weekend Worked 54 
+Doctor 9: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 4: REST Shift Worked 239 Shift Worked 249 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 5: REST Shift Worked 244 Shift Worked 248 
+Doctor 14: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 16: REST Shift Worked 245 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 3: REST Weekend Worked 55 
+
+
+Day: Sunday
+
+Shift 248
+Time: 08:00-16:00 (Day Shift)
+Assignees: [17, 5]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 10: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 9: REST Shift Worked 243 Weekend Worked 54 Weekend Worked 55 
+Doctor 8: REST Shift Worked 243 Weekend Worked 54 Weekend Worked 55 
+Doctor 11: REST Shift Worked 250 Shift Worked 246 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 1: REST Shift Worked 251 Shift Worked 247 
+Doctor 2: REST Weekend Worked 55 Shift Worked 242 Weekend Worked 54 
+Doctor 12: REST Shift Worked 251 Shift Worked 247 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 14: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 16: REST Shift Worked 245 
+Doctor 4: REST Shift Worked 249 
+Doctor 3: REST Weekend Worked 55 
+
+Shift 249
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 10: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 9: REST Shift Worked 243 Weekend Worked 54 Weekend Worked 55 
+Doctor 8: REST Shift Worked 243 Weekend Worked 54 Weekend Worked 55 
+Doctor 11: REST Shift Worked 250 Shift Worked 246 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 1: REST Shift Worked 251 Shift Worked 247 
+Doctor 2: REST Weekend Worked 55 Shift Worked 242 Weekend Worked 54 
+Doctor 12: REST Shift Worked 251 Shift Worked 247 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 14: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 17: REST Shift Worked 248 
+Doctor 3: REST Weekend Worked 55 
+Doctor 5: REST Shift Worked 248 
+
+Shift 250
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [11]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 10: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 9: REST Shift Worked 243 Weekend Worked 54 Weekend Worked 55 
+Doctor 8: REST Shift Worked 243 Weekend Worked 54 Weekend Worked 55 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 1: REST Shift Worked 251 Shift Worked 247 
+Doctor 2: REST Weekend Worked 55 Shift Worked 242 Weekend Worked 54 
+Doctor 12: REST Shift Worked 251 Shift Worked 247 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 14: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 17: REST Shift Worked 248 
+Doctor 4: REST Shift Worked 249 
+Doctor 3: REST Weekend Worked 55 
+Doctor 5: REST Shift Worked 248 
+
+Shift 251
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [1, 12]
+Doctors that cannot work the shift:
+Doctor 6: LEAVE 
+Doctor 7: LEAVE 
+Doctor 10: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 9: REST Shift Worked 243 Weekend Worked 54 Weekend Worked 55 
+Doctor 8: REST Shift Worked 243 Weekend Worked 54 Weekend Worked 55 
+Doctor 11: REST Shift Worked 250 
+Doctor 0: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 2: REST Weekend Worked 55 Shift Worked 242 Weekend Worked 54 
+Doctor 13: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 15: REST Weekend Worked 47 Weekend Worked 48 
+Doctor 14: REST Weekend Worked 54 Weekend Worked 55 
+Doctor 17: REST Shift Worked 248 
+Doctor 4: REST Shift Worked 249 
+Doctor 3: REST Weekend Worked 55 
+Doctor 5: REST Shift Worked 248 
+
+Doctors:
+Doctor: 0
+Grade: junior
+Target Hours: 47.0
+Target Day Shifts: 20
+Target Night Shifts: 7
+Hours Worked: 88.0
+Average Hours Worked (Adjusted for leave) 9.777777777777779
+Day Shifts Worked: 4
+Night Shifts Worked: 7
+
+Doctor: 1
+Grade: junior
+Target Hours: 47.0
+Target Day Shifts: 20
+Target Night Shifts: 7
+Hours Worked: 96.0
+Average Hours Worked (Adjusted for leave) 10.666666666666666
+Day Shifts Worked: 4
+Night Shifts Worked: 8
+
+Doctor: 2
+Grade: junior
+Target Hours: 47.0
+Target Day Shifts: 20
+Target Night Shifts: 7
+Hours Worked: 96.0
+Average Hours Worked (Adjusted for leave) 10.666666666666666
+Day Shifts Worked: 4
+Night Shifts Worked: 8
+
+Doctor: 3
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 20
+Target Night Shifts: 7
+Hours Worked: 128.0
+Average Hours Worked (Adjusted for leave) 14.222222222222221
+Day Shifts Worked: 8
+Night Shifts Worked: 8
+
+Doctor: 4
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 20
+Target Night Shifts: 7
+Hours Worked: 128.0
+Average Hours Worked (Adjusted for leave) 14.222222222222221
+Day Shifts Worked: 9
+Night Shifts Worked: 7
+
+Doctor: 5
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 20
+Target Night Shifts: 7
+Hours Worked: 96.0
+Average Hours Worked (Adjusted for leave) 10.666666666666666
+Day Shifts Worked: 5
+Night Shifts Worked: 7
+
+Doctor: 6
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 20
+Target Night Shifts: 7
+Hours Worked: 296.0
+Average Hours Worked (Adjusted for leave) 35.930635838150295
+Day Shifts Worked: 20
+Night Shifts Worked: 17
+
+Doctor: 7
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 20
+Target Night Shifts: 7
+Hours Worked: 248.0
+Average Hours Worked (Adjusted for leave) 39.1578947368421
+Day Shifts Worked: 19
+Night Shifts Worked: 12
+
+Doctor: 8
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 20
+Target Night Shifts: 7
+Hours Worked: 216.0
+Average Hours Worked (Adjusted for leave) 24.518918918918917
+Day Shifts Worked: 19
+Night Shifts Worked: 8
+
+Doctor: 9
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 20
+Target Night Shifts: 7
+Hours Worked: 232.0
+Average Hours Worked (Adjusted for leave) 37.76744186046511
+Day Shifts Worked: 9
+Night Shifts Worked: 20
+
+Doctor: 10
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 20
+Target Night Shifts: 7
+Hours Worked: 296.0
+Average Hours Worked (Adjusted for leave) 37.67272727272727
+Day Shifts Worked: 20
+Night Shifts Worked: 17
+
+Doctor: 11
+Grade: senior
+Target Hours: 37.6
+Target Day Shifts: 16
+Target Night Shifts: 5
+Hours Worked: 248.0
+Average Hours Worked (Adjusted for leave) 28.773480662983427
+Day Shifts Worked: 12
+Night Shifts Worked: 19
+
+Doctor: 12
+Grade: senior
+Target Hours: 37.6
+Target Day Shifts: 16
+Target Night Shifts: 5
+Hours Worked: 104.0
+Average Hours Worked (Adjusted for leave) 11.555555555555555
+Day Shifts Worked: 7
+Night Shifts Worked: 6
+
+Doctor: 13
+Grade: junior
+Target Hours: 37.6
+Target Day Shifts: 16
+Target Night Shifts: 5
+Hours Worked: 112.0
+Average Hours Worked (Adjusted for leave) 12.444444444444445
+Day Shifts Worked: 9
+Night Shifts Worked: 5
+
+Doctor: 14
+Grade: junior
+Target Hours: 37.6
+Target Day Shifts: 16
+Target Night Shifts: 5
+Hours Worked: 96.0
+Average Hours Worked (Adjusted for leave) 10.666666666666666
+Day Shifts Worked: 7
+Night Shifts Worked: 5
+
+Doctor: 15
+Grade: senior
+Target Hours: 37.6
+Target Day Shifts: 16
+Target Night Shifts: 5
+Hours Worked: 112.0
+Average Hours Worked (Adjusted for leave) 12.444444444444445
+Day Shifts Worked: 9
+Night Shifts Worked: 5
+
+Doctor: 16
+Grade: senior
+Target Hours: 37.6
+Target Day Shifts: 16
+Target Night Shifts: 5
+Hours Worked: 112.0
+Average Hours Worked (Adjusted for leave) 12.444444444444445
+Day Shifts Worked: 8
+Night Shifts Worked: 6
+
+Doctor: 17
+Grade: junior
+Target Hours: 37.6
+Target Day Shifts: 16
+Target Night Shifts: 5
+Hours Worked: 232.0
+Average Hours Worked (Adjusted for leave) 26.917127071823206
+Day Shifts Worked: 16
+Night Shifts Worked: 13
