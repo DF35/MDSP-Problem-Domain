@@ -10,7 +10,7 @@ import problemDomain.Source
 
 @DisplayName("Shift Tests")
 class ShiftTest {
-    fun newShift(): DayShift { return DayShift(1, intArrayOf(1), setOf(2), setOf(1), 1, mutableSetOf(0), 10) }
+    fun newShift(): DayShift { return DayShift(1, intArrayOf(1), setOf(2), setOf(1), 1, mutableSetOf(0), 10.00) }
 
     @Nested
     inner class RestInfeasibilityTests {
@@ -19,7 +19,7 @@ class ShiftTest {
             val shift = newShift()
             shift.restInfeasibility(0, Source.ShiftWorked(1))
             assertNotNull(shift.causesOfInfeasibility[0])
-            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.REST)
+            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.Rest)
             assertEquals(shift.causesOfInfeasibility[0]!!.sources, setOf(Source.ShiftWorked(1)))
         }
 
@@ -29,16 +29,16 @@ class ShiftTest {
             shift.restInfeasibility(0, Source.ShiftWorked(1))
             shift.restInfeasibility(0, Source.ShiftWorked(2))
             assertNotNull(shift.causesOfInfeasibility[0])
-            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.REST)
+            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.Rest)
             assertEquals(shift.causesOfInfeasibility[0]!!.sources, setOf(Source.ShiftWorked(1), Source.ShiftWorked(2)))
         }
 
         @Test
         fun doesNothingInCaseOfPreexistingNonRestInfeasibility() {
             val shift = newShift()
-            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.LEAVE)
+            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.Leave)
             shift.restInfeasibility(0, Source.ShiftWorked(1))
-            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.LEAVE)
+            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.Leave)
             assertEquals(shift.causesOfInfeasibility[0]!!.sources, setOf<Source>())
         }
 
@@ -55,28 +55,28 @@ class ShiftTest {
         @Test
         fun throwsExceptionForPreexistingInfeasibility() {
             val shift = newShift()
-            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.LEAVE)
-            assertThrows<Exception> { shift.createNonRestInfeasibility(0, Cause.LEAVE) }
+            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.Leave)
+            assertThrows<Exception> { shift.createNonRestInfeasibility(0, Cause.Leave) }
         }
 
         @Test
         fun throwsExceptionForRestGivenAsACause() {
             val shift = newShift()
-            assertThrows<Exception> { shift.createNonRestInfeasibility(0, Cause.REST) }
+            assertThrows<Exception> { shift.createNonRestInfeasibility(0, Cause.Rest) }
         }
 
         @Test
         fun successFullyCreatesNewInfeasibility() {
             val shift = newShift()
-            shift.createNonRestInfeasibility(0, Cause.TRAINING)
+            shift.createNonRestInfeasibility(0, Cause.Training)
             assertNotNull(shift.causesOfInfeasibility[0])
-            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.TRAINING)
+            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.Training)
         }
 
         @Test
         fun doctorIsRemovedFromFeasibleDoctors() {
             val shift = newShift()
-            shift.createNonRestInfeasibility(0, Cause.LEAVE)
+            shift.createNonRestInfeasibility(0, Cause.Leave)
             assertEquals(shift.feasibleDoctors, setOf<Int>())
         }
     }
@@ -86,22 +86,22 @@ class ShiftTest {
         @Test
         fun throwsExceptionIfNoInfeasibilityExists() {
             val shift = newShift()
-            assertThrows<Exception> { shift.removeSource(0, Source.NightsWorked) }
+            assertThrows<Exception> { shift.removeSource(0, Source.RowOfNights) }
         }
 
         @Test
         fun doesNothingInCaseOfNonRestInfeasibility() {
             val shift = newShift()
-            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.TRAINING)
-            shift.removeSource(0, Source.NightsWorked)
+            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.Training)
+            shift.removeSource(0, Source.RowOfNights)
             assertNotNull(shift.causesOfInfeasibility[0])
-            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.TRAINING)
+            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.Training)
         }
 
         @Test
         fun rejectsRemovalOfNonExistantSource() {
             val shift = newShift()
-            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.REST)
+            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.Rest)
             shift.causesOfInfeasibility[0]!!.sources.add(Source.ShiftWorked(1))
             assertThrows<Exception> {shift.removeSource(0, Source.ShiftWorked(2))}
         }
@@ -110,13 +110,13 @@ class ShiftTest {
         fun doctorIsNotRemovedFromFeasibleDoctorsIfAnInfeasibilityStillExists() {
             val shift = newShift()
             shift.feasibleDoctors.remove(0)
-            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.REST)
+            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.Rest)
             shift.causesOfInfeasibility[0]!!.sources.add(Source.ShiftWorked(1))
             shift.causesOfInfeasibility[0]!!.sources.add(Source.ShiftWorked(2))
             shift.removeSource(0, Source.ShiftWorked(2))
 
             assertNotNull(shift.causesOfInfeasibility[0])
-            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.REST)
+            assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.Rest)
             assertEquals(shift.causesOfInfeasibility[0]!!.sources, setOf(Source.ShiftWorked(1)))
             assertEquals(setOf<Int>(), shift.feasibleDoctors)
         }
@@ -124,7 +124,7 @@ class ShiftTest {
         @Test
         fun doctorIsAddedToFeasibleDoctorsIfAllInfeasibilityHasBeenRemoved() {
             val shift = newShift()
-            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.REST)
+            shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.Rest)
             shift.causesOfInfeasibility[0]!!.sources.add(Source.ShiftWorked(1))
             shift.removeSource(0, Source.ShiftWorked(1))
 

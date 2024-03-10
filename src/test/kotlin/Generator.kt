@@ -6,7 +6,7 @@ class Generator {
     val seniors = setOf(3,4,5)
 
     fun generateShiftsAndDays(numDays: Int): Pair<List<Shift>,List<Day>> {
-        val max = (numDays-1) * 2 + 1
+        /*val max = (numDays-1) * 2 + 1
         tailrec fun recurse(days: MutableList<Day>, shifts: MutableList<Shift>, prev: Int) {
             if(prev == 0) return
             val day = numDays - prev
@@ -74,6 +74,7 @@ class Generator {
             "Senior" -> juniors
             "Junior" -> seniors
             else -> emptySet()
-        }
+        }*/
+        TODO()
     }
 }

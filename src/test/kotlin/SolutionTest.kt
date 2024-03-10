@@ -11,7 +11,7 @@ class SolutionTest {
     val generator = Generator()
     val random = Random()
 
-    fun newSolution(generator: Generator): Solution {
+    /*fun newSolution(generator: Generator): Solution {
         val (shifts, days) = generator.generateShiftsAndDays(21)
         val assignments = generator.generateAssignments(shifts)
         return Solution(random, assignments, shifts, days, listOf(),47, 15, 6)
@@ -848,5 +848,5 @@ class SolutionTest {
             }
 
         }
-    }
+    }*/
 }

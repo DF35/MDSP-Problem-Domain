@@ -159,7 +159,7 @@ class MDSP(
 
         for(dayID in 0..<numDays) {
             val dayShifts = mutableListOf<Int>()
-            val nightShifts = mutableListOf<Int>()
+            val nonOverlappingNights = mutableListOf<Int>()
             val overlappingNights = mutableListOf<Int>()
             var nextDay = false
             while(!nextDay) {
@@ -177,6 +177,7 @@ class MDSP(
                     assignmentID++
                 }
                 val shiftsWithin11Hours = getShiftIDs(scanner)
+                val shifts48HoursAfter = getShiftIDs(scanner)
                 val otherRelevantShifts = getShiftIDs(scanner)
                 val duration = scanner.nextDouble()
                 scanner.nextLine()
@@ -187,7 +188,8 @@ class MDSP(
                         shifts.add(
                             DayShift(
                                 shiftID, shiftAssignments.toIntArray(), shiftsWithin11Hours.toSet(),
-                                otherRelevantShifts.toSet(), dayID, (0..<numDoctors).toMutableSet(), duration
+                                shifts48HoursAfter, otherRelevantShifts.toSet(), dayID,
+                                (0..<numDoctors).toMutableSet(), duration
                             )
                         )
                         dayShifts.add(shiftID)
@@ -196,25 +198,26 @@ class MDSP(
                         shifts.add(
                             NightShift(
                                 shiftID, shiftAssignments.toIntArray(), shiftsWithin11Hours.toSet(),
-                                otherRelevantShifts.toSet(), dayID, (0..<numDoctors).toMutableSet(), duration, false
+                                shifts48HoursAfter, otherRelevantShifts.toSet(), dayID,
+                                (0..<numDoctors).toMutableSet(), duration, false
                             )
                         )
-                        nightShifts.add(shiftID)
+                        nonOverlappingNights.add(shiftID)
                     }
                     "night overlaps" -> {
                         shifts.add(
                             NightShift(
                                 shiftID, shiftAssignments.toIntArray(), shiftsWithin11Hours.toSet(),
-                                otherRelevantShifts.toSet(), dayID, (0..<numDoctors).toMutableSet(), duration, true
+                                shifts48HoursAfter, otherRelevantShifts.toSet(), dayID,
+                                (0..<numDoctors).toMutableSet(), duration, true
                             )
                         )
-                        nightShifts.add(shiftID)
                         overlappingNights.add(shiftID)
                     }
                     else -> throw Exception("Invalid shift type given, please limit to \"day\" and \"night\"")
                 }
             }
-            days.add(Day(dayID, dayShifts.toSet(), nightShifts.toSet(), overlappingNights.toSet()))
+            days.add(Day(dayID, dayShifts, nonOverlappingNights, overlappingNights))
         }
         this.days = days
         this.shifts = shifts
@@ -242,11 +245,11 @@ class MDSP(
     private fun setLeaveAndTrainingInfeasibility() {
         for((doctorID, leaveShifts) in doctorLeave)
             for(shiftId in leaveShifts) {
-                shifts[shiftId].createNonRestInfeasibility(doctorID, Cause.LEAVE)
+                shifts[shiftId].createNonRestInfeasibility(doctorID, Cause.Leave)
             }
         for((doctorID, trainingShifts) in doctorTraining)
             for(shiftId in trainingShifts.filter { shifts[it].causesOfInfeasibility[doctorID] == null })
-                shifts[shiftId].createNonRestInfeasibility(doctorID, Cause.TRAINING)
+                shifts[shiftId].createNonRestInfeasibility(doctorID, Cause.Training)
     }
 
     override fun setMemorySize(size: Int) {
@@ -284,11 +287,11 @@ class MDSP(
         val doctors = mutableListOf<MiddleGrade>()
         this.assignments.forEach { assignments.add(it.copy()) }
         this.shifts.forEach { shifts.add(it.copy()) }
-        this.days.forEach { days.add(it.copy()) }
         this.doctors.forEach { doctors.add((it.copy())) }
+        this.days.forEach { days.add(it.copy()) }
 
         val solution = Solution(
-            rng, assignments, shifts, days, doctors, averageHours, averageDayShifts,
+            rng, SolutionData(assignments, shifts, doctors, days), averageHours, averageDayShifts,
             averageNightShifts
         )
         solution.unassignedAssignments = assignments.indices.toMutableList()
@@ -378,7 +381,7 @@ class MDSP(
     private fun heuristic0(solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
         val tempSol = solutionMemory[solutionSourceIndex]!!.copy()
         var mutationStrength = this.mutationStrength
-        val doctor = tempSol.doctors[rng.nextInt(doctors.size)]
+        val doctor = tempSol.data.doctors[rng.nextInt(doctors.size)]
         if(doctor.assignedAssignments.size < mutationStrength) mutationStrength = doctor.assignedAssignments.size
 
         IOM@for(x in 1..mutationStrength) {
@@ -478,9 +481,9 @@ class MDSP(
         val sol1 = solutionMemory[solutionSourceIndex] ?: return Double.MAX_VALUE
         val sol2 = solutionMemory[solutionSourceIndex2] ?: return Double.MAX_VALUE
 
-        for(assignment in tempSol.assignments) {
-            val sol1Assignee = sol1.assignments[assignment.id].assignee
-            if (sol1Assignee == sol2.assignments[assignment.id].assignee && sol1Assignee != null)
+        for(assignment in tempSol.data.assignments) {
+            val sol1Assignee = sol1.data.assignments[assignment.id].assignee
+            if (sol1Assignee == sol2.data.assignments[assignment.id].assignee && sol1Assignee != null)
                 tempSol.allocateAssignment(assignment.id, sol1Assignee)
         }
 
@@ -492,7 +495,7 @@ class MDSP(
     private fun heuristic5(solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
         val tempSol = solutionMemory[solutionSourceIndex]!!.copy()
         var mutationStrength = this.mutationStrength
-        val doctor = tempSol.doctors[rng.nextInt(tempSol.doctors.size)]
+        val doctor = tempSol.data.doctors[rng.nextInt(tempSol.data.doctors.size)]
         val numAssignedAssignments = doctor.assignedAssignments.size
         if(mutationStrength > numAssignedAssignments)
             mutationStrength = numAssignedAssignments
@@ -683,7 +686,7 @@ class MDSP(
 
         var string = "Shifts:"
         var dayID = Int.MAX_VALUE
-        for(shift in solution.shifts) {
+        for(shift in solution.data.shifts) {
             if(shift.day != dayID) {
                 dayID = shift.day
                 string += "\n\nDay: ${findDay(dayID)}"
@@ -699,7 +702,7 @@ class MDSP(
         }
 
         string += "\nDoctors:"
-        for(doctor in solution.doctors)
+        for(doctor in solution.data.doctors)
             string += doctor
 
         return string
@@ -719,7 +722,8 @@ class MDSP(
 
         // If any shift has different assignees, the solutions are different
         for(x in shifts.indices) {
-            if(solutionMemory[solutionIndex1]!!.shifts[x].assignees != solutionMemory[solutionIndex2]!!.shifts[x].assignees)
+            if(solutionMemory[solutionIndex1]!!.data.shifts[x].assignees !=
+                                solutionMemory[solutionIndex2]!!.data.shifts[x].assignees)
                 return false
         }
 

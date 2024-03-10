@@ -6,7 +6,6 @@ import javafx.application.Application
 import problemDomain.InstanceGUI
 import problemDomain.MDSP
 import java.io.BufferedWriter
-import java.io.File
 import java.io.FileWriter
 import java.text.SimpleDateFormat
 import java.util.*
@@ -48,14 +47,14 @@ fun main(args: Array<String>) {
         writer.write("${problem.bestSolutionValue} \n")
         writer.write(problem.bestSolutionToString())
         writer.close()
-    } */
+    }*/
 
 
     /*val gen = InstanceGenerator(Random(3032024))
-    gen.generateInstance("instance3.txt", 1, 9, 6, 12, 0.4, 0.4)*/
+    gen.generateInstance("instance2.txt", 2, 8, 4, 4, 0.4, 0.4)*/
 
     // Debugging a doctor log file
-    val seedGenerator = Random(25022024)
+    /*val seedGenerator = Random(25022024)
     val seed = seedGenerator.nextLong()
     val problem = MDSP(seed)
     problem.loadInstance(1)
@@ -72,5 +71,6 @@ fun main(args: Array<String>) {
             "al" -> solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
             "de" -> solution.deallocateAssignment(tokens[1].toInt())
         }
-    }
+    }*/
+
 }

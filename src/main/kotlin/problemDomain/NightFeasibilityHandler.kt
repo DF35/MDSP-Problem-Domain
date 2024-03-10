@@ -1,4 +1,0 @@
-package problemDomain
-
-class NightFeasibilityHandler {
-}
