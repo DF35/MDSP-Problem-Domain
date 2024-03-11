@@ -73,4 +73,19 @@ fun main(args: Array<String>) {
         }
     }*/
 
+    val problem = MDSP(25032024)
+    problem.loadInstance(1)
+    val solution = problem.blankSolution()
+    solution.allocateAssignment(0, 3)
+    solution.allocateAssignment(4, 3)
+    solution.allocateAssignment(9, 3)
+    solution.allocateAssignment(14, 3)
+    solution.allocateAssignment(18, 3)
+    solution.allocateAssignment(22, 3)
+    solution.allocateAssignment(26, 3)
+    solution.allocateAssignment(3, 0)
+    solution.allocateAssignment(7, 0)
+    solution.allocateAssignment(11, 0)
+    println(solution.deallocateAssignment(3))
+    solution.debug()
 }

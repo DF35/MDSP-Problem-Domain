@@ -247,9 +247,9 @@ class MDSP(
             for(shiftId in leaveShifts) {
                 shifts[shiftId].createNonRestInfeasibility(doctorID, Cause.Leave)
             }
-        for((doctorID, trainingShifts) in doctorTraining)
+        /*for((doctorID, trainingShifts) in doctorTraining)
             for(shiftId in trainingShifts.filter { shifts[it].causesOfInfeasibility[doctorID] == null })
-                shifts[shiftId].createNonRestInfeasibility(doctorID, Cause.Training)
+                shifts[shiftId].createNonRestInfeasibility(doctorID, Cause.Training)*/
     }
 
     override fun setMemorySize(size: Int) {

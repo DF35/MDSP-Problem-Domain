@@ -74,10 +74,9 @@ fun updateFeasibilityNightShift(
 
                 for(shiftID in shifts[lastShift].shifts48HoursAfter + priorDayShifts) {
                     /*
-                     * Need to check:
-                     * - Cause of infeasibility exists - throw exception if not
-                     * - That cause of infeasibility is REST - continue if not
-                     * - Find the source that is RowOfNights and has an equivalent set of sources
+                     * - Check that the cause of infeasibility exists - throw exception if not
+                     * - Check that the cause of infeasibility is REST - continue if not
+                     * - Find the RowOfNights source that has an equivalent set of sources
                      */
                     val infeasibility = shifts[shiftID].causesOfInfeasibility[doctor]
                     when {

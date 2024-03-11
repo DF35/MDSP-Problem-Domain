@@ -50,6 +50,7 @@ class Solution(
         data.assignments.forEach { it.debug() }
         data.shifts.forEach { it.debug() }
         data.days.forEach { it.debug() }
+        data.doctors.forEach { it.debug() }
         println("\n\n\n\n")
     }
 
@@ -243,6 +244,8 @@ class Solution(
             var inMiddleOfBlock = true
             for(dayID in listOf(shift.day - 1, shift.day + 1).filter { it in days.indices })
                 inMiddleOfBlock = inMiddleOfBlock && days[dayID].doctorsWorkingNight.contains(doctor)
+            if(shift.day - 1 !in days.indices || shift.day + 1 !in days.indices)
+                inMiddleOfBlock = false
             if(inMiddleOfBlock) {
                 assignments[assignment].assign(doctor)
                 return false

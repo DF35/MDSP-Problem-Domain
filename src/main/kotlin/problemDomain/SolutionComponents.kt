@@ -278,6 +278,7 @@ class Day(
     var doctorsWorkingDay = mutableMapOf<Int, MutableSet<Int>>()
     // Number of shifts that have at least one doctor assigned to them
     var numShiftsWithCoverage = 0
+    var block = mutableMapOf<Int, Int>()
 
     fun copy(): Day {
         val day = Day(id, dayShifts, nonOverlappingNightShifts, overlappingNightShifts)
@@ -286,6 +287,7 @@ class Day(
         for((key, value) in doctorsWorkingDay)
             day.doctorsWorkingDay[key] = value.toMutableSet()
         day.numShiftsWithCoverage = this.numShiftsWithCoverage
+        day.block = this.block
         return day
     }
 
@@ -327,14 +329,53 @@ class Day(
     }
 }
 
-class Block(val id: Int, var lastShift: Int) {
+class Block(val id: Int) {
     val days = mutableSetOf<Int>()
     val shiftsMadeInfeasible = mutableSetOf<Int>()
 
-    // Checking whether blocks should be combined should be done elsewhere
-    fun addDay() {
-        TODO()
+    fun copy(): Block {
+        val block = Block(id)
+        block.setDays(days.toSet())
+        block.shiftsMadeInfeasible.addAll(this.shiftsMadeInfeasible)
+        return block
     }
+
+    // Checking whether blocks should be combined should be done elsewhere
+    fun addDay(day: Int) {
+        if(!days.add(day))
+            throw Exception("addDay: Block $id already contains $day")
+    }
+
+    // Clears [days] and accepts the new value; for use in merging and splitting blocks
+    fun setDays(newDays: Set<Int>) {
+        days.clear()
+        days.addAll(newDays)
+    }
+
+    fun removeDay(day: Int, nextID: Int): Pair<Block, Block>? {
+        /*
+         * If the day is neither the max nor the min value, it must be in the middle of
+         * the block, the block will be split into two
+         */
+        val middleOfBlock = day != days.min() && day != days.max()
+        if(!days.remove(day))
+            throw Exception("removeDay: Block $id does not contain $day")
+
+        return when(middleOfBlock) {
+            // The block is just edited, no new ones are created
+            false -> null
+            // The block is split into two, one has the original [id], the other, [nextID]
+            true -> {
+                val (firstBlock, secondBlock) = days.partition { it < day }
+                val block1 = Block(id)
+                block1.setDays(firstBlock.toSet())
+                val block2 = Block(nextID)
+                block2.setDays(secondBlock.toSet())
+                Pair(block1, block2)
+            }
+        }
+    }
+
 }
 
 
@@ -352,7 +393,7 @@ class MiddleGrade(
     var dayShiftsWorked = 0
     var nighShiftsWorked = 0
     var assignedAssignments = mutableListOf<Int>()
-    var blocksOfDays = mutableMapOf<Int, Block>()
+    val blocksOfDays = mutableMapOf<Int, Block>()
     var nextBlockID = 0
 
     // Used in debugging
@@ -370,6 +411,8 @@ class MiddleGrade(
         doctor.dayShiftsWorked = this.dayShiftsWorked
         doctor.nighShiftsWorked = this.nighShiftsWorked
         doctor.assignedAssignments = this.assignedAssignments.toMutableList()
+        this.blocksOfDays.forEach { doctor.blocksOfDays[it.key] = it.value.copy() }
+        doctor.nextBlockID = this.nextBlockID
         doctor.assignmentLog = assignmentLog
         return doctor
     }
@@ -381,7 +424,9 @@ class MiddleGrade(
         println(grade)
         println(targetHours)
         println(hoursWorked)
-        println("$assignedAssignments\n")
+        println(assignedAssignments)
+        blocksOfDays.forEach { println("Block ${it.key}, Days = ${it.value.days}, InfShifts = ${it.value.shiftsMadeInfeasible}") }
+        println()
     }
 }
 
