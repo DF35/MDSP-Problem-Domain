@@ -9,13 +9,27 @@ enum class Cause {
 
 // The source of a shift's infeasibility for a given doctor
 sealed class Source {
+    // Stores the ID of the seven-day-long block
     data class RowOfSevenDays(val block: Int): Source()
-    data class InsufficientRest(val blocks: Set<Int>): Source()
-    data class WouldCauseRowTooLarge(val blocks: Set<Int>): Source()
-    data class WouldCauseRowTooLargeOverlap(val blocks: Set<Int>): Source()
-    data class InsufficientRestOverlap(val blocks: Set<Int>): Source()
+    // Stores the IDs of the two blocks making the day infeasible
+    data class WouldCauseRowTooLarge(val blocks: Pair<Int, Int>): Source()
+    // Stores the IDs of the two blocks making the overlapping shifts infeasible
+    data class WouldCauseRowTooLargeOverlap(val blocks: Pair<Int, Int>): Source()
+    /*
+     * Essentially a sub-case of WouldCauseRowTwoLargeOverlap, if a block is 6 days long
+     * overlapping shifts two days before, and overlapping shifts the day after become
+     * infeasible as they would cause a row of 8 days worked
+     */
+    data class RowOfSixOverlap(val block: Int): Source()
+    // Stores the ID of the block and the ID of the day preventing it from being extended
+    data class InsufficientRest(val blockAndDay: Pair<Int, Int>): Source()
+    // Stores the IDs of the block and the day that make the overlapping shifts infeasible
+    data class InsufficientRestOverlap(val blockAndDay: Pair<Int, Int>): Source()
+
     data class WeekendWorked(val dayID: Int): Source() // Need to alter
+    // Stores the IDs of days with nights worked by the doctor that are necessitating rest
     data class RowOfNights(val days: Set<Int>): Source()
+    // Stores the ID of a shift that has made another shift infeasible
     data class ShiftWorked(val shiftID: Int): Source()
 }
 
@@ -38,9 +52,10 @@ class ShiftInfeasibility(val cause : Cause) {
                 is Source.WeekendWorked -> "Weekend Worked ${source.dayID} "
                 is Source.InsufficientRest -> TODO()
                 is Source.InsufficientRestOverlap -> TODO()
-                is Source.RowOfSevenDays -> TODO()
-                is Source.WouldCauseRowTooLarge -> TODO()
+                is Source.RowOfSevenDays -> "Row of Seven Days ${source.block}"
+                is Source.WouldCauseRowTooLarge -> "Would Cause Row Too Large ${source.blocks.first}, ${source.blocks.second}"
                 is Source.WouldCauseRowTooLargeOverlap -> TODO()
+                is Source.RowOfSixOverlap -> "Row of Six Overlap ${source.block}"
             }
         return string + "\n"
     }
@@ -52,11 +67,12 @@ class ShiftInfeasibility(val cause : Cause) {
                 is Source.ShiftWorked -> println("ShiftWorked: ${source.shiftID}")
                 is Source.WeekendWorked -> println("WeekendWorked ${source.dayID}")
                 is Source.RowOfNights -> println("NightsWorked ${source.days}")
-                is Source.InsufficientRest -> TODO()
-                is Source.InsufficientRestOverlap -> TODO()
-                is Source.RowOfSevenDays -> TODO()
-                is Source.WouldCauseRowTooLarge -> TODO()
-                is Source.WouldCauseRowTooLargeOverlap -> TODO()
+                is Source.InsufficientRest -> println("InsufficientRest: Block ${source.blockAndDay.first}, Day ${source.blockAndDay.second}")
+                is Source.InsufficientRestOverlap -> println("InsufficientRestOverlap: Block ${source.blockAndDay.first}, Day ${source.blockAndDay.second}")
+                is Source.RowOfSevenDays -> println("RowOfSevenDays: ${source.block}")
+                is Source.WouldCauseRowTooLarge -> println("WouldCauseRowTooLarge: ${source.blocks.first}, ${source.blocks.second}")
+                is Source.WouldCauseRowTooLargeOverlap -> println("WouldCauseRowTooLargeOverlap: ${source.blocks.first}, ${source.blocks.second}")
+                is Source.RowOfSixOverlap -> println("RowOfSixOverlap ${source.block}")
             }
     }
 }
@@ -276,6 +292,10 @@ class Day(
     var doctorsWorkingNight = mutableMapOf<Int, Int>()
     // <DoctorID, Set<ShiftID>>
     var doctorsWorkingDay = mutableMapOf<Int, MutableSet<Int>>()
+    /* Stores the shifts made infeasible due to InsufficientRest by this day
+     * <DoctorID, <Set<ShiftID>>
+     */
+    var shiftsMadeInfeasibleIR = mutableMapOf<Int, MutableSet<Int>>()
     // Number of shifts that have at least one doctor assigned to them
     var numShiftsWithCoverage = 0
     var block = mutableMapOf<Int, Int>()
@@ -294,8 +314,14 @@ class Day(
     fun debug() {
         println("Day: $id")
         println("Shifts: ${this.getShifts()}")
+        println("Doctors Working Day:")
+        doctorsWorkingDay.forEach { println("Doctor: ${it.key}, Shifts: ${it.value}")}
         println("Doctors Working Night:")
         doctorsWorkingNight.forEach { println("Doctor: ${it.key}, Shift ${it.value}") }
+        println("Shifts made infeasible due to insufficient rest")
+        shiftsMadeInfeasibleIR.forEach { println("Doctor: ${it.key}, Shifts: ${it.value}") }
+        println("Blocks: ")
+        block.forEach { println("Doctor: ${it.key}, Block: ${it.value}") }
         println()
     }
 
@@ -326,6 +352,17 @@ class Day(
         if(!removed) throw Exception("removeWorkingDoctor: Doctor $doctor has no record of working shift $shiftID on day $id")
         if(doctorsWorkingDay[doctor]!!.isEmpty())
             doctorsWorkingDay.remove(doctor)
+    }
+
+    fun addInfeasibleShifts(doctor: Int, shifts: List<Int>) {
+        shiftsMadeInfeasibleIR.getOrPut(doctor) { mutableSetOf() }.addAll(shifts)
+    }
+
+    fun removeInfeasibleShifts(doctor: Int, shifts: List<Int>) {
+        val removed = shiftsMadeInfeasibleIR[doctor]?.removeAll(shifts.toSet()) ?: throw Exception("removeInfeasibleShifts: Doctor $doctor has no entry for shifts made infeasible by Day $id")
+        if(!removed) throw Exception("removeInfeasibleShifts: at least on of $shifts not present in infeasible shifts of Day $id for Doctor $doctor")
+        if(shiftsMadeInfeasibleIR[doctor]!!.isEmpty())
+            shiftsMadeInfeasibleIR.remove(doctor)
     }
 }
 
