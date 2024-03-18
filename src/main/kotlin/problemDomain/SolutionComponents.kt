@@ -20,13 +20,13 @@ sealed class Source {
      * overlapping shifts two days before, and overlapping shifts the day after become
      * infeasible as they would cause a row of 8 days worked <BlockID, DaysInBlockAtTime>
      */
-    data class RowOfSixOverlap(val blockAndDays: Pair<Int, Set<Int>>): Source()
+    data class RowOfSixOverlap(val block: Int): Source()
     // Stores the ID of the block and the ID of the day preventing it from being extended
-    data class InsufficientRest(val blockAndDay: Pair<Int, Int>): Source()
+    data class InsufficientRest(val blocks: Pair<Int, Int>): Source()
     // Stores the IDs of the block and the day that make the overlapping shifts infeasible
-    data class InsufficientRestOverlap(val blockAndDay: Pair<Int, Int>): Source()
-    data class InsufficientRestMid(val blocksAndDay: Triple<Int, Int, Int>): Source()
-    data class InsufficientRestMidOverlap(val blocksAndDay: Triple<Int, Int, Int>): Source()
+    data class InsufficientRestOverlap(val blocks: Pair<Int, Int>): Source()
+    data class InsufficientRestMid(val blocks: Triple<Int, Int, Int>): Source()
+    data class InsufficientRestMidOverlap(val blocks: Triple<Int, Int, Int>): Source()
     data class WeekendWorked(val dayID: Int): Source() // Need to alter
     // Stores the IDs of days with nights worked by the doctor that are necessitating rest
     data class RowOfNights(val days: Set<Int>): Source()
@@ -51,14 +51,14 @@ class ShiftInfeasibility(val cause : Cause) {
                 is Source.ShiftWorked -> "ShiftWorked: ${source.shiftID} "
                 is Source.WeekendWorked -> "WeekendWorked ${source.dayID} "
                 is Source.RowOfNights -> "NightsWorked ${source.days} "
-                is Source.InsufficientRest -> "InsufficientRest: Block ${source.blockAndDay.first}, Day ${source.blockAndDay.second} "
-                is Source.InsufficientRestOverlap -> "InsufficientRestOverlap: Block ${source.blockAndDay.first}, Day ${source.blockAndDay.second} "
+                is Source.InsufficientRest -> "InsufficientRest: Block ${source.blocks.first}, Block ${source.blocks.second} "
+                is Source.InsufficientRestOverlap -> "InsufficientRestOverlap: Block ${source.blocks.first}, Block ${source.blocks.second} "
                 is Source.RowOfSevenDays -> "RowOfSevenDays: ${source.block} "
                 is Source.WouldCauseRowTooLarge -> "WouldCauseRowTooLarge: ${source.blocks.first}, ${source.blocks.second} "
                 is Source.WouldCauseRowTooLargeOverlap -> "WouldCauseRowTooLargeOverlap: ${source.blocks.first}, ${source.blocks.second} "
-                is Source.RowOfSixOverlap -> "RowOfSixOverlap: Block ${source.blockAndDays.first}, Days ${source.blockAndDays.second} "
-                is Source.InsufficientRestMid -> "InsufficientRestMid: Block ${source.blocksAndDay.first}, Block ${source.blocksAndDay.second}, Day ${source.blocksAndDay.third} "
-                is Source.InsufficientRestMidOverlap -> "InsufficientRestMidOverlap: Block ${source.blocksAndDay.first}, Block ${source.blocksAndDay.second}, Day ${source.blocksAndDay.third} "
+                is Source.RowOfSixOverlap -> "RowOfSixOverlap: Block ${source.block} "
+                is Source.InsufficientRestMid -> "InsufficientRestMid: Block ${source.blocks.first}, Block ${source.blocks.second}, Block ${source.blocks.third} "
+                is Source.InsufficientRestMidOverlap -> "InsufficientRestMidOverlap: Block ${source.blocks.first}, Block ${source.blocks.second}, Block ${source.blocks.third} "
             }
         return string + "\n"
     }
@@ -283,10 +283,6 @@ class Day(
     var doctorsWorkingNight = mutableMapOf<Int, Int>()
     // <DoctorID, Set<ShiftID>>
     var doctorsWorkingDay = mutableMapOf<Int, MutableSet<Int>>()
-    /* Stores the shifts made infeasible by this day that cannot be covered by a block
-     * <DoctorID, <Set<ShiftID>>
-     */
-    var shiftsMadeInfeasible = mutableMapOf<Int, MutableSet<Int>>()
     // Number of shifts that have at least one doctor assigned to them
     var numShiftsWithCoverage = 0
     // Tracks the block of each doctor the day is a part of (if it is) <DoctorID, BlockID>
@@ -298,8 +294,6 @@ class Day(
             day.doctorsWorkingNight[key] = value
         for((key, value) in doctorsWorkingDay)
             day.doctorsWorkingDay[key] = value.toMutableSet()
-        for((key, value) in shiftsMadeInfeasible)
-            day.shiftsMadeInfeasible[key] = value.toMutableSet()
         day.numShiftsWithCoverage = this.numShiftsWithCoverage
         day.block = this.block.toMutableMap()
         return day
@@ -313,7 +307,6 @@ class Day(
         println("Doctors Working Night:")
         doctorsWorkingNight.forEach { println("Doctor: ${it.key}, Shift ${it.value}") }
         println("Shifts made infeasible due to insufficient rest")
-        shiftsMadeInfeasible.forEach { println("Doctor: ${it.key}, Shifts: ${it.value}") }
         println("Blocks: ")
         block.forEach { println("Doctor: ${it.key}, Block: ${it.value}") }
         println()
@@ -346,17 +339,6 @@ class Day(
         if(!removed) throw Exception("removeWorkingDoctor: Doctor $doctor has no record of working shift $shiftID on day $id")
         if(doctorsWorkingDay[doctor]!!.isEmpty())
             doctorsWorkingDay.remove(doctor)
-    }
-
-    fun addInfeasibleShifts(doctor: Int, shifts: List<Int>) {
-        shiftsMadeInfeasible.getOrPut(doctor) { mutableSetOf() }.addAll(shifts)
-    }
-
-    fun removeInfeasibleShifts(doctor: Int, shifts: List<Int>) {
-        val removed = shiftsMadeInfeasible[doctor]?.removeAll(shifts.toSet()) ?: throw Exception("removeInfeasibleShifts: Doctor $doctor has no entry for shifts made infeasible by Day $id")
-        if(!removed) throw Exception("removeInfeasibleShifts: at least on of $shifts not present in infeasible shifts of Day $id for Doctor $doctor")
-        if(shiftsMadeInfeasible[doctor]!!.isEmpty())
-            shiftsMadeInfeasible.remove(doctor)
     }
 }
 

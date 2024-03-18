@@ -2,7 +2,6 @@ package problemDomain
 
 import java.util.*
 import kotlin.Exception
-import problemDomain.feasibilityHandling.dayStillPresent
 import problemDomain.feasibilityHandling.blockStillPresent
 
 data class SolutionData(
@@ -228,16 +227,13 @@ class Solution(
             }
         }
 
-        for(day in days) {
-            if(day.shiftsMadeInfeasible[doctor] == null) continue
-            for(testShift in day.shiftsMadeInfeasible[doctor]!!)
-                if(!dayStillPresent(shifts[testShift], day.id, doctor))
-                    println("Problematic")
-        }
-
         for((id, block) in doc.blocksOfDays) {
             for(testShift in block.shiftsMadeInfeasible) {
-                if(!blockStillPresent(shifts[testShift], block.id, doctor))
+                val shiftToCheck = shifts[testShift]
+                if(shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Training ||
+                    shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Leave)
+                    continue
+                if(!blockStillPresent(shiftToCheck, block.id, doctor))
                     println("Schlecht")
             }
         }
@@ -317,16 +313,13 @@ class Solution(
             }
         }
 
-        for(day in days) {
-            if(day.shiftsMadeInfeasible[doctor] == null) continue
-            for(testShift in day.shiftsMadeInfeasible[doctor]!!)
-                if(!dayStillPresent(shifts[testShift], day.id, doctor))
-                    println("Problematic")
-        }
-
         for((id, block) in doc.blocksOfDays) {
             for(testShift in block.shiftsMadeInfeasible) {
-                if(!blockStillPresent(shifts[testShift], block.id, doctor))
+                val shiftToCheck = shifts[testShift]
+                if(shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Training ||
+                    shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Leave)
+                    continue
+                if(!blockStillPresent(shiftToCheck, block.id, doctor))
                     println("Schlecht")
             }
         }

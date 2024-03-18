@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
         return
     }
 
-    /*val seedGenerator = Random(25022024)
+    val seedGenerator = Random(25022024)
     val totalExecutionTime: Long = 120000
     val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
     val acceptanceType = AcceptanceCriterionType.AdaptiveIterationLimitedListBasedTA
@@ -49,14 +49,14 @@ fun main(args: Array<String>) {
         writer.write("${problem.bestSolutionValue} \n")
         writer.write(problem.bestSolutionToString())
         writer.close()
-    }*/
+    }
 
 
     /*val gen = InstanceGenerator(Random(3032024))
     gen.generateInstance("instance1.txt", 2, 8, 4, 4, 0.4, 0.4)*/
 
     // Debugging a doctor log file
-    val seedGenerator = Random(25022024)
+    /*val seedGenerator = Random(25022024)
     val seed = seedGenerator.nextLong()
     val problem = MDSP(seed)
     problem.loadInstance(1)
@@ -73,7 +73,7 @@ fun main(args: Array<String>) {
             "al" -> solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
             "de" -> solution.deallocateAssignment(tokens[1].toInt())
         }
-    }
+    }*/
 
     /*val problem = MDSP(25032024)
     problem.loadInstance(1)

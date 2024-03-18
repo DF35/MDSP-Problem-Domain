@@ -23,7 +23,7 @@ fun updateFeasibilityDayAdded(solutionData: SolutionData, doctorID: Int, dayID: 
         else -> doctor.nextBlockID
     }
 
-    // If no block existed to either side, a new one needs to be created
+    // If no block existed to either side, a new one is crated, [doctor] is updated accordingly
     if(blockID == doctor.nextBlockID) {
         doctor.nextBlockID++
         doctor.blocksOfDays[blockID] = Block(blockID)
@@ -31,23 +31,15 @@ fun updateFeasibilityDayAdded(solutionData: SolutionData, doctorID: Int, dayID: 
 
     val block = doctor.blocksOfDays[blockID] ?: throw Exception("updateFeasibilityDaysWorked: Block $blockID missing from doctor $doctorID")
 
+    // Remove previous sources of infeasibility
+    clearInfeasibleShiftsBlock(solutionData, block, doctorID)
+
     // [dayID] is added to the identified block of [doctor]
     block.addDay(dayID)
     days[dayID].block[doctorID] = blockID
 
     // Assesses the impact that the added day has on feasibility
-    val relevantSources = mutableMapOf<Shift, List<Source>>()
-    for(shiftID in block.shiftsMadeInfeasible) {
-        val shift = solutionData.shifts[shiftID]
-        relevantSources[shift] = shift.causesOfInfeasibility[doctorID]!!.sources.filter { sourceContainsBlock(it, block.id) }
-    }
-
-    for((shift, sources) in relevantSources)
-        sources.forEach {
-            processBlockCausedSource(solutionData, it, shift, doctorID)
-        }
-
-    val infeasibilities = identifySourcesOfInfeasibility(solutionData, doctor, block, dayID)
+    val infeasibilities = identifySourcesOfInfeasibility(solutionData, doctor, block)
     implementInfeasibilities(solutionData, doctor, infeasibilities)
 }
 
@@ -68,14 +60,7 @@ private fun mergeBlocks(
     }
 
     // Removes sources of infeasibility relating to the block that no longer exists
-    val relevantSources = mutableMapOf<Shift, List<Source>>()
-    for(shiftID in doctor.blocksOfDays[leftBlock]!!.shiftsMadeInfeasible) {
-        val shift = solutionData.shifts[shiftID]
-        relevantSources[shift] = shift.causesOfInfeasibility[doctor.id]!!.sources.filter { sourceContainsBlock(it, leftBlock) }
-    }
-
-    for((shift, sources) in relevantSources)
-        sources.forEach { processBlockCausedSource(solutionData, it, shift, doctor.id) }
+    clearInfeasibleShiftsBlock(solutionData, doctor.blocksOfDays[leftBlock]!!, doctor.id)
 
     doctor.blocksOfDays.remove(leftBlock)
     return rightBlock
@@ -88,18 +73,36 @@ private fun sourceContainsBlock(source: Source, blockID: Int): Boolean {
             source.blocks.first == blockID || source.blocks.second == blockID
         is Source.WouldCauseRowTooLargeOverlap ->
             source.blocks.first == blockID || source.blocks.second == blockID
-        is Source.RowOfSixOverlap -> source.blockAndDays.first == blockID
-        is Source.InsufficientRest -> source.blockAndDay.first == blockID
-        is Source.InsufficientRestOverlap -> source.blockAndDay.first == blockID
-        is Source.InsufficientRestMid ->
-            source.blocksAndDay.first == blockID || source.blocksAndDay.second == blockID
-        is Source.InsufficientRestMidOverlap ->
-            source.blocksAndDay.first == blockID || source.blocksAndDay.second == blockID
+        is Source.RowOfSixOverlap -> source.block == blockID
+        is Source.InsufficientRest ->
+            source.blocks.first == blockID || source.blocks.second == blockID
+        is Source.InsufficientRestOverlap ->
+            source.blocks.first == blockID || source.blocks.second == blockID
+        is Source.InsufficientRestMid -> source.blocks.first == blockID ||
+                source.blocks.second == blockID || source.blocks.third == blockID
+        is Source.InsufficientRestMidOverlap -> source.blocks.first == blockID ||
+                source.blocks.second == blockID || source.blocks.third == blockID
         else -> false
     }
 }
 
-private fun processBlockCausedSource(
+private fun clearInfeasibleShiftsBlock(
+    solutionData: SolutionData,
+    block: Block,
+    doctorID: Int
+) {
+    val relevantSources = mutableMapOf<Shift, List<Source>>()
+    for(shiftID in block.shiftsMadeInfeasible) {
+        val shift = solutionData.shifts[shiftID]
+        relevantSources[shift] = shift.causesOfInfeasibility[doctorID]!!.sources.filter {
+            sourceContainsBlock(it, block.id)
+        }
+    }
+    for((shift, sources) in relevantSources)
+        sources.forEach { removeRelevantSources(solutionData, it, shift, doctorID) }
+}
+
+private fun removeRelevantSources(
     solutionData: SolutionData,
     source: Source,
     shift: Shift,
@@ -107,43 +110,26 @@ private fun processBlockCausedSource(
 ) {
     shift.removeSource(doctorID, source)
 
-    val (relevantBlocks, relevantDay) = when(source) {
-        is Source.InsufficientRest -> Pair(
-            listOf(source.blockAndDay.first), source.blockAndDay.second
-        )
-        is Source.InsufficientRestMid -> Pair(
-            listOf(source.blocksAndDay.first, source.blocksAndDay.second),
-            source.blocksAndDay.third
-        )
-        is Source.InsufficientRestMidOverlap -> Pair(
-            listOf(source.blocksAndDay.first, source.blocksAndDay.second),
-            source.blocksAndDay.third
-        )
-        is Source.InsufficientRestOverlap -> Pair(
-            listOf(source.blockAndDay.first), source.blockAndDay.second
-        )
-        is Source.RowOfSevenDays -> Pair(listOf(source.block), null)
-        is Source.RowOfSixOverlap -> Pair(listOf(source.blockAndDays.first), null)
-        is Source.WouldCauseRowTooLarge -> Pair(
-            listOf(source.blocks.first, source.blocks.second), null
-        )
-        is Source.WouldCauseRowTooLargeOverlap -> Pair(
-            listOf(source.blocks.first, source.blocks.second), null
-        )
+    val relevantBlocks = when(source) {
+        is Source.InsufficientRest -> listOf(source.blocks.first, source.blocks.second)
+        is Source.RowOfSevenDays -> listOf(source.block)
+        is Source.RowOfSixOverlap -> listOf(source.block)
+        is Source.InsufficientRestMid ->
+                listOf(source.blocks.first, source.blocks.second, source.blocks.third)
+        is Source.InsufficientRestMidOverlap ->
+                listOf(source.blocks.first, source.blocks.second, source.blocks.third)
+        is Source.InsufficientRestOverlap ->
+            listOf(source.blocks.first, source.blocks.second)
+        is Source.WouldCauseRowTooLarge ->
+            listOf(source.blocks.first, source.blocks.second)
+        is Source.WouldCauseRowTooLargeOverlap ->
+            listOf(source.blocks.first, source.blocks.second)
         else -> throw Exception("processBlockCausedSource: function can only be passed sources of infeasibility relating to blocks")
     }
 
     for(block in relevantBlocks)
         if(!blockStillPresent(shift, block, doctorID))
             solutionData.doctors[doctorID].blocksOfDays[block]!!.shiftsMadeInfeasible.remove(shift.id)
-
-    when(relevantDay) {
-        null -> return
-        else -> {
-            if(!dayStillPresent(shift, relevantDay, doctorID))
-                solutionData.days[relevantDay].shiftsMadeInfeasible[doctorID]!!.remove(shift.id)
-        }
-    }
 }
 
 private fun implementInfeasibilities(
@@ -159,12 +145,12 @@ private fun implementInfeasibilities(
             is Source.RowOfSevenDays ->
                 doctor.blocksOfDays[source.block]!!.shiftsMadeInfeasible.addAll(shifts)
             is Source.InsufficientRest -> {
-                doctor.blocksOfDays[source.blockAndDay.first]!!.shiftsMadeInfeasible.addAll(shifts)
-                solutionData.days[source.blockAndDay.second].addInfeasibleShifts(doctor.id, shifts)
+                doctor.blocksOfDays[source.blocks.first]!!.shiftsMadeInfeasible.addAll(shifts)
+                doctor.blocksOfDays[source.blocks.second]!!.shiftsMadeInfeasible.addAll(shifts)
             }
             is Source.InsufficientRestOverlap -> {
-                doctor.blocksOfDays[source.blockAndDay.first]!!.shiftsMadeInfeasible.addAll(shifts)
-                solutionData.days[source.blockAndDay.second].addInfeasibleShifts(doctor.id, shifts)
+                doctor.blocksOfDays[source.blocks.first]!!.shiftsMadeInfeasible.addAll(shifts)
+                doctor.blocksOfDays[source.blocks.second]!!.shiftsMadeInfeasible.addAll(shifts)
             }
             is Source.WouldCauseRowTooLarge -> {
                 doctor.blocksOfDays[source.blocks.first]!!.shiftsMadeInfeasible.addAll(shifts)
@@ -175,16 +161,16 @@ private fun implementInfeasibilities(
                 doctor.blocksOfDays[source.blocks.second]!!.shiftsMadeInfeasible.addAll(shifts)
             }
             is Source.RowOfSixOverlap ->
-                doctor.blocksOfDays[source.blockAndDays.first]!!.shiftsMadeInfeasible.addAll(shifts)
+                doctor.blocksOfDays[source.block]!!.shiftsMadeInfeasible.addAll(shifts)
             is Source.InsufficientRestMid -> {
-                doctor.blocksOfDays[source.blocksAndDay.first]!!.shiftsMadeInfeasible.addAll(shifts)
-                doctor.blocksOfDays[source.blocksAndDay.second]!!.shiftsMadeInfeasible.addAll(shifts)
-                solutionData.days[source.blocksAndDay.third].addInfeasibleShifts(doctor.id, shifts)
+                doctor.blocksOfDays[source.blocks.first]!!.shiftsMadeInfeasible.addAll(shifts)
+                doctor.blocksOfDays[source.blocks.second]!!.shiftsMadeInfeasible.addAll(shifts)
+                doctor.blocksOfDays[source.blocks.third]!!.shiftsMadeInfeasible.addAll(shifts)
             }
             is Source.InsufficientRestMidOverlap -> {
-                doctor.blocksOfDays[source.blocksAndDay.first]!!.shiftsMadeInfeasible.addAll(shifts)
-                doctor.blocksOfDays[source.blocksAndDay.second]!!.shiftsMadeInfeasible.addAll(shifts)
-                solutionData.days[source.blocksAndDay.third].addInfeasibleShifts(doctor.id, shifts)
+                doctor.blocksOfDays[source.blocks.first]!!.shiftsMadeInfeasible.addAll(shifts)
+                doctor.blocksOfDays[source.blocks.second]!!.shiftsMadeInfeasible.addAll(shifts)
+                doctor.blocksOfDays[source.blocks.third]!!.shiftsMadeInfeasible.addAll(shifts)
             }
             else -> TODO()
             }
@@ -195,18 +181,19 @@ private fun identifySourcesOfInfeasibility(
     solutionData: SolutionData,
     doctor: MiddleGrade,
     block: Block,
-    dayInQuestion: Int
 ): MutableMap<Source, List<Int>> {
     val infeasibilities = mutableMapOf<Source, List<Int>>()
+
+    if(block.days.size > 7)
+        throw Exception("identifySourcesOfInfeasibility: infeasible block size reached")
 
     if(block.days.size == 7) {
         val (shiftsMadeInfeasible, source) = assessRowOfSevenDaysInfeasibility(solutionData, doctor.id, block)
         infeasibilities[source] = shiftsMadeInfeasible
     }
 
-    val firstIsDayInQuestion = block.days.min() == dayInQuestion
-    checkToLeft(solutionData, block, doctor, firstIsDayInQuestion, infeasibilities)
-
+    // Checks in either direction of the block
+    checkToLeft(solutionData, block, doctor, infeasibilities)
     checkToRight(solutionData, block, doctor, infeasibilities)
 
     return infeasibilities
@@ -216,7 +203,6 @@ private fun checkToLeft(
     solutionData: SolutionData,
     block: Block,
     doctor: MiddleGrade,
-    dayInQuestionIsFirst: Boolean,
     infeasibilities: MutableMap<Source, List<Int>>
 ) {
     val blockSize = block.days.size
@@ -237,7 +223,7 @@ private fun checkToLeft(
     // If the block of shifts is six long, overlapping shifts two days prior are infeasible
     if(twoToLeftInIndices && blockSize == 6 &&
         solutionData.days[firstDay-2].overlappingNightShifts.isNotEmpty()) {
-        val source = Source.RowOfSixOverlap(Pair(block.id, block.days.toSet()))
+        val source = Source.RowOfSixOverlap(block.id)
         infeasibilities[source] = solutionData.days[firstDay-2].overlappingNightShifts.toList()
     }
 
@@ -259,10 +245,11 @@ private fun checkToLeft(
         }
 
         if(twoToRightWorked && prevBlockSize + blockSize + 1 == 7) {
-            val source = when(prevBlockID < block.id) {
-                true -> Source.InsufficientRestMid(Triple(prevBlockID, block.id, lastDay+2))
-                false -> Source.InsufficientRestMid(Triple(block.id, prevBlockID, lastDay+2))
-            }
+            val nextBlockID = solutionData.days[lastDay+2].block[doctor.id]!!
+            val blocks = mutableListOf(prevBlockID, block.id, nextBlockID)
+            blocks.sortDescending()
+
+            val source = Source.InsufficientRestMid(Triple(blocks[0], blocks[1], blocks[2]))
             infeasibilities[source] = solutionData.days[firstDay-1].getShifts()
         }
 
@@ -270,8 +257,8 @@ private fun checkToLeft(
          * If block before gap of one day is 6 days long, there is insufficient rest for
          * the day prior to it to be worked.
          */
-        if(prevBlockSize == 6 && dayInQuestionIsFirst && prevBlock.days.min() - 1 in solutionData.days.indices) {
-            val source = Source.InsufficientRest(Pair(prevBlockID, firstDay))
+        if(prevBlockSize == 6 && prevBlock.days.min() - 1 in solutionData.days.indices) {
+            val source = Source.InsufficientRest(Pair(prevBlockID, block.id))
             infeasibilities[source] = solutionData.days[prevBlock.days.min()-1].getShifts()
         }
 
@@ -280,22 +267,22 @@ private fun checkToLeft(
          * overlapping night shift two days before that to be worked (would cause a
          * row of 7 days)
          */
-        if(prevBlockSize == 5 && dayInQuestionIsFirst && prevBlock.days.min() - 2 in solutionData.days.indices) {
-            val source = Source.InsufficientRestOverlap(Pair(prevBlockID, firstDay))
+        if(prevBlockSize == 5 && prevBlock.days.min() - 2 in solutionData.days.indices) {
+            val source = Source.InsufficientRestOverlap(Pair(prevBlockID, block.id))
             infeasibilities[source] = solutionData.days[prevBlock.days.min()-2].overlappingNightShifts.toList()
         }
 
-        if(dayInQuestionIsFirst && prevBlockSize < 6){
+        if(prevBlockSize < 6){
             if(prevBlock.days.min() - 2 in solutionData.days.indices
                 && solutionData.days[prevBlock.days.min()-2].block[doctor.id] != null) {
                 val twoPrevID = solutionData.days[prevBlock.days.min()-2].block[doctor.id]!!
                 val blockTwoPrev = doctor.blocksOfDays[twoPrevID]!!
 
                 if(prevBlockSize + blockTwoPrev.days.size + 1 == 7) {
-                    val source = when(twoPrevID < prevBlockID) {
-                        true -> Source.InsufficientRestMid(Triple(twoPrevID, prevBlockID, firstDay))
-                        false -> Source.InsufficientRestMid(Triple(prevBlockID, twoPrevID, firstDay))
-                    }
+                    val blocks = mutableListOf(twoPrevID, prevBlockID, block.id)
+                    blocks.sortDescending()
+
+                    val source = Source.InsufficientRestMid(Triple(blocks[0], blocks[1], blocks[2]))
                     infeasibilities[source] = solutionData.days[prevBlock.days.min()-1].getShifts()
                 }
             }
@@ -305,10 +292,10 @@ private fun checkToLeft(
                 val blockThreePrev = doctor.blocksOfDays[threePrevID]!!
 
                 if(prevBlockSize + blockThreePrev.days.size + 2 == 7) {
-                    val source = when(threePrevID < prevBlockID) {
-                        true -> Source.InsufficientRestMidOverlap(Triple(threePrevID, prevBlockID, firstDay))
-                        false -> Source.InsufficientRestMidOverlap(Triple(prevBlockID, threePrevID, firstDay))
-                    }
+                    val blocks = mutableListOf(threePrevID, prevBlockID, block.id)
+                    blocks.sortDescending()
+
+                    val source = Source.InsufficientRestMidOverlap(Triple(blocks[0], blocks[1], blocks[2]))
                     infeasibilities[source] = solutionData.days[prevBlock.days.min()-2].overlappingNightShifts.toList()
                 }
             }
@@ -338,10 +325,11 @@ private fun checkToLeft(
         }
 
         if(twoToRightWorked && prevBlock.days.size + blockSize + 2 == 7) {
-            val source = when(prevBlockID < block.id) {
-                true -> Source.InsufficientRestMidOverlap(Triple(prevBlockID, block.id, lastDay+2))
-                false -> Source.InsufficientRestMidOverlap(Triple(block.id, prevBlockID, lastDay+2))
-            }
+            val nextBlockID = solutionData.days[lastDay+2].block[doctor.id]!!
+            val blocks = mutableListOf(prevBlockID, nextBlockID, block.id)
+            blocks.sortDescending()
+
+            val source = Source.InsufficientRestMidOverlap(Triple(blocks[0], blocks[1], blocks[2]))
             infeasibilities[source] = solutionData.days[firstDay-2].overlappingNightShifts.toList()
         }
 
@@ -351,13 +339,13 @@ private fun checkToLeft(
          * Only needs to be evaluated if the day we are considering is the first day of
          * [block]
          */
-        if(prevBlock.days.size == 6 && dayInQuestionIsFirst) {
-            val source = Source.InsufficientRest(Pair(prevBlockID, firstDay))
+        if(prevBlock.days.size == 6) {
+            val source = Source.InsufficientRest(Pair(prevBlockID, block.id))
             infeasibilities[source] = solutionData.days[firstDay-2].getShifts()
 
             // If last day of [prevBlock] has overlapping night shifts they become infeasible
             if(solutionData.days[prevBlock.days.max()].overlappingNightShifts.isNotEmpty()) {
-                val overlapSource = Source.InsufficientRestOverlap(Pair(prevBlockID, firstDay))
+                val overlapSource = Source.InsufficientRestOverlap(Pair(prevBlockID, block.id))
                 infeasibilities[overlapSource] =
                     solutionData.days[prevBlock.days.max()].overlappingNightShifts.toList()
             }
@@ -375,9 +363,9 @@ private fun checkToLeft(
          * If the row is of size 5, and the following day has overlapping shifts, there
          * would be insufficient rest, were those overlapping shifts to be assigned
          */
-        if(prevBlock.days.size == 5 && dayInQuestionIsFirst &&
+        if(prevBlock.days.size == 5 &&
             solutionData.days[firstDay-3].overlappingNightShifts.isNotEmpty()) {
-            val source = Source.InsufficientRestOverlap(Pair(prevBlockID, firstDay))
+            val source = Source.InsufficientRestOverlap(Pair(prevBlockID, block.id))
             infeasibilities[source] = solutionData.days[firstDay-3].overlappingNightShifts.toList()
         }
     }
@@ -401,7 +389,7 @@ private fun checkToRight(
     // If block size is six, any overlapping shifts on the next day are infeasible
     if(lastDay + 1 in solutionData.days.indices && blockSize == 6 &&
         solutionData.days[lastDay+1].overlappingNightShifts.isNotEmpty()) {
-        val source = Source.RowOfSixOverlap(Pair(block.id, block.days.toSet()))
+        val source = Source.RowOfSixOverlap(block.id)
         /*
          * If shifts to the left were made infeasible by this source, we need to add to the
          * list of shifts to be made infeasible, rather than overwrite it
@@ -431,10 +419,11 @@ private fun checkToRight(
 
         if(nextBlock.days.size + blockSize + 1 == 7 && nextBlock.days.max() + 2 in solutionData.days.indices
             && solutionData.days[nextBlock.days.max()+2].block[doctor.id] != null) {
-            val source = when(nextBlockID < block.id) {
-                true -> Source.InsufficientRestMid(Triple(nextBlockID, block.id, nextBlock.days.max()+2))
-                false -> Source.InsufficientRestMid(Triple(block.id, nextBlockID, nextBlock.days.max()+2))
-            }
+            val blockAfter = solutionData.days[nextBlock.days.max()+2].block[doctor.id]!!
+            val blocks = mutableListOf(blockAfter, nextBlockID, block.id)
+            blocks.sortDescending()
+
+            val source = Source.InsufficientRestMid(Triple(blocks[0], blocks[1], blocks[2]))
             infeasibilities[source] = solutionData.days[lastDay+1].getShifts()
 
         }
@@ -446,7 +435,7 @@ private fun checkToRight(
          * of seven days
          */
         if(blockSize == 6 && firstDay - 1 in solutionData.days.indices) {
-            val source = Source.InsufficientRest(Pair(block.id, nextBlock.days.min()))
+            val source = Source.InsufficientRest(Pair(block.id, nextBlockID))
             infeasibilities[source] = solutionData.days[firstDay-1].getShifts()
         }
 
@@ -456,7 +445,7 @@ private fun checkToRight(
          * as there is no possible 48 hours of rest after the hypothetical row of 7 days
          */
         if(blockSize == 5 && twoToLeftInIndices) {
-            val source = Source.InsufficientRestOverlap(Pair(block.id, nextBlock.days.min()))
+            val source = Source.InsufficientRestOverlap(Pair(block.id, nextBlockID))
             infeasibilities[source] = solutionData.days[firstDay-2].overlappingNightShifts.toList()
         }
     }
@@ -480,21 +469,22 @@ private fun checkToRight(
 
         if(nextBlock.days.size + blockSize + 2 == 7 && nextBlock.days.max() + 2 in solutionData.days.indices
             && solutionData.days[nextBlock.days.max()+2].block[doctor.id] != null) {
-            val source = when(nextBlockID < block.id) {
-                true -> Source.InsufficientRestMidOverlap(Triple(nextBlockID, block.id, nextBlock.days.max()+2))
-                false -> Source.InsufficientRestMidOverlap(Triple(block.id, nextBlockID, nextBlock.days.max()+2))
-            }
+            val blockAfter = solutionData.days[nextBlock.days.max()+2].block[doctor.id]!!
+            val blocks = mutableListOf(blockAfter, nextBlockID, block.id)
+            blocks.sortDescending()
+
+            val source = Source.InsufficientRestMidOverlap(Triple(blocks[0], blocks[1], blocks[2]))
             infeasibilities[source] = solutionData.days[lastDay+1].overlappingNightShifts.toList()
         }
 
         if(blockSize == 6) {
-            val source = Source.InsufficientRest(Pair(block.id, nextBlock.days.min()))
+            val source = Source.InsufficientRest(Pair(block.id, nextBlockID))
             infeasibilities[source] = solutionData.days[lastDay+1].getShifts()
 
             // If end day of [block] has overlapping shifts, they become infeasible
             if(solutionData.days[lastDay].overlappingNightShifts.isNotEmpty()) {
                 val overlappingSource =
-                    Source.InsufficientRestOverlap(Pair(block.id, nextBlock.days.min()))
+                    Source.InsufficientRestOverlap(Pair(block.id, nextBlockID))
                 infeasibilities[overlappingSource] =
                     solutionData.days[lastDay].overlappingNightShifts.toList()
             }
@@ -505,10 +495,9 @@ private fun checkToRight(
             && solutionData.days[lastDay+4].block.contains(doctor.id)
     if(!twoToRightWorked && !threeToRightWorked && fourToRightWorked) {
         val nextBlockID = solutionData.days[lastDay+4].block[doctor.id]!!
-        val nextBlock = doctor.blocksOfDays[nextBlockID] ?: throw Exception("sdfsd")
 
         if(blockSize == 5 && solutionData.days[lastDay+1].overlappingNightShifts.isNotEmpty()) {
-            val source = Source.InsufficientRestOverlap(Pair(block.id, nextBlock.days.min()))
+            val source = Source.InsufficientRestOverlap(Pair(block.id, nextBlockID))
             infeasibilities[source] = solutionData.days[lastDay+1].overlappingNightShifts.toList()
         }
     }
@@ -564,160 +553,74 @@ fun updateFeasibilityDayRemoved(solutionData: SolutionData, doctorID: Int, dayID
      * block(s) on feasibility regarding days worked, will be reassessed after [dayID]
      * is removed
      */
-     removeRelatedInfeasibilities(solutionData, doctor, block, dayID)
+     clearInfeasibleShiftsBlock(solutionData, block, doctorID)
 
-    var infeasibilities = mutableMapOf<Source, List<Int>>()
     val (position, blocks) = block.removeDay(dayID, doctor.nextBlockID)
-    when(position) {
-        // Day was the last in the block
-        DayRemovedPos.Final -> doctor.blocksOfDays.remove(block.id)
-        // If block was split, block IDs and days in the new block need to be updated
-        DayRemovedPos.Middle -> {
-            doctor.blocksOfDays[blocks!!.first.id] = blocks.first
-            doctor.blocksOfDays[blocks.second.id] = blocks.second
-            for(day in blocks.second.days)
-                days[day].block[doctorID] = blocks.second.id
-            doctor.nextBlockID++
-
-            // Update feasibility according to new blocks
-            infeasibilities = identifySourcesOfInfeasibility(solutionData, doctor,
-                blocks.first, blocks.first.days.min())
-            checkToRight(solutionData, blocks.second, doctor, infeasibilities)
-        }
-        DayRemovedPos.Start -> infeasibilities = identifySourcesOfInfeasibility(
-            solutionData, doctor, block, block.days.min()
-        )
-        DayRemovedPos.End -> infeasibilities = identifySourcesOfInfeasibility(
-            solutionData, doctor, block, block.days.max()
-        )
-    }
     // Reference to the block is removed from the day that is no longer worked
     days[dayID].block.remove(doctorID)
 
-    if(position == DayRemovedPos.Final) {
-        val twoToLeftIsWorked = dayID - 2 in days.indices && days[dayID-2].block.contains(doctorID)
-        val twoToRightIsWorked = dayID + 2 in days.indices && days[dayID+2].block.contains(doctorID)
-
-        if(twoToLeftIsWorked && twoToRightIsWorked)
-            checkToRight(solutionData, doctor.blocksOfDays[days[dayID - 2].block[doctorID]]!!,
-                doctor, infeasibilities)
+    // New sources of infeasibility are calculated
+    val infeasibilities = when(position) {
+        // Day was the last in the block
+        DayRemovedPos.Final -> processEmptyBlock(solutionData, block, doctor, dayID)
+        // Block was split in two
+        DayRemovedPos.Middle -> processSplitBlock(solutionData, blocks!!, doctor)
+        // Day was leftmost of block
+        DayRemovedPos.Start -> identifySourcesOfInfeasibility(solutionData, doctor, block)
+        // Day was rightmost of block
+        DayRemovedPos.End -> identifySourcesOfInfeasibility(solutionData, doctor, block)
     }
 
     // Updates feasibility as required
     implementInfeasibilities(solutionData, doctor, infeasibilities)
 }
 
-private fun removeRelatedInfeasibilities(
+
+private fun processEmptyBlock(
     solutionData: SolutionData,
-    doctor: MiddleGrade,
     block: Block,
+    doctor: MiddleGrade,
     removedDay: Int
-) {
-    val infeasibilities = identifySourcesOfInfeasibility(solutionData, doctor, block, removedDay)
+): MutableMap<Source, List<Int>> {
+    val days = solutionData.days
 
-    /*
-     * Row of six is a special case, as the check is for the size of a block, a block
-     * can later on be of the same size with different constituent days (think of a block
-     * of six that gets one day added to the right hand side, with the leftmost day being
-     * later removed; this would be the same size but would make different shifts infeasible
-     * compared to the previous block of 6)
-     */
-    if(block.days.size == 7)
-        processRowOfSixOverlap(solutionData, doctor.id, removedDay, infeasibilities)
+    // Record of block is removed from [doctor]
+    doctor.blocksOfDays.remove(block.id)
 
-    fun updateShiftsWithRemovedSource(source: Source, shift: Shift, doctor: MiddleGrade) {
-        when(source) {
-            is Source.InsufficientRest -> {
-                val (blockID, dayID) = source.blockAndDay
-                if(!blockStillPresent(shift, blockID, doctor.id))
-                    doctor.blocksOfDays[blockID]!!.shiftsMadeInfeasible.remove(shift.id)
-                if(!dayStillPresent(shift, dayID, doctor.id))
-                    solutionData.days[dayID].removeInfeasibleShifts(doctor.id, listOf(shift.id))
-            }
-            is Source.InsufficientRestOverlap -> {
-                val (blockID, dayID) = source.blockAndDay
-                if(!blockStillPresent(shift, blockID, doctor.id))
-                    doctor.blocksOfDays[blockID]!!.shiftsMadeInfeasible.remove(shift.id)
-                if(!dayStillPresent(shift, dayID, doctor.id))
-                    solutionData.days[dayID].removeInfeasibleShifts(doctor.id, listOf(shift.id))
-            }
-            is Source.RowOfSevenDays -> {
-                val blockID = source.block
-                if(!blockStillPresent(shift, blockID, doctor.id))
-                    doctor.blocksOfDays[blockID]!!.shiftsMadeInfeasible.remove(shift.id)
-            }
-            is Source.RowOfSixOverlap -> {
-                val blockID = source.blockAndDays.first
-                if(!blockStillPresent(shift, blockID, doctor.id)) {
-                    doctor.blocksOfDays[blockID]!!.shiftsMadeInfeasible.remove(shift.id)
-                }
-            }
-            is Source.WouldCauseRowTooLarge -> {
-                val (block1, block2) = source.blocks
-                if(!blockStillPresent(shift, block1, doctor.id))
-                    doctor.blocksOfDays[block1]!!.shiftsMadeInfeasible.remove(shift.id)
-                if(!blockStillPresent(shift, block2, doctor.id))
-                    doctor.blocksOfDays[block2]!!.shiftsMadeInfeasible.remove(shift.id)
-            }
-            is Source.WouldCauseRowTooLargeOverlap -> {
-                val (block1, block2) = source.blocks
-                if(!blockStillPresent(shift, block1, doctor.id))
-                    doctor.blocksOfDays[block1]!!.shiftsMadeInfeasible.remove(shift.id)
-                if(!blockStillPresent(shift, block2, doctor.id))
-                    doctor.blocksOfDays[block2]!!.shiftsMadeInfeasible.remove(shift.id)
-            }
-            is Source.InsufficientRestMid -> {
-                val (block1, block2, dayID) = source.blocksAndDay
-                if(!blockStillPresent(shift, block1, doctor.id))
-                    doctor.blocksOfDays[block1]!!.shiftsMadeInfeasible.remove(shift.id)
-                if(!blockStillPresent(shift, block2, doctor.id))
-                    doctor.blocksOfDays[block2]!!.shiftsMadeInfeasible.remove(shift.id)
-                if(!dayStillPresent(shift, dayID, doctor.id))
-                    solutionData.days[dayID].removeInfeasibleShifts(doctor.id, listOf(shift.id))
-            }
-            is Source.InsufficientRestMidOverlap -> {
-                val (block1, block2, dayID) = source.blocksAndDay
-                if(!blockStillPresent(shift, block1, doctor.id))
-                    doctor.blocksOfDays[block1]!!.shiftsMadeInfeasible.remove(shift.id)
-                if(!blockStillPresent(shift, block2, doctor.id))
-                    doctor.blocksOfDays[block2]!!.shiftsMadeInfeasible.remove(shift.id)
-                if(!dayStillPresent(shift, dayID, doctor.id))
-                    solutionData.days[dayID].removeInfeasibleShifts(doctor.id, listOf(shift.id))
-            }
-            else -> TODO()
-        }
-    }
+    // Potential sources of infeasibility for neighbouring blocks are calculated
+    val infeasibilities = mutableMapOf<Source, List<Int>>()
+    val twoToLeftIsWorked =
+        removedDay - 2 in days.indices && days[removedDay-2].block.contains(doctor.id)
+    val twoToRightIsWorked =
+        removedDay + 2 in days.indices && days[removedDay+2].block.contains(doctor.id)
+    if(twoToLeftIsWorked && twoToRightIsWorked)
+        checkToRight(solutionData, doctor.blocksOfDays[days[removedDay - 2].block[doctor.id]]!!,
+            doctor, infeasibilities)
 
-    for((source, shifts) in infeasibilities) {
-        for(shift in shifts) {
-            solutionData.shifts[shift].removeSource(doctor.id, source)
-            updateShiftsWithRemovedSource(source, solutionData.shifts[shift], doctor)
-        }
-    }
+    return infeasibilities
 }
 
-// Allows for the removal of "RowOfSixOverlap" infeasibility based on day removed
-private fun processRowOfSixOverlap(
+private fun processSplitBlock(
     solutionData: SolutionData,
-    doctorID: Int,
-    removedDay: Int,
-    infeasibilities: MutableMap<Source, List<Int>>
-) {
-    val infeasibleShifts = solutionData.days[removedDay].shiftsMadeInfeasible[doctorID] ?: return
+    blocks: Pair<Block, Block>,
+    doctor: MiddleGrade,
+): MutableMap<Source, List<Int>> {
+    // Updates [doctor] with created blocks
+    doctor.blocksOfDays[blocks.first.id] = blocks.first
+    doctor.blocksOfDays[blocks.second.id] = blocks.second
 
-    for(shift in infeasibleShifts) {
-        val sources = solutionData.shifts[shift].causesOfInfeasibility[doctorID]!!.sources
-            .filterIsInstance<Source.RowOfSixOverlap>()
-            .filter { it.blockAndDays.second.contains(removedDay) }
+    // Updates days that are now in the newly created block
+    for(day in blocks.second.days)
+        solutionData.days[day].block[doctor.id] = blocks.second.id
+    doctor.nextBlockID++
 
-        for(source in sources) {
-            when(infeasibilities[source]) {
-                null -> infeasibilities[source] = listOf(shift)
-                else -> infeasibilities[source] = infeasibilities[source]!! + shift
-            }
-        }
-    }
+    // Update feasibility according to new blocks
+    val infeasibilities = identifySourcesOfInfeasibility(solutionData, doctor, blocks.first)
+    checkToRight(solutionData, blocks.second, doctor, infeasibilities)
+
+    return infeasibilities
 }
+
 
 fun blockStillPresent(shift: Shift, blockID: Int, doctorID: Int): Boolean {
     val sources = shift.causesOfInfeasibility[doctorID]?.sources ?: return false
@@ -731,28 +634,5 @@ fun blockStillPresent(shift: Shift, blockID: Int, doctorID: Int): Boolean {
     return false
 }
 
-fun dayStillPresent(shift: Shift, dayID: Int, doctorID: Int): Boolean {
-    val sources = shift.causesOfInfeasibility[doctorID]?.sources ?: return false
 
-    for(source in sources)
-        when(sourceContainsDay(source, dayID)) {
-            true -> return true
-            false -> continue
-        }
 
-    return false
-}
-
-private fun sourceContainsDay(source: Source, dayID: Int): Boolean {
-    return when(source) {
-        is Source.InsufficientRest -> source.blockAndDay.second == dayID
-        is Source.InsufficientRestOverlap -> source.blockAndDay.second == dayID
-        is Source.InsufficientRestMid -> source.blocksAndDay.third == dayID
-        is Source.InsufficientRestMidOverlap -> source.blocksAndDay.third == dayID
-        else -> false
-    }
-}
-
-fun assessBlockDayRemoved() {
-    TODO()
-}
