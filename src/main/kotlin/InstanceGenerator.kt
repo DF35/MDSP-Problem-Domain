@@ -87,9 +87,9 @@ class InstanceGenerator(val rand: Random) {
             { i:Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8) }
         )
         val relevantShiftFunctions = listOf(
-            { i:Int -> listOf(i-1, i-4) },
-            { i:Int -> listOf(i-2, i-5) },
-            { i:Int -> listOf(i+1, i+2, i+4, i+5) }
+            { i:Int -> listOf(i-1, i-4, i-7) },
+            { i:Int -> listOf(i-2, i-5, i-8) },
+            { i:Int -> listOf(i+1, i+2, i+4, i+5, i+7, i+8) }
         )
 
         val (shiftInfo, days) = generateShiftInfo(numWeeks, max, genShifts, genDaysEntry,

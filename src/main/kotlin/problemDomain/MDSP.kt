@@ -387,7 +387,9 @@ class MDSP(
         IOM@for(x in 1..mutationStrength) {
             // Will make 20 attempts to deallocate a random assignment (might not be feasible to do so)
             for(y in 0..19) {
-                val assignment = doctor.assignedAssignments[rng.nextInt(doctor.assignedAssignments.size)]
+                val numAssignedAssignments = doctor.assignedAssignments.size
+                if(numAssignedAssignments == 0) break@IOM
+                val assignment = doctor.assignedAssignments[rng.nextInt(numAssignedAssignments)]
                 // If it succeeds in deallocating a solution in 20 attempts, we continue with the IOM loop
                 if(tempSol.deallocateAssignment(assignment)) continue@IOM
             }
@@ -407,7 +409,9 @@ class MDSP(
 
         IOM@for(x in 1..mutationStrength) {
             for(y in 0..19) {
-                val assignment = tempSol.unassignedAssignments[rng.nextInt(tempSol.unassignedAssignments.size)]
+                val numUnassignedAssignments = tempSol.unassignedAssignments.size
+                if(numUnassignedAssignments == 0) break@IOM
+                val assignment = tempSol.unassignedAssignments[rng.nextInt(numUnassignedAssignments)]
                 if(tempSol.allocateAssignment(assignment, doctor)) continue@IOM
             }
             break
@@ -426,7 +430,9 @@ class MDSP(
 
         IOM@for(x in 1..mutationStrength) {
             for (y in 0..19) {
-                val assignment = tempSol.assignedAssignments[rng.nextInt(tempSol.assignedAssignments.size)]
+                val numAssignedAssignments = tempSol.assignedAssignments.size
+                if(numAssignedAssignments == 0) break@IOM
+                val assignment = tempSol.assignedAssignments[rng.nextInt(numAssignedAssignments)]
                 if(tempSol.deallocateAssignment(assignment)) continue@IOM
             }
             break
@@ -573,7 +579,14 @@ class MDSP(
     // First Improvement Hill-Climbing
     private fun heuristic7(solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
         val tempSol = solutionMemory[solutionSourceIndex]!!.copy()
-        var unassignedIndex = rng.nextInt(tempSol.unassignedAssignments.size)
+
+        val numUnassignedAssignments = tempSol.unassignedAssignments.size
+        if(numUnassignedAssignments == 0) {
+            solutionMemory[solutionDestinationIndex] = tempSol
+            return tempSol.objectiveValue
+        }
+
+        var unassignedIndex = rng.nextInt(numUnassignedAssignments)
 
         for(x in 1..searchDepth) {
             var improved = false

@@ -7,6 +7,7 @@ import problemDomain.InstanceGUI
 import problemDomain.MDSP
 import problemDomain.Source
 import java.io.BufferedWriter
+import java.io.File
 import java.io.FileWriter
 import java.text.SimpleDateFormat
 import java.util.*
@@ -52,10 +53,10 @@ fun main(args: Array<String>) {
 
 
     /*val gen = InstanceGenerator(Random(3032024))
-    gen.generateInstance("instance2.txt", 2, 8, 4, 4, 0.4, 0.4)*/
+    gen.generateInstance("instance1.txt", 2, 8, 4, 4, 0.4, 0.4)*/
 
     // Debugging a doctor log file
-    /*val seedGenerator = Random(25022024)
+    val seedGenerator = Random(25022024)
     val seed = seedGenerator.nextLong()
     val problem = MDSP(seed)
     problem.loadInstance(1)
@@ -72,31 +73,35 @@ fun main(args: Array<String>) {
             "al" -> solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
             "de" -> solution.deallocateAssignment(tokens[1].toInt())
         }
-    }*/
+    }
 
-    val problem = MDSP(25032024)
+    /*val problem = MDSP(25032024)
     problem.loadInstance(1)
     val solution = problem.blankSolution()
     //solution.allocateAssignment(0, 3)
 
-    solution.allocateAssignment(4, 3)
-    solution.allocateAssignment(9, 3)
+    //solution.allocateAssignment(4, 3)
+    //solution.allocateAssignment(9, 3)
+    //solution.allocateAssignment(14, 3)
     solution.allocateAssignment(18, 3)
     solution.allocateAssignment(22, 3)
-    //solution.allocateAssignment(26, 3)
-    //solution.allocateAssignment(30, 3)
+    solution.allocateAssignment(26, 3)
+    solution.allocateAssignment(30, 3)
+    solution.allocateAssignment(34, 3)
+    //solution.allocateAssignment(38, 3)
+    solution.allocateAssignment(42, 3)
+    //solution.allocateAssignment(46, 3)
 
-    //solution.allocateAssignment(34, 3)
     solution.allocateAssignment(38, 3)
-    //solution.allocateAssignment(42, 3)
-
-    solution.allocateAssignment(14, 3)
+    solution.deallocateAssignment(42)
+    //solution.deallocateAssignment(38)
+    //solution.deallocateAssignment(4)
 
     /*solution.allocateAssignment(3, 0)
     solution.allocateAssignment(7, 0)
     solution.allocateAssignment(11, 0)*/
     //println(solution.deallocateAssignment(22))
 
+    solution.debug()*/
 
-    solution.debug()
 }

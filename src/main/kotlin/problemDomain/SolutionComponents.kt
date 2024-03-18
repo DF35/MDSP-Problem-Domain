@@ -18,14 +18,15 @@ sealed class Source {
     /*
      * Essentially a sub-case of WouldCauseRowTwoLargeOverlap, if a block is 6 days long
      * overlapping shifts two days before, and overlapping shifts the day after become
-     * infeasible as they would cause a row of 8 days worked
+     * infeasible as they would cause a row of 8 days worked <BlockID, DaysInBlockAtTime>
      */
-    data class RowOfSixOverlap(val block: Int): Source()
+    data class RowOfSixOverlap(val blockAndDays: Pair<Int, Set<Int>>): Source()
     // Stores the ID of the block and the ID of the day preventing it from being extended
     data class InsufficientRest(val blockAndDay: Pair<Int, Int>): Source()
     // Stores the IDs of the block and the day that make the overlapping shifts infeasible
     data class InsufficientRestOverlap(val blockAndDay: Pair<Int, Int>): Source()
-
+    data class InsufficientRestMid(val blocksAndDay: Triple<Int, Int, Int>): Source()
+    data class InsufficientRestMidOverlap(val blocksAndDay: Triple<Int, Int, Int>): Source()
     data class WeekendWorked(val dayID: Int): Source() // Need to alter
     // Stores the IDs of days with nights worked by the doctor that are necessitating rest
     data class RowOfNights(val days: Set<Int>): Source()
@@ -47,33 +48,23 @@ class ShiftInfeasibility(val cause : Cause) {
         var string = "$cause "
         for(source in sources)
             string += when(source) {
-                is Source.RowOfNights -> "Nights Worked ${source.days}"
-                is Source.ShiftWorked -> "Shift Worked ${source.shiftID} "
-                is Source.WeekendWorked -> "Weekend Worked ${source.dayID} "
-                is Source.InsufficientRest -> TODO()
-                is Source.InsufficientRestOverlap -> TODO()
-                is Source.RowOfSevenDays -> "Row of Seven Days ${source.block}"
-                is Source.WouldCauseRowTooLarge -> "Would Cause Row Too Large ${source.blocks.first}, ${source.blocks.second}"
-                is Source.WouldCauseRowTooLargeOverlap -> TODO()
-                is Source.RowOfSixOverlap -> "Row of Six Overlap ${source.block}"
+                is Source.ShiftWorked -> "ShiftWorked: ${source.shiftID} "
+                is Source.WeekendWorked -> "WeekendWorked ${source.dayID} "
+                is Source.RowOfNights -> "NightsWorked ${source.days} "
+                is Source.InsufficientRest -> "InsufficientRest: Block ${source.blockAndDay.first}, Day ${source.blockAndDay.second} "
+                is Source.InsufficientRestOverlap -> "InsufficientRestOverlap: Block ${source.blockAndDay.first}, Day ${source.blockAndDay.second} "
+                is Source.RowOfSevenDays -> "RowOfSevenDays: ${source.block} "
+                is Source.WouldCauseRowTooLarge -> "WouldCauseRowTooLarge: ${source.blocks.first}, ${source.blocks.second} "
+                is Source.WouldCauseRowTooLargeOverlap -> "WouldCauseRowTooLargeOverlap: ${source.blocks.first}, ${source.blocks.second} "
+                is Source.RowOfSixOverlap -> "RowOfSixOverlap: Block ${source.blockAndDays.first}, Days ${source.blockAndDays.second} "
+                is Source.InsufficientRestMid -> "InsufficientRestMid: Block ${source.blocksAndDay.first}, Block ${source.blocksAndDay.second}, Day ${source.blocksAndDay.third} "
+                is Source.InsufficientRestMidOverlap -> "InsufficientRestMidOverlap: Block ${source.blocksAndDay.first}, Block ${source.blocksAndDay.second}, Day ${source.blocksAndDay.third} "
             }
         return string + "\n"
     }
 
     fun debug() {
-        print("$cause ")
-        for(source in sources)
-            when(source) {
-                is Source.ShiftWorked -> println("ShiftWorked: ${source.shiftID}")
-                is Source.WeekendWorked -> println("WeekendWorked ${source.dayID}")
-                is Source.RowOfNights -> println("NightsWorked ${source.days}")
-                is Source.InsufficientRest -> println("InsufficientRest: Block ${source.blockAndDay.first}, Day ${source.blockAndDay.second}")
-                is Source.InsufficientRestOverlap -> println("InsufficientRestOverlap: Block ${source.blockAndDay.first}, Day ${source.blockAndDay.second}")
-                is Source.RowOfSevenDays -> println("RowOfSevenDays: ${source.block}")
-                is Source.WouldCauseRowTooLarge -> println("WouldCauseRowTooLarge: ${source.blocks.first}, ${source.blocks.second}")
-                is Source.WouldCauseRowTooLargeOverlap -> println("WouldCauseRowTooLargeOverlap: ${source.blocks.first}, ${source.blocks.second}")
-                is Source.RowOfSixOverlap -> println("RowOfSixOverlap ${source.block}")
-            }
+        println(this.toString())
     }
 }
 
@@ -170,7 +161,7 @@ abstract class Shift(
         if (infeasibility.cause != Cause.Rest) return
 
         if(!infeasibility.sources.remove(source))
-            throw Exception("removeSource: Source $source does not exist")
+            throw Exception("removeSource: Source $source does not exist for shift $id")
 
         if(infeasibility.sources.isEmpty()) {
             causesOfInfeasibility.remove(doctor)
@@ -194,7 +185,7 @@ class DayShift(
     duration: Double
 ) : Shift(id, assignmentIDs, shiftsWithin11Hours, shifts48HoursAfter, day, feasibleDoctors, duration) {
     override fun copy(): Shift {
-        val shift = DayShift(id, assignmentIDs, shiftsWithin11Hours, shifts48HoursAfter.toList(), nightShifts48HoursBefore, day,
+        val shift = DayShift(id, assignmentIDs, shiftsWithin11Hours, shifts48HoursAfter, nightShifts48HoursBefore, day,
                                 feasibleDoctors.toMutableSet(), duration)
         for((key, value) in causesOfInfeasibility)
             shift.causesOfInfeasibility[key] = value.copy()
@@ -292,12 +283,13 @@ class Day(
     var doctorsWorkingNight = mutableMapOf<Int, Int>()
     // <DoctorID, Set<ShiftID>>
     var doctorsWorkingDay = mutableMapOf<Int, MutableSet<Int>>()
-    /* Stores the shifts made infeasible due to InsufficientRest by this day
+    /* Stores the shifts made infeasible by this day that cannot be covered by a block
      * <DoctorID, <Set<ShiftID>>
      */
-    var shiftsMadeInfeasibleIR = mutableMapOf<Int, MutableSet<Int>>()
+    var shiftsMadeInfeasible = mutableMapOf<Int, MutableSet<Int>>()
     // Number of shifts that have at least one doctor assigned to them
     var numShiftsWithCoverage = 0
+    // Tracks the block of each doctor the day is a part of (if it is) <DoctorID, BlockID>
     var block = mutableMapOf<Int, Int>()
 
     fun copy(): Day {
@@ -306,8 +298,10 @@ class Day(
             day.doctorsWorkingNight[key] = value
         for((key, value) in doctorsWorkingDay)
             day.doctorsWorkingDay[key] = value.toMutableSet()
+        for((key, value) in shiftsMadeInfeasible)
+            day.shiftsMadeInfeasible[key] = value.toMutableSet()
         day.numShiftsWithCoverage = this.numShiftsWithCoverage
-        day.block = this.block
+        day.block = this.block.toMutableMap()
         return day
     }
 
@@ -319,7 +313,7 @@ class Day(
         println("Doctors Working Night:")
         doctorsWorkingNight.forEach { println("Doctor: ${it.key}, Shift ${it.value}") }
         println("Shifts made infeasible due to insufficient rest")
-        shiftsMadeInfeasibleIR.forEach { println("Doctor: ${it.key}, Shifts: ${it.value}") }
+        shiftsMadeInfeasible.forEach { println("Doctor: ${it.key}, Shifts: ${it.value}") }
         println("Blocks: ")
         block.forEach { println("Doctor: ${it.key}, Block: ${it.value}") }
         println()
@@ -355,15 +349,23 @@ class Day(
     }
 
     fun addInfeasibleShifts(doctor: Int, shifts: List<Int>) {
-        shiftsMadeInfeasibleIR.getOrPut(doctor) { mutableSetOf() }.addAll(shifts)
+        shiftsMadeInfeasible.getOrPut(doctor) { mutableSetOf() }.addAll(shifts)
     }
 
     fun removeInfeasibleShifts(doctor: Int, shifts: List<Int>) {
-        val removed = shiftsMadeInfeasibleIR[doctor]?.removeAll(shifts.toSet()) ?: throw Exception("removeInfeasibleShifts: Doctor $doctor has no entry for shifts made infeasible by Day $id")
+        val removed = shiftsMadeInfeasible[doctor]?.removeAll(shifts.toSet()) ?: throw Exception("removeInfeasibleShifts: Doctor $doctor has no entry for shifts made infeasible by Day $id")
         if(!removed) throw Exception("removeInfeasibleShifts: at least on of $shifts not present in infeasible shifts of Day $id for Doctor $doctor")
-        if(shiftsMadeInfeasibleIR[doctor]!!.isEmpty())
-            shiftsMadeInfeasibleIR.remove(doctor)
+        if(shiftsMadeInfeasible[doctor]!!.isEmpty())
+            shiftsMadeInfeasible.remove(doctor)
     }
+}
+
+// Represents where in the block a day was removed from
+enum class DayRemovedPos {
+    Start, // Leftmost day
+    Middle, // From the middle of the block
+    End, // Rightmost day
+    Final // Was the last day in the block
 }
 
 class Block(val id: Int) {
@@ -389,20 +391,20 @@ class Block(val id: Int) {
         days.addAll(newDays)
     }
 
-    fun removeDay(day: Int, nextID: Int): Pair<Block, Block>? {
-        /*
-         * If the day is neither the max nor the min value, it must be in the middle of
-         * the block, the block will be split into two
-         */
-        val middleOfBlock = day != days.min() && day != days.max()
+    fun removeDay(day: Int, nextID: Int): Pair<DayRemovedPos, Pair<Block, Block>?> {
+        val position = when {
+            day == days.min() && day == days.max() -> DayRemovedPos.Final
+            day == days.min() -> DayRemovedPos.Start
+            day == days.max() -> DayRemovedPos.End
+            else -> DayRemovedPos.Middle
+        }
+
         if(!days.remove(day))
             throw Exception("removeDay: Block $id does not contain $day")
 
-        return when(middleOfBlock) {
-            // The block is just edited, no new ones are created
-            false -> null
+        val blocks =  when(position) {
             // The block is split into two, one has the original [id], the other, [nextID]
-            true -> {
+            DayRemovedPos.Middle -> {
                 val (firstBlock, secondBlock) = days.partition { it < day }
                 val block1 = Block(id)
                 block1.setDays(firstBlock.toSet())
@@ -410,7 +412,10 @@ class Block(val id: Int) {
                 block2.setDays(secondBlock.toSet())
                 Pair(block1, block2)
             }
+            else -> null
         }
+
+        return Pair(position, blocks)
     }
 
 }

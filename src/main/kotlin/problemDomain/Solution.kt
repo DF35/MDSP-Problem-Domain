@@ -2,6 +2,8 @@ package problemDomain
 
 import java.util.*
 import kotlin.Exception
+import problemDomain.feasibilityHandling.dayStillPresent
+import problemDomain.feasibilityHandling.blockStillPresent
 
 data class SolutionData(
     val assignments: List<Assignment>,
@@ -175,6 +177,11 @@ class Solution(
 
         if(!feasibleDoctors.contains(doctor)) return false
 
+        val doc = doctors[doctor]
+        val shiftType = if(shift is NightShift) "Night" else "Day"
+        doc.assignmentLog += "al $assignment $doctor Shift: $shiftID ($shiftType) Day: ${shift.day}\n"
+
+
         // Subtracts previous objective value contribution of the doctor
         objectiveValue -= calculateDoctorContribution(doctors[doctor])
 
@@ -187,7 +194,6 @@ class Solution(
         updateFeasibilityAllocation(this.data, FeasibilityInfo(shift, doctor))
 
         // Updates data of the doctor allocated to the shift
-        val doc = doctors[doctor]
         doc.hoursWorked += shift.duration
         when(shift) {
             is DayShift -> doc.dayShiftsWorked++
@@ -211,8 +217,6 @@ class Solution(
         assignments[assignment].iterationAssigned = iteration
         iteration += 1
 
-        doc.assignmentLog += "al $assignment $doctor\n"
-
         for(testShift in shifts) {
             for(assignee in testShift.assignees)
                 if(testShift.causesOfInfeasibility[assignee] != null)
@@ -221,6 +225,20 @@ class Solution(
                 val a = assignments[assignmentID].assignee
                 if(a != null && !testShift.assignees.contains(a))
                     println("Dreadful")
+            }
+        }
+
+        for(day in days) {
+            if(day.shiftsMadeInfeasible[doctor] == null) continue
+            for(testShift in day.shiftsMadeInfeasible[doctor]!!)
+                if(!dayStillPresent(shifts[testShift], day.id, doctor))
+                    println("Problematic")
+        }
+
+        for((id, block) in doc.blocksOfDays) {
+            for(testShift in block.shiftsMadeInfeasible) {
+                if(!blockStillPresent(shifts[testShift], block.id, doctor))
+                    println("Schlecht")
             }
         }
 
@@ -252,6 +270,11 @@ class Solution(
             }
         }
 
+        val doc = doctors[doctor]
+        val shiftType = if(shift is NightShift) "Night" else "Day"
+        doc.assignmentLog += "de $assignment Shift: $shiftID (${shiftType}) Day: ${shift.day}\n"
+
+
         // Subtracts previous objective value contribution of the doctor
         objectiveValue -= calculateDoctorContribution(doctors[doctor])
 
@@ -263,7 +286,6 @@ class Solution(
         updateFeasibilityDeallocation(this.data, FeasibilityInfo(shift, doctor))
 
         // Updates data for doctor removed from the shift
-        val doc = doctors[doctor]
         doc.hoursWorked -= shift.duration
         when(shift) {
             is DayShift -> doc.dayShiftsWorked--
@@ -283,7 +305,6 @@ class Solution(
                 objectiveValue += 20
         }
 
-        doc.assignmentLog += "de $assignment\n"
 
         for(testShift in shifts) {
             for(assignee in testShift.assignees)
@@ -293,6 +314,20 @@ class Solution(
                 val a = assignments[assignmentID].assignee
                 if (a != null && !testShift.assignees.contains(a))
                     println("God has cursed me")
+            }
+        }
+
+        for(day in days) {
+            if(day.shiftsMadeInfeasible[doctor] == null) continue
+            for(testShift in day.shiftsMadeInfeasible[doctor]!!)
+                if(!dayStillPresent(shifts[testShift], day.id, doctor))
+                    println("Problematic")
+        }
+
+        for((id, block) in doc.blocksOfDays) {
+            for(testShift in block.shiftsMadeInfeasible) {
+                if(!blockStillPresent(shifts[testShift], block.id, doctor))
+                    println("Schlecht")
             }
         }
 

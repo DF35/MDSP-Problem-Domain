@@ -81,16 +81,13 @@ fun updateFeasibilityDeallocation(solutionData: SolutionData, info: FeasibilityI
     }
 
     val day = solutionData.days[shift.day]
-    day.removeWorkingDoctor(doctor, shift.id)
-    val dayNoLongerWorked = day.doctorsWorkingDay[doctor] == null
+    val dayNoLongerWorked = day.doctorsWorkingDay[doctor]!!.size == 1
 
     val nextDayID = day.id + 1
     val removedShiftOverlaps = shift is NightShift && shift.overlaps &&
                                 nextDayID in solutionData.days.indices
-    if(removedShiftOverlaps)
-        solutionData.days[nextDayID].removeWorkingDoctor(doctor, shift.id)
     val nextDayNoLongerWorked = removedShiftOverlaps &&
-            solutionData.days[nextDayID].doctorsWorkingDay[doctor] == null
+            solutionData.days[nextDayID].doctorsWorkingDay[doctor]!!.size == 1
 
     when {
         dayNoLongerWorked && nextDayNoLongerWorked -> {
@@ -100,6 +97,10 @@ fun updateFeasibilityDeallocation(solutionData: SolutionData, info: FeasibilityI
         dayNoLongerWorked -> updateFeasibilityDayRemoved(solutionData, doctor, day.id)
         nextDayNoLongerWorked -> updateFeasibilityDayRemoved(solutionData, doctor, nextDayID)
     }
+
+    day.removeWorkingDoctor(doctor, shift.id)
+    if(removedShiftOverlaps)
+        solutionData.days[nextDayID].removeWorkingDoctor(doctor, shift.id)
 
     return
     // Both types of shifts impact the days worked by the doctor
