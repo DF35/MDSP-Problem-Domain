@@ -4,24 +4,6 @@ import java.util.*
 import kotlin.Exception
 import problemDomain.feasibilityHandling.blockStillPresent
 
-data class SolutionData(
-    val assignments: List<Assignment>,
-    val shifts: List<Shift>,
-    val doctors: List<MiddleGrade>,
-    val days: List<Day>
-) {
-    fun copy(): SolutionData {
-        val assignments = mutableListOf<Assignment>()
-        val shifts = mutableListOf<Shift>()
-        val days = mutableListOf<Day>()
-        val doctors = mutableListOf<MiddleGrade>()
-        this.assignments.forEach { assignments.add(it.copy()) }
-        this.shifts.forEach { shifts.add(it.copy()) }
-        this.doctors.forEach { doctors.add(it.copy()) }
-        this.days.forEach { days.add(it.copy()) }
-        return SolutionData(assignments, shifts, doctors, days)
-    }
-}
 
 // Represents a single solution - interface for the problem domain
 class Solution(

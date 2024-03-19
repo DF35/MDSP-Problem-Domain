@@ -1,33 +1,6 @@
-al 35 6 Shift: 26 (Night) Day: 8
-al 51 6 Shift: 38 (Night) Day: 12
-al 55 6 Shift: 41 (Night) Day: 13
-al 119 6 Shift: 89 (Night) Day: 29
-al 123 6 Shift: 92 (Night) Day: 30
-al 155 6 Shift: 116 (Night) Day: 38
-al 167 6 Shift: 125 (Night) Day: 41
-al 179 6 Shift: 134 (Night) Day: 44
-al 195 6 Shift: 146 (Night) Day: 48
-al 208 6 Shift: 156 (Day) Day: 52
-al 215 6 Shift: 161 (Night) Day: 53
-al 26 6 Shift: 19 (Day) Day: 6
-al 10 6 Shift: 7 (Day) Day: 2
-al 88 6 Shift: 66 (Day) Day: 22
-al 30 6 Shift: 22 (Day) Day: 7
-de 119 Shift: 89 (Night) Day: 29
-de 179 Shift: 134 (Night) Day: 44
-al 179 6 Shift: 134 (Night) Day: 44
-al 119 6 Shift: 89 (Night) Day: 29
-al 14 6 Shift: 10 (Day) Day: 3
-de 55 Shift: 41 (Night) Day: 13
-al 55 6 Shift: 41 (Night) Day: 13
-de 35 Shift: 26 (Night) Day: 8
-al 74 6 Shift: 55 (Day) Day: 18
-de 123 Shift: 92 (Night) Day: 30
-al 123 6 Shift: 92 (Night) Day: 30
-al 16 6 Shift: 12 (Day) Day: 4
-de 55 Shift: 41 (Night) Day: 13
-al 55 6 Shift: 41 (Night) Day: 13
-al 46 6 Shift: 34 (Day) Day: 11
-al 76 6 Shift: 57 (Day) Day: 19
-al 144 6 Shift: 108 (Day) Day: 36
-al 40 6 Shift: 30 (Day) Day: 10
+al 215 2 Shift: 161 (Night) Day: 53
+al 66 2 Shift: 49 (Day) Day: 16
+al 19 2 Shift: 14 (Night) Day: 4
+al 34 2 Shift: 25 (Day) Day: 8
+al 36 2 Shift: 27 (Day) Day: 9
+al 74 2 Shift: 55 (Day) Day: 18

@@ -2,6 +2,25 @@ package problemDomain
 
 import kotlin.Exception
 
+data class SolutionData(
+    val assignments: List<Assignment>,
+    val shifts: List<Shift>,
+    val doctors: List<MiddleGrade>,
+    val days: List<Day>,
+) {
+    fun copy(): SolutionData {
+        val assignments = mutableListOf<Assignment>()
+        val shifts = mutableListOf<Shift>()
+        val days = mutableListOf<Day>()
+        val doctors = mutableListOf<MiddleGrade>()
+        this.assignments.forEach { assignments.add(it.copy()) }
+        this.shifts.forEach { shifts.add(it.copy()) }
+        this.doctors.forEach { doctors.add(it.copy()) }
+        this.days.forEach { days.add(it.copy()) }
+        return SolutionData(assignments, shifts, doctors, days)
+    }
+}
+
 // The cause for a shift's infeasibility for a given doctor
 enum class Cause {
     Leave, Training, Rest

@@ -57,9 +57,9 @@ fun updateFeasibilityAllocation(solutionData: SolutionData, info: FeasibilityInf
         overlapOnlyShiftWorkedNextDay -> updateFeasibilityDayAdded(solutionData, doctor, nextDayID)
     }
 
+    weekendFeasibility(solutionData, doctor, shift, allocate = true)
+
     return
-    // Weekend Feasibility
-    TODO()
 }
 
 fun updateFeasibilityDeallocation(solutionData: SolutionData, info: FeasibilityInfo) {
@@ -102,7 +102,53 @@ fun updateFeasibilityDeallocation(solutionData: SolutionData, info: FeasibilityI
     if(removedShiftOverlaps)
         solutionData.days[nextDayID].removeWorkingDoctor(doctor, shift.id)
 
+    weekendFeasibility(solutionData, doctor, shift, allocate = false)
+
     return
-    // Both types of shifts impact the days worked by the doctor
-    TODO()
+}
+
+// Handles the impact of weekend shifts (Midnight on Friday to Midnight on Sunday) on feasibility
+private fun weekendFeasibility(
+    solutionData: SolutionData,
+    doctorID: Int,
+    shift: Shift,
+    allocate: Boolean
+) {
+    val dayID = shift.day
+    val addedValues = when {
+        // Day is a Sunday
+        (dayID + 1) % 7 == 0 -> listOf(6, 7, 13, 14, -7, -8, -14, -15)
+        // Day is Saturday
+        (dayID + 2) % 7 == 0 -> listOf(7, 8, 14, 15, -6, -7, -13, -14)
+        // Day is a Friday and shift is an overlapping night shift
+        (dayID + 3) % 7 == 0 && shift is NightShift && shift.overlaps ->
+            listOf(8, 9, 15, 16, -5, -6, -12, -13)
+        // Day is not relevant to weekend feasibility
+        else -> return
+    }
+
+    // Calculates weekendDays that are impacted by the allocated/deallocated shift
+    val relevantWeekendDays = addedValues.map { it + dayID }
+        .filter { it in solutionData.days.indices }
+
+    val relevantShifts = mutableListOf<Int>()
+    for(weekendDay in relevantWeekendDays) {
+        val day = solutionData.days[weekendDay]
+        relevantShifts.addAll(day.getShifts())
+
+        /*
+         * If [weekendDay] is a Saturday, we add any overlapping night shifts from the
+         * Friday before it
+         */
+        if((day.id + 2) % 7 == 0)
+            relevantShifts.addAll(solutionData.days[day.id-1].overlappingNightShifts)
+    }
+
+    // Adds or removes sources as required
+    val feasibilityAction = when(allocate) {
+        true -> { s: Shift -> s.restInfeasibility(doctorID, Source.WeekendWorked(shift.id)) }
+        false -> { s: Shift -> s.removeSource(doctorID, Source.WeekendWorked(shift.id)) }
+    }
+    for(shiftID in relevantShifts)
+        feasibilityAction(solutionData.shifts[shiftID])
 }
