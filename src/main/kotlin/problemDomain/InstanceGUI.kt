@@ -13,7 +13,7 @@ import java.util.*
 
 class InstanceGUI: Application() {
     override fun start(primaryStage: Stage) {
-        val pane = FXMLLoader.load<AnchorPane>(javaClass.getResource("InstanceGUI.fxml"))
+        val pane = FXMLLoader.load<AnchorPane>(javaClass.classLoader.getResource("fxml/InstanceGUI.fxml"))
         val scene = Scene(pane)
 
         primaryStage.title = "Test"

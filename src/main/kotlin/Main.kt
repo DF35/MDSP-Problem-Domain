@@ -3,11 +3,8 @@ import hyperheuristic.hh.GIHH
 import hyperheuristic.selection.SelectionMethodType
 import hyperheuristic.util.WriteInfo
 import javafx.application.Application
-import problemDomain.InstanceGUI
 import problemDomain.MDSP
-import problemDomain.Source
 import java.io.BufferedWriter
-import java.io.File
 import java.io.FileWriter
 import java.text.SimpleDateFormat
 import java.util.*
@@ -16,13 +13,13 @@ import kotlin.random.Random
 fun main(args: Array<String>) {
     // If "--instance" is passed as an argument, we run the instance input gui
     if (args.isNotEmpty() && args.first() == "--instance") {
-        val gui = InstanceGUI()
+        val gui = ExperimentGUI()
         Application.launch(gui::class.java)
         return
     }
 
-    val gen = InstanceGenerator(Random(3032024))
-    gen.generateInstance("instance2.txt", 1, 8, 4, 6, 0.4, 0.4)
+    /*val gen = InstanceGenerator(Random(3032024))
+    gen.generateInstance("instance2.txt", 1, 8, 4, 6, 0.4, 0.4)*/
 
     val seedGenerator = Random(25022024)
     val totalExecutionTime: Long = 120000

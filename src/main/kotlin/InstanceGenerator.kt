@@ -19,7 +19,7 @@ class InstanceGenerator(val rand: Random) {
             2 -> generateDepartment2(numWeeks, numJunior, numSenior, percentageOnLeave, percentagePartTime)
             else -> throw Exception("generateInstance: Invalid value for [department] passed")
         }
-        val writer = BufferedWriter(FileWriter("src/main/resources/$filename"))
+        val writer = BufferedWriter(FileWriter("src/main/resources/instances$filename"))
         writer.write(instance)
         writer.close()
     }
