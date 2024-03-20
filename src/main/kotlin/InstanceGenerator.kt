@@ -50,17 +50,17 @@ class InstanceGenerator(val rand: Random) {
             { i:Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9) }
         )
         val relevantShiftFunctions = listOf(
-            { i: Int -> listOf(i-1, i-2, i-5, i-6) },
+            { i: Int -> listOf(i-1, i-2, i-5, i-6, i-9) },
             { i: Int -> listOf(i-2, i-3, i-6, i-7) },
             { i: Int -> listOf(i+2, i+3, i+6, i+7) },
-            { i: Int -> listOf(i+1, i+2, i+5, i+6) }
+            { i: Int -> listOf(i+1, i+2, i+5, i+6, i+9) }
         )
 
         val (shiftInfo, days) = generateShiftInfo(numWeeks, max, genShifts, genDaysEntry,
             genTimesAndTypes, grades, elevenHoursFunctions, fortyEightHoursFunctions, relevantShiftFunctions)
-        val doctors = generateDoctorInfo(numJunior, numSenior, percentagePartTime, percentageOnLeave, days, listOf(8.0,8.0,8.0,8.0), 3)
+        val doctors = generateDoctorInfo(numJunior, numSenior, percentagePartTime, percentageOnLeave, days, listOf(8.0,8.0,8.0,8.0), 5)
 
-        return "junior senior any\n47\n20 7\n$numWeeks\n18\n$doctors$shiftInfo"
+        return "junior senior any\n47\n20 7\n$numWeeks\n10\n$doctors$shiftInfo"
     }
 
     private fun generateDepartment2(

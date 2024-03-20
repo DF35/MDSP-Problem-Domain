@@ -21,6 +21,9 @@ fun main(args: Array<String>) {
         return
     }
 
+    val gen = InstanceGenerator(Random(3032024))
+    gen.generateInstance("instance2.txt", 1, 8, 4, 6, 0.4, 0.4)
+
     val seedGenerator = Random(25022024)
     val totalExecutionTime: Long = 120000
     val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
@@ -38,22 +41,18 @@ fun main(args: Array<String>) {
             resultFileName, selectionType, acceptanceType
         )
 
-        problem.loadInstance(1)
+        problem.loadInstance(2)
         problem.initialiseSolution(0)
         println(problem.getFunctionValue(0))
         hyperHeuristic.timeLimit = totalExecutionTime
         hyperHeuristic.loadProblemDomain(problem)
         hyperHeuristic.run()
 
-        val writer = BufferedWriter(FileWriter("resultInst1-$i.txt"))
+        val writer = BufferedWriter(FileWriter("resultInst2-$i.txt"))
         writer.write("${problem.bestSolutionValue} \n")
         writer.write(problem.bestSolutionToString())
         writer.close()
     }
-
-
-    /*val gen = InstanceGenerator(Random(3032024))
-    gen.generateInstance("instance1.txt", 2, 8, 4, 4, 0.4, 0.4)*/
 
     // Debugging a doctor log file
     /*val seedGenerator = Random(25022024)
