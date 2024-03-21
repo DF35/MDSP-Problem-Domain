@@ -1,0 +1,83 @@
+package fieldExperimentInterface
+
+import hyflex.ProblemDomain
+import javafx.event.EventHandler
+import javafx.fxml.FXML
+import javafx.scene.control.Button
+import javafx.scene.control.ComboBox
+import javafx.scene.control.ListView
+import javafx.scene.layout.VBox
+import problemDomain.Assignment
+import problemDomain.Shift
+import problemDomain.Solution
+import javafx.event.ActionEvent
+import javafx.fxml.Initializable
+import javafx.scene.layout.HBox
+import javafx.scene.text.Text
+import javafx.scene.text.TextAlignment
+import problemDomain.MDSP
+import java.net.URL
+import java.util.*
+
+class ShiftViewController {
+    @FXML
+    lateinit var assignmentView: ListView<AssignmentView>
+    @FXML
+    lateinit var time: Text
+    @FXML
+    lateinit var assignmentInfo: Text
+
+    fun initialise(
+        handler: ExperimentGUI,
+        assignments: List<AssignmentView>,
+        time: String,
+        assignmentInfo: String
+    ) {
+        this.time.text = time
+        this.assignmentInfo.text = assignmentInfo
+        assignments.forEach { assignmentView.items.add(it) }
+        assignmentView.items.forEach { it.button.onAction = handler }
+    }
+}
+
+class AssignmentView(val id: Int): HBox() {
+    val button = AssignmentButton(this)
+    val options = ComboBox<String>()
+    val doctor = Text()
+    var editMode = false
+
+    init {
+        children.addAll(options, button, doctor)
+        spacing = 10.0
+    }
+
+    fun setOptions(doctors: Set<Int>) {
+        options.items.clear()
+        doctors.forEach { options.items.add("Doctor $it") }
+    }
+}
+
+class AssignmentButton(val view: AssignmentView): Button() {
+    init {
+        this.text = "Assign"
+    }
+}
+
+/*button.onAction = EventHandler {
+            when(editMode) {
+                false -> {
+                    if(options.value == null) return@EventHandler
+
+                    val selectedDoctor = options.value.toString().split(" ")[1].toInt()
+                    solution.allocateAssignment(assignment.id, selectedDoctor)
+                    options.items.clear()
+                    button.text = "Edit"
+                    editMode = true
+                }
+                true -> {
+                    solution.deallocateAssignment(assignment.id)
+                    getOptions()
+                    button.text = "Select"
+                    editMode = false
+                }
+            }*/

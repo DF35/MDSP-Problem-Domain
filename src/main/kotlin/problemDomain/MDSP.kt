@@ -81,7 +81,7 @@ class MDSP(
             else -> Exception("loadInstance: Invalid instanceID given")
         }
 
-        readFile("src/main/resources/$fileName.txt")
+        readFile("src/main/resources/instances/$fileName.txt")
     }
 
     private fun readFile(filename: String) {

@@ -1,3 +1,4 @@
+import fieldExperimentInterface.ExperimentGUI
 import hyperheuristic.acceptance.AcceptanceCriterionType
 import hyperheuristic.hh.GIHH
 import hyperheuristic.selection.SelectionMethodType
