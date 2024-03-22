@@ -77,7 +77,6 @@ class MDSP(
             0 -> "testInstance"
             1 -> "instance1"
             2 -> "instance2"
-            3 -> "instance3"
             else -> Exception("loadInstance: Invalid instanceID given")
         }
 

@@ -22,7 +22,7 @@ fun main(args: Array<String>) {
     /*val gen = InstanceGenerator(Random(3032024))
     gen.generateInstance("instance2.txt", 1, 8, 4, 6, 0.4, 0.4)*/
 
-    val seedGenerator = Random(25022024)
+    val seedGenerator = Random(22032024)
     val totalExecutionTime: Long = 120000
     val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
     val acceptanceType = AcceptanceCriterionType.AdaptiveIterationLimitedListBasedTA
@@ -31,7 +31,7 @@ fun main(args: Array<String>) {
     val dateFormatter = SimpleDateFormat("ddMMyyyyHHmmss")
     WriteInfo.resultSubFolderName = dateFormatter.format(today)
 
-    for(i in 1..5) {
+    for(i in 1..3) {
         val seed = seedGenerator.nextLong()
         val problem = MDSP(seed)
         val hyperHeuristic = GIHH(
@@ -46,9 +46,8 @@ fun main(args: Array<String>) {
         hyperHeuristic.loadProblemDomain(problem)
         hyperHeuristic.run()
 
-        val writer = BufferedWriter(FileWriter("resultInst2-$i.txt"))
-        writer.write("${problem.bestSolutionValue} \n")
-        writer.write(problem.bestSolutionToString())
+        val writer = BufferedWriter(FileWriter("testInstance2-$i.txt"))
+        writer.write(problem.bestSolution.assignmentLog)
         writer.close()
     }
 

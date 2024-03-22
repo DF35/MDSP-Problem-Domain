@@ -406,6 +406,19 @@ class InstanceGenerator(val rand: Random) {
         return trainingShifts
     }
 
+    private fun nextDay(day: Int): String {
+        return when (day % 7) {
+            0 -> "Tuesday"
+            1 -> "Wednesday"
+            2 -> "Thursday"
+            3 -> "Friday"
+            4 -> "Saturday"
+            5 -> "Sunday"
+            else -> "Monday"
+        }
+    }
+
+    // A very simply toy instance that was used to test functions during the development process
     private fun generateTestInstance(numWeeks: Int): String {
         val max = (7*numWeeks) *2 -1
         val calcShiftsWithin11Hours = { i: Int -> arrayOf(i-1, i+1).filter{ j: Int -> j in 0..max }.toSet() }
@@ -444,17 +457,4 @@ class InstanceGenerator(val rand: Random) {
         }
         return string
     }
-
-    private fun nextDay(day: Int): String {
-        return when (day % 7) {
-            0 -> "Tuesday"
-            1 -> "Wednesday"
-            2 -> "Thursday"
-            3 -> "Friday"
-            4 -> "Saturday"
-            5 -> "Sunday"
-            else -> "Monday"
-        }
-    }
-
 }

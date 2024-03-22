@@ -18,6 +18,7 @@ class Solution(
     var assignedAssignments = mutableListOf<Int>()
     var objectiveValue = Double.MAX_VALUE
     var iteration = 0
+    var assignmentLog = ""
 
     fun copy(): Solution {
         val data = this.data.copy()
@@ -26,6 +27,7 @@ class Solution(
         solution.assignedAssignments = assignedAssignments.toMutableList()
         solution.objectiveValue = objectiveValue
         solution.iteration = iteration
+        solution.assignmentLog = assignmentLog
         return solution
     }
 
@@ -160,7 +162,7 @@ class Solution(
 
         val doc = doctors[doctor]
         val shiftType = if(shift is NightShift) "Night" else "Day"
-        doc.assignmentLog += "al $assignment $doctor Shift: $shiftID ($shiftType) Day: ${shift.day}\n"
+        assignmentLog += "al $assignment $doctor Shift: $shiftID ($shiftType) Day: ${shift.day}\n"
 
 
         // Subtracts previous objective value contribution of the doctor
@@ -250,7 +252,7 @@ class Solution(
 
         val doc = doctors[doctor]
         val shiftType = if(shift is NightShift) "Night" else "Day"
-        doc.assignmentLog += "de $assignment Shift: $shiftID (${shiftType}) Day: ${shift.day}\n"
+        assignmentLog += "de $assignment Shift: $shiftID (${shiftType}) Day: ${shift.day}\n"
 
 
         // Subtracts previous objective value contribution of the doctor
