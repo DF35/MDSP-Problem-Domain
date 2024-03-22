@@ -20,7 +20,7 @@ fun main(args: Array<String>) {
     }
 
     /*val gen = InstanceGenerator(Random(3032024))
-    gen.generateInstance("instance2.txt", 1, 8, 4, 6, 0.4, 0.4)*/
+    gen.generateInstance("instance1.txt", 2, 8, 4, 4, 0.4, 0.4)*/
 
     val seedGenerator = Random(22032024)
     val totalExecutionTime: Long = 120000
@@ -39,15 +39,16 @@ fun main(args: Array<String>) {
             resultFileName, selectionType, acceptanceType
         )
 
-        problem.loadInstance(2)
+        problem.loadInstance(1)
         problem.initialiseSolution(0)
         println(problem.getFunctionValue(0))
         hyperHeuristic.timeLimit = totalExecutionTime
         hyperHeuristic.loadProblemDomain(problem)
         hyperHeuristic.run()
 
-        val writer = BufferedWriter(FileWriter("testInstance2-$i.txt"))
-        writer.write(problem.bestSolution.assignmentLog)
+        val writer = BufferedWriter(FileWriter("testInstance1-$i.txt"))
+        writer.write("${problem.bestSolutionValue} \n")
+        writer.write(problem.bestSolutionToString())
         writer.close()
     }
 

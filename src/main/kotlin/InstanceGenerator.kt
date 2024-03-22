@@ -1,5 +1,7 @@
 import java.io.BufferedWriter
+import java.io.File
 import java.io.FileWriter
+import java.util.Scanner
 import kotlin.random.Random
 
 class InstanceGenerator(val rand: Random) {
@@ -19,7 +21,7 @@ class InstanceGenerator(val rand: Random) {
             2 -> generateDepartment2(numWeeks, numJunior, numSenior, percentageOnLeave, percentagePartTime)
             else -> throw Exception("generateInstance: Invalid value for [department] passed")
         }
-        val writer = BufferedWriter(FileWriter("src/main/resources/instances$filename"))
+        val writer = BufferedWriter(FileWriter("src/main/resources/instances/$filename"))
         writer.write(instance)
         writer.close()
     }
@@ -192,6 +194,7 @@ class InstanceGenerator(val rand: Random) {
 
         // Generates schedules for each group
         val trainingSchedules = generateTraining(days, numTrainingGroups)
+        val preferences = calculatePreferences(days, numJunior + numSenior, rand)
 
         var doctors = ""
 
@@ -203,6 +206,7 @@ class InstanceGenerator(val rand: Random) {
 
             val group = trainingGroups[doctor] ?: throw Exception("generateDoctorInfo: Doctor not assigned training group")
             val training = trainingSchedules[group-1]
+            val preferenceInfo = preferences[doctor]
 
             val grade = when(juniors.contains(doctor)) {
                 false -> "senior "
@@ -214,7 +218,7 @@ class InstanceGenerator(val rand: Random) {
                 true -> "80\n"
             }
 
-            doctors += "$leave $training $grade$percentage"
+            doctors += "$leave $training $preferenceInfo$grade$percentage"
         }
 
         return doctors
@@ -309,8 +313,6 @@ class InstanceGenerator(val rand: Random) {
         }
 
         val numWeeks = days.size / 7
-        // Uses 4 as the approximate number of weeks in a month
-        val months = numWeeks / 4
 
         /*
          * Maps group to a Pair containing the list of days and the increment for repetition
@@ -404,6 +406,67 @@ class InstanceGenerator(val rand: Random) {
         }
 
         return trainingShifts
+    }
+
+    fun calculatePreferences(
+        days: Map<Int, Pair<List<Int>, List<Int>>>,
+        numDoctors: Int,
+        rand: Random
+    ): List<String> {
+        val file = File("src/main/resources/doctor_preferences.txt")
+        val scanner = Scanner(file)
+        val prefTypes = mutableListOf<String>()
+        while(scanner.hasNextLine())
+            prefTypes.add(scanner.nextLine())
+
+        val numWeeks = days.size / 7
+
+        val preferences = mutableListOf<String>()
+        for(i in 0..numDoctors) {
+            val prefType = prefTypes[rand.nextInt(prefTypes.size)]
+            val components = prefType.split("\\s+".toRegex())
+            val specificDayOrNight = when(components[2]) {
+                "None" -> "NULL "
+
+                "Weekday" -> {
+                    var shifts = ""
+                    for(w in 0..<numWeeks) {
+                        val day = rand.nextInt(7)
+                        for(shift in days[w*7+day]!!.first)
+                            shifts += "$shift,"
+                    }
+                    shifts = shifts.dropLast(1)
+                    "$shifts "
+                }
+
+                "Night" -> {
+                    var shifts = ""
+                    for(w in 0..<numWeeks) {
+                        val day = rand.nextInt(7)
+                        for(shift in days[w*7+day]!!.second)
+                            shifts += "$shift,"
+                    }
+                    shifts = shifts.dropLast(1)
+                    "$shifts "
+                }
+
+                "Sunday" -> {
+                    var shifts = ""
+                    for(w in 0..<numWeeks) {
+                        for(shift in days[w*7+6]!!.second)
+                            shifts += "$shift,"
+                    }
+                    shifts = shifts.dropLast(1)
+                    "$shifts "
+                }
+
+                else -> throw Exception("calculatePreferences: Invalid preference file used")
+            }
+
+            preferences.add("${components[0]} ${components[1]} $specificDayOrNight")
+        }
+
+        return preferences
     }
 
     private fun nextDay(day: Int): String {

@@ -16,6 +16,9 @@ class Solution(
     // Tracks unassigned assignments for use in the objective function and heuristics
     var unassignedAssignments = mutableListOf<Int>()
     var assignedAssignments = mutableListOf<Int>()
+    val shiftPrefsViolated = mutableMapOf<Int, Int>() // <doctorID, numViolations>
+    val dayRangeViolations = mutableMapOf<Int, Int>() // <doctorID, numViolations>
+    val nightRangeViolations = mutableMapOf<Int, Int>() // <doctorID, numViolations>
     var objectiveValue = Double.MAX_VALUE
     var iteration = 0
     var assignmentLog = ""
@@ -25,9 +28,12 @@ class Solution(
         val solution = Solution(rand, data, averageHours, averageNumDayShifts, averageNumNightShifts)
         solution.unassignedAssignments = unassignedAssignments.toMutableList()
         solution.assignedAssignments = assignedAssignments.toMutableList()
+        shiftPrefsViolated.forEach { solution.shiftPrefsViolated[it.key] = it.value }
+        dayRangeViolations.forEach { solution.dayRangeViolations[it.key] = it.value }
+        nightRangeViolations.forEach { solution.nightRangeViolations[it.key] = it.value }
         solution.objectiveValue = objectiveValue
         solution.iteration = iteration
-        solution.assignmentLog = assignmentLog
+        //solution.assignmentLog = assignmentLog
         return solution
     }
 
@@ -42,6 +48,12 @@ class Solution(
     // Generates an initial solution - has stochastic elements
     fun initialise() {
         val (assignments, shifts, doctors) = data
+
+        for(doctor in doctors) {
+            shiftPrefsViolated[doctor.id] = 0
+            dayRangeViolations[doctor.id] = 0
+            nightRangeViolations[doctor.id] = 0
+        }
 
         val doctorsNeedingNightShifts = doctors.indices.filter { doctors[it].targetNightShifts > 0 }.toMutableList()
         val doctorsNeedingDayShifts = doctors.indices.filter { doctors[it].targetDayShifts > 0 }.toMutableList()
@@ -119,7 +131,7 @@ class Solution(
             if(day.numShiftsWithCoverage == 0)
                 value += 20
 
-            // Penalises shifts that are totally locum dependent
+            // Penalizes shifts that are totally locum dependent
             val numLocumDependentShifts = day.getShifts().size - day.numShiftsWithCoverage
             value += 15 * numLocumDependentShifts
         }
@@ -128,17 +140,23 @@ class Solution(
         for(doctor in data.doctors)
             value += calculateDoctorContribution(doctor)
 
+        // Impact of disparity in preference adherence is calculated
+        value += calculatePreferenceDisparity() * 8
+
         objectiveValue = value
     }
 
     // Calculates the impact of a single doctor on the objective function value
     private fun calculateDoctorContribution(doctor: MiddleGrade): Double {
         var contribution = 0.00
+
+        // Variance compared to number of shifts and hours worked targets
         val varianceAverageWorked = doctor.varianceHoursWorked()
         contribution += when (varianceAverageWorked < 0) {
             false -> varianceAverageWorked * 10
             true -> -varianceAverageWorked * 20
         }
+
         val varianceShifts = listOf(doctor.varianceDayShiftsWorked(), doctor.varianceNightShiftsWorked())
         for(variance in varianceShifts) {
             contribution += when (variance < 0) {
@@ -146,7 +164,67 @@ class Solution(
                 true -> -variance * 12
             }
         }
-        return contribution
+
+        // Contribution of infractions on preferences - also updates solution record of infractions
+        val shiftPrefsViolated = doctor.numberOfShiftPrefsViolated()
+
+        // Row of day/night shift preferences
+        var dayRangeViolations = 0
+        var nightRangeViolations = 0
+        for(block in doctor.blocksOfDays.values) {
+            if(block.days.size !in doctor.dayRange)
+                dayRangeViolations++
+
+            var numNightsInRow = 0
+            // If there are night shifts in the block, they must be at the end, due to rest laws
+            for(dayID in block.days.sortedDescending())
+                when(data.days[dayID].doctorsWorkingNight[doctor.id] == null) {
+                    true -> break
+                    false -> numNightsInRow++
+                }
+            // true if there is a row of nights and it is not in the desired range
+            if(numNightsInRow > 0 && numNightsInRow !in doctor.nightRange)
+                nightRangeViolations++
+        }
+
+        // Update solution record of infractions
+        this.shiftPrefsViolated[doctor.id] = shiftPrefsViolated
+        this.dayRangeViolations[doctor.id] = dayRangeViolations
+        this.nightRangeViolations[doctor.id] = nightRangeViolations
+
+        // Add contributions of infractions
+        return contribution + shiftPrefsViolated * 4 + dayRangeViolations * 4 + nightRangeViolations * 4
+    }
+
+    private fun calculatePreferenceDisparity(): Int {
+        // Calculate disparity in terms of shift preferences
+        val withShiftPreferences = shiftPrefsViolated.filter {
+            data.doctors[it.key].preferences.shiftsToAvoid
+        }
+        val minimumShiftInfraction = withShiftPreferences.values.min()
+        var shiftDisparity = 0
+        for(infraction in withShiftPreferences.values)
+            shiftDisparity += infraction - minimumShiftInfraction
+
+        // Calculate disparity in terms of day stretch preferences
+        val withDayPreferences = dayRangeViolations.filter {
+            data.doctors[it.key].preferences.dayRange
+        }
+        val minimumDayInfraction = withDayPreferences.values.min()
+        var dayDisparity = 0
+        for(infraction in withDayPreferences.values)
+            dayDisparity += infraction - minimumDayInfraction
+
+        // Calculate disparity in terms of night stretch preferences
+        val withNightPreferences = nightRangeViolations.filter {
+            data.doctors[it.key].preferences.nightRange
+        }
+        val minimumNightInfraction = withNightPreferences.values.min()
+        var nightDisparity = 0
+        for(infraction in withNightPreferences.values)
+            nightDisparity += infraction - minimumNightInfraction
+
+        return shiftDisparity + dayDisparity + nightDisparity
     }
 
     // Allocates indicated [assignment] to a given doctor and updates the feasibility of relevant shifts
@@ -162,11 +240,14 @@ class Solution(
 
         val doc = doctors[doctor]
         val shiftType = if(shift is NightShift) "Night" else "Day"
-        assignmentLog += "al $assignment $doctor Shift: $shiftID ($shiftType) Day: ${shift.day}\n"
+        //assignmentLog += "al $assignment $doctor Shift: $shiftID ($shiftType) Day: ${shift.day}\n"
 
 
         // Subtracts previous objective value contribution of the doctor
         objectiveValue -= calculateDoctorContribution(doctors[doctor])
+
+        // Subtracts previous objective value of preference disparity
+        objectiveValue -= calculatePreferenceDisparity() * 8
 
         // Updates feasibility and assignee/assignment information
         shift.feasibleDoctors.remove(doctor)
@@ -183,11 +264,17 @@ class Solution(
             is NightShift -> doc.nighShiftsWorked++
         }
         doc.assignedAssignments.add(assignment)
+        doc.assignedShifts.add(shift.id)
 
-        // Updates Objective Function value using delta evaluation
+        // Update Objective Function value using delta evaluation
         objectiveValue -= 10 // One less unassigned assignment
+
         // Adds new objective contribution value of the doctor
         objectiveValue += calculateDoctorContribution(doctors[doctor])
+
+        // Adds new contribution of preference disparity
+        objectiveValue += calculatePreferenceDisparity() * 8
+
         // Checks if the shift was previously without assignees, if so, does the same for the day
         if(shift.assignees.size == 1) {
             objectiveValue -= 15
@@ -252,11 +339,13 @@ class Solution(
 
         val doc = doctors[doctor]
         val shiftType = if(shift is NightShift) "Night" else "Day"
-        assignmentLog += "de $assignment Shift: $shiftID (${shiftType}) Day: ${shift.day}\n"
-
+        //assignmentLog += "de $assignment Shift: $shiftID (${shiftType}) Day: ${shift.day}\n"
 
         // Subtracts previous objective value contribution of the doctor
         objectiveValue -= calculateDoctorContribution(doctors[doctor])
+
+        // Subtracts previous objective value contribution of disparity
+        objectiveValue -= calculatePreferenceDisparity() * 8
 
         // Updates feasibility and assignee/assignment information
         shift.feasibleDoctors.add(doctor)
@@ -272,11 +361,17 @@ class Solution(
             is NightShift -> doc.nighShiftsWorked--
         }
         doc.assignedAssignments.remove(assignment)
+        doc.assignedShifts.remove(shift.id)
 
         // Updates Objective Function value using delta evaluation
         objectiveValue += 10 // One extra unassigned assignment
+
         // Adds new objective contribution value of the doctor
         objectiveValue += calculateDoctorContribution(doctors[doctor])
+
+        // Adds new contribution of preference disparity
+        objectiveValue += calculatePreferenceDisparity() * 8
+
         // Checks if the shift is without assignees, if so also checks the day
         if(shift.assignees.isEmpty()) {
             objectiveValue += 15

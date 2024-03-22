@@ -421,6 +421,12 @@ class Block(val id: Int) {
 
 }
 
+// Represents whether a doctor has a preference for this aspect of timetabling
+data class Preferences(
+    val dayRange: Boolean,
+    val nightRange: Boolean,
+    val shiftsToAvoid: Boolean
+)
 
 // Stores information relating to each MiddleGrade
 class MiddleGrade(
@@ -430,14 +436,20 @@ class MiddleGrade(
     val targetHours: Double,
     val targetDayShifts: Int,
     val targetNightShifts: Int,
-    val averageHoursDenominator: Double
+    val averageHoursDenominator: Double,
+    val shiftsToAvoid: Set<Int>,
+    val dayRange: IntRange,
+    val nightRange: IntRange
 ) {
     var hoursWorked = 0.00
     var dayShiftsWorked = 0
     var nighShiftsWorked = 0
     var assignedAssignments = mutableListOf<Int>()
+    var assignedShifts = mutableSetOf<Int>()
     val blocksOfDays = mutableMapOf<Int, Block>()
     var nextBlockID = 0
+    val preferences = Preferences(dayRange != 1..7,
+        nightRange != 1..4, shiftsToAvoid.isNotEmpty())
 
     // Used in debugging
     var assignmentLog = ""
@@ -448,12 +460,16 @@ class MiddleGrade(
 
     fun varianceNightShiftsWorked(): Int { return targetNightShifts - nighShiftsWorked }
 
+    fun numberOfShiftPrefsViolated(): Int { return assignedShifts.intersect(shiftsToAvoid).size }
+
     fun copy(): MiddleGrade {
-        val doctor = MiddleGrade(id, grade, targetHours, targetDayShifts, targetNightShifts, averageHoursDenominator)
+        val doctor = MiddleGrade(id, grade, targetHours, targetDayShifts, targetNightShifts,
+            averageHoursDenominator, shiftsToAvoid, dayRange, nightRange)
         doctor.hoursWorked = this.hoursWorked
         doctor.dayShiftsWorked = this.dayShiftsWorked
         doctor.nighShiftsWorked = this.nighShiftsWorked
         doctor.assignedAssignments = this.assignedAssignments.toMutableList()
+        doctor.assignedShifts = this.assignedShifts.toMutableSet()
         this.blocksOfDays.forEach { doctor.blocksOfDays[it.key] = it.value.copy() }
         doctor.nextBlockID = this.nextBlockID
         doctor.assignmentLog = assignmentLog

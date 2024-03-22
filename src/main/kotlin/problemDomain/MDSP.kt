@@ -119,11 +119,37 @@ class MDSP(
                 "NULL" -> emptyList()
                 else -> string.split(",").map { it.toInt() }
             }
+
             string = scanner.next()
             training[id] = when(string) {
                 "NULL" -> emptyList()
                 else -> string.split(",").map { it.toInt() }
             }
+
+            string = scanner.next()
+            val dayRange = when(string) {
+                "None" -> 1..7
+                else -> {
+                    val bounds = string.split("-")
+                    bounds[0].toInt()..bounds[1].toInt()
+                }
+            }
+
+            string = scanner.next()
+            val nightRange = when(string) {
+                "None" -> 1..4
+                else -> {
+                    val bounds = string.split("-")
+                    bounds[0].toInt()..bounds[1].toInt()
+                }
+            }
+
+            string = scanner.next()
+            val shiftsToAvoid = when(string) {
+                "NULL" -> emptyList()
+                else -> string.split(",").map { it.toInt() }
+            }
+
             string = scanner.next()
             val grade = when(string) {
                 in grades -> string
@@ -139,7 +165,8 @@ class MDSP(
                 Triple(averageHours.toDouble(), averageDayShifts, averageNightShifts)
             }
 
-            doctors.add(MiddleGrade(id, grade, targets.first, targets.second, targets.third, averageHoursDenominator))
+            doctors.add(MiddleGrade(id, grade, targets.first, targets.second, targets.third,
+                averageHoursDenominator, shiftsToAvoid.toSet(), dayRange, nightRange))
             doctorsOfGrade[grade]!!.add(id)
         }
 
