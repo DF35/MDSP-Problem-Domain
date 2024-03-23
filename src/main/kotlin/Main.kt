@@ -39,16 +39,17 @@ fun main(args: Array<String>) {
             resultFileName, selectionType, acceptanceType
         )
 
-        problem.loadInstance(1)
+        problem.loadInstance(2)
         problem.initialiseSolution(0)
         println(problem.getFunctionValue(0))
         hyperHeuristic.timeLimit = totalExecutionTime
         hyperHeuristic.loadProblemDomain(problem)
         hyperHeuristic.run()
 
-        val writer = BufferedWriter(FileWriter("testInstance1-$i.txt"))
+        val writer = BufferedWriter(FileWriter("testInstance2-$i.txt"))
         writer.write("${problem.bestSolutionValue} \n")
         writer.write(problem.bestSolutionToString())
+        writer.write("${problem.bestSolution.calculatePreferenceDisparity()}\n")
         writer.close()
     }
 
@@ -75,7 +76,13 @@ fun main(args: Array<String>) {
     /*val problem = MDSP(25032024)
     problem.loadInstance(1)
     val solution = problem.blankSolution()
-    //solution.allocateAssignment(0, 3)
+    solution.calculateObjectiveValue()
+    println(solution.nightRangeViolations)
+    //solution.nightRangeViolations[3] = 6
+    println(solution.calculatePreferenceDisparity())*/
+
+
+    /*//solution.allocateAssignment(0, 3)
 
     //solution.allocateAssignment(4, 3)
     //solution.allocateAssignment(9, 3)

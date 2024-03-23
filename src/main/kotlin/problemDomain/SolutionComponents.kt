@@ -21,7 +21,7 @@ data class SolutionData(
     }
 }
 
-// The cause for a shift's infeasibility for a given doctor
+// The cause of a shift's infeasibility for a given doctor
 enum class Cause {
     Leave, Training, Rest
 }
@@ -34,11 +34,7 @@ sealed class Source {
     data class WouldCauseRowTooLarge(val blocks: Pair<Int, Int>): Source()
     // Stores the IDs of the two blocks making the overlapping shifts infeasible
     data class WouldCauseRowTooLargeOverlap(val blocks: Pair<Int, Int>): Source()
-    /*
-     * Essentially a sub-case of WouldCauseRowTwoLargeOverlap, if a block is 6 days long
-     * overlapping shifts two days before, and overlapping shifts the day after become
-     * infeasible as they would cause a row of 8 days worked <BlockID, DaysInBlockAtTime>
-     */
+    // If a day is 6 days long, relevant overlapping shifts need to be made infeasible
     data class RowOfSixOverlap(val block: Int): Source()
     // Stores the ID of the block and the ID of the day preventing it from being extended
     data class InsufficientRest(val blocks: Pair<Int, Int>): Source()
@@ -476,7 +472,12 @@ class MiddleGrade(
         return doctor
     }
 
-    override fun toString(): String { return "\nDoctor: $id\nGrade: $grade\nTarget Hours: $targetHours\nTarget Day Shifts: $targetDayShifts\nTarget Night Shifts: $targetNightShifts\nHours Worked: $hoursWorked\nAverage Hours Worked (Adjusted for leave) ${hoursWorked/averageHoursDenominator}\nDay Shifts Worked: $dayShiftsWorked\nNight Shifts Worked: $nighShiftsWorked\n" }
+    override fun toString(): String {
+        val basicInfo = "\nDoctor: $id\nGrade: $grade\n"
+        val targets = "Target Hours: $targetHours\nTarget Day Shifts: $targetDayShifts\nTarget Night Shifts: $targetNightShifts\n"
+        val actual = "Hours Worked: $hoursWorked\nAverage Hours Worked (Adjusted for leave) ${hoursWorked/averageHoursDenominator}\nDay Shifts Worked: $dayShiftsWorked\nNight Shifts Worked: $nighShiftsWorked\n"
+        return basicInfo + targets + actual
+    }
 
     fun debug() {
         println(id)

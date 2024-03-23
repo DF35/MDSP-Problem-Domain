@@ -741,8 +741,15 @@ class MDSP(
         }
 
         string += "\nDoctors:"
-        for(doctor in solution.data.doctors)
+        for(doctor in solution.data.doctors) {
             string += doctor
+            if(doctor.preferences.dayRange)
+                string += "Preferred day stretch length: ${doctor.dayRange.min()}-${doctor.dayRange.max()}, Violations: ${solution.dayRangeViolations[doctor.id]}\n"
+            if(doctor.preferences.nightRange)
+                string += "Preferred night stretch length: ${doctor.nightRange.min()}-${doctor.nightRange.max()}, Violations: ${solution.nightRangeViolations[doctor.id]}\n"
+            if(doctor.preferences.shiftsToAvoid)
+                string += "Shifts preferably avoided: ${doctor.shiftsToAvoid}, Violations: ${solution.shiftPrefsViolated[doctor.id]}\n"
+        }
 
         return string
     }

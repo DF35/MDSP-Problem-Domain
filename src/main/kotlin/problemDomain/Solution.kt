@@ -3,6 +3,7 @@ package problemDomain
 import java.util.*
 import kotlin.Exception
 import problemDomain.feasibilityHandling.blockStillPresent
+import kotlin.math.pow
 
 
 // Represents a single solution - interface for the problem domain
@@ -141,7 +142,7 @@ class Solution(
             value += calculateDoctorContribution(doctor)
 
         // Impact of disparity in preference adherence is calculated
-        value += calculatePreferenceDisparity() * 8
+        value += calculatePreferenceDisparity() * 500
 
         objectiveValue = value
     }
@@ -196,35 +197,42 @@ class Solution(
         return contribution + shiftPrefsViolated * 4 + dayRangeViolations * 4 + nightRangeViolations * 4
     }
 
-    private fun calculatePreferenceDisparity(): Int {
+    // Uses Jain's Fairness Index
+    fun calculatePreferenceDisparity(): Double {
         // Calculate disparity in terms of shift preferences
         val withShiftPreferences = shiftPrefsViolated.filter {
             data.doctors[it.key].preferences.shiftsToAvoid
         }
-        val minimumShiftInfraction = withShiftPreferences.values.min()
-        var shiftDisparity = 0
-        for(infraction in withShiftPreferences.values)
-            shiftDisparity += infraction - minimumShiftInfraction
+        val shiftNumerator = withShiftPreferences.values.sum().toDouble().pow(2)
+        var shiftSquaredTotal = 0.00
+        withShiftPreferences.values.forEach { shiftSquaredTotal += it.toDouble().pow(2) }
+        val shiftDenominator = shiftSquaredTotal * withShiftPreferences.size
+        val shiftDisparity = shiftNumerator / shiftDenominator
 
         // Calculate disparity in terms of day stretch preferences
         val withDayPreferences = dayRangeViolations.filter {
             data.doctors[it.key].preferences.dayRange
         }
-        val minimumDayInfraction = withDayPreferences.values.min()
-        var dayDisparity = 0
-        for(infraction in withDayPreferences.values)
-            dayDisparity += infraction - minimumDayInfraction
+        val dayNumerator = withDayPreferences.values.sum().toDouble().pow(2)
+        var daySquaredTotal = 0.00
+        withDayPreferences.values.forEach { daySquaredTotal += it.toDouble().pow(2) }
+        val dayDenominator = daySquaredTotal * withDayPreferences.size
+        val dayDisparity = dayNumerator / dayDenominator
 
         // Calculate disparity in terms of night stretch preferences
         val withNightPreferences = nightRangeViolations.filter {
             data.doctors[it.key].preferences.nightRange
         }
-        val minimumNightInfraction = withNightPreferences.values.min()
-        var nightDisparity = 0
-        for(infraction in withNightPreferences.values)
-            nightDisparity += infraction - minimumNightInfraction
+        val nightNumerator = withNightPreferences.values.sum().toDouble().pow(2)
+        var nightSquaredTotal = 0.00
+        withNightPreferences.values.forEach { nightSquaredTotal += it.toDouble().pow(2) }
+        val nightDenominator = nightSquaredTotal * withNightPreferences.size
+        val nightDisparity = nightNumerator / nightDenominator
 
-        return shiftDisparity + dayDisparity + nightDisparity
+        val shiftContribution = if(!shiftDisparity.isNaN()) shiftDisparity else 1.0
+        val dayContribution = if(!dayDisparity.isNaN()) dayDisparity else 1.0
+        val nightContribution = if(!nightDisparity.isNaN()) nightDisparity else 1.0
+        return 3 - (shiftContribution + dayContribution + nightContribution)
     }
 
     // Allocates indicated [assignment] to a given doctor and updates the feasibility of relevant shifts
@@ -247,7 +255,7 @@ class Solution(
         objectiveValue -= calculateDoctorContribution(doctors[doctor])
 
         // Subtracts previous objective value of preference disparity
-        objectiveValue -= calculatePreferenceDisparity() * 8
+        objectiveValue -= calculatePreferenceDisparity() * 500
 
         // Updates feasibility and assignee/assignment information
         shift.feasibleDoctors.remove(doctor)
@@ -273,7 +281,7 @@ class Solution(
         objectiveValue += calculateDoctorContribution(doctors[doctor])
 
         // Adds new contribution of preference disparity
-        objectiveValue += calculatePreferenceDisparity() * 8
+        objectiveValue += calculatePreferenceDisparity() * 500
 
         // Checks if the shift was previously without assignees, if so, does the same for the day
         if(shift.assignees.size == 1) {
@@ -345,7 +353,7 @@ class Solution(
         objectiveValue -= calculateDoctorContribution(doctors[doctor])
 
         // Subtracts previous objective value contribution of disparity
-        objectiveValue -= calculatePreferenceDisparity() * 8
+        objectiveValue -= calculatePreferenceDisparity() * 500
 
         // Updates feasibility and assignee/assignment information
         shift.feasibleDoctors.add(doctor)
@@ -370,7 +378,7 @@ class Solution(
         objectiveValue += calculateDoctorContribution(doctors[doctor])
 
         // Adds new contribution of preference disparity
-        objectiveValue += calculatePreferenceDisparity() * 8
+        objectiveValue += calculatePreferenceDisparity() * 500
 
         // Checks if the shift is without assignees, if so also checks the day
         if(shift.assignees.isEmpty()) {
