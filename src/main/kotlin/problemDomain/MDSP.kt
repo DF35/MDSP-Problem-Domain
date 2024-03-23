@@ -306,6 +306,7 @@ class MDSP(
         }
     }
 
+    // Returns a blank solution for use in testing and the experiment interface
     fun blankSolution(): Solution {
         val assignments = mutableListOf<Assignment>()
         val shifts = mutableListOf<Shift>()
@@ -321,6 +322,7 @@ class MDSP(
             averageNightShifts
         )
         solution.unassignedAssignments = assignments.indices.toMutableList()
+        solution.calculateObjectiveValue()
         return solution
     }
 

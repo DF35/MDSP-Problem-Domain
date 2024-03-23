@@ -178,15 +178,31 @@ class Solution(
 
             var numNightsInRow = 0
             // If there are night shifts in the block, they must be at the end, due to rest laws
-            for(dayID in block.days.sortedDescending())
-                when(data.days[dayID].doctorsWorkingNight[doctor.id] == null) {
-                    true -> break
-                    false -> numNightsInRow++
+            for(dayID in block.days.sortedDescending()) {
+                /*
+                 * End day of block could be from an overlapping night shift, so next day
+                 * still needs to be checking if the end day does not have a worked night
+                 * shift
+                 */
+                if(numNightsInRow == 0) {
+                    when (data.days[dayID].doctorsWorkingNight[doctor.id] == null) {
+                        true -> continue
+                        false -> numNightsInRow++
+                    }
                 }
+                else
+                    // Continue until stretch of nights ends
+                    when (data.days[dayID].doctorsWorkingNight[doctor.id] == null) {
+                        true -> break
+                        false -> numNightsInRow++
+                    }
+            }
+
             // true if there is a row of nights and it is not in the desired range
             if(numNightsInRow > 0 && numNightsInRow !in doctor.nightRange)
                 nightRangeViolations++
         }
+
 
         // Update solution record of infractions
         this.shiftPrefsViolated[doctor.id] = shiftPrefsViolated

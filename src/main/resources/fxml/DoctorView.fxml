@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="341.0" prefWidth="301.0" spacing="6.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fieldExperimentInterface.DoctorViewController">
+   <children>
+      <Text fx:id="doctorID" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="doctorGrade" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="dayPref" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="dayViolation" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="nightPref" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="nightViolation" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="shiftPref" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="shiftViolation" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="targetHours" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="avgHours" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="dayTarget" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="dayShifts" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="nightTarget" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="nightShifts" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+   </children>
+</VBox>

@@ -26,13 +26,17 @@ class ShiftViewController {
     lateinit var time: Text
     @FXML
     lateinit var assignmentInfo: Text
+    @FXML
+    lateinit var shiftID: Text
 
     fun initialise(
         handler: ExperimentGUI,
         assignments: List<AssignmentView>,
+        shiftID: Int,
         time: String,
         assignmentInfo: String
     ) {
+        this.shiftID.text = "Shift $shiftID"
         this.time.text = time
         this.assignmentInfo.text = assignmentInfo
         assignments.forEach { assignmentView.items.add(it) }
@@ -62,22 +66,3 @@ class AssignmentButton(val view: AssignmentView): Button() {
         this.text = "Assign"
     }
 }
-
-/*button.onAction = EventHandler {
-            when(editMode) {
-                false -> {
-                    if(options.value == null) return@EventHandler
-
-                    val selectedDoctor = options.value.toString().split(" ")[1].toInt()
-                    solution.allocateAssignment(assignment.id, selectedDoctor)
-                    options.items.clear()
-                    button.text = "Edit"
-                    editMode = true
-                }
-                true -> {
-                    solution.deallocateAssignment(assignment.id)
-                    getOptions()
-                    button.text = "Select"
-                    editMode = false
-                }
-            }*/

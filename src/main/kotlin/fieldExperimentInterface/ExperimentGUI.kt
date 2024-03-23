@@ -8,7 +8,6 @@ import javafx.geometry.Pos
 import javafx.scene.Scene
 import javafx.scene.control.Button
 import javafx.scene.control.ListView
-import javafx.scene.layout.AnchorPane
 import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
 import javafx.scene.text.Font
@@ -23,18 +22,21 @@ class ExperimentGUI: Application(), EventHandler<javafx.event.ActionEvent> {
     lateinit var solution: Solution
     lateinit var pd: MDSP
     val assignmentViews = mutableListOf<AssignmentView>()
+    val doctorViews = mutableMapOf<Int, DoctorViewController>()
 
     override fun start(primaryStage: Stage) {
         pd = MDSP(25022024)
-        pd.loadInstance(1)
+        pd.loadInstance(2)
         solution = pd.blankSolution()
 
-        val content = ListView<VBox>()
-        content.prefWidth = 1050.00
-        content.prefHeight = 590.00
+        val content = HBox()
+
+        val shiftContent = ListView<VBox>()
+        shiftContent.prefWidth = 1050.00
+        shiftContent.prefHeight = 590.00
 
         for(day in solution.data.days)
-            initialiseDay(day, content)
+            initialiseDay(day, shiftContent)
 
         val submitButton = Button("Submit")
         submitButton.onAction = EventHandler {
@@ -47,14 +49,16 @@ class ExperimentGUI: Application(), EventHandler<javafx.event.ActionEvent> {
             writer.close()
             exitProcess(0)
         }
+
         val buttonContainer = VBox(submitButton)
         buttonContainer.alignment = Pos.BASELINE_CENTER
         buttonContainer.padding = Insets(30.00)
-        content.items.add(buttonContainer)
+        shiftContent.items.add(buttonContainer)
 
-        val pane = FXMLLoader.load<AnchorPane>(javaClass.classLoader.getResource("fxml/ExperimentGUI.fxml"))
-        pane.children.add(content)
-        val scene = Scene(pane)
+        val doctorContent = initialiseDoctorContent()
+
+        content.children.addAll(shiftContent, doctorContent)
+        val scene = Scene(content)
 
         primaryStage.title = "Timetabling Experiment Interface"
         primaryStage.scene = scene
@@ -120,8 +124,24 @@ class ExperimentGUI: Application(), EventHandler<javafx.event.ActionEvent> {
             assignmentRequirements += "Assignment ${index+1} Required Grade = $grade\n"
         if(requiredGrades.size > 1) assignmentRequirements = assignmentRequirements.dropLast(1)
 
-        controller.initialise(this, shiftAssignments, time, assignmentRequirements)
+        controller.initialise(this, shiftAssignments, shiftID, time, assignmentRequirements)
         shifts.children.add(sView)
+    }
+
+    private fun initialiseDoctorContent(): ListView<VBox> {
+        val doctorList = ListView<VBox>()
+        doctorList.prefWidth = 350.0
+
+        for(doctor in solution.data.doctors) {
+            val loader = FXMLLoader(javaClass.classLoader.getResource("fxml/DoctorView.fxml"))
+            val dView = loader.load<VBox>()
+            val controller = loader.getController<DoctorViewController>()
+            controller.initialise(doctor)
+            doctorList.items.add(dView)
+            doctorViews[doctor.id] = controller
+        }
+
+        return doctorList
     }
 
     // Used to handle the assignment buttons being pressed
@@ -170,6 +190,14 @@ class ExperimentGUI: Application(), EventHandler<javafx.event.ActionEvent> {
                 v.setOptions(solution.data.shifts[assignment.shift].feasibleDoctors
                     .subtract(assignment.infeasibleDoctors))
             }
+
+        for((doctorID, controller) in doctorViews) {
+            val doctor = solution.data.doctors[doctorID]
+            val dayViolations = solution.dayRangeViolations[doctorID]!!
+            val nightViolations = solution.nightRangeViolations[doctorID]!!
+            val shiftViolations = solution.shiftPrefsViolated[doctorID]!!
+            controller.refresh(doctor, dayViolations, nightViolations, shiftViolations)
+        }
     }
 
 }

@@ -31,7 +31,7 @@ fun main(args: Array<String>) {
     val dateFormatter = SimpleDateFormat("ddMMyyyyHHmmss")
     WriteInfo.resultSubFolderName = dateFormatter.format(today)
 
-    for(i in 1..3) {
+    for(i in 1..5) {
         val seed = seedGenerator.nextLong()
         val problem = MDSP(seed)
         val hyperHeuristic = GIHH(
@@ -47,6 +47,28 @@ fun main(args: Array<String>) {
         hyperHeuristic.run()
 
         val writer = BufferedWriter(FileWriter("testInstance2-$i.txt"))
+        writer.write("${problem.bestSolutionValue} \n")
+        writer.write(problem.bestSolutionToString())
+        writer.write("${problem.bestSolution.calculatePreferenceDisparity()}\n")
+        writer.close()
+    }
+
+    for(i in 1..5) {
+        val seed = seedGenerator.nextLong()
+        val problem = MDSP(seed)
+        val hyperHeuristic = GIHH(
+            seed, problem.numberOfHeuristics, totalExecutionTime,
+            resultFileName, selectionType, acceptanceType
+        )
+
+        problem.loadInstance(1)
+        problem.initialiseSolution(0)
+        println(problem.getFunctionValue(0))
+        hyperHeuristic.timeLimit = totalExecutionTime
+        hyperHeuristic.loadProblemDomain(problem)
+        hyperHeuristic.run()
+
+        val writer = BufferedWriter(FileWriter("testInstance1-$i.txt"))
         writer.write("${problem.bestSolutionValue} \n")
         writer.write(problem.bestSolutionToString())
         writer.write("${problem.bestSolution.calculatePreferenceDisparity()}\n")
