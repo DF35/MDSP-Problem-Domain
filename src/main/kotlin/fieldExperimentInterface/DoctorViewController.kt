@@ -37,9 +37,17 @@ class DoctorViewController {
     fun initialise(doctor: MiddleGrade) {
         doctorID.text = "Doctor ${doctor.id}"
         doctorGrade.text = "Grade: ${doctor.grade}"
-        dayPref.text = "Prefers ${doctor.dayRange.min()}-${doctor.dayRange.max()} days in a row"
+        dayPref.text = when {
+            doctor.dayRange == 1..7 -> "No preference for day shifts"
+            doctor.dayRange.min() == doctor.dayRange.max() -> "Prefers ${doctor.dayRange.min()} days in a row"
+            else -> "Prefers ${doctor.dayRange.min()}-${doctor.dayRange.max()} days in a row"
+        }
         dayViolation.text = "Day preference violated 0 times"
-        nightPref.text = "Prefers ${doctor.nightRange.min()}-${doctor.nightRange.max()} nights in a row"
+        nightPref.text = when {
+            doctor.nightRange == 1..4 -> "No preference for night shifts"
+            doctor.nightRange.min() == doctor.nightRange.max() -> "Prefers ${doctor.nightRange.min()} nights in a row"
+            else -> "Prefers ${doctor.nightRange.min()}-${doctor.nightRange.max()} nights in a row"
+        }
         nightViolation.text = "Night preference violated 0 times"
         shiftPref.text = when(doctor.shiftsToAvoid.isNotEmpty()) {
             true -> "Shifts preferably avoided: ${doctor.shiftsToAvoid}"

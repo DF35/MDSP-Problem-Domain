@@ -45,10 +45,6 @@ fun main(args: Array<String>) {
         hyperHeuristic.timeLimit = totalExecutionTime
         hyperHeuristic.loadProblemDomain(problem)
         hyperHeuristic.run()
-
-        val writer = BufferedWriter(FileWriter("test_instance2_log-$i.txt"))
-        writer.write(problem.bestSolution.assignmentLog)
-        writer.close()
     }
 
     for(i in 1..3) {
@@ -65,10 +61,6 @@ fun main(args: Array<String>) {
         hyperHeuristic.timeLimit = totalExecutionTime
         hyperHeuristic.loadProblemDomain(problem)
         hyperHeuristic.run()
-
-        val writer = BufferedWriter(FileWriter("test_instance1_log-$i.txt"))
-        writer.write(problem.bestSolution.assignmentLog)
-        writer.close()
     }
 
     // Debugging a doctor log file
