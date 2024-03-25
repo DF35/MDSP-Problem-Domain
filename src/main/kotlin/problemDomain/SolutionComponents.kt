@@ -322,7 +322,6 @@ class Day(
         doctorsWorkingDay.forEach { println("Doctor: ${it.key}, Shifts: ${it.value}")}
         println("Doctors Working Night:")
         doctorsWorkingNight.forEach { println("Doctor: ${it.key}, Shift ${it.value}") }
-        println("Shifts made infeasible due to insufficient rest")
         println("Blocks: ")
         block.forEach { println("Doctor: ${it.key}, Block: ${it.value}") }
         println()

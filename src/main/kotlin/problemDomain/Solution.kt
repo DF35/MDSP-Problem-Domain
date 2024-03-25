@@ -18,8 +18,6 @@ class Solution(
     val dayRangeViolations = mutableMapOf<Int, Int>() // <doctorID, numViolations>
     val nightRangeViolations = mutableMapOf<Int, Int>() // <doctorID, numViolations>
     var objectiveValue = Double.MAX_VALUE
-    var iteration = 0
-    var assignmentLog = ""
 
     fun copy(): Solution {
         val data = this.data.copy()
@@ -30,8 +28,6 @@ class Solution(
         dayRangeViolations.forEach { solution.dayRangeViolations[it.key] = it.value }
         nightRangeViolations.forEach { solution.nightRangeViolations[it.key] = it.value }
         solution.objectiveValue = objectiveValue
-        solution.iteration = iteration
-        //solution.assignmentLog = assignmentLog
         return solution
     }
 
@@ -259,11 +255,6 @@ class Solution(
 
         if(!feasibleDoctors.contains(doctor)) return false
 
-        val doc = doctors[doctor]
-        val shiftType = if(shift is NightShift) "Night" else "Day"
-        //assignmentLog += "al $assignment $doctor Shift: $shiftID ($shiftType) Day: ${shift.day}\n"
-
-
         // Subtracts previous objective value contribution of the doctor
         objectiveValue -= calculateDoctorContribution(doctors[doctor])
 
@@ -279,6 +270,7 @@ class Solution(
         updateFeasibilityAllocation(this.data, FeasibilityInfo(shift, doctor))
 
         // Updates data of the doctor allocated to the shift
+        val doc = doctors[doctor]
         doc.hoursWorked += shift.duration
         when(shift) {
             is DayShift -> doc.dayShiftsWorked++
@@ -303,10 +295,6 @@ class Solution(
             if(days[shift.day].numShiftsWithCoverage == 1)
                 objectiveValue -= 20
         }
-
-
-        assignments[assignment].iterationAssigned = iteration
-        iteration += 1
 
         return true
     }
@@ -336,10 +324,6 @@ class Solution(
             }
         }
 
-        val doc = doctors[doctor]
-        val shiftType = if(shift is NightShift) "Night" else "Day"
-        //assignmentLog += "de $assignment Shift: $shiftID (${shiftType}) Day: ${shift.day}\n"
-
         // Subtracts previous objective value contribution of the doctor
         objectiveValue -= calculateDoctorContribution(doctors[doctor])
 
@@ -354,6 +338,7 @@ class Solution(
         updateFeasibilityDeallocation(this.data, FeasibilityInfo(shift, doctor))
 
         // Updates data for doctor removed from the shift
+        val doc = doctors[doctor]
         doc.hoursWorked -= shift.duration
         when(shift) {
             is DayShift -> doc.dayShiftsWorked--
