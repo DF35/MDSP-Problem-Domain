@@ -10,7 +10,10 @@ import problemDomain.Source
 
 @DisplayName("Shift Tests")
 class ShiftTest {
-    fun newShift(): DayShift { return DayShift(1, intArrayOf(1), setOf(2), setOf(1), 1, mutableSetOf(0), 10.00) }
+    fun newShift(): DayShift {
+        return DayShift(1, intArrayOf(1), setOf(2), listOf(1), setOf(1),
+            1, mutableSetOf(0), 10.00)
+    }
 
     @Nested
     inner class RestInfeasibilityTests {
@@ -86,14 +89,14 @@ class ShiftTest {
         @Test
         fun throwsExceptionIfNoInfeasibilityExists() {
             val shift = newShift()
-            assertThrows<Exception> { shift.removeSource(0, Source.RowOfNights) }
+            assertThrows<Exception> { shift.removeSource(0, Source.RowOfNights(setOf(0,1,2,3))) }
         }
 
         @Test
         fun doesNothingInCaseOfNonRestInfeasibility() {
             val shift = newShift()
             shift.causesOfInfeasibility[0] = ShiftInfeasibility(Cause.Training)
-            shift.removeSource(0, Source.RowOfNights)
+            shift.removeSource(0, Source.RowOfNights(setOf(0,1,2,3)))
             assertNotNull(shift.causesOfInfeasibility[0])
             assertEquals(shift.causesOfInfeasibility[0]!!.cause, Cause.Training)
         }

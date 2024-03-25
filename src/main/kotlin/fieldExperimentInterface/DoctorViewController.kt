@@ -51,7 +51,7 @@ class DoctorViewController {
         dayTarget.text = "Target number of day shifts: ${doctor.targetDayShifts}"
         dayShifts.text = "Number of day shifts worked: ${doctor.dayShiftsWorked}"
         nightTarget.text = "Target number of night shifts: ${doctor.targetNightShifts}"
-        nightShifts.text = "Number of night shifts worked: ${doctor.nighShiftsWorked}"
+        nightShifts.text = "Number of night shifts worked: ${doctor.nightShiftsWorked}"
     }
 
     fun refresh(
@@ -65,7 +65,7 @@ class DoctorViewController {
         shiftViolation.text = "Shift preferences violated $shiftViolations times"
         avgHours.text = "Average weekly hours (adjusted for leave): ${doctor.hoursWorked/doctor.averageHoursDenominator}"
         dayShifts.text = "Number of day shifts worked: ${doctor.dayShiftsWorked}"
-        nightShifts.text = "Number of night shifts worked: ${doctor.nighShiftsWorked}"
+        nightShifts.text = "Number of night shifts worked: ${doctor.nightShiftsWorked}"
 
     }
 }

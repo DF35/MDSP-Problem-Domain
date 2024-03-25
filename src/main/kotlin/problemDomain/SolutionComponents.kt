@@ -83,13 +83,61 @@ class ShiftInfeasibility(val cause : Cause) {
     }
 }
 
+/*
+ * Used to simplify the assignment of multiple doctors to one shift as well as the
+ * requirement for specific numbers of doctors of a given grade
+ */
+class Assignment(
+    val id: Int,
+    val shift: Int,
+    val requiredGrade: String,
+    //Doctors that do not meet the required grade for the assignment
+    val infeasibleDoctors: Set<Int>
+) {
+    var assignee: Int? = null
+    var iterationAssigned = Int.MAX_VALUE
+
+    fun copy(): Assignment {
+        val assignment = Assignment(id, shift, requiredGrade, infeasibleDoctors)
+        assignment.assignee = assignee
+        assignment.iterationAssigned = iterationAssigned
+        return assignment
+    }
+
+    fun debug() {
+        println("Assignment: $id")
+        println("Shift: $shift")
+        println("RequiredGrade: $requiredGrade")
+        println("Assignee: $assignee")
+        println("Infeasible Doctors: $infeasibleDoctors")
+        println()
+    }
+
+    // Allocates the given doctor to the assignment
+    fun assign(doctor: Int) { assignee = doctor }
+
+    /*
+     * If the doctor is assigned, they are removed and the shiftId and doctor ID are returned for use in updating
+     * the feasibility of shifts, null is returned if the doctor is not assigned
+     */
+    fun unAssign(): Pair<Int,Int>?{
+        val doctor : Int
+        when (assignee){
+            null -> return assignee
+            else -> doctor = assignee as Int
+        }
+        assignee = null
+        return Pair(doctor, shift)
+    }
+}
+
 // Represents a single shift within the timetable - holds data and related functions
 abstract class Shift(
     val id: Int,
     // A single shift can have multiple assignees - one assignment per needed doctor is made for each shift
     val assignmentIDs: IntArray,
     val shiftsWithin11Hours: Set<Int>,
-    val shifts48HoursAfter: List<Int>, // Add calculation for this
+    val shifts48HoursAfter: List<Int>,
     val day: Int,
     val feasibleDoctors: MutableSet<Int>,
     // Duration of the shift in hours
@@ -237,54 +285,7 @@ class NightShift(
     }
 }
 
-/*
- * Used to simplify the assignment of multiple doctors to one shift as well as the requirement for specific numbers
- * of doctors of a specific grade
- */
-class Assignment(
-    val id: Int,
-    val shift: Int,
-    val requiredGrade: String,
-    //Doctors that do not meet the required grade for the assignment
-    val infeasibleDoctors: Set<Int>
-) {
-    var assignee: Int? = null
-    var iterationAssigned = Int.MAX_VALUE
-
-    fun copy(): Assignment {
-        val assignment = Assignment(id, shift, requiredGrade, infeasibleDoctors)
-        assignment.assignee = assignee
-        assignment.iterationAssigned = iterationAssigned
-        return assignment
-    }
-
-    fun debug() {
-        println("Assignment: $id")
-        println("Shift: $shift")
-        println("RequiredGrade: $requiredGrade")
-        println("Assignee: $assignee")
-        println("Infeasible Doctors: $infeasibleDoctors")
-        println()
-    }
-
-    // Allocates the given doctor to the assignment
-    fun assign(doctor: Int) { assignee = doctor }
-
-    /*
-     * If the doctor is assigned, they are removed and the shiftId and doctor ID are returned for use in updating
-     * the feasibility of shifts, null is returned if the doctor is not assigned
-     */
-    fun unAssign(): Pair<Int,Int>?{
-        val doctor : Int
-        when (assignee){
-            null -> return assignee
-            else -> doctor = assignee as Int
-        }
-        assignee = null
-        return Pair(doctor, shift)
-    }
-}
-
+// Stores data related to a specific day within the timetable
 class Day(
     val id: Int,
     // IDs of all day shifts on this day
@@ -365,6 +366,7 @@ enum class DayRemovedPos {
     Final // Was the last day in the block
 }
 
+// Stores information relating to a block of days worked by the doctor
 class Block(val id: Int) {
     val days = mutableSetOf<Int>()
     val shiftsMadeInfeasible = mutableSetOf<Int>()
@@ -376,7 +378,6 @@ class Block(val id: Int) {
         return block
     }
 
-    // Checking whether blocks should be combined should be done elsewhere
     fun addDay(day: Int) {
         if(!days.add(day))
             throw Exception("addDay: Block $id already contains $day")
@@ -439,22 +440,20 @@ class MiddleGrade(
 ) {
     var hoursWorked = 0.00
     var dayShiftsWorked = 0
-    var nighShiftsWorked = 0
+    var nightShiftsWorked = 0
     var assignedAssignments = mutableListOf<Int>()
     var assignedShifts = mutableSetOf<Int>()
-    val blocksOfDays = mutableMapOf<Int, Block>()
+    val blocksOfDays = mutableMapOf<Int, Block>() //<blockID, Block>
     var nextBlockID = 0
+    // Any element of the data class is true, if the doctor has a preference for that aspect
     val preferences = Preferences(dayRange != 1..7,
         nightRange != 1..4, shiftsToAvoid.isNotEmpty())
-
-    // Used in debugging
-    var assignmentLog = ""
 
     fun varianceHoursWorked(): Double { return targetHours - (hoursWorked / averageHoursDenominator) }
 
     fun varianceDayShiftsWorked(): Int { return targetDayShifts - dayShiftsWorked }
 
-    fun varianceNightShiftsWorked(): Int { return targetNightShifts - nighShiftsWorked }
+    fun varianceNightShiftsWorked(): Int { return targetNightShifts - nightShiftsWorked }
 
     fun numberOfShiftPrefsViolated(): Int { return assignedShifts.intersect(shiftsToAvoid).size }
 
@@ -463,19 +462,18 @@ class MiddleGrade(
             averageHoursDenominator, shiftsToAvoid, dayRange, nightRange)
         doctor.hoursWorked = this.hoursWorked
         doctor.dayShiftsWorked = this.dayShiftsWorked
-        doctor.nighShiftsWorked = this.nighShiftsWorked
+        doctor.nightShiftsWorked = this.nightShiftsWorked
         doctor.assignedAssignments = this.assignedAssignments.toMutableList()
         doctor.assignedShifts = this.assignedShifts.toMutableSet()
         this.blocksOfDays.forEach { doctor.blocksOfDays[it.key] = it.value.copy() }
         doctor.nextBlockID = this.nextBlockID
-        doctor.assignmentLog = assignmentLog
         return doctor
     }
 
     override fun toString(): String {
         val basicInfo = "\nDoctor: $id\nGrade: $grade\n"
         val targets = "Target Hours: $targetHours\nTarget Day Shifts: $targetDayShifts\nTarget Night Shifts: $targetNightShifts\n"
-        val actual = "Hours Worked: $hoursWorked\nAverage Hours Worked (Adjusted for leave) ${hoursWorked/averageHoursDenominator}\nDay Shifts Worked: $dayShiftsWorked\nNight Shifts Worked: $nighShiftsWorked\n"
+        val actual = "Hours Worked: $hoursWorked\nAverage Hours Worked (Adjusted for leave) ${hoursWorked/averageHoursDenominator}\nDay Shifts Worked: $dayShiftsWorked\nNight Shifts Worked: $nightShiftsWorked\n"
         return basicInfo + targets + actual
     }
 

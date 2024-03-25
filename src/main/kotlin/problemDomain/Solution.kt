@@ -10,9 +10,6 @@ import kotlin.math.pow
 class Solution(
     val rand: Random,
     val data: SolutionData,
-    val averageHours: Int,
-    val averageNumDayShifts: Int,
-    val averageNumNightShifts: Int
 ) {
     // Tracks unassigned assignments for use in the objective function and heuristics
     var unassignedAssignments = mutableListOf<Int>()
@@ -26,7 +23,7 @@ class Solution(
 
     fun copy(): Solution {
         val data = this.data.copy()
-        val solution = Solution(rand, data, averageHours, averageNumDayShifts, averageNumNightShifts)
+        val solution = Solution(rand, data)
         solution.unassignedAssignments = unassignedAssignments.toMutableList()
         solution.assignedAssignments = assignedAssignments.toMutableList()
         shiftPrefsViolated.forEach { solution.shiftPrefsViolated[it.key] = it.value }
@@ -214,7 +211,7 @@ class Solution(
     }
 
     // Uses Jain's Fairness Index
-    fun calculatePreferenceDisparity(): Double {
+    private fun calculatePreferenceDisparity(): Double {
         // Calculate disparity in terms of shift preferences
         val withShiftPreferences = shiftPrefsViolated.filter {
             data.doctors[it.key].preferences.shiftsToAvoid
@@ -285,7 +282,7 @@ class Solution(
         doc.hoursWorked += shift.duration
         when(shift) {
             is DayShift -> doc.dayShiftsWorked++
-            is NightShift -> doc.nighShiftsWorked++
+            is NightShift -> doc.nightShiftsWorked++
         }
         doc.assignedAssignments.add(assignment)
         doc.assignedShifts.add(shift.id)
@@ -310,28 +307,6 @@ class Solution(
 
         assignments[assignment].iterationAssigned = iteration
         iteration += 1
-
-        for(testShift in shifts) {
-            for(assignee in testShift.assignees)
-                if(testShift.causesOfInfeasibility[assignee] != null)
-                    println("Bad news")
-            for(assignmentID in testShift.assignmentIDs) {
-                val a = assignments[assignmentID].assignee
-                if(a != null && !testShift.assignees.contains(a))
-                    println("Dreadful")
-            }
-        }
-
-        for((id, block) in doc.blocksOfDays) {
-            for(testShift in block.shiftsMadeInfeasible) {
-                val shiftToCheck = shifts[testShift]
-                if(shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Training ||
-                    shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Leave)
-                    continue
-                if(!blockStillPresent(shiftToCheck, block.id, doctor))
-                    println("Schlecht")
-            }
-        }
 
         return true
     }
@@ -382,7 +357,7 @@ class Solution(
         doc.hoursWorked -= shift.duration
         when(shift) {
             is DayShift -> doc.dayShiftsWorked--
-            is NightShift -> doc.nighShiftsWorked--
+            is NightShift -> doc.nightShiftsWorked--
         }
         doc.assignedAssignments.remove(assignment)
         doc.assignedShifts.remove(shift.id)
@@ -402,29 +377,6 @@ class Solution(
             days[shift.day].numShiftsWithCoverage--
             if(days[shift.day].numShiftsWithCoverage == 0)
                 objectiveValue += 20
-        }
-
-
-        for(testShift in shifts) {
-            for(assignee in testShift.assignees)
-                if(testShift.causesOfInfeasibility[assignee] != null)
-                    println("Awful news")
-            for(assignmentID in testShift.assignmentIDs) {
-                val a = assignments[assignmentID].assignee
-                if (a != null && !testShift.assignees.contains(a))
-                    println("God has cursed me")
-            }
-        }
-
-        for((id, block) in doc.blocksOfDays) {
-            for(testShift in block.shiftsMadeInfeasible) {
-                val shiftToCheck = shifts[testShift]
-                if(shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Training ||
-                    shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Leave)
-                    continue
-                if(!blockStillPresent(shiftToCheck, block.id, doctor))
-                    println("Schlecht")
-            }
         }
 
         return true

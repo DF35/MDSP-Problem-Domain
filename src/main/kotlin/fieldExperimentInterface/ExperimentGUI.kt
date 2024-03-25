@@ -26,7 +26,7 @@ class ExperimentGUI: Application(), EventHandler<javafx.event.ActionEvent> {
 
     override fun start(primaryStage: Stage) {
         pd = MDSP(25022024)
-        pd.loadInstance(2)
+        pd.loadInstance(0)
         solution = pd.blankSolution()
 
         val content = HBox()

@@ -74,9 +74,8 @@ class MDSP(
 
     override fun loadInstance(instanceID: Int) {
         val fileName = when(instanceID) {
-            0 -> "testInstance"
-            1 -> "instance1"
-            2 -> "instance2"
+            0 -> "test_instance_1"
+            1 -> "test_instance_2"
             else -> Exception("loadInstance: Invalid instanceID given")
         }
 
@@ -317,10 +316,7 @@ class MDSP(
         this.doctors.forEach { doctors.add((it.copy())) }
         this.days.forEach { days.add(it.copy()) }
 
-        val solution = Solution(
-            rng, SolutionData(assignments, shifts, doctors, days), averageHours, averageDayShifts,
-            averageNightShifts
-        )
+        val solution = Solution(rng, SolutionData(assignments, shifts, doctors, days))
         solution.unassignedAssignments = assignments.indices.toMutableList()
         solution.calculateObjectiveValue()
         return solution

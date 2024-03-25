@@ -17,10 +17,8 @@ fun updateFeasibilityAllocation(solutionData: SolutionData, info: FeasibilityInf
                 solutionData.shifts[shiftID].restInfeasibility(doctor, Source.ShiftWorked(shift.id))
         }
         // Makes relevant shifts infeasible and handles other night-related infeasibility
-        is NightShift -> {
-            updateFeasibilityNightShift(
-                solutionData, shift, doctor, allocate = true)
-        }
+        is NightShift ->
+            updateFeasibilityNightShift(solutionData, shift, doctor, allocate = true)
     }
 
     // Adds the shift as a source of the doctor having worked on that day
@@ -76,8 +74,8 @@ fun updateFeasibilityDeallocation(solutionData: SolutionData, info: FeasibilityI
                             info.doctor, Source.ShiftWorked(shift.id))
         }
         // Removes infeasibility from relevant shifts and handles other night-related actions
-        is NightShift -> updateFeasibilityNightShift(
-                            solutionData, shift, info.doctor, allocate = false)
+        is NightShift ->
+            updateFeasibilityNightShift(solutionData, shift, info.doctor, allocate = false)
     }
 
     val day = solutionData.days[shift.day]
