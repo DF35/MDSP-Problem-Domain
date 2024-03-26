@@ -28,8 +28,6 @@ class MDSP(
     var searchDepth = 2
     var mutationStrength = 2
 
-    var log = ""
-
     override fun toString(): String {
         return "problemDomain.MDSP"
     }
@@ -76,6 +74,10 @@ class MDSP(
         val fileName = when(instanceID) {
             0 -> "test_instance_1"
             1 -> "test_instance_2"
+            2 -> "experiment_department1_easy"
+            3 -> "experiment_department1_hard"
+            4 -> "experiment_department2_easy"
+            5 -> "experiment_department2_hard"
             else -> Exception("loadInstance: Invalid instanceID given")
         }
 
@@ -358,8 +360,6 @@ class MDSP(
             bestSolutionValue = objectiveValue
         }
 
-        log += "Heuristic: $heuristicID Source: $solutionSourceIndex Destination: $solutionDestinationIndex Value: $objectiveValue\n"
-
         return objectiveValue
     }
 
@@ -397,7 +397,6 @@ class MDSP(
             bestSolutionValue = objectiveValue
         }
 
-        log += "Heuristic: $heuristicID Sources: $solutionSourceIndex1, $solutionSourceIndex2 Destination: $solutionDestinationIndex Value: $objectiveValue\n"
         return objectiveValue
     }
 

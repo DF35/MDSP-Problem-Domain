@@ -19,8 +19,8 @@ fun main(args: Array<String>) {
         return
     }
 
-    /*val gen = InstanceGenerator(Random(3032024))
-    gen.generateInstance("test_instance_1.txt", 2, 8, 4, 4, 0.4, 0.4)*/
+    /*val gen = InstanceGenerator(Random(25032024))
+    gen.generateInstance("test.txt", 1, 8, 4, 4, 0.4, 0.4, 4)*/
 
     val seedGenerator = Random(22032024)
     val totalExecutionTime: Long = 120000
@@ -31,7 +31,7 @@ fun main(args: Array<String>) {
     val dateFormatter = SimpleDateFormat("ddMMyyyyHHmmss")
     WriteInfo.resultSubFolderName = dateFormatter.format(today)
 
-    for(i in 1..3) {
+    for(i in 5..5) {
         val seed = seedGenerator.nextLong()
         val problem = MDSP(seed)
         val hyperHeuristic = GIHH(
@@ -39,29 +39,15 @@ fun main(args: Array<String>) {
             resultFileName, selectionType, acceptanceType
         )
 
-        problem.loadInstance(1)
+        problem.loadInstance(i)
         problem.initialiseSolution(0)
         println(problem.getFunctionValue(0))
         hyperHeuristic.timeLimit = totalExecutionTime
         hyperHeuristic.loadProblemDomain(problem)
         hyperHeuristic.run()
+        println(problem.bestSolutionValue)
     }
 
-    for(i in 1..3) {
-        val seed = seedGenerator.nextLong()
-        val problem = MDSP(seed)
-        val hyperHeuristic = GIHH(
-            seed, problem.numberOfHeuristics, totalExecutionTime,
-            resultFileName, selectionType, acceptanceType
-        )
-
-        problem.loadInstance(0)
-        problem.initialiseSolution(0)
-        println(problem.getFunctionValue(0))
-        hyperHeuristic.timeLimit = totalExecutionTime
-        hyperHeuristic.loadProblemDomain(problem)
-        hyperHeuristic.run()
-    }
 
     // Debugging a doctor log file
     /*val seedGenerator = Random(25022024)
