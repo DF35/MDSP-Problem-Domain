@@ -53,10 +53,10 @@ class SolutionTest {
             Assignment(3, 1, "any", emptySet())
         )
         private val shifts = listOf(
-            DayShift(0, intArrayOf(0,1), emptySet(), emptyList(), emptySet(), 0, mutableSetOf(0,1), 8.0),
-            DayShift(1, intArrayOf(2,3), emptySet(), emptyList(), emptySet(), 0, mutableSetOf(0,1), 8.0)
+            DayShift(0, intArrayOf(0,1), emptySet(), emptyList(), emptyList(), emptySet(), 0, mutableSetOf(0,1), 8.0),
+            DayShift(1, intArrayOf(2,3), emptySet(), emptyList(), emptyList(), emptySet(), 0, mutableSetOf(0,1), 8.0)
         )
-        private val day = Day(0, listOf(0,1), emptyList(), emptyList())
+        private val day = Day(0, listOf(0,1), emptyList(), emptyList(), emptyList())
         private val doctors = listOf(
             MiddleGrade(0, "senior", 16.0, 2, 0, 1.0, setOf(1), 1..1, 1..1),
             MiddleGrade(1, "senior", 16.0, 2, 0, 1.0, setOf(0), 1..1, 1..1)
@@ -125,14 +125,14 @@ class SolutionTest {
         @Test
         fun updatesRelevantDataAndReturnsTrueForFeasibleDoctor() {
             val solution = getSolution()
-            assertTrue(solution.allocateAssignment(0, 1))
+            assertTrue(solution.allocateAssignment(0, 0))
             assertEquals(1, solution.assignedAssignments.size)
-            assertEquals(1, solution.data.assignments[0].assignee)
-            assertEquals(1, solution.data.doctors[1].assignedAssignments.size)
-            assertEquals(1, solution.data.doctors[1].assignedShifts.size)
+            assertEquals(0, solution.data.assignments[0].assignee)
+            assertEquals(1, solution.data.doctors[0].assignedAssignments.size)
+            assertEquals(1, solution.data.doctors[0].assignedShifts.size)
             assertFalse(solution.unassignedAssignments.contains(0))
-            assertFalse(solution.data.shifts[0].feasibleDoctors.contains(1))
-            assertTrue(solution.data.shifts[0].assignees.contains(1))
+            assertFalse(solution.data.shifts[0].feasibleDoctors.contains(0))
+            assertTrue(solution.data.shifts[0].assignees.contains(0))
         }
     }
 
@@ -147,24 +147,24 @@ class SolutionTest {
         @Test
         fun returnsFalseForNightShiftInMiddleOfBlock() {
             val solution = getSolution()
-            solution.allocateAssignment(3, 6)
-            solution.allocateAssignment(7, 6)
-            solution.allocateAssignment(11, 6)
+            solution.allocateAssignment(3, 2)
+            println(solution.allocateAssignment(7, 2))
+            solution.allocateAssignment(11, 2)
             assertFalse(solution.deallocateAssignment(7))
         }
 
         @Test
         fun updatesRelevantDataAndReturnsTrueForValidDeallocation() {
             val solution = getSolution()
-            solution.allocateAssignment(0, 1)
+            solution.allocateAssignment(0, 0)
             assertTrue(solution.deallocateAssignment(0))
             assertEquals(0, solution.assignedAssignments.size)
             assertNull(solution.data.assignments[0].assignee)
-            assertEquals(0, solution.data.doctors[1].assignedAssignments.size)
-            assertEquals(0, solution.data.doctors[1].assignedShifts.size)
+            assertEquals(0, solution.data.doctors[0].assignedAssignments.size)
+            assertEquals(0, solution.data.doctors[0].assignedShifts.size)
             assertTrue(solution.unassignedAssignments.contains(0))
-            assertTrue(solution.data.shifts[0].feasibleDoctors.contains(1))
-            assertFalse(solution.data.shifts[0].assignees.contains(1))
+            assertTrue(solution.data.shifts[0].feasibleDoctors.contains(0))
+            assertFalse(solution.data.shifts[0].assignees.contains(0))
         }
     }
 

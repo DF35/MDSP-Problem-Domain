@@ -34,15 +34,17 @@ sealed class Source {
     data class WouldCauseRowTooLarge(val blocks: Pair<Int, Int>): Source()
     // Stores the IDs of the two blocks making the overlapping shifts infeasible
     data class WouldCauseRowTooLargeOverlap(val blocks: Pair<Int, Int>): Source()
-    // If a day is 6 days long, relevant overlapping shifts need to be made infeasible
+    // If a block is 6 days long, relevant overlapping shifts need to be made infeasible
     data class RowOfSixOverlap(val block: Int): Source()
-    // Stores the ID of the block and the ID of the day preventing it from being extended
     data class InsufficientRest(val blocks: Pair<Int, Int>): Source()
-    // Stores the IDs of the block and the day that make the overlapping shifts infeasible
     data class InsufficientRestOverlap(val blocks: Pair<Int, Int>): Source()
     data class InsufficientRestMid(val blocks: Triple<Int, Int, Int>): Source()
     data class InsufficientRestMidOverlap(val blocks: Triple<Int, Int, Int>): Source()
-    data class WeekendWorked(val dayID: Int): Source() // Need to alter
+    data class RowOfFourLongShifts(val block: Int): Source()
+    data class WouldCauseTooLargeRowOfLongShifts(val blocks: Pair<Int, Int>): Source()
+    data class InsufficientRestForRowOfFourLongShifts(val blockAndShifts: Pair<Int, Set<Int>>): Source()
+    data class InsufficientRestForRowOfFourLongShiftsMid(val blocksAndShifts: Triple<Int, Int, Set<Int>>): Source()
+    data class WeekendWorked(val dayID: Int): Source()
     // Stores the IDs of days with nights worked by the doctor that are necessitating rest
     data class RowOfNights(val days: Set<Int>): Source()
     // Stores the ID of a shift that has made another shift infeasible
@@ -74,6 +76,10 @@ class ShiftInfeasibility(val cause : Cause) {
                 is Source.RowOfSixOverlap -> "RowOfSixOverlap: Block ${source.block} "
                 is Source.InsufficientRestMid -> "InsufficientRestMid: Block ${source.blocks.first}, Block ${source.blocks.second}, Block ${source.blocks.third} "
                 is Source.InsufficientRestMidOverlap -> "InsufficientRestMidOverlap: Block ${source.blocks.first}, Block ${source.blocks.second}, Block ${source.blocks.third} "
+                is Source.InsufficientRestForRowOfFourLongShifts -> "InsufficientRestForRowOfFourLongShifts: Block ${source.blockAndShifts.first}, Shifts ${source.blockAndShifts.second}"
+                is Source.InsufficientRestForRowOfFourLongShiftsMid -> "InsufficientRestForRowOfFourLongShiftsMid: Block ${source.blocksAndShifts.first}, Block ${source.blocksAndShifts.second}, Shifts ${source.blocksAndShifts.third}"
+                is Source.RowOfFourLongShifts -> "RowOfFourLongShifts: Block ${source.block}"
+                is Source.WouldCauseTooLargeRowOfLongShifts -> "WouldCauseRowTooLargeRowOfLongShifts: Block ${source.blocks.first}, Block ${source.blocks.second}"
             }
         return string + "\n"
     }
@@ -95,12 +101,10 @@ class Assignment(
     val infeasibleDoctors: Set<Int>
 ) {
     var assignee: Int? = null
-    var iterationAssigned = Int.MAX_VALUE
 
     fun copy(): Assignment {
         val assignment = Assignment(id, shift, requiredGrade, infeasibleDoctors)
         assignment.assignee = assignee
-        assignment.iterationAssigned = iterationAssigned
         return assignment
     }
 
@@ -138,15 +142,19 @@ abstract class Shift(
     val assignmentIDs: IntArray,
     val shiftsWithin11Hours: Set<Int>,
     val shifts48HoursAfter: List<Int>,
+    val longShifts48HoursBefore: List<Int>,
     val day: Int,
     val feasibleDoctors: MutableSet<Int>,
     // Duration of the shift in hours
     val duration: Double
 ) {
     // Key = doctor ID, value = reason for infeasibility - used to map doctors to their causes of infeasibility
-    val causesOfInfeasibility: MutableMap<Int, ShiftInfeasibility> = mutableMapOf()
+    val causesOfInfeasibility = mutableMapOf<Int, ShiftInfeasibility>()
+    val longShiftsMadeInfeasible = mutableMapOf<Int, MutableSet<Int>>()
     // IDs of Doctors assigned to the shift
     val assignees = mutableSetOf<Int>()
+    // If a shift is more than 10 hours in length it is classed as "long" relevant to feasibility
+    val long = if(duration > 10) true else false
 
     abstract fun copy(): Shift
 
@@ -155,6 +163,7 @@ abstract class Shift(
         println("Assignment ids: " + assignmentIDs.contentToString())
         println("Shifts within 11 hours: $shiftsWithin11Hours")
         println("Shifts 48 hours after: $shifts48HoursAfter")
+        println("Long shifts 48 hours before: $longShifts48HoursBefore")
         when(this) {
             is DayShift -> println("Night Shifts 48 hours before: $nightShifts48HoursBefore")
             is NightShift -> println("DayShifts 48 hours after: $dayShifts48HoursAfter")
@@ -162,8 +171,8 @@ abstract class Shift(
         println("Day: $day")
         println("Feasible Doctors: $feasibleDoctors")
         causesOfInfeasibility.forEach { print("Doctor ${it.key}: "); it.value.debug(); println() }
-        println()
         println("Assignees: $assignees")
+        println("longShiftsMadeInfeasible: $longShiftsMadeInfeasible")
         println()
     }
 
@@ -231,6 +240,21 @@ abstract class Shift(
             feasibleDoctors.add(doctor)
         }
     }
+
+    fun addInfeasibleShift(doctor: Int, shiftID: Int) {
+        val set = longShiftsMadeInfeasible.getOrDefault(doctor, mutableSetOf())
+        set.add(shiftID)
+        longShiftsMadeInfeasible[doctor] = set
+    }
+
+    fun removeInfeasibleShift(doctor: Int, shiftID: Int) {
+        if(longShiftsMadeInfeasible[doctor] == null)
+            throw Exception("removeInfeasibleShift: no entry for doctor $doctor in longShiftsMadeInfeasible")
+        longShiftsMadeInfeasible[doctor]!!.remove(shiftID)
+
+        if(longShiftsMadeInfeasible[doctor]!!.isEmpty())
+            longShiftsMadeInfeasible.remove(doctor)
+    }
 }
 
 /*
@@ -242,16 +266,22 @@ class DayShift(
     assignmentIDs: IntArray,
     shiftsWithin11Hours: Set<Int>,
     shifts48HoursAfter: List<Int>,
+    longShifts48HoursBefore: List<Int>,
     val nightShifts48HoursBefore: Set<Int>,
     day: Int,
     feasibleDoctors: MutableSet<Int>,
     duration: Double
-) : Shift(id, assignmentIDs, shiftsWithin11Hours, shifts48HoursAfter, day, feasibleDoctors, duration) {
+) : Shift(id, assignmentIDs, shiftsWithin11Hours, shifts48HoursAfter,
+            longShifts48HoursBefore, day, feasibleDoctors, duration) {
     override fun copy(): Shift {
-        val shift = DayShift(id, assignmentIDs, shiftsWithin11Hours, shifts48HoursAfter, nightShifts48HoursBefore, day,
-                                feasibleDoctors.toMutableSet(), duration)
+        val shift = DayShift(
+            id, assignmentIDs, shiftsWithin11Hours, shifts48HoursAfter, longShifts48HoursBefore,
+            nightShifts48HoursBefore, day, feasibleDoctors.toMutableSet(), duration
+        )
         for((key, value) in causesOfInfeasibility)
             shift.causesOfInfeasibility[key] = value.copy()
+        for((key, value) in longShiftsMadeInfeasible)
+            shift.longShiftsMadeInfeasible[key] = value.toMutableSet()
         shift.assignees.addAll(this.assignees)
         return shift
     }
@@ -266,20 +296,24 @@ class NightShift(
     assignmentIDs: IntArray,
     shiftsWithin11Hours: Set<Int>,
     shifts48HoursAfter: List<Int>,
+    longShifts48HoursBefore: List<Int>,
     val dayShifts48HoursAfter: Set<Int>,
     day: Int,
     feasibleDoctors: MutableSet<Int>,
     duration: Double,
     // true if night shift overlaps into next day, false if not
     val overlaps: Boolean
-) : Shift(id, assignmentIDs, shiftsWithin11Hours, shifts48HoursAfter, day, feasibleDoctors, duration) {
+) : Shift(id, assignmentIDs, shiftsWithin11Hours, shifts48HoursAfter,
+            longShifts48HoursBefore, day, feasibleDoctors, duration) {
     override fun copy(): Shift {
         val shift = NightShift(
-            id, assignmentIDs, shiftsWithin11Hours, shifts48HoursAfter, dayShifts48HoursAfter, day,
-            feasibleDoctors.toMutableSet(), duration, overlaps
+            id, assignmentIDs, shiftsWithin11Hours, shifts48HoursAfter, longShifts48HoursBefore,
+            dayShifts48HoursAfter, day, feasibleDoctors.toMutableSet(), duration, overlaps
         )
         for ((key, value) in causesOfInfeasibility)
             shift.causesOfInfeasibility[key] = value.copy()
+        for((key, value) in longShiftsMadeInfeasible)
+            shift.longShiftsMadeInfeasible[key] = value.toMutableSet()
         shift.assignees.addAll(this.assignees)
         return shift
     }
@@ -288,30 +322,35 @@ class NightShift(
 // Stores data related to a specific day within the timetable
 class Day(
     val id: Int,
-    // IDs of all day shifts on this day
+    // IDs of all non-long day shifts on this day
     val dayShifts: List<Int>,
     // IDs of all night shifts on this day that do not overlap to the next
     val nonOverlappingNightShifts: List<Int>,
     // IDs of all night shifts on this day that overlap to the next
-    val overlappingNightShifts: List<Int>
+    val overlappingNightShifts: List<Int>,
+    val longShifts: List<Int>,
 ) {
     // <DoctorID, ShiftID>
     var doctorsWorkingNight = mutableMapOf<Int, Int>()
     // <DoctorID, Set<ShiftID>>
     var doctorsWorkingDay = mutableMapOf<Int, MutableSet<Int>>()
+    // <DoctorID, ShiftID> (Doctor cannot work more than 1 long shift a day)
+    var doctorsWorkingLongShift = mutableMapOf<Int, Int>()
     // Number of shifts that have at least one doctor assigned to them
     var numShiftsWithCoverage = 0
     // Tracks the block of each doctor the day is a part of (if it is) <DoctorID, BlockID>
     var block = mutableMapOf<Int, Int>()
+    var longShiftBlock = mutableMapOf<Int, Int>()
 
     fun copy(): Day {
-        val day = Day(id, dayShifts, nonOverlappingNightShifts, overlappingNightShifts)
-        for((key, value) in doctorsWorkingNight)
-            day.doctorsWorkingNight[key] = value
+        val day = Day(id, dayShifts, nonOverlappingNightShifts, overlappingNightShifts, longShifts)
+        day.doctorsWorkingNight = doctorsWorkingNight.toMutableMap()
         for((key, value) in doctorsWorkingDay)
             day.doctorsWorkingDay[key] = value.toMutableSet()
+        day.doctorsWorkingLongShift = doctorsWorkingLongShift.toMutableMap()
         day.numShiftsWithCoverage = this.numShiftsWithCoverage
         day.block = this.block.toMutableMap()
+        day.longShiftBlock = this.longShiftBlock.toMutableMap()
         return day
     }
 
@@ -324,6 +363,8 @@ class Day(
         doctorsWorkingNight.forEach { println("Doctor: ${it.key}, Shift ${it.value}") }
         println("Blocks: ")
         block.forEach { println("Doctor: ${it.key}, Block: ${it.value}") }
+        println("Blocks of long shifts: ")
+        longShiftBlock.forEach { println("Doctor: ${it.key}, Block: ${it.value}") }
         println()
     }
 
@@ -357,56 +398,59 @@ class Day(
     }
 }
 
-// Represents where in the block a day was removed from
-enum class DayRemovedPos {
-    Start, // Leftmost day
+// Represents where in the block an item was removed from
+enum class ItemRemovedPos {
+    Start, // Leftmost item
     Middle, // From the middle of the block
-    End, // Rightmost day
-    Final // Was the last day in the block
+    End, // Rightmost item
+    Final // Was the last item in the block
 }
 
-// Stores information relating to a block of days worked by the doctor
+/*
+ * Stores information relating to a block of either days worked or of days where a long
+ * shift is worked
+ */
 class Block(val id: Int) {
-    val days = mutableSetOf<Int>()
+    val items = mutableSetOf<Int>()
     val shiftsMadeInfeasible = mutableSetOf<Int>()
 
     fun copy(): Block {
         val block = Block(id)
-        block.setDays(days.toSet())
+        block.setItems(items.toSet())
         block.shiftsMadeInfeasible.addAll(this.shiftsMadeInfeasible)
         return block
     }
 
-    fun addDay(day: Int) {
-        if(!days.add(day))
-            throw Exception("addDay: Block $id already contains $day")
+    fun addItem(item: Int) {
+        if(!items.add(item))
+            throw Exception("addItem: Block $id already contains $item")
     }
 
     // Clears [days] and accepts the new value; for use in merging and splitting blocks
-    fun setDays(newDays: Set<Int>) {
-        days.clear()
-        days.addAll(newDays)
+    fun setItems(newDays: Set<Int>) {
+        items.clear()
+        items.addAll(newDays)
     }
 
-    fun removeDay(day: Int, nextID: Int): Pair<DayRemovedPos, Pair<Block, Block>?> {
+    fun removeItem(item: Int, nextID: Int): Pair<ItemRemovedPos, Pair<Block, Block>?> {
         val position = when {
-            day == days.min() && day == days.max() -> DayRemovedPos.Final
-            day == days.min() -> DayRemovedPos.Start
-            day == days.max() -> DayRemovedPos.End
-            else -> DayRemovedPos.Middle
+            item == items.min() && item == items.max() -> ItemRemovedPos.Final
+            item == items.min() -> ItemRemovedPos.Start
+            item == items.max() -> ItemRemovedPos.End
+            else -> ItemRemovedPos.Middle
         }
 
-        if(!days.remove(day))
-            throw Exception("removeDay: Block $id does not contain $day")
+        if(!items.remove(item))
+            throw Exception("removeItem: Block $id does not contain $item")
 
         val blocks =  when(position) {
             // The block is split into two, one has the original [id], the other, [nextID]
-            DayRemovedPos.Middle -> {
-                val (firstBlock, secondBlock) = days.partition { it < day }
+            ItemRemovedPos.Middle -> {
+                val (firstBlock, secondBlock) = items.partition { it < item }
                 val block1 = Block(id)
-                block1.setDays(firstBlock.toSet())
+                block1.setItems(firstBlock.toSet())
                 val block2 = Block(nextID)
-                block2.setDays(secondBlock.toSet())
+                block2.setItems(secondBlock.toSet())
                 Pair(block1, block2)
             }
             else -> null
@@ -442,11 +486,14 @@ class MiddleGrade(
     var nightShiftsWorked = 0
     var assignedAssignments = mutableListOf<Int>()
     var assignedShifts = mutableSetOf<Int>()
+    // nextBlockID is shared between [blocksOfDays] and [blocksOfLongShifts]
     val blocksOfDays = mutableMapOf<Int, Block>() //<blockID, Block>
+    val blocksOfLongShifts = mutableMapOf<Int, Block>() //<blockID, Block>
     var nextBlockID = 0
     // Any element of the data class is true, if the doctor has a preference for that aspect
     val preferences = Preferences(dayRange != 1..7,
         nightRange != 1..4, shiftsToAvoid.isNotEmpty())
+    var assignmentLog = ""
 
     fun varianceHoursWorked(): Double { return targetHours - (hoursWorked / averageHoursDenominator) }
 
@@ -465,7 +512,9 @@ class MiddleGrade(
         doctor.assignedAssignments = this.assignedAssignments.toMutableList()
         doctor.assignedShifts = this.assignedShifts.toMutableSet()
         this.blocksOfDays.forEach { doctor.blocksOfDays[it.key] = it.value.copy() }
+        this.blocksOfLongShifts.forEach { doctor.blocksOfLongShifts[it.key] = it.value.copy() }
         doctor.nextBlockID = this.nextBlockID
+        doctor.assignmentLog = this.assignmentLog
         return doctor
     }
 
@@ -480,9 +529,11 @@ class MiddleGrade(
         println(id)
         println(grade)
         println(targetHours)
-        println(hoursWorked)
         println(assignedAssignments)
-        blocksOfDays.forEach { println("Block ${it.key}, Days = ${it.value.days}, InfShifts = ${it.value.shiftsMadeInfeasible}") }
+        println("Blocks of Days:")
+        blocksOfDays.forEach { println("Block ${it.key}, Days = ${it.value.items}, InfShifts = ${it.value.shiftsMadeInfeasible}") }
+        println("Blocks of Long Shifts:")
+        blocksOfLongShifts.forEach { println("Block ${it.key}, Days = ${it.value.items}, InfShifts = ${it.value.shiftsMadeInfeasible}") }
         println()
     }
 }

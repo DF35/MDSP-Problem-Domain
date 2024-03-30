@@ -39,13 +39,14 @@ class Generator {
             val dayShifts48HoursAfter = { i: Int -> arrayOf(i+1, i + 3).filter{ j: Int -> j in 0..max }.toSet() }
             val assignmentIds = {i: Int -> intArrayOf(i*2, i*2+1)}
 
-            days.add(Day(day, listOf(idDayShift), emptyList(), listOf(idNightShift)))
+            days.add(Day(day, listOf(idDayShift), emptyList(), listOf(idNightShift), emptyList()))
             shifts.add(
                 DayShift(
                     idDayShift,
                     assignmentIds(idDayShift),
                     shiftsWithin11Hours(idDayShift),
                     shifts48HoursAfter(idDayShift),
+                    emptyList(),
                     nights48HoursBefore(idDayShift),
                     day,
                     allDoctors.toMutableSet(),
@@ -58,6 +59,7 @@ class Generator {
                     assignmentIds(idNightShift),
                     shiftsWithin11Hours(idNightShift),
                     shifts48HoursAfter(idNightShift),
+                    emptyList(),
                     dayShifts48HoursAfter(idNightShift),
                     day,
                     allDoctors.toMutableSet(),

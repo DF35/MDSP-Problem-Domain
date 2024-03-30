@@ -16,7 +16,8 @@ import javafx.stage.Stage
 import problemDomain.*
 import java.io.BufferedWriter
 import java.io.FileWriter
-import kotlin.system.exitProcess
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class ExperimentGUI: Application(), EventHandler<javafx.event.ActionEvent> {
     lateinit var solution: Solution
@@ -25,10 +26,33 @@ class ExperimentGUI: Application(), EventHandler<javafx.event.ActionEvent> {
     val doctorViews = mutableMapOf<Int, DoctorViewController>()
 
     override fun start(primaryStage: Stage) {
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm")
+        val time = LocalDateTime.now().format(formatter)
+        val stage = Stage()
         pd = MDSP(25022024)
-        pd.loadInstance(3)
+        pd.loadInstance(2)
         solution = pd.blankSolution()
+        val content = generateContent(stage, "dep1_easy_$time.txt")
+        val scene = Scene(content)
 
+        stage.title = "Timetabling Experiment Interface"
+        stage.scene = scene
+        stage.showAndWait()
+
+        assignmentViews.clear()
+        doctorViews.clear()
+        val stage2 = Stage()
+        pd = MDSP(25022024)
+        pd.loadInstance(5)
+        solution = pd.blankSolution()
+        val content2 = generateContent(stage2, "dep2_hard_$time.txt")
+        val scene2 = Scene(content2)
+        stage2.title = "Timetabling Experiment Interface"
+        stage2.scene = scene2
+        stage2.showAndWait()
+    }
+
+    private fun generateContent(stage: Stage, filename: String): HBox {
         val content = HBox()
 
         val shiftContent = ListView<VBox>()
@@ -44,10 +68,10 @@ class ExperimentGUI: Application(), EventHandler<javafx.event.ActionEvent> {
             for(assignment in solution.data.assignments)
                 if(assignment.assignee != null)
                     solutionString += "al ${assignment.id} ${assignment.assignee}\n"
-            val writer = BufferedWriter(FileWriter("timetable.txt"))
+            val writer = BufferedWriter(FileWriter(filename))
             writer.write(solutionString)
             writer.close()
-            exitProcess(0)
+            stage.close()
         }
 
         val buttonContainer = VBox(submitButton)
@@ -58,11 +82,7 @@ class ExperimentGUI: Application(), EventHandler<javafx.event.ActionEvent> {
         val doctorContent = initialiseDoctorContent()
 
         content.children.addAll(shiftContent, doctorContent)
-        val scene = Scene(content)
-
-        primaryStage.title = "Timetabling Experiment Interface"
-        primaryStage.scene = scene
-        primaryStage.show()
+        return content
     }
 
     private fun initialiseDay(day: Day, content: ListView<VBox>) {

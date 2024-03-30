@@ -11,7 +11,7 @@ import problemDomain.Source
 @DisplayName("Shift Tests")
 class ShiftTest {
     fun newShift(): DayShift {
-        return DayShift(1, intArrayOf(1), setOf(2), listOf(1), setOf(1),
+        return DayShift(1, intArrayOf(1), setOf(2), listOf(1), listOf(1), setOf(1),
             1, mutableSetOf(0), 10.00)
     }
 

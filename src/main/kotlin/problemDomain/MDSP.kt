@@ -1,7 +1,6 @@
 package problemDomain
 
 import hyflex.ProblemDomain
-import java.io.File
 import java.lang.NumberFormatException
 import java.util.Scanner
 
@@ -78,14 +77,15 @@ class MDSP(
             3 -> "experiment_department1_hard"
             4 -> "experiment_department2_easy"
             5 -> "experiment_department2_hard"
+            6 -> "test"
             else -> Exception("loadInstance: Invalid instanceID given")
         }
 
-        readFile("src/main/resources/instances/$fileName.txt")
+        readFile("/instances/$fileName.txt")
     }
 
     private fun readFile(filename: String) {
-        val file = File(filename)
+        val file = javaClass.getResourceAsStream(filename)!!
         val scanner = Scanner(file)
         val gradeString = scanner.nextLine()
         grades = gradeString.split(" ")
@@ -188,6 +188,7 @@ class MDSP(
             val dayShifts = mutableListOf<Int>()
             val nonOverlappingNights = mutableListOf<Int>()
             val overlappingNights = mutableListOf<Int>()
+            val longShifts = mutableListOf<Int>()
             var nextDay = false
             while(!nextDay) {
                 val nextLine = scanner.nextLine()
@@ -205,6 +206,7 @@ class MDSP(
                 }
                 val shiftsWithin11Hours = getShiftIDs(scanner)
                 val shifts48HoursAfter = getShiftIDs(scanner)
+                val longShifts48HoursBefore = getShiftIDs(scanner)
                 val otherRelevantShifts = getShiftIDs(scanner)
                 val duration = scanner.nextDouble()
                 scanner.nextLine()
@@ -215,36 +217,41 @@ class MDSP(
                         shifts.add(
                             DayShift(
                                 shiftID, shiftAssignments.toIntArray(), shiftsWithin11Hours.toSet(),
-                                shifts48HoursAfter, otherRelevantShifts.toSet(), dayID,
-                                (0..<numDoctors).toMutableSet(), duration
+                                shifts48HoursAfter, longShifts48HoursBefore, otherRelevantShifts.toSet(),
+                                dayID, (0..<numDoctors).toMutableSet(), duration
                             )
                         )
                         dayShifts.add(shiftID)
+                        if(duration > 10.0) longShifts.add(shiftID)
                     }
+
                     "night" -> {
                         shifts.add(
                             NightShift(
                                 shiftID, shiftAssignments.toIntArray(), shiftsWithin11Hours.toSet(),
-                                shifts48HoursAfter, otherRelevantShifts.toSet(), dayID,
-                                (0..<numDoctors).toMutableSet(), duration, false
+                                shifts48HoursAfter, longShifts48HoursBefore, otherRelevantShifts.toSet(),
+                                dayID, (0..<numDoctors).toMutableSet(), duration, false
                             )
                         )
                         nonOverlappingNights.add(shiftID)
+                        if(duration > 10.0) longShifts.add(shiftID)
                     }
+
                     "night overlaps" -> {
                         shifts.add(
                             NightShift(
                                 shiftID, shiftAssignments.toIntArray(), shiftsWithin11Hours.toSet(),
-                                shifts48HoursAfter, otherRelevantShifts.toSet(), dayID,
-                                (0..<numDoctors).toMutableSet(), duration, true
+                                shifts48HoursAfter, longShifts48HoursBefore, otherRelevantShifts.toSet(),
+                                dayID, (0..<numDoctors).toMutableSet(), duration, true
                             )
                         )
                         overlappingNights.add(shiftID)
+                        if(duration > 10.0) longShifts.add(shiftID)
                     }
                     else -> throw Exception("Invalid shift type given, please limit to \"day\" and \"night\"")
                 }
             }
-            days.add(Day(dayID, dayShifts, nonOverlappingNights, overlappingNights))
+            days.add(Day(dayID, dayShifts, nonOverlappingNights, overlappingNights, longShifts))
         }
         this.days = days
         this.shifts = shifts

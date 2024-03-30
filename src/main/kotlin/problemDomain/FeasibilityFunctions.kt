@@ -55,6 +55,8 @@ fun updateFeasibilityAllocation(solutionData: SolutionData, info: FeasibilityInf
         overlapOnlyShiftWorkedNextDay -> updateFeasibilityDayAdded(solutionData, doctor, nextDayID)
     }
 
+    updateFeasibilityLongShifts(solutionData, shift, doctor, allocated = true)
+
     weekendFeasibility(solutionData, doctor, shift, allocate = true)
 
     return
@@ -99,6 +101,8 @@ fun updateFeasibilityDeallocation(solutionData: SolutionData, info: FeasibilityI
     day.removeWorkingDoctor(doctor, shift.id)
     if(removedShiftOverlaps)
         solutionData.days[nextDayID].removeWorkingDoctor(doctor, shift.id)
+
+    updateFeasibilityLongShifts(solutionData, shift, doctor, allocated = false)
 
     weekendFeasibility(solutionData, doctor, shift, allocate = false)
 

@@ -48,10 +48,16 @@ class InstanceGenerator(val rand: Random) {
             { i: Int -> listOf(i+1, i+2, i+3, i-1, i-2, i-3) }
         )
         val fortyEightHoursFunctions = listOf(
-            { i:Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9) },
-            { i:Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9) },
-            { i:Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9) },
-            { i:Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9) }
+            { i: Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9) },
+            { i: Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9) },
+            { i: Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9) },
+            { i: Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9) }
+        )
+        val longFortyEightBeforeFunctions = listOf(
+            { _: Int -> emptyList<Int>() },
+            { _: Int -> emptyList() },
+            { _: Int -> emptyList() },
+            { _: Int -> emptyList() }
         )
         val relevantShiftFunctions = listOf(
             { i: Int -> listOf(i-1, i-2, i-5, i-6, i-9) },
@@ -60,8 +66,11 @@ class InstanceGenerator(val rand: Random) {
             { i: Int -> listOf(i+1, i+2, i+5, i+6, i+9) }
         )
 
-        val (shiftInfo, days) = generateShiftInfo(numWeeks, max, genShifts, genDaysEntry,
-            genTimesAndTypes, grades, elevenHoursFunctions, fortyEightHoursFunctions, relevantShiftFunctions)
+        val (shiftInfo, days) = generateShiftInfo(
+            numWeeks, max, genShifts, genDaysEntry, genTimesAndTypes, grades,
+            elevenHoursFunctions, fortyEightHoursFunctions, longFortyEightBeforeFunctions,
+            relevantShiftFunctions
+        )
         val doctors = generateDoctorInfo(numJunior, numSenior, percentagePartTime, percentageOnLeave, days, listOf(8.0,8.0,8.0,8.0), numTrainingGroups)
 
         return "junior senior any\n47\n20 7\n$numWeeks\n${numJunior+numSenior}\n$doctors$shiftInfo"
@@ -82,23 +91,31 @@ class InstanceGenerator(val rand: Random) {
             "\n13\n19:30-08:30 (${nextDay(i)})\nnight overlaps\nnext\n")}
         val grades = listOf("any senior\n", "any\n", "any\n")
         val elevenHoursFunctions = listOf(
-            { i:Int -> listOf(i-1, i+1, i+2) },
-            { i:Int -> listOf(i-2, i-1, i+1) },
-            { i:Int -> listOf(i-2, i-1, i+1, i+2) }
+            { i: Int -> listOf(i-1, i+1, i+2) },
+            { i: Int -> listOf(i-2, i-1, i+1) },
+            { i: Int -> listOf(i-2, i-1, i+1, i+2) }
         )
         val fortyEightHoursFunctions = listOf(
-            { i:Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7) },
-            { i:Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7) },
-            { i:Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8) }
+            { i: Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7) },
+            { i: Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7) },
+            { i: Int -> listOf(i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8) }
+        )
+        val longFortyEightBeforeFunctions = listOf(
+            { i: Int -> listOf(i-1, i-2, i-4, i-5, i-7) },
+            { i: Int -> listOf(i-2, i-3, i-5, i-6, i-8) },
+            { i: Int -> listOf(i-1, i-3, i-4, i-6, i-7)}
         )
         val relevantShiftFunctions = listOf(
-            { i:Int -> listOf(i-1, i-4, i-7) },
-            { i:Int -> listOf(i-2, i-5, i-8) },
-            { i:Int -> listOf(i+1, i+2, i+4, i+5, i+7, i+8) }
+            { i: Int -> listOf(i-1, i-4, i-7) },
+            { i: Int -> listOf(i-2, i-5, i-8) },
+            { i: Int -> listOf(i+1, i+2, i+4, i+5, i+7, i+8) }
         )
 
-        val (shiftInfo, days) = generateShiftInfo(numWeeks, max, genShifts, genDaysEntry,
-            genTimesAndTypes, grades, elevenHoursFunctions, fortyEightHoursFunctions, relevantShiftFunctions)
+        val (shiftInfo, days) = generateShiftInfo(
+            numWeeks, max, genShifts, genDaysEntry, genTimesAndTypes, grades,
+            elevenHoursFunctions, fortyEightHoursFunctions, longFortyEightBeforeFunctions,
+            relevantShiftFunctions
+        )
         val doctors = generateDoctorInfo(numJunior, numSenior, percentagePartTime, percentageOnLeave, days, listOf(9.5,12.0,13.0), numTrainingGroups)
 
         return "junior senior any\n47\n20 7\n$numWeeks\n${numJunior+numSenior}\n$doctors$shiftInfo"
@@ -113,6 +130,7 @@ class InstanceGenerator(val rand: Random) {
         grades: List<String>,
         elevenHoursFunctions: List<(Int) -> List<Int>>,
         fortyEightHoursFunctions: List<(Int) -> List<Int>>,
+        longFortyEightBeforeFunctions: List<(Int) -> List<Int>>,
         relevantShiftFunctions: List<(Int) -> List<Int>>
     ): Pair<String, Map<Int, Pair<List<Int>,List<Int>>>> {
         var shiftInfo = ""
@@ -133,6 +151,15 @@ class InstanceGenerator(val rand: Random) {
                     true -> shiftInfo += "NULL\n"
                     false -> {
                         for(id in shiftsInFortyEight) shiftInfo += "$id "
+                        shiftInfo = shiftInfo.dropLast(1) + "\n"
+                    }
+                }
+
+                val longDayShifts48Before = longFortyEightBeforeFunctions[index](shiftID).filter { it in 0..max }
+                when(longDayShifts48Before.isEmpty()) {
+                    true -> shiftInfo += "NULL\n"
+                    false -> {
+                        for(id in longDayShifts48Before) shiftInfo += "$id "
                         shiftInfo = shiftInfo.dropLast(1) + "\n"
                     }
                 }

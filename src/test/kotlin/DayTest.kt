@@ -7,7 +7,7 @@ import problemDomain.Day
 
 @DisplayName("Day Tests")
 class DayTest {
-    private fun getDay(): Day {return Day(0, emptyList(), emptyList(), emptyList())}
+    private fun getDay(): Day {return Day(0, emptyList(), emptyList(), emptyList(), emptyList())}
     @Nested
     inner class AddWorkingDoctorTests {
         @Test

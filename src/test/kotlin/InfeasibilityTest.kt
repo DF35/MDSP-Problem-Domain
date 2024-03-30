@@ -219,7 +219,7 @@ class InfeasibilityTest {
             assertEquals(0, doctor.blocksOfDays.size)
             solution.allocateAssignment(0, 0)
             assertEquals(1, doctor.blocksOfDays.size)
-            assertTrue(doctor.blocksOfDays[0]!!.days.contains(0))
+            assertTrue(doctor.blocksOfDays[0]!!.items.contains(0))
         }
 
         @Test
@@ -229,8 +229,8 @@ class InfeasibilityTest {
             solution.allocateAssignment(4, 0)
             solution.allocateAssignment(0, 0)
             assertEquals(1, doctor.blocksOfDays.size)
-            assertEquals(2, doctor.blocksOfDays[0]!!.days.size)
-            assertTrue(doctor.blocksOfDays[0]!!.days.containsAll(listOf(0,1)))
+            assertEquals(2, doctor.blocksOfDays[0]!!.items.size)
+            assertTrue(doctor.blocksOfDays[0]!!.items.containsAll(listOf(0,1)))
         }
 
         @Test
@@ -240,8 +240,8 @@ class InfeasibilityTest {
             solution.allocateAssignment(0, 0)
             solution.allocateAssignment(4, 0)
             assertEquals(1, doctor.blocksOfDays.size)
-            assertEquals(2, doctor.blocksOfDays[0]!!.days.size)
-            assertTrue(doctor.blocksOfDays[0]!!.days.containsAll(listOf(0,1)))
+            assertEquals(2, doctor.blocksOfDays[0]!!.items.size)
+            assertTrue(doctor.blocksOfDays[0]!!.items.containsAll(listOf(0,1)))
         }
 
         @Test
@@ -253,7 +253,7 @@ class InfeasibilityTest {
             assertEquals(2, doctor.blocksOfDays.size)
             solution.allocateAssignment(4, 0)
             assertEquals(1, doctor.blocksOfDays.size)
-            assertTrue(doctor.blocksOfDays[1]!!.days.containsAll(listOf(0,1,2)))
+            assertTrue(doctor.blocksOfDays[1]!!.items.containsAll(listOf(0,1,2)))
         }
     }
 
@@ -276,13 +276,13 @@ class InfeasibilityTest {
             solution.allocateAssignment(4, 0)
             solution.allocateAssignment(8, 0)
 
-            assertEquals(3, doctor.blocksOfDays[0]!!.days.size)
+            assertEquals(3, doctor.blocksOfDays[0]!!.items.size)
             solution.deallocateAssignment(0)
-            assertEquals(2, doctor.blocksOfDays[0]!!.days.size)
-            assertFalse(doctor.blocksOfDays[0]!!.days.contains(0))
+            assertEquals(2, doctor.blocksOfDays[0]!!.items.size)
+            assertFalse(doctor.blocksOfDays[0]!!.items.contains(0))
             solution.deallocateAssignment(4)
-            assertEquals(1, doctor.blocksOfDays[0]!!.days.size)
-            assertFalse(doctor.blocksOfDays[0]!!.days.contains(1))
+            assertEquals(1, doctor.blocksOfDays[0]!!.items.size)
+            assertFalse(doctor.blocksOfDays[0]!!.items.contains(1))
         }
 
         @Test
@@ -293,13 +293,13 @@ class InfeasibilityTest {
             solution.allocateAssignment(4, 0)
             solution.allocateAssignment(8, 0)
 
-            assertEquals(3, doctor.blocksOfDays[0]!!.days.size)
+            assertEquals(3, doctor.blocksOfDays[0]!!.items.size)
             solution.deallocateAssignment(8)
-            assertEquals(2, doctor.blocksOfDays[0]!!.days.size)
-            assertFalse(doctor.blocksOfDays[0]!!.days.contains(2))
+            assertEquals(2, doctor.blocksOfDays[0]!!.items.size)
+            assertFalse(doctor.blocksOfDays[0]!!.items.contains(2))
             solution.deallocateAssignment(4)
-            assertEquals(1, doctor.blocksOfDays[0]!!.days.size)
-            assertFalse(doctor.blocksOfDays[0]!!.days.contains(1))
+            assertEquals(1, doctor.blocksOfDays[0]!!.items.size)
+            assertFalse(doctor.blocksOfDays[0]!!.items.contains(1))
         }
 
         @Test
@@ -312,13 +312,13 @@ class InfeasibilityTest {
             solution.deallocateAssignment(4)
 
             assertEquals(2, doctor.blocksOfDays.size)
-            assertTrue(doctor.blocksOfDays[0]!!.days.contains(0))
-            assertFalse(doctor.blocksOfDays[0]!!.days.contains(1))
-            assertFalse(doctor.blocksOfDays[0]!!.days.contains(2))
+            assertTrue(doctor.blocksOfDays[0]!!.items.contains(0))
+            assertFalse(doctor.blocksOfDays[0]!!.items.contains(1))
+            assertFalse(doctor.blocksOfDays[0]!!.items.contains(2))
 
-            assertTrue(doctor.blocksOfDays[1]!!.days.contains(2))
-            assertFalse(doctor.blocksOfDays[1]!!.days.contains(1))
-            assertFalse(doctor.blocksOfDays[1]!!.days.contains(0))
+            assertTrue(doctor.blocksOfDays[1]!!.items.contains(2))
+            assertFalse(doctor.blocksOfDays[1]!!.items.contains(1))
+            assertFalse(doctor.blocksOfDays[1]!!.items.contains(0))
         }
     }
 

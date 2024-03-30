@@ -11,19 +11,19 @@ fun updateFeasibilityDayAdded(solutionData: SolutionData, doctorID: Int, dayID: 
     val days = solutionData.days
     val doctor = solutionData.doctors[doctorID]
 
-    val leftInBlock = dayID - 1 in days.indices && days[dayID - 1].block[doctorID] != null
-    val rightInBlock = dayID + 1 in days.indices && days[dayID + 1].block[doctorID] != null
+    val leftInBlock = dayID - 1 in days.indices && days[dayID-1].block[doctorID] != null
+    val rightInBlock = dayID + 1 in days.indices && days[dayID+1].block[doctorID] != null
 
     // Decides the block that [dayID] should be added to
     val blockID = when {
         // Right and left blocks are merged
-        leftInBlock && rightInBlock -> mergeBlocks(
+        leftInBlock && rightInBlock -> mergeBlocksDay(
                 solutionData, doctor, days[dayID-1].block[doctorID]!!, days[dayID+1].block[doctorID]!!
             )
         // Only left day is in a block
-        leftInBlock -> days[dayID-1].block[doctorID] ?: throw Exception("updateFeasibilityDayAdded: day $dayID not in any block despite being worked")
+        leftInBlock -> days[dayID-1].block[doctorID]!!
         // Only right day is in a block
-        rightInBlock -> days[dayID+1].block[doctorID] ?: throw Exception("updateFeasibilityDayAdded: day $dayID not in any block despite being worked")
+        rightInBlock -> days[dayID+1].block[doctorID]!!
         // Neither day is in a block
         else -> doctor.nextBlockID
     }
@@ -40,11 +40,11 @@ fun updateFeasibilityDayAdded(solutionData: SolutionData, doctorID: Int, dayID: 
     clearInfeasibleShiftsBlock(solutionData, block, doctorID)
 
     // [dayID] is added to the identified block of [doctor]
-    block.addDay(dayID)
+    block.addItem(dayID)
     days[dayID].block[doctorID] = blockID
 
     // Assesses the impact that the added day has on feasibility
-    val infeasibilities = identifySourcesOfInfeasibility(solutionData, doctor, block)
+    val infeasibilities = identifySourcesOfInfeasibilityDay(solutionData, doctor, block)
     implementInfeasibilities(solutionData, doctor, infeasibilities)
 }
 
@@ -53,14 +53,14 @@ fun updateFeasibilityDayAdded(solutionData: SolutionData, doctorID: Int, dayID: 
  * Merges two blocks, returning the ID of merged block (same as [rightBlock]), [leftBlock]
  * is removed from [blocksOfDays] of [doctor]
  */
-private fun mergeBlocks(
+private fun mergeBlocksDay(
     solutionData: SolutionData,
     doctor: MiddleGrade,
     leftBlock: Int,
     rightBlock: Int
 ): Int {
-    for(day in doctor.blocksOfDays[leftBlock]!!.days) {
-        doctor.blocksOfDays[rightBlock]!!.addDay(day)
+    for(day in doctor.blocksOfDays[leftBlock]!!.items) {
+        doctor.blocksOfDays[rightBlock]!!.addItem(day)
         solutionData.days[day].block[doctor.id] = rightBlock
     }
 
@@ -91,20 +91,20 @@ fun updateFeasibilityDayRemoved(solutionData: SolutionData, doctorID: Int, dayID
      */
     clearInfeasibleShiftsBlock(solutionData, block, doctorID)
 
-    val (position, blocks) = block.removeDay(dayID, doctor.nextBlockID)
+    val (position, blocks) = block.removeItem(dayID, doctor.nextBlockID)
     // Reference to the block is removed from the day that is no longer worked
     days[dayID].block.remove(doctorID)
 
     // New sources of infeasibility are calculated
     val infeasibilities = when(position) {
         // Day was the last in the block
-        DayRemovedPos.Final -> processEmptyBlock(solutionData, block, doctor, dayID)
+        ItemRemovedPos.Final -> processEmptyBlockDay(solutionData, block, doctor, dayID)
         // Block was split in two
-        DayRemovedPos.Middle -> processSplitBlock(solutionData, blocks!!, doctor)
+        ItemRemovedPos.Middle -> processSplitBlockDay(solutionData, blocks!!, doctor)
         // Day was leftmost of block
-        DayRemovedPos.Start -> identifySourcesOfInfeasibility(solutionData, doctor, block)
+        ItemRemovedPos.Start -> identifySourcesOfInfeasibilityDay(solutionData, doctor, block)
         // Day was rightmost of block
-        DayRemovedPos.End -> identifySourcesOfInfeasibility(solutionData, doctor, block)
+        ItemRemovedPos.End -> identifySourcesOfInfeasibilityDay(solutionData, doctor, block)
     }
 
     // Updates feasibility as required
@@ -112,7 +112,7 @@ fun updateFeasibilityDayRemoved(solutionData: SolutionData, doctorID: Int, dayID
 }
 
 // Deals with a block that no longer has any days in it
-private fun processEmptyBlock(
+private fun processEmptyBlockDay(
     solutionData: SolutionData,
     block: Block,
     doctor: MiddleGrade,
@@ -130,14 +130,14 @@ private fun processEmptyBlock(
     val twoToRightIsWorked =
         removedDay + 2 in days.indices && days[removedDay+2].block.contains(doctor.id)
     if(twoToLeftIsWorked && twoToRightIsWorked)
-        checkToRight(solutionData, doctor.blocksOfDays[days[removedDay - 2].block[doctor.id]]!!,
+        checkToRightDay(solutionData, doctor.blocksOfDays[days[removedDay - 2].block[doctor.id]]!!,
             doctor, infeasibilities)
 
     return infeasibilities
 }
 
 // Deals with a block that has been split in half by the removal of a day
-private fun processSplitBlock(
+private fun processSplitBlockDay(
     solutionData: SolutionData,
     blocks: Pair<Block, Block>,
     doctor: MiddleGrade,
@@ -147,13 +147,13 @@ private fun processSplitBlock(
     doctor.blocksOfDays[blocks.second.id] = blocks.second
 
     // Updates days that are now in the newly created block
-    for(day in blocks.second.days)
+    for(day in blocks.second.items)
         solutionData.days[day].block[doctor.id] = blocks.second.id
     doctor.nextBlockID++
 
     // Update feasibility according to new blocks
-    val infeasibilities = identifySourcesOfInfeasibility(solutionData, doctor, blocks.first)
-    checkToRight(solutionData, blocks.second, doctor, infeasibilities)
+    val infeasibilities = identifySourcesOfInfeasibilityDay(solutionData, doctor, blocks.first)
+    checkToRightDay(solutionData, blocks.second, doctor, infeasibilities)
 
     return infeasibilities
 }
@@ -230,7 +230,7 @@ private fun clearInfeasibleShiftsBlock(
         }
     }
     for((shift, sources) in relevantSources)
-        sources.forEach { removeRelevantSources(solutionData, it, shift, doctorID) }
+        sources.forEach { removeRelevantSource(solutionData, it, shift, doctorID) }
 }
 
 private fun sourceContainsBlock(source: Source, blockID: Int): Boolean {
@@ -253,7 +253,7 @@ private fun sourceContainsBlock(source: Source, blockID: Int): Boolean {
     }
 }
 
-private fun removeRelevantSources(
+private fun removeRelevantSource(
     solutionData: SolutionData,
     source: Source,
     shift: Shift,
@@ -263,18 +263,23 @@ private fun removeRelevantSources(
 
     val relevantBlocks = when(source) {
         is Source.InsufficientRest -> listOf(source.blocks.first, source.blocks.second)
+
         is Source.RowOfSevenDays -> listOf(source.block)
+
         is Source.RowOfSixOverlap -> listOf(source.block)
+
         is Source.InsufficientRestMid ->
                 listOf(source.blocks.first, source.blocks.second, source.blocks.third)
+
         is Source.InsufficientRestMidOverlap ->
                 listOf(source.blocks.first, source.blocks.second, source.blocks.third)
-        is Source.InsufficientRestOverlap ->
-            listOf(source.blocks.first, source.blocks.second)
-        is Source.WouldCauseRowTooLarge ->
-            listOf(source.blocks.first, source.blocks.second)
-        is Source.WouldCauseRowTooLargeOverlap ->
-            listOf(source.blocks.first, source.blocks.second)
+
+        is Source.InsufficientRestOverlap -> listOf(source.blocks.first, source.blocks.second)
+
+        is Source.WouldCauseRowTooLarge -> listOf(source.blocks.first, source.blocks.second)
+
+        is Source.WouldCauseRowTooLargeOverlap -> listOf(source.blocks.first, source.blocks.second)
+
         else -> throw Exception("processBlockCausedSource: function can only be passed sources of infeasibility relating to blocks")
     }
 

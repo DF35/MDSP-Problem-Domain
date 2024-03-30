@@ -1,8 +1,8 @@
 package problemDomain
 
+import problemDomain.feasibilityHandling.blockStillPresent
 import java.util.*
 import kotlin.Exception
-import problemDomain.feasibilityHandling.blockStillPresent
 import kotlin.math.pow
 
 
@@ -18,6 +18,7 @@ class Solution(
     val dayRangeViolations = mutableMapOf<Int, Int>() // <doctorID, numViolations>
     val nightRangeViolations = mutableMapOf<Int, Int>() // <doctorID, numViolations>
     var objectiveValue = Double.MAX_VALUE
+    var assignmentLog = ""
 
     fun copy(): Solution {
         val data = this.data.copy()
@@ -28,6 +29,7 @@ class Solution(
         dayRangeViolations.forEach { solution.dayRangeViolations[it.key] = it.value }
         nightRangeViolations.forEach { solution.nightRangeViolations[it.key] = it.value }
         solution.objectiveValue = objectiveValue
+        solution.assignmentLog = assignmentLog
         return solution
     }
 
@@ -166,12 +168,12 @@ class Solution(
         var dayRangeViolations = 0
         var nightRangeViolations = 0
         for(block in doctor.blocksOfDays.values) {
-            if(block.days.size !in doctor.dayRange)
+            if(block.items.size !in doctor.dayRange)
                 dayRangeViolations++
 
             var numNightsInRow = 0
             // If there are night shifts in the block, they must be at the end, due to rest laws
-            for(dayID in block.days.sortedDescending()) {
+            for(dayID in block.items.sortedDescending()) {
                 /*
                  * End day of block could be from an overlapping night shift, so next day
                  * still needs to be checking if the end day does not have a worked night
@@ -261,6 +263,10 @@ class Solution(
         // Subtracts previous objective value of preference disparity
         objectiveValue -= calculatePreferenceDisparity() * 500
 
+        val doc = doctors[doctor]
+        val shiftType = if(shift is NightShift) "Night" else "Day"
+        assignmentLog += "al $assignment $doctor Shift: $shiftID ($shiftType) Day: ${shift.day}\n"
+
         // Updates feasibility and assignee/assignment information
         shift.feasibleDoctors.remove(doctor)
         shift.assignees.add(doctor)
@@ -270,7 +276,7 @@ class Solution(
         updateFeasibilityAllocation(this.data, FeasibilityInfo(shift, doctor))
 
         // Updates data of the doctor allocated to the shift
-        val doc = doctors[doctor]
+        //val doc = doctors[doctor]
         doc.hoursWorked += shift.duration
         when(shift) {
             is DayShift -> doc.dayShiftsWorked++
@@ -294,6 +300,28 @@ class Solution(
             days[shift.day].numShiftsWithCoverage++
             if(days[shift.day].numShiftsWithCoverage == 1)
                 objectiveValue -= 20
+        }
+
+        for(testShift in data.shifts) {
+            for(assignee in testShift.assignees)
+                if(testShift.causesOfInfeasibility[assignee] != null)
+                    println("hmmm")
+            for(assignmentID in testShift.assignmentIDs) {
+                val a = data.assignments[assignmentID].assignee
+                if (a != null && !testShift.assignees.contains(a))
+                    println("hmmm")
+            }
+        }
+
+        for(block in doc.blocksOfDays.values) {
+            for(testShift in block.shiftsMadeInfeasible) {
+                val shiftToCheck = data.shifts[testShift]
+                if(shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Training ||
+                    shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Leave)
+                    continue
+                if(!blockStillPresent(shiftToCheck, block.id, doctor))
+                    println("hmmm")
+            }
         }
 
         return true
@@ -330,6 +358,10 @@ class Solution(
         // Subtracts previous objective value contribution of disparity
         objectiveValue -= calculatePreferenceDisparity() * 500
 
+        val doc = doctors[doctor]
+        val shiftType = if(shift is NightShift) "Night" else "Day"
+        assignmentLog += "de $assignment Shift: $shiftID (${shiftType}) Day: ${shift.day}\n"
+
         // Updates feasibility and assignee/assignment information
         shift.feasibleDoctors.add(doctor)
         shift.assignees.remove(doctor)
@@ -338,7 +370,7 @@ class Solution(
         updateFeasibilityDeallocation(this.data, FeasibilityInfo(shift, doctor))
 
         // Updates data for doctor removed from the shift
-        val doc = doctors[doctor]
+        //val doc = doctors[doctor]
         doc.hoursWorked -= shift.duration
         when(shift) {
             is DayShift -> doc.dayShiftsWorked--
@@ -362,6 +394,28 @@ class Solution(
             days[shift.day].numShiftsWithCoverage--
             if(days[shift.day].numShiftsWithCoverage == 0)
                 objectiveValue += 20
+        }
+
+        for(testShift in data.shifts) {
+            for(assignee in testShift.assignees)
+                if(testShift.causesOfInfeasibility[assignee] != null)
+                    println("hmmm")
+            for(assignmentID in testShift.assignmentIDs) {
+                val a = data.assignments[assignmentID].assignee
+                if (a != null && !testShift.assignees.contains(a))
+                    println("hmmm")
+            }
+        }
+
+        for(block in doc.blocksOfDays.values) {
+            for(testShift in block.shiftsMadeInfeasible) {
+                val shiftToCheck = data.shifts[testShift]
+                if(shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Training ||
+                    shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Leave)
+                    continue
+                if(!blockStillPresent(shiftToCheck, block.id, doctor))
+                    println("hmmm")
+            }
         }
 
         return true
