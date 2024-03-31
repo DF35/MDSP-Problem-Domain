@@ -39,7 +39,7 @@ class InstanceGenerator(val rand: Random) {
         val genShifts = { i: Int -> listOf(i*4, i*4+1, i*4+2, i*4+3) }
         val genDaysEntry = { l: List<Int> -> Pair(l.subList(0,1), l.subList(1,4)) }
         val genTimesAndTypes = { i: Int -> listOf("\n8.0\n08:00-16:00\nday\n", "\n8.0\n14:00-22:00\nday\n",
-            "\n8.0\n17:00-01:00 (${nextDay(i)})\nnight overlaps\n", "\n8.0\n22:00-08:30 (${nextDay(i)})\nnight overlaps\nnext\n") }
+            "\n8.0\n17:00-01:00 (${nextDay(i)})\nnight overlaps\n", "\n10.5\n22:00-08:30 (${nextDay(i)})\nnight overlaps\nnext\n") }
         val grades = listOf("any senior\n", "any\n", "any\n", "any senior\n")
         val elevenHoursFunctions = listOf(
             { i: Int -> listOf(i+1, i+2, i+3, i-1, i-2, i-3) },

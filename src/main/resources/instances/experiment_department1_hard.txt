@@ -40,7 +40,7 @@ night overlaps
 4 5 6 7 8 9 10 11 12
 NULL
 4 5 8 9 12
-8.0
+10.5
 22:00-08:30 (Tuesday)
 night overlaps
 next
@@ -73,7 +73,7 @@ night overlaps
 8 9 10 11 12 13 14 15 16
 NULL
 8 9 12 13 16
-8.0
+10.5
 22:00-08:30 (Wednesday)
 night overlaps
 next
@@ -106,7 +106,7 @@ night overlaps
 12 13 14 15 16 17 18 19 20
 NULL
 12 13 16 17 20
-8.0
+10.5
 22:00-08:30 (Thursday)
 night overlaps
 next
@@ -139,7 +139,7 @@ night overlaps
 16 17 18 19 20 21 22 23 24
 NULL
 16 17 20 21 24
-8.0
+10.5
 22:00-08:30 (Friday)
 night overlaps
 next
@@ -172,7 +172,7 @@ night overlaps
 20 21 22 23 24 25 26 27 28
 NULL
 20 21 24 25 28
-8.0
+10.5
 22:00-08:30 (Saturday)
 night overlaps
 next
@@ -205,7 +205,7 @@ night overlaps
 24 25 26 27 28 29 30 31 32
 NULL
 24 25 28 29 32
-8.0
+10.5
 22:00-08:30 (Sunday)
 night overlaps
 next
@@ -238,7 +238,7 @@ night overlaps
 28 29 30 31 32 33 34 35 36
 NULL
 28 29 32 33 36
-8.0
+10.5
 22:00-08:30 (Monday)
 night overlaps
 next
@@ -271,7 +271,7 @@ night overlaps
 32 33 34 35 36 37 38 39 40
 NULL
 32 33 36 37 40
-8.0
+10.5
 22:00-08:30 (Tuesday)
 night overlaps
 next
@@ -304,7 +304,7 @@ night overlaps
 36 37 38 39 40 41 42 43 44
 NULL
 36 37 40 41 44
-8.0
+10.5
 22:00-08:30 (Wednesday)
 night overlaps
 next
@@ -337,7 +337,7 @@ night overlaps
 40 41 42 43 44 45 46 47 48
 NULL
 40 41 44 45 48
-8.0
+10.5
 22:00-08:30 (Thursday)
 night overlaps
 next
@@ -370,7 +370,7 @@ night overlaps
 44 45 46 47 48 49 50 51 52
 NULL
 44 45 48 49 52
-8.0
+10.5
 22:00-08:30 (Friday)
 night overlaps
 next
@@ -403,7 +403,7 @@ night overlaps
 48 49 50 51 52 53 54 55 56
 NULL
 48 49 52 53 56
-8.0
+10.5
 22:00-08:30 (Saturday)
 night overlaps
 next
@@ -436,7 +436,7 @@ night overlaps
 52 53 54 55 56 57 58 59 60
 NULL
 52 53 56 57 60
-8.0
+10.5
 22:00-08:30 (Sunday)
 night overlaps
 next
@@ -469,7 +469,7 @@ night overlaps
 56 57 58 59 60 61 62 63 64
 NULL
 56 57 60 61 64
-8.0
+10.5
 22:00-08:30 (Monday)
 night overlaps
 next
@@ -502,7 +502,7 @@ night overlaps
 60 61 62 63 64 65 66 67 68
 NULL
 60 61 64 65 68
-8.0
+10.5
 22:00-08:30 (Tuesday)
 night overlaps
 next
@@ -535,7 +535,7 @@ night overlaps
 64 65 66 67 68 69 70 71 72
 NULL
 64 65 68 69 72
-8.0
+10.5
 22:00-08:30 (Wednesday)
 night overlaps
 next
@@ -568,7 +568,7 @@ night overlaps
 68 69 70 71 72 73 74 75 76
 NULL
 68 69 72 73 76
-8.0
+10.5
 22:00-08:30 (Thursday)
 night overlaps
 next
@@ -601,7 +601,7 @@ night overlaps
 72 73 74 75 76 77 78 79 80
 NULL
 72 73 76 77 80
-8.0
+10.5
 22:00-08:30 (Friday)
 night overlaps
 next
@@ -634,7 +634,7 @@ night overlaps
 76 77 78 79 80 81 82 83 84
 NULL
 76 77 80 81 84
-8.0
+10.5
 22:00-08:30 (Saturday)
 night overlaps
 next
@@ -667,7 +667,7 @@ night overlaps
 80 81 82 83 84 85 86 87 88
 NULL
 80 81 84 85 88
-8.0
+10.5
 22:00-08:30 (Sunday)
 night overlaps
 next
@@ -700,7 +700,7 @@ night overlaps
 84 85 86 87 88 89 90 91 92
 NULL
 84 85 88 89 92
-8.0
+10.5
 22:00-08:30 (Monday)
 night overlaps
 next
@@ -733,7 +733,7 @@ night overlaps
 88 89 90 91 92 93 94 95 96
 NULL
 88 89 92 93 96
-8.0
+10.5
 22:00-08:30 (Tuesday)
 night overlaps
 next
@@ -766,7 +766,7 @@ night overlaps
 92 93 94 95 96 97 98 99 100
 NULL
 92 93 96 97 100
-8.0
+10.5
 22:00-08:30 (Wednesday)
 night overlaps
 next
@@ -799,7 +799,7 @@ night overlaps
 96 97 98 99 100 101 102 103 104
 NULL
 96 97 100 101 104
-8.0
+10.5
 22:00-08:30 (Thursday)
 night overlaps
 next
@@ -832,7 +832,7 @@ night overlaps
 100 101 102 103 104 105 106 107 108
 NULL
 100 101 104 105 108
-8.0
+10.5
 22:00-08:30 (Friday)
 night overlaps
 next
@@ -865,7 +865,7 @@ night overlaps
 104 105 106 107 108 109 110 111 112
 NULL
 104 105 108 109 112
-8.0
+10.5
 22:00-08:30 (Saturday)
 night overlaps
 next
@@ -898,7 +898,7 @@ night overlaps
 108 109 110 111 112 113 114 115 116
 NULL
 108 109 112 113 116
-8.0
+10.5
 22:00-08:30 (Sunday)
 night overlaps
 next
@@ -931,7 +931,7 @@ night overlaps
 112 113 114 115 116 117 118 119 120
 NULL
 112 113 116 117 120
-8.0
+10.5
 22:00-08:30 (Monday)
 night overlaps
 next
@@ -964,7 +964,7 @@ night overlaps
 116 117 118 119 120 121 122 123 124
 NULL
 116 117 120 121 124
-8.0
+10.5
 22:00-08:30 (Tuesday)
 night overlaps
 next
@@ -997,7 +997,7 @@ night overlaps
 120 121 122 123 124 125 126 127 128
 NULL
 120 121 124 125 128
-8.0
+10.5
 22:00-08:30 (Wednesday)
 night overlaps
 next
@@ -1030,7 +1030,7 @@ night overlaps
 124 125 126 127 128 129 130 131 132
 NULL
 124 125 128 129 132
-8.0
+10.5
 22:00-08:30 (Thursday)
 night overlaps
 next
@@ -1063,7 +1063,7 @@ night overlaps
 128 129 130 131 132 133 134 135 136
 NULL
 128 129 132 133 136
-8.0
+10.5
 22:00-08:30 (Friday)
 night overlaps
 next
@@ -1096,7 +1096,7 @@ night overlaps
 132 133 134 135 136 137 138 139 140
 NULL
 132 133 136 137 140
-8.0
+10.5
 22:00-08:30 (Saturday)
 night overlaps
 next
@@ -1129,7 +1129,7 @@ night overlaps
 136 137 138 139 140 141 142 143 144
 NULL
 136 137 140 141 144
-8.0
+10.5
 22:00-08:30 (Sunday)
 night overlaps
 next
@@ -1162,7 +1162,7 @@ night overlaps
 140 141 142 143 144 145 146 147 148
 NULL
 140 141 144 145 148
-8.0
+10.5
 22:00-08:30 (Monday)
 night overlaps
 next
@@ -1195,7 +1195,7 @@ night overlaps
 144 145 146 147 148 149 150 151 152
 NULL
 144 145 148 149 152
-8.0
+10.5
 22:00-08:30 (Tuesday)
 night overlaps
 next
@@ -1228,7 +1228,7 @@ night overlaps
 148 149 150 151 152 153 154 155 156
 NULL
 148 149 152 153 156
-8.0
+10.5
 22:00-08:30 (Wednesday)
 night overlaps
 next
@@ -1261,7 +1261,7 @@ night overlaps
 152 153 154 155 156 157 158 159 160
 NULL
 152 153 156 157 160
-8.0
+10.5
 22:00-08:30 (Thursday)
 night overlaps
 next
@@ -1294,7 +1294,7 @@ night overlaps
 156 157 158 159 160 161 162 163 164
 NULL
 156 157 160 161 164
-8.0
+10.5
 22:00-08:30 (Friday)
 night overlaps
 next
@@ -1327,7 +1327,7 @@ night overlaps
 160 161 162 163 164 165 166 167 168
 NULL
 160 161 164 165 168
-8.0
+10.5
 22:00-08:30 (Saturday)
 night overlaps
 next
@@ -1360,7 +1360,7 @@ night overlaps
 164 165 166 167 168 169 170 171 172
 NULL
 164 165 168 169 172
-8.0
+10.5
 22:00-08:30 (Sunday)
 night overlaps
 next
@@ -1393,7 +1393,7 @@ night overlaps
 168 169 170 171 172 173 174 175 176
 NULL
 168 169 172 173 176
-8.0
+10.5
 22:00-08:30 (Monday)
 night overlaps
 next
@@ -1426,7 +1426,7 @@ night overlaps
 172 173 174 175 176 177 178 179 180
 NULL
 172 173 176 177 180
-8.0
+10.5
 22:00-08:30 (Tuesday)
 night overlaps
 next
@@ -1459,7 +1459,7 @@ night overlaps
 176 177 178 179 180 181 182 183 184
 NULL
 176 177 180 181 184
-8.0
+10.5
 22:00-08:30 (Wednesday)
 night overlaps
 next
@@ -1492,7 +1492,7 @@ night overlaps
 180 181 182 183 184 185 186 187 188
 NULL
 180 181 184 185 188
-8.0
+10.5
 22:00-08:30 (Thursday)
 night overlaps
 next
@@ -1525,7 +1525,7 @@ night overlaps
 184 185 186 187 188 189 190 191 192
 NULL
 184 185 188 189 192
-8.0
+10.5
 22:00-08:30 (Friday)
 night overlaps
 next
@@ -1558,7 +1558,7 @@ night overlaps
 188 189 190 191 192 193 194 195 196
 NULL
 188 189 192 193 196
-8.0
+10.5
 22:00-08:30 (Saturday)
 night overlaps
 next
@@ -1591,7 +1591,7 @@ night overlaps
 192 193 194 195 196 197 198 199 200
 NULL
 192 193 196 197 200
-8.0
+10.5
 22:00-08:30 (Sunday)
 night overlaps
 next
@@ -1624,7 +1624,7 @@ night overlaps
 196 197 198 199 200 201 202 203 204
 NULL
 196 197 200 201 204
-8.0
+10.5
 22:00-08:30 (Monday)
 night overlaps
 next
@@ -1657,7 +1657,7 @@ night overlaps
 200 201 202 203 204 205 206 207 208
 NULL
 200 201 204 205 208
-8.0
+10.5
 22:00-08:30 (Tuesday)
 night overlaps
 next
@@ -1690,7 +1690,7 @@ night overlaps
 204 205 206 207 208 209 210 211 212
 NULL
 204 205 208 209 212
-8.0
+10.5
 22:00-08:30 (Wednesday)
 night overlaps
 next
@@ -1723,7 +1723,7 @@ night overlaps
 208 209 210 211 212 213 214 215 216
 NULL
 208 209 212 213 216
-8.0
+10.5
 22:00-08:30 (Thursday)
 night overlaps
 next
@@ -1756,7 +1756,7 @@ night overlaps
 212 213 214 215 216 217 218 219 220
 NULL
 212 213 216 217 220
-8.0
+10.5
 22:00-08:30 (Friday)
 night overlaps
 next
@@ -1789,7 +1789,7 @@ night overlaps
 216 217 218 219 220 221 222 223
 NULL
 216 217 220 221
-8.0
+10.5
 22:00-08:30 (Saturday)
 night overlaps
 next
@@ -1822,7 +1822,7 @@ night overlaps
 220 221 222 223
 NULL
 220 221
-8.0
+10.5
 22:00-08:30 (Sunday)
 night overlaps
 next
@@ -1855,7 +1855,7 @@ night overlaps
 NULL
 NULL
 NULL
-8.0
+10.5
 22:00-08:30 (Monday)
 night overlaps
 next

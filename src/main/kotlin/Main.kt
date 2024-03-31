@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
     }
 
     /*val gen = InstanceGenerator(Random(25032024))
-    gen.generateInstance("experiment_department1_hard.txt", 1, 8, 4, 4, 0.5, 0.5, 4)*/
+    gen.generateInstance("experiment_department1_easy.txt", 2, 8, 5, 5, 0.2, 0.2, 5)*/
 
     /*val pd = MDSP(25032024)
     pd.loadInstance(6)
