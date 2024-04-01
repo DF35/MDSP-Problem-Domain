@@ -43,8 +43,9 @@ fun main(args: Array<String>) {
 
     solution.debug()*/
 
-    /*val seedGenerator = Random(22032024)
-    val totalExecutionTime: Long = 120000
+    val seedGenerator = Random(22032024)
+    var totalExecutionTime: Long = 0
+    val toAdd = 60000
     val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
     val acceptanceType = AcceptanceCriterionType.AdaptiveIterationLimitedListBasedTA
     val resultFileName = "GIHH_"
@@ -52,42 +53,101 @@ fun main(args: Array<String>) {
     val dateFormatter = SimpleDateFormat("ddMMyyyyHHmmss")
     WriteInfo.resultSubFolderName = dateFormatter.format(today)
 
-    for(i in 1..3) {
-        val seed = seedGenerator.nextLong()
-        val problem = MDSP(seed)
-        val hyperHeuristic = GIHH(
-            seed, problem.numberOfHeuristics, totalExecutionTime,
-            resultFileName, selectionType, acceptanceType
-        )
+    for(i in 1..10) {
+        totalExecutionTime += toAdd
 
-        problem.loadInstance(1)
-        problem.initialiseSolution(0)
-        hyperHeuristic.timeLimit = totalExecutionTime
-        hyperHeuristic.loadProblemDomain(problem)
-        hyperHeuristic.run()
-        val writer = BufferedWriter(FileWriter("src/test/resources/test_instance2_log-$i.txt"))
-        writer.write(problem.bestSolution.assignmentLog)
-        writer.close()
+        for (h in 1..5) {
+            val seed = seedGenerator.nextLong()
+            val problem = MDSP(seed)
+            val hyperHeuristic = GIHH(
+                seed, problem.numberOfHeuristics, totalExecutionTime,
+                resultFileName, selectionType, acceptanceType
+            )
+
+            problem.loadInstance(2)
+            problem.initialiseSolution(0)
+            hyperHeuristic.timeLimit = totalExecutionTime
+            hyperHeuristic.loadProblemDomain(problem)
+            hyperHeuristic.run()
+            val writer = BufferedWriter(FileWriter("results/time_limit/experiment_department1_easy_${i}-minutes_${h}.txt"))
+            var assignments = ""
+            for(assignment in problem.bestSolution.data.assignments)
+                if(assignment.assignee != null)
+                    assignments += "al ${assignment.id} ${assignment.assignee}\n"
+            writer.write(assignments)
+            writer.close()
+            println(problem.bestSolutionValue)
+        }
+
+        for (h in 1..5) {
+            val seed = seedGenerator.nextLong()
+            val problem = MDSP(seed)
+            val hyperHeuristic = GIHH(
+                seed, problem.numberOfHeuristics, totalExecutionTime,
+                resultFileName, selectionType, acceptanceType
+            )
+
+            problem.loadInstance(3)
+            problem.initialiseSolution(0)
+            hyperHeuristic.timeLimit = totalExecutionTime
+            hyperHeuristic.loadProblemDomain(problem)
+            hyperHeuristic.run()
+            val writer = BufferedWriter(FileWriter("results/time_limit/experiment_department1_hard_${i}_minutes-${h}.txt"))
+            var assignments = ""
+            for(assignment in problem.bestSolution.data.assignments)
+                if(assignment.assignee != null)
+                    assignments += "al ${assignment.id} ${assignment.assignee}\n"
+            writer.write(assignments)
+            writer.close()
+            println(problem.bestSolutionValue)
+        }
+
+        for (h in 1..5) {
+            val seed = seedGenerator.nextLong()
+            val problem = MDSP(seed)
+            val hyperHeuristic = GIHH(
+                seed, problem.numberOfHeuristics, totalExecutionTime,
+                resultFileName, selectionType, acceptanceType
+            )
+
+            problem.loadInstance(4)
+            problem.initialiseSolution(0)
+            hyperHeuristic.timeLimit = totalExecutionTime
+            hyperHeuristic.loadProblemDomain(problem)
+            hyperHeuristic.run()
+            val writer = BufferedWriter(FileWriter("results/time_limit/experiment_department2_easy_${i}_minutes-${h}.txt"))
+            var assignments = ""
+            for(assignment in problem.bestSolution.data.assignments)
+                if(assignment.assignee != null)
+                    assignments += "al ${assignment.id} ${assignment.assignee}\n"
+            writer.write(assignments)
+            writer.close()
+            println(problem.bestSolutionValue)
+        }
+
+        for (h in 1..5) {
+            val seed = seedGenerator.nextLong()
+            val problem = MDSP(seed)
+            val hyperHeuristic = GIHH(
+                seed, problem.numberOfHeuristics, totalExecutionTime,
+                resultFileName, selectionType, acceptanceType
+            )
+
+            problem.loadInstance(5)
+            problem.initialiseSolution(0)
+            hyperHeuristic.timeLimit = totalExecutionTime
+            hyperHeuristic.loadProblemDomain(problem)
+            hyperHeuristic.run()
+            val writer = BufferedWriter(FileWriter("results/time_limit/experiment_department2_hard_${i}_minutes-${h}.txt"))
+            var assignments = ""
+            for(assignment in problem.bestSolution.data.assignments)
+                if(assignment.assignee != null)
+                    assignments += "al ${assignment.id} ${assignment.assignee}\n"
+            writer.write(assignments)
+            writer.close()
+            println(problem.bestSolutionValue)
+        }
     }
-
-    for(i in 1..3) {
-        val seed = seedGenerator.nextLong()
-        val problem = MDSP(seed)
-        val hyperHeuristic = GIHH(
-            seed, problem.numberOfHeuristics, totalExecutionTime,
-            resultFileName, selectionType, acceptanceType
-        )
-
-        problem.loadInstance(0)
-        problem.initialiseSolution(0)
-        hyperHeuristic.timeLimit = totalExecutionTime
-        hyperHeuristic.loadProblemDomain(problem)
-        hyperHeuristic.run()
-        val writer = BufferedWriter(FileWriter("src/test/resources/test_instance1_log-$i.txt"))
-        writer.write(problem.bestSolution.assignmentLog)
-        writer.close()
-    }*/
-
 
     // Debugging a doctor log file
     /*val seedGenerator = Random(25022024)
