@@ -332,7 +332,7 @@ class MDSP(
     }
 
     override fun getNumberOfHeuristics(): Int {
-        return 9
+        return 11
     }
 
     override fun applyHeuristic(heuristicID: Int, solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
@@ -352,6 +352,8 @@ class MDSP(
             6 -> heuristic6(solutionSourceIndex, solutionDestinationIndex)
             7 -> heuristic7(solutionSourceIndex, solutionDestinationIndex)
             8 -> heuristic8(solutionSourceIndex, solutionDestinationIndex)
+            9 -> heuristic9(solutionSourceIndex, solutionDestinationIndex)
+            10 -> heuristic10(solutionSourceIndex, solutionDestinationIndex)
             else -> throw Exception("Heuristic: $heuristicID does not exist")
         }
 
@@ -393,6 +395,8 @@ class MDSP(
             6 -> heuristic6(solutionSourceIndex1, solutionDestinationIndex)
             7 -> heuristic7(solutionSourceIndex1, solutionDestinationIndex)
             8 -> heuristic8(solutionSourceIndex1, solutionDestinationIndex)
+            9 -> heuristic9(solutionSourceIndex1, solutionDestinationIndex)
+            10 -> heuristic10(solutionSourceIndex1, solutionDestinationIndex)
             else -> throw Exception("applyHeuristic: Invalid heuristicID passed with arguments")
         }
 
@@ -606,7 +610,7 @@ class MDSP(
         return tempSol.objectiveValue
     }
 
-    // First Improvement Hill-Climbing
+    // First Improvement Hill-Climbing - assigning a random doctor
     private fun heuristic7(solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
         val tempSol = solutionMemory[solutionSourceIndex]!!.copy()
 
@@ -648,7 +652,7 @@ class MDSP(
         return tempSol.objectiveValue
     }
 
-    // Steepest Descent Hill Climbing
+    // Steepest Descent Hill Climbing - assigning a random doctor
     private fun heuristic8(solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
         val tempSol = solutionMemory[solutionSourceIndex]!!.copy()
 
@@ -663,6 +667,86 @@ class MDSP(
 
                 if(feasibleDoctors.isNotEmpty()) {
                     val doctor = feasibleDoctors[rng.nextInt(feasibleDoctors.size)]
+                    tempSol.allocateAssignment(assignment, doctor)
+
+                    if(tempSol.objectiveValue < bestValue) {
+                        bestValue = tempSol.objectiveValue
+                        bestAssignment = assignment
+                        bestDoctor = doctor
+                    }
+                    tempSol.deallocateAssignment(assignment)
+                }
+            }
+
+            if(bestValue < prevValue) {
+                tempSol.allocateAssignment(bestAssignment, bestDoctor)
+                continue
+            }
+            // In the case of no improvement, we exit the loop
+            break
+        }
+
+        solutionMemory[solutionDestinationIndex] = tempSol
+        return tempSol.objectiveValue
+    }
+
+    // First improvement hill climbing - exhaustive check of feasible doctors
+    private fun heuristic9(solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
+        val tempSol = solutionMemory[solutionSourceIndex]!!.copy()
+
+        val numUnassignedAssignments = tempSol.unassignedAssignments.size
+        if(numUnassignedAssignments == 0) {
+            solutionMemory[solutionDestinationIndex] = tempSol
+            return tempSol.objectiveValue
+        }
+
+        var unassignedIndex = rng.nextInt(numUnassignedAssignments)
+
+        for(x in 1..searchDepth) {
+            var improved = false
+            val assignmentsToCheck = tempSol.unassignedAssignments.size
+            for(y in 1..assignmentsToCheck) {
+                val assignment = tempSol.unassignedAssignments[unassignedIndex]
+                val feasibleDoctors = tempSol.getFeasibleDoctors(assignment).toList()
+
+                // Tries each feasible doctor to see if the objective function improves
+                for(doctor in feasibleDoctors) {
+                    val prevValue = tempSol.objectiveValue
+                    tempSol.allocateAssignment(assignment, doctor)
+
+                    when(tempSol.objectiveValue < prevValue) {
+                        true -> {
+                            improved = true
+                            unassignedIndex--
+                            break
+                        }
+                        false -> tempSol.deallocateAssignment(assignment)
+                    }
+                }
+                unassignedIndex++
+                if(unassignedIndex !in tempSol.unassignedAssignments.indices) unassignedIndex = 0
+            }
+            if(!improved) break
+        }
+
+        solutionMemory[solutionDestinationIndex] = tempSol
+        return tempSol.objectiveValue
+    }
+
+    // Best improvement hill climbing - exhaustive check of feasible doctors
+    private fun heuristic10(solutionSourceIndex: Int, solutionDestinationIndex: Int): Double {
+        val tempSol = solutionMemory[solutionSourceIndex]!!.copy()
+
+        for(x in 1..searchDepth*2) {
+            val prevValue = tempSol.objectiveValue
+            var bestValue = Double.MAX_VALUE
+            var bestAssignment = Int.MAX_VALUE
+            var bestDoctor = Int.MAX_VALUE
+            val assignmentsToCheck = tempSol.unassignedAssignments.toList()
+            for(assignment in assignmentsToCheck) {
+                val feasibleDoctors = tempSol.getFeasibleDoctors(assignment).toList()
+
+                for(doctor in feasibleDoctors) {
                     tempSol.allocateAssignment(assignment, doctor)
 
                     if(tempSol.objectiveValue < bestValue) {
