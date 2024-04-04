@@ -20,8 +20,9 @@ fun main(args: Array<String>) {
         return
     }
 
-    /*val gen = InstanceGenerator(Random(25032024))
-    gen.generateInstance("experiment_department1_easy.txt", 2, 8, 5, 5, 0.2, 0.2, 5)*/
+    val gen = InstanceGenerator(Random(25032024))
+    gen.generateInstance("experiment_department1_easy.txt", 1, 8, 5, 5, 0.2, 0.2, 5)
+    //gen.generateInstance("department2_baseline.txt", 2)
 
     /*val pd = MDSP(25032024)
     pd.loadInstance(6)
@@ -43,7 +44,7 @@ fun main(args: Array<String>) {
 
     solution.debug()*/
 
-    val seedGenerator = Random(22032024)
+    /*val seedGenerator = Random(22032024)
     var totalExecutionTime: Long = 0
     val toAdd = 60000
     val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
@@ -147,16 +148,44 @@ fun main(args: Array<String>) {
             writer.close()
             println(problem.bestSolutionValue)
         }
+    }*/
+
+    /*val writer = BufferedWriter(FileWriter("results/time_limit/graph_data/experiment_department2_hard.csv"))
+    writer.write("Objective_Function,Minutes\n")
+
+    for(i in listOf(5, 10, 15, 20)) {
+        for (h in 1..5) {
+            val problem = MDSP(25032024)
+            problem.loadInstance(5)
+            val solution = problem.blankSolution()
+
+            val log = File("results/time_limit/experiment_department2_hard_${i}_minutes-${h}.txt")
+            val scanner = Scanner(log)
+            var lineNum = 0
+            while(scanner.hasNextLine()) {
+                lineNum++
+                val line = scanner.nextLine()
+                val tokens = line.split(" ")
+                solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+            }
+
+            /*println(solution.descriptiveObjectiveFunction(true))
+            println("\n\n\n")*/
+            solution.calculateObjectiveValue()
+            writer.write("${solution.objectiveValue},$i\n")
+        }
     }
+
+    writer.close()*/
 
     // Debugging a doctor log file
     /*val seedGenerator = Random(25022024)
     val seed = seedGenerator.nextLong()
     val problem = MDSP(seed)
-    problem.loadInstance(6)
+    problem.loadInstance(3)
     val solution = problem.blankSolution()
 
-    val log = File("src/main/resources/docLog.txt")
+    val log = File("results/field_study/dep2_easy_2024-04-01_13-42.txt")
     val scanner = Scanner(log)
     var lineNum = 0
     while(scanner.hasNextLine()) {
@@ -167,7 +196,9 @@ fun main(args: Array<String>) {
             "al" -> solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
             "de" -> solution.deallocateAssignment(tokens[1].toInt())
         }
-    }*/
+    }
+    solution.calculateObjectiveValue()
+    println(solution.objectiveValue)*/
 
     /*val problem = MDSP(25032024)
     problem.loadInstance(1)

@@ -333,18 +333,19 @@ class InstanceGenerator(val rand: Random) {
 
     private fun generateTraining(days: Map<Int, Pair<List<Int>, List<Int>>>, numGroups: Int): List<String> {
         val prob = rand.nextDouble()
-        val type = when {
+        /*val type = when {
             prob < 0.22 -> TrainingType.OneDayPerWeek
             prob < 0.29 -> TrainingType.TwoDaysPerMonth
             prob < 0.43 -> TrainingType.OneDayPerMonth
             prob < 0.50 -> TrainingType.RandomDay
             prob < 0.64 -> TrainingType.FixedAfternoon2Weeks
             else -> TrainingType.WeeklyAfternoon
-        }
+        }*/
+
+        val type = TrainingType.OneDayPerWeek
 
         val numWeeks = days.size / 7
 
-        println(type)
 
         /*
          * Maps group to a Pair containing the list of days and the increment for repetition

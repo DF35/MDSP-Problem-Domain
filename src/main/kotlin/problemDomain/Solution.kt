@@ -3,6 +3,7 @@ package problemDomain
 import problemDomain.feasibilityHandling.blockStillPresent
 import java.util.*
 import kotlin.Exception
+import kotlin.math.absoluteValue
 import kotlin.math.pow
 
 
@@ -162,9 +163,15 @@ class Solution(
         }
 
         // Contribution of infractions on preferences - also updates solution record of infractions
-        val shiftPrefsViolated = doctor.numberOfShiftPrefsViolated()
+        val (shiftPrefsViolated, dayRangeViolations, nightRangeViolations) =
+            calculateDoctorPreferenceViolations(doctor)
 
-        // Row of day/night shift preferences
+        // Add contributions of infractions
+        return contribution + shiftPrefsViolated * 4 + dayRangeViolations * 4 + nightRangeViolations * 4
+    }
+
+    private fun calculateDoctorPreferenceViolations(doctor: MiddleGrade): Triple<Int, Int, Int> {
+        val shiftPrefsViolated = doctor.numberOfShiftPrefsViolated()
         var dayRangeViolations = 0
         var nightRangeViolations = 0
         for(block in doctor.blocksOfDays.values) {
@@ -186,7 +193,7 @@ class Solution(
                     }
                 }
                 else
-                    // Continue until stretch of nights ends
+                // Continue until stretch of nights ends
                     when (data.days[dayID].doctorsWorkingNight[doctor.id] == null) {
                         true -> break
                         false -> numNightsInRow++
@@ -204,8 +211,7 @@ class Solution(
         this.dayRangeViolations[doctor.id] = dayRangeViolations
         this.nightRangeViolations[doctor.id] = nightRangeViolations
 
-        // Add contributions of infractions
-        return contribution + shiftPrefsViolated * 4 + dayRangeViolations * 4 + nightRangeViolations * 4
+        return Triple(shiftPrefsViolated, dayRangeViolations, nightRangeViolations)
     }
 
     // Uses Jain's Fairness Index
@@ -244,6 +250,96 @@ class Solution(
         val dayContribution = if(!dayDisparity.isNaN()) dayDisparity else 1.0
         val nightContribution = if(!nightDisparity.isNaN()) nightDisparity else 1.0
         return 3 - (shiftContribution + dayContribution + nightContribution)
+    }
+
+    // Breaks down the sources of a solution's objective function score; used in result analysis
+    fun descriptiveObjectiveFunction(toRead: Boolean): String {
+        // Called to ensure that all values that are needed have been initialised
+        calculateObjectiveValue()
+        var description = ""
+
+        val numDaysWithoutCoverage = data.days.count { it.numShiftsWithCoverage == 0 }
+        val dayCoverageContribution = numDaysWithoutCoverage * 20
+        val numShiftsWithoutCoverage = data.shifts.count { it.assignees.isEmpty() }
+        val shiftCoverageContribution = numShiftsWithoutCoverage * 15
+        val numAssignmentsWithoutCoverage = data.assignments.count { it.assignee == null }
+        val assignmentCoverageContribution = numAssignmentsWithoutCoverage * 10
+        val totalCoverageContribution = dayCoverageContribution + shiftCoverageContribution + assignmentCoverageContribution
+
+
+        // Analysis of Doctor related contribution
+        var totalVarianceHours = 0.0
+        var varianceHoursContribution = 0.0
+        var totalVarianceDayShifts = 0
+        var contributionVarianceDayShifts = 0.0
+        var totalVarianceNightShifts = 0
+        var contributionVarianceNightShifts = 0.0
+        var totalPreferenceViolations = 0
+        var contributionPreferenceViolations = 0.0
+
+        data.doctors.forEach {
+            val varianceHours = it.varianceHoursWorked()
+            totalVarianceHours += varianceHours.absoluteValue
+            varianceHoursContribution += when(varianceHours < 0) {
+                false -> varianceHours * 10
+                true -> -varianceHours * 15
+            }
+
+            val varianceDays = it.varianceDayShiftsWorked()
+            totalVarianceDayShifts += varianceDays.absoluteValue
+            contributionVarianceDayShifts += when(varianceDays < 0) {
+                false -> varianceDays * 10
+                true -> -varianceDays * 12
+            }
+
+            val varianceNights = it.varianceNightShiftsWorked()
+            totalVarianceNightShifts += varianceNights.absoluteValue
+            contributionVarianceNightShifts += when(varianceNights < 0) {
+                false -> varianceNights * 10
+                true -> -varianceNights * 12
+            }
+
+            val prefsViolated = calculateDoctorPreferenceViolations(it).toList().sum()
+            totalPreferenceViolations += prefsViolated
+            contributionPreferenceViolations += prefsViolated * 4
+        }
+
+        val totalPreferenceContribution = contributionPreferenceViolations + 500 * calculatePreferenceDisparity()
+
+        val totalDoctorTargetContribution =
+            varianceHoursContribution + contributionVarianceDayShifts + contributionVarianceNightShifts
+
+
+        when(toRead) {
+            true -> {
+                description += "Objective Value: $objectiveValue\n\n"
+
+                description += "Breakdown of overall contributions:\n"
+                description += "    - Coverage: $totalCoverageContribution\n"
+                description += "    - Doctor Targets: $totalDoctorTargetContribution\n"
+                description += "    - Doctor Preferences: $totalPreferenceContribution\n\n"
+
+                description += "Breakdown of coverage contributions:\n"
+                description += "    - Days Without Coverage: $numDaysWithoutCoverage, Contribution to Objective Function Value: $dayCoverageContribution\n"
+                description += "    - Shifts Without Coverage: $numShiftsWithoutCoverage, Contribution to Objective Function Value: $shiftCoverageContribution\n"
+                description += "    - Assignments Without Coverage: $numAssignmentsWithoutCoverage, Contribution to Objective Function Value: $assignmentCoverageContribution\n\n"
+
+                description += "Breakdown of doctor target contributions:\n"
+                description += "    - Total deviation from target hours: $totalVarianceHours, Contribution to Objective Function Value: $varianceHoursContribution\n"
+                description += "    - Total deviation from target day shifts: $totalVarianceDayShifts, Contribution to Objective Function Value: $contributionVarianceDayShifts\n"
+                description += "    - Total deviation from target night shifts: $totalVarianceNightShifts, Contribution to Objective Function Value: $contributionVarianceNightShifts\n\n"
+
+                description += "Breakdown of doctor preference contributions:\n"
+                description += "    - Total preference violations: $totalPreferenceViolations, Contribution to Objective Function Value: $contributionPreferenceViolations\n"
+                description += "    - Added score for disparity in preferences being met: ${500 * calculatePreferenceDisparity()}"
+            }
+
+            false -> {
+                description += "$totalCoverageContribution\n$totalDoctorTargetContribution\n$totalPreferenceContribution"
+            }
+        }
+
+        return description
     }
 
     // Allocates indicated [assignment] to a given doctor and updates the feasibility of relevant shifts
