@@ -17,7 +17,7 @@ class InstanceGenerator(val rand: Random) {
         numTrainingGroups: Int
     ) {
         val instance = when(department) {
-            0 -> generateTestInstance(numWeeks)
+            //0 -> generateTestInstance(numWeeks)
             1 -> generateDepartment1(numWeeks, numJunior, numSenior, percentageOnLeave, percentagePartTime, numTrainingGroups)
             2 -> generateDepartment2(numWeeks, numJunior, numSenior, percentageOnLeave, percentagePartTime, numTrainingGroups)
             else -> throw Exception("generateInstance: Invalid value for [department] passed")
@@ -71,7 +71,7 @@ class InstanceGenerator(val rand: Random) {
             elevenHoursFunctions, fortyEightHoursFunctions, longFortyEightBeforeFunctions,
             relevantShiftFunctions
         )
-        val doctors = generateDoctorInfo(numJunior, numSenior, percentagePartTime, percentageOnLeave, days, listOf(8.0,8.0,8.0,8.0), numTrainingGroups)
+        val doctors = generateDoctorInfo(numJunior, numSenior, percentagePartTime, percentageOnLeave, days, listOf(8.0,8.0,8.0,10.5), numTrainingGroups)
 
         return "junior senior any\n47\n20 7\n$numWeeks\n${numJunior+numSenior}\n$doctors$shiftInfo"
     }
@@ -191,24 +191,24 @@ class InstanceGenerator(val rand: Random) {
         val numPartTime = ((numJunior+numSenior) * percentagePartTime).toInt()
         val numOnLeave = ((numJunior+numSenior) * percentageOnLeave).toInt()
         val juniors = (0..<numJunior).toList()
-        val allDoctors = (0..<numJunior+numSenior).toMutableList()
+        val allDoctors = (0..<numJunior+numSenior).toList()
         val onLeave = mutableListOf<Int>()
         val partTime = mutableListOf<Int>()
 
+        val doctorsAvailableForLeave = allDoctors.toMutableList()
         for(x in 1..numOnLeave) {
-            val doctor = allDoctors[rand.nextInt(allDoctors.size)]
+            val doctor = allDoctors[rand.nextInt(doctorsAvailableForLeave.size)]
             onLeave.add(doctor)
-            allDoctors.remove(doctor)
+            doctorsAvailableForLeave.remove(doctor)
         }
 
         // Doctors can be both on leave and part-time
-        allDoctors.addAll(onLeave)
+        val doctorsAvailableToBePartTime = allDoctors.toMutableList()
         for(x in 1..numPartTime) {
-            val doctor = allDoctors[rand.nextInt(allDoctors.size)]
+            val doctor = allDoctors[rand.nextInt(doctorsAvailableToBePartTime.size)]
             partTime.add(doctor)
-            allDoctors.remove(doctor)
+            doctorsAvailableToBePartTime.remove(doctor)
         }
-        allDoctors.addAll(partTime)
 
         // Randomly assigns the doctors to training groups
         val numPerGroup = allDoctors.size / numTrainingGroups
@@ -258,7 +258,7 @@ class InstanceGenerator(val rand: Random) {
         Large, Medium, Small, Single, Weekend
     }
 
-    private fun generateLeave(days: Map<Int, Pair<List<Int>, List<Int>>>, durations: List<Double>): String {
+    fun generateLeave(days: Map<Int, Pair<List<Int>, List<Int>>>, durations: List<Double>): String {
         val prob = rand.nextDouble()
         val type = when {
             prob < 0.36 -> LeaveType.Large
@@ -327,22 +327,20 @@ class InstanceGenerator(val rand: Random) {
         return "$hoursOff $shiftsOff"
     }
 
-    private enum class TrainingType {
+    enum class TrainingType {
         OneDayPerWeek, TwoDaysPerMonth, OneDayPerMonth, RandomDay, FixedAfternoon2Weeks, WeeklyAfternoon
     }
 
-    private fun generateTraining(days: Map<Int, Pair<List<Int>, List<Int>>>, numGroups: Int): List<String> {
+    fun generateTraining(days: Map<Int, Pair<List<Int>, List<Int>>>, numGroups: Int): List<String> {
         val prob = rand.nextDouble()
-        /*val type = when {
+        val type = when {
             prob < 0.22 -> TrainingType.OneDayPerWeek
             prob < 0.29 -> TrainingType.TwoDaysPerMonth
             prob < 0.43 -> TrainingType.OneDayPerMonth
             prob < 0.50 -> TrainingType.RandomDay
             prob < 0.64 -> TrainingType.FixedAfternoon2Weeks
             else -> TrainingType.WeeklyAfternoon
-        }*/
-
-        val type = TrainingType.OneDayPerWeek
+        }
 
         val numWeeks = days.size / 7
 

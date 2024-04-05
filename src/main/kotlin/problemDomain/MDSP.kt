@@ -77,10 +77,13 @@ class MDSP(
             3 -> "experiment_department1_hard"
             4 -> "experiment_department2_easy"
             5 -> "experiment_department2_hard"
-            6 -> "test"
             else -> Exception("loadInstance: Invalid instanceID given")
         }
 
+        readFile("/instances/$fileName.txt")
+    }
+
+    fun loadInstance(fileName: String) {
         readFile("/instances/$fileName.txt")
     }
 

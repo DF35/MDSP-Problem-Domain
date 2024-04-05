@@ -20,33 +20,8 @@ fun main(args: Array<String>) {
         return
     }
 
-    val gen = InstanceGenerator(Random(25032024))
-    gen.generateInstance("experiment_department1_easy.txt", 1, 8, 5, 5, 0.2, 0.2, 5)
-    //gen.generateInstance("department2_baseline.txt", 2)
-
-    /*val pd = MDSP(25032024)
-    pd.loadInstance(6)
-    val solution = pd.blankSolution()
-    //solution.allocateAssignment(2, 0)
-    //solution.allocateAssignment(6, 1)
-    solution.allocateAssignment(10, 1)
-    solution.allocateAssignment(14, 1)
-    //solution.allocateAssignment(18, 0)
-    solution.allocateAssignment(22, 1)
-    solution.allocateAssignment(25, 1)
-    //solution.allocateAssignment(30, 0)
-    //solution.allocateAssignment(34, 0)
-
-    //solution.deallocateAssignment(21)
-    //solution.allocateAssignment(26, 0)
-    //solution.deallocateAssignment(30)
-
-
-    solution.debug()*/
-
-    /*val seedGenerator = Random(22032024)
-    var totalExecutionTime: Long = 0
-    val toAdd = 60000
+    val seedGenerator = Random(22032024)
+    val totalExecutionTime: Long = 60000
     val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
     val acceptanceType = AcceptanceCriterionType.AdaptiveIterationLimitedListBasedTA
     val resultFileName = "GIHH_"
@@ -54,10 +29,60 @@ fun main(args: Array<String>) {
     val dateFormatter = SimpleDateFormat("ddMMyyyyHHmmss")
     WriteInfo.resultSubFolderName = dateFormatter.format(today)
 
-    for(i in 1..10) {
-        totalExecutionTime += toAdd
+    val instances = listOf(
+        "department1_baseline",
+        "department2_baseline",
+        "leave_partTime_mix/department1_20Percent",
+        "leave_partTime_mix/department1_40Percent",
+        "leave_partTime_mix/department1_60Percent",
+        "leave_partTime_mix/department1_80Percent",
+        "leave_partTime_mix/department2_20Percent",
+        "leave_partTime_mix/department2_40Percent",
+        "leave_partTime_mix/department2_60Percent",
+        "leave_partTime_mix/department2_80Percent",
+        "leave_tests/department1_20PercentLeave",
+        "leave_tests/department1_40PercentLeave",
+        "leave_tests/department1_60PercentLeave",
+        "leave_tests/department1_80PercentLeave",
+        "leave_tests/department2_20PercentLeave",
+        "leave_tests/department2_40PercentLeave",
+        "leave_tests/department2_60PercentLeave",
+        "leave_tests/department2_80PercentLeave",
+        "partTime_tests/department1_20PercentPartTime",
+        "partTime_tests/department1_40PercentPartTime",
+        "partTime_tests/department1_60PercentPartTime",
+        "partTime_tests/department1_80PercentPartTime",
+        "partTime_tests/department2_20PercentPartTime",
+        "partTime_tests/department2_40PercentPartTime",
+        "partTime_tests/department2_60PercentPartTime",
+        "partTime_tests/department2_80PercentPartTime",
+        "training_schedules/department1_fixedAfternoon2Weeks",
+        "training_schedules/department1_oneDayPerMonth",
+        "training_schedules/department1_oneDayPerWeek",
+        "training_schedules/department1_randomDay",
+        "training_schedules/department1_twoDaysPerMonth",
+        "training_schedules/department1_weeklyAfternoon",
+        "training_schedules/department2_fixedAfternoon2Weeks",
+        "training_schedules/department2_oneDayPerMonth",
+        "training_schedules/department2_oneDayPerWeek",
+        "training_schedules/department2_randomDay",
+        "training_schedules/department2_twoDaysPerMonth",
+        "training_schedules/department2_weeklyAfternoon",
+        "understaffing_tests/department1_1Junior",
+        "understaffing_tests/department1_1Junior_1Senior",
+        "understaffing_tests/department1_1Senior",
+        "understaffing_tests/department1_2Junior",
+        "understaffing_tests/department1_2Senior",
+        "understaffing_tests/department2_1Junior",
+        "understaffing_tests/department2_1Junior1Senior",
+        "understaffing_tests/department2_1Senior",
+        "understaffing_tests/department2_2Junior",
+        "understaffing_tests/department2_2Senior"
+    )
 
-        for (h in 1..5) {
+    for(instance in instances) {
+
+        for (h in 1..1) {
             val seed = seedGenerator.nextLong()
             val problem = MDSP(seed)
             val hyperHeuristic = GIHH(
@@ -65,127 +90,30 @@ fun main(args: Array<String>) {
                 resultFileName, selectionType, acceptanceType
             )
 
-            problem.loadInstance(2)
+            problem.loadInstance(instance)
             problem.initialiseSolution(0)
             hyperHeuristic.timeLimit = totalExecutionTime
             hyperHeuristic.loadProblemDomain(problem)
             hyperHeuristic.run()
-            val writer = BufferedWriter(FileWriter("results/time_limit/experiment_department1_easy_${i}-minutes_${h}.txt"))
+            val writer = BufferedWriter(FileWriter("results/$instance-${h}.txt"))
             var assignments = ""
-            for(assignment in problem.bestSolution.data.assignments)
-                if(assignment.assignee != null)
+            for (assignment in problem.bestSolution.data.assignments)
+                if (assignment.assignee != null)
                     assignments += "al ${assignment.id} ${assignment.assignee}\n"
             writer.write(assignments)
             writer.close()
             println(problem.bestSolutionValue)
-        }
-
-        for (h in 1..5) {
-            val seed = seedGenerator.nextLong()
-            val problem = MDSP(seed)
-            val hyperHeuristic = GIHH(
-                seed, problem.numberOfHeuristics, totalExecutionTime,
-                resultFileName, selectionType, acceptanceType
-            )
-
-            problem.loadInstance(3)
-            problem.initialiseSolution(0)
-            hyperHeuristic.timeLimit = totalExecutionTime
-            hyperHeuristic.loadProblemDomain(problem)
-            hyperHeuristic.run()
-            val writer = BufferedWriter(FileWriter("results/time_limit/experiment_department1_hard_${i}_minutes-${h}.txt"))
-            var assignments = ""
-            for(assignment in problem.bestSolution.data.assignments)
-                if(assignment.assignee != null)
-                    assignments += "al ${assignment.id} ${assignment.assignee}\n"
-            writer.write(assignments)
-            writer.close()
-            println(problem.bestSolutionValue)
-        }
-
-        for (h in 1..5) {
-            val seed = seedGenerator.nextLong()
-            val problem = MDSP(seed)
-            val hyperHeuristic = GIHH(
-                seed, problem.numberOfHeuristics, totalExecutionTime,
-                resultFileName, selectionType, acceptanceType
-            )
-
-            problem.loadInstance(4)
-            problem.initialiseSolution(0)
-            hyperHeuristic.timeLimit = totalExecutionTime
-            hyperHeuristic.loadProblemDomain(problem)
-            hyperHeuristic.run()
-            val writer = BufferedWriter(FileWriter("results/time_limit/experiment_department2_easy_${i}_minutes-${h}.txt"))
-            var assignments = ""
-            for(assignment in problem.bestSolution.data.assignments)
-                if(assignment.assignee != null)
-                    assignments += "al ${assignment.id} ${assignment.assignee}\n"
-            writer.write(assignments)
-            writer.close()
-            println(problem.bestSolutionValue)
-        }
-
-        for (h in 1..5) {
-            val seed = seedGenerator.nextLong()
-            val problem = MDSP(seed)
-            val hyperHeuristic = GIHH(
-                seed, problem.numberOfHeuristics, totalExecutionTime,
-                resultFileName, selectionType, acceptanceType
-            )
-
-            problem.loadInstance(5)
-            problem.initialiseSolution(0)
-            hyperHeuristic.timeLimit = totalExecutionTime
-            hyperHeuristic.loadProblemDomain(problem)
-            hyperHeuristic.run()
-            val writer = BufferedWriter(FileWriter("results/time_limit/experiment_department2_hard_${i}_minutes-${h}.txt"))
-            var assignments = ""
-            for(assignment in problem.bestSolution.data.assignments)
-                if(assignment.assignee != null)
-                    assignments += "al ${assignment.id} ${assignment.assignee}\n"
-            writer.write(assignments)
-            writer.close()
-            println(problem.bestSolutionValue)
-        }
-    }*/
-
-    /*val writer = BufferedWriter(FileWriter("results/time_limit/graph_data/experiment_department2_hard.csv"))
-    writer.write("Objective_Function,Minutes\n")
-
-    for(i in listOf(5, 10, 15, 20)) {
-        for (h in 1..5) {
-            val problem = MDSP(25032024)
-            problem.loadInstance(5)
-            val solution = problem.blankSolution()
-
-            val log = File("results/time_limit/experiment_department2_hard_${i}_minutes-${h}.txt")
-            val scanner = Scanner(log)
-            var lineNum = 0
-            while(scanner.hasNextLine()) {
-                lineNum++
-                val line = scanner.nextLine()
-                val tokens = line.split(" ")
-                solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
-            }
-
-            /*println(solution.descriptiveObjectiveFunction(true))
-            println("\n\n\n")*/
-            solution.calculateObjectiveValue()
-            writer.write("${solution.objectiveValue},$i\n")
         }
     }
 
-    writer.close()*/
 
-    // Debugging a doctor log file
     /*val seedGenerator = Random(25022024)
     val seed = seedGenerator.nextLong()
     val problem = MDSP(seed)
-    problem.loadInstance(3)
+    problem.loadInstance(2)
     val solution = problem.blankSolution()
 
-    val log = File("results/field_study/dep2_easy_2024-04-01_13-42.txt")
+    val log = File("results/field_study/dep1_hard_2024-04-02_15-09.txt")
     val scanner = Scanner(log)
     var lineNum = 0
     while(scanner.hasNextLine()) {
@@ -200,39 +128,27 @@ fun main(args: Array<String>) {
     solution.calculateObjectiveValue()
     println(solution.objectiveValue)*/
 
-    /*val problem = MDSP(25032024)
-    problem.loadInstance(1)
-    val solution = problem.blankSolution()
-    solution.calculateObjectiveValue()
-    println(solution.nightRangeViolations)
-    //solution.nightRangeViolations[3] = 6
-    println(solution.calculatePreferenceDisparity())*/
+    /*val writer = BufferedWriter(FileWriter("results/time_limit/graph_data/department2_hard.csv"))
+    writer.write("Objective_Function,Minutes\n")
 
+    for(i in listOf(5, 10, 15, 20)) {
+        for(h in 1..5) {
+            val problem = MDSP(25032024)
+            problem.loadInstance(5)
+            val solution = problem.blankSolution()
 
-    /*//solution.allocateAssignment(0, 3)
+            val log = File("results/time_limit/experiment_department2_hard_${i}_minutes-${h}.txt")
+            val scanner = Scanner(log)
+            while(scanner.hasNextLine()) {
+                val line = scanner.nextLine()
+                val tokens = line.split(" ")
+                solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+            }
 
-    //solution.allocateAssignment(4, 3)
-    //solution.allocateAssignment(9, 3)
-    //solution.allocateAssignment(14, 3)
-    solution.allocateAssignment(18, 3)
-    solution.allocateAssignment(22, 3)
-    solution.allocateAssignment(26, 3)
-    solution.allocateAssignment(30, 3)
-    solution.allocateAssignment(34, 3)
-    //solution.allocateAssignment(38, 3)
-    solution.allocateAssignment(42, 3)
-    //solution.allocateAssignment(46, 3)
-
-    solution.allocateAssignment(38, 3)
-    solution.deallocateAssignment(42)
-    //solution.deallocateAssignment(38)
-    //solution.deallocateAssignment(4)
-
-    /*solution.allocateAssignment(3, 0)
-    solution.allocateAssignment(7, 0)
-    solution.allocateAssignment(11, 0)*/
-    //println(solution.deallocateAssignment(22))
-
-    solution.debug()*/
+            solution.calculateObjectiveValue()
+            writer.write("${solution.objectiveValue},$i\n")
+        }
+    }
+    writer.close()*/
 
 }
