@@ -34,7 +34,8 @@ fun updateFeasibilityDayAdded(solutionData: SolutionData, doctorID: Int, dayID: 
         doctor.blocksOfDays[blockID] = Block(blockID)
     }
 
-    val block = doctor.blocksOfDays[blockID] ?: throw Exception("updateFeasibilityDaysWorked: Block $blockID missing from doctor $doctorID")
+    val block = doctor.blocksOfDays[blockID]
+        ?: throw Exception("updateFeasibilityDaysWorked: Block $blockID missing from doctor $doctorID")
 
     // Remove previous sources of infeasibility
     clearInfeasibleShiftsBlock(solutionData, block, doctorID)

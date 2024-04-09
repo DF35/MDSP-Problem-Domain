@@ -1,4 +1,4 @@
-package problemDomain.feasibilityHandling;
+package problemDomain.feasibilityHandling
 
 import problemDomain.*
 
@@ -86,7 +86,8 @@ fun updateFeasibilityNightShift(
                         else -> {
                             val nightRowSources = infeasibility.sources.filterIsInstance<Source.RowOfNights>()
                                 .filter { it.days == row }
-                            if(nightRowSources.isEmpty()) throw Exception("updateFeasibilityNightShift: Shift $shiftID lacks night row infeasibility $row for doctor $doctor")
+                            if(nightRowSources.isEmpty())
+                                throw Exception("updateFeasibilityNightShift: Shift $shiftID lacks night row infeasibility $row for doctor $doctor")
                             for(source in nightRowSources)
                                 shifts[shiftID].removeSource(doctor, source)
                         }

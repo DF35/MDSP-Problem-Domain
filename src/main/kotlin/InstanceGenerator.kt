@@ -4,7 +4,7 @@ import java.io.FileWriter
 import java.util.Scanner
 import kotlin.random.Random
 
-class InstanceGenerator(val rand: Random) {
+class InstanceGenerator(private val rand: Random) {
 
     fun generateInstance(
         filename: String,
@@ -18,8 +18,14 @@ class InstanceGenerator(val rand: Random) {
     ) {
         val instance = when(department) {
             //0 -> generateTestInstance(numWeeks)
-            1 -> generateDepartment1(numWeeks, numJunior, numSenior, percentageOnLeave, percentagePartTime, numTrainingGroups)
-            2 -> generateDepartment2(numWeeks, numJunior, numSenior, percentageOnLeave, percentagePartTime, numTrainingGroups)
+            1 -> generateDepartment1(
+                numWeeks, numJunior, numSenior, percentageOnLeave, percentagePartTime,
+                numTrainingGroups
+            )
+            2 -> generateDepartment2(
+                numWeeks, numJunior, numSenior, percentageOnLeave, percentagePartTime,
+                numTrainingGroups
+            )
             else -> throw Exception("generateInstance: Invalid value for [department] passed")
         }
         val writer = BufferedWriter(FileWriter("src/main/resources/instances/$filename"))
@@ -116,7 +122,9 @@ class InstanceGenerator(val rand: Random) {
             elevenHoursFunctions, fortyEightHoursFunctions, longFortyEightBeforeFunctions,
             relevantShiftFunctions
         )
-        val doctors = generateDoctorInfo(numJunior, numSenior, percentagePartTime, percentageOnLeave, days, listOf(9.5,12.0,13.0), numTrainingGroups)
+        val doctors = generateDoctorInfo(
+            numJunior, numSenior, percentagePartTime, percentageOnLeave, days, listOf(9.5,12.0,13.0), numTrainingGroups
+        )
 
         return "junior senior any\n47\n20 7\n$numWeeks\n${numJunior+numSenior}\n$doctors$shiftInfo"
     }

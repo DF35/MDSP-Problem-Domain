@@ -53,7 +53,8 @@ private fun checkToLeft(
 
     if(twoToLeftWorked) {
         val prevBlockID = days[firstDay-2].block[doctor.id]!!
-        val prevBlock = doctor.blocksOfDays[prevBlockID] ?: throw Exception("addBlockInfeasibility: doctor $doctor does not have block $prevBlockID")
+        val prevBlock = doctor.blocksOfDays[prevBlockID]
+            ?: throw Exception("addBlockInfeasibility: doctor $doctor does not have block $prevBlockID")
         val prevBlockSize = prevBlock.items.size
 
         /*
@@ -139,7 +140,8 @@ private fun checkToLeft(
 
     if(!twoToLeftWorked && threeToLeftWorked) {
         val prevBlockID = days[firstDay-3].block[doctor.id]!!
-        val prevBlock = doctor.blocksOfDays[prevBlockID] ?: throw Exception("addBlockInfeasibility: doctor $doctor does not have block $prevBlockID")
+        val prevBlock = doctor.blocksOfDays[prevBlockID]
+            ?: throw Exception("addBlockInfeasibility: doctor $doctor does not have block $prevBlockID")
 
         /*
          * If there is a gap of two days between blocks where the size of the block, were
@@ -191,7 +193,8 @@ private fun checkToLeft(
     // True if there is a gap of three days followed by a block of days
     if(!twoToLeftWorked && !threeToLeftWorked && fourToLeftWorked) {
         val prevBlockID = days[firstDay-4].block[doctor.id]!!
-        val prevBlock = doctor.blocksOfDays[prevBlockID] ?: throw Exception("sdfsd")
+        val prevBlock = doctor.blocksOfDays[prevBlockID]
+            ?: throw Exception("checkToLeft: doctor ${doctor.id} does not have block $prevBlockID")
 
         /*
          * If the row is of size 5, and the following day has overlapping shifts, there
@@ -238,7 +241,8 @@ fun checkToRightDay(
 
     if(twoToRightWorked) {
         val nextBlockID = days[lastDay+2].block[doctor.id]!!
-        val nextBlock = doctor.blocksOfDays[nextBlockID] ?: throw Exception("addBlockInfeasibility: doctor $doctor does not have block $nextBlockID")
+        val nextBlock = doctor.blocksOfDays[nextBlockID]
+            ?: throw Exception("addBlockInfeasibility: doctor $doctor does not have block $nextBlockID")
 
         /*
          * The combined length of the blocks, were the day between them to be worked, is
@@ -296,7 +300,8 @@ fun checkToRightDay(
 
     if(!twoToRightWorked && threeToRightWorked) {
         val nextBlockID = days[lastDay+3].block[doctor.id]!!
-        val nextBlock = doctor.blocksOfDays[nextBlockID] ?: throw Exception("sdfsd")
+        val nextBlock = doctor.blocksOfDays[nextBlockID]
+            ?: throw Exception("checkToRightDay: doctor ${doctor.id} does not have block $nextBlockID")
 
         /*
          * The assignment of an overlapping night shift would lead to a scenario where 8 nights are
@@ -387,6 +392,7 @@ private fun getLastShiftOfBlock(
 ): Shift {
     val endDay = solutionData.days[block.items.max()]
     // It is assumed that shift IDs increase with their end time
-    val lastShift = endDay.doctorsWorkingDay[doctorID]?.max() ?: throw Exception("getEndShiftOfBlock: Doctor $doctorID absent from [doctorsWorkingDay] of day ${endDay.id}")
+    val lastShift = endDay.doctorsWorkingDay[doctorID]?.max()
+        ?: throw Exception("getEndShiftOfBlock: Doctor $doctorID absent from [doctorsWorkingDay] of day ${endDay.id}")
     return solutionData.shifts[lastShift]
 }
