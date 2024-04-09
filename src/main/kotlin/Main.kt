@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
     }
 
     val seedGenerator = Random(22032024)
-    val totalExecutionTime: Long = 60000
+    val totalExecutionTime: Long = 60000 * 15 // 15 minutes
     val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
     val acceptanceType = AcceptanceCriterionType.AdaptiveIterationLimitedListBasedTA
     val resultFileName = "GIHH_"
@@ -82,7 +82,7 @@ fun main(args: Array<String>) {
 
     for(instance in instances) {
 
-        for (h in 1..1) {
+        for (h in 1..7) {
             val seed = seedGenerator.nextLong()
             val problem = MDSP(seed)
             val hyperHeuristic = GIHH(
