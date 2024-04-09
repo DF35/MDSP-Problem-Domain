@@ -121,16 +121,16 @@ class Solution(
 
     fun calculateObjectiveValue() {
         // 10 is added for each assignment without an assignee
-        var value = unassignedAssignments.size.toDouble() * 10
+        var value = unassignedAssignments.size.toDouble() * 15
 
         for(day in data.days) {
             // Penalises days that are entirely locum dependent
             if(day.numShiftsWithCoverage == 0)
-                value += 20
+                value += 30
 
             // Penalizes shifts that are totally locum dependent
             val numLocumDependentShifts = day.getShifts().size - day.numShiftsWithCoverage
-            value += 15 * numLocumDependentShifts
+            value += 20 * numLocumDependentShifts
         }
 
         // Impact of each doctor is added to the objective value
@@ -150,16 +150,21 @@ class Solution(
         // Variance compared to number of shifts and hours worked targets
         val varianceAverageWorked = doctor.varianceHoursWorked()
         contribution += when (varianceAverageWorked < 0) {
-            false -> varianceAverageWorked * 10
-            true -> -varianceAverageWorked * 20
+            false -> varianceAverageWorked * 5
+            true -> -varianceAverageWorked * 10
         }
 
-        val varianceShifts = listOf(doctor.varianceDayShiftsWorked(), doctor.varianceNightShiftsWorked())
-        for(variance in varianceShifts) {
-            contribution += when (variance < 0) {
-                false -> variance * 10
-                true -> -variance * 12
-            }
+        // Lower weighting as unsure about correctness of this target
+        val dayShiftVariance = doctor.varianceNightShiftsWorked()
+        contribution += when(dayShiftVariance < 0) {
+            false -> dayShiftVariance * 5
+            true -> dayShiftVariance * 5
+        }
+
+        val nightVariance = doctor.varianceNightShiftsWorked()
+        contribution += when (nightVariance < 0) {
+            false -> nightVariance * 10
+            true -> -nightVariance * 12
         }
 
         // Contribution of infractions on preferences - also updates solution record of infractions
@@ -259,11 +264,11 @@ class Solution(
         var description = ""
 
         val numDaysWithoutCoverage = data.days.count { it.numShiftsWithCoverage == 0 }
-        val dayCoverageContribution = numDaysWithoutCoverage * 20
+        val dayCoverageContribution = numDaysWithoutCoverage * 30
         val numShiftsWithoutCoverage = data.shifts.count { it.assignees.isEmpty() }
-        val shiftCoverageContribution = numShiftsWithoutCoverage * 15
+        val shiftCoverageContribution = numShiftsWithoutCoverage * 20
         val numAssignmentsWithoutCoverage = data.assignments.count { it.assignee == null }
-        val assignmentCoverageContribution = numAssignmentsWithoutCoverage * 10
+        val assignmentCoverageContribution = numAssignmentsWithoutCoverage * 15
         val totalCoverageContribution = dayCoverageContribution + shiftCoverageContribution + assignmentCoverageContribution
 
 
@@ -281,15 +286,15 @@ class Solution(
             val varianceHours = it.varianceHoursWorked()
             totalVarianceHours += varianceHours.absoluteValue
             varianceHoursContribution += when(varianceHours < 0) {
-                false -> varianceHours * 10
-                true -> -varianceHours * 15
+                false -> varianceHours * 5
+                true -> -varianceHours * 10
             }
 
             val varianceDays = it.varianceDayShiftsWorked()
             totalVarianceDayShifts += varianceDays.absoluteValue
             contributionVarianceDayShifts += when(varianceDays < 0) {
-                false -> varianceDays * 10
-                true -> -varianceDays * 12
+                false -> varianceDays * 5
+                true -> -varianceDays * 5
             }
 
             val varianceNights = it.varianceNightShiftsWorked()
@@ -335,7 +340,7 @@ class Solution(
             }
 
             false -> {
-                description += "$totalCoverageContribution\n$totalDoctorTargetContribution\n$totalPreferenceContribution"
+                description += "$objectiveValue,$totalCoverageContribution,$totalDoctorTargetContribution,$totalPreferenceContribution,$varianceHoursContribution"
             }
         }
 
@@ -382,7 +387,7 @@ class Solution(
         doc.assignedShifts.add(shift.id)
 
         // Update Objective Function value using delta evaluation
-        objectiveValue -= 10 // One less unassigned assignment
+        objectiveValue -= 15 // One less unassigned assignment
 
         // Adds new objective contribution value of the doctor
         objectiveValue += calculateDoctorContribution(doctors[doctor])
@@ -392,33 +397,11 @@ class Solution(
 
         // Checks if the shift was previously without assignees, if so, does the same for the day
         if(shift.assignees.size == 1) {
-            objectiveValue -= 15
+            objectiveValue -= 20
             days[shift.day].numShiftsWithCoverage++
             if(days[shift.day].numShiftsWithCoverage == 1)
-                objectiveValue -= 20
+                objectiveValue -= 30
         }
-
-        /*for(testShift in data.shifts) {
-            for(assignee in testShift.assignees)
-                if(testShift.causesOfInfeasibility[assignee] != null)
-                    println("hmmm")
-            for(assignmentID in testShift.assignmentIDs) {
-                val a = data.assignments[assignmentID].assignee
-                if (a != null && !testShift.assignees.contains(a))
-                    println("hmmm")
-            }
-        }
-
-        for(block in doc.blocksOfDays.values) {
-            for(testShift in block.shiftsMadeInfeasible) {
-                val shiftToCheck = data.shifts[testShift]
-                if(shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Training ||
-                    shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Leave)
-                    continue
-                if(!blockStillPresent(shiftToCheck, block.id, doctor))
-                    println("hmmm")
-            }
-        }*/
 
         return true
     }
@@ -476,7 +459,7 @@ class Solution(
         doc.assignedShifts.remove(shift.id)
 
         // Updates Objective Function value using delta evaluation
-        objectiveValue += 10 // One extra unassigned assignment
+        objectiveValue += 15 // One extra unassigned assignment
 
         // Adds new objective contribution value of the doctor
         objectiveValue += calculateDoctorContribution(doctors[doctor])
@@ -486,33 +469,11 @@ class Solution(
 
         // Checks if the shift is without assignees, if so also checks the day
         if(shift.assignees.isEmpty()) {
-            objectiveValue += 15
+            objectiveValue += 20
             days[shift.day].numShiftsWithCoverage--
             if(days[shift.day].numShiftsWithCoverage == 0)
-                objectiveValue += 20
+                objectiveValue += 30
         }
-
-        /*for(testShift in data.shifts) {
-            for(assignee in testShift.assignees)
-                if(testShift.causesOfInfeasibility[assignee] != null)
-                    println("hmmm")
-            for(assignmentID in testShift.assignmentIDs) {
-                val a = data.assignments[assignmentID].assignee
-                if (a != null && !testShift.assignees.contains(a))
-                    println("hmmm")
-            }
-        }
-
-        for(block in doc.blocksOfDays.values) {
-            for(testShift in block.shiftsMadeInfeasible) {
-                val shiftToCheck = data.shifts[testShift]
-                if(shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Training ||
-                    shiftToCheck.causesOfInfeasibility[doctor]!!.cause == Cause.Leave)
-                    continue
-                if(!blockStillPresent(shiftToCheck, block.id, doctor))
-                    println("hmmm")
-            }
-        }*/
 
         return true
     }

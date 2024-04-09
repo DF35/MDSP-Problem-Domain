@@ -81,7 +81,7 @@ class ShiftInfeasibility(val cause : Cause) {
                 is Source.RowOfFourLongShifts -> "RowOfFourLongShifts: Block ${source.block}"
                 is Source.WouldCauseTooLargeRowOfLongShifts -> "WouldCauseRowTooLargeRowOfLongShifts: Block ${source.blocks.first}, Block ${source.blocks.second}"
             }
-        return string + "\n"
+        return string
     }
 
     fun debug() {
@@ -170,7 +170,7 @@ abstract class Shift(
         }
         println("Day: $day")
         println("Feasible Doctors: $feasibleDoctors")
-        causesOfInfeasibility.forEach { print("Doctor ${it.key}: "); it.value.debug(); println() }
+        causesOfInfeasibility.forEach { print("Doctor ${it.key}: "); it.value.debug() }
         println("Assignees: $assignees")
         println("longShiftsMadeInfeasible: $longShiftsMadeInfeasible")
         println()
