@@ -32,7 +32,7 @@ fun main(args: Array<String>) {
     val dateFormatter = SimpleDateFormat("ddMMyyyyHHmmss")
     WriteInfo.resultSubFolderName = dateFormatter.format(today)
 
-    for(minutes in listOf(5,10,15,20)) {
+    /*for(minutes in listOf(5,10,15,20)) {
         val execTime = (minutes * 60000).toLong()
         for(h in 1..5) {
             val seed = seedGenerator.nextLong()
@@ -126,11 +126,11 @@ fun main(args: Array<String>) {
             writer.close()
             println(problem.bestSolutionValue)
         }
-    }
+    }*/
 
     val instances = listOf(
-        "baseline/department1_baseline",
-        "baseline/department2_baseline",
+        "department1_baseline",
+        "department2_baseline",
         "leave_partTime_mix/department1_20Percent",
         "leave_partTime_mix/department1_40Percent",
         "leave_partTime_mix/department1_60Percent",
