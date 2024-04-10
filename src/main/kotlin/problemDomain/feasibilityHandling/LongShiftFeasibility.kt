@@ -2,6 +2,7 @@ package problemDomain.feasibilityHandling
 
 import problemDomain.*
 
+// Ascertains which checks for long shift-related feasibility need to be made
 fun updateFeasibilityLongShifts(
     solutionData: SolutionData,
     shift: Shift,
@@ -9,9 +10,13 @@ fun updateFeasibilityLongShifts(
     allocated: Boolean
 ) {
     when {
+        // Long shift has been allocated
         allocated && shift.long -> longShiftAdded(solutionData, shift, doctorID)
+        // Non-long shift has been added
         allocated && !shift.long -> impactShiftAdded(solutionData, shift, doctorID)
+        // Long shift has been removed
         !allocated && shift.long -> longShiftRemoved(solutionData, shift, doctorID)
+        // Non-long shift has been removed
         else -> impactShiftRemoved(solutionData, shift, doctorID)
     }
 }
@@ -25,8 +30,10 @@ private fun longShiftAdded(
     val days = solutionData.days
     val doctor = solutionData.doctors[doctorID]
 
+    // Days are used to track rows of long shifts
     days[dayID].doctorsWorkingLongShift[doctorID] = shift.id
 
+    // Checks for long shifts to either side
     val workedLongShiftToLeft = dayID - 1 in days.indices &&
             days[dayID-1].longShiftBlock[doctorID] != null
     val workedLongShiftToRight = dayID + 1 in days.indices &&
@@ -52,13 +59,16 @@ private fun longShiftAdded(
         doctor.blocksOfLongShifts[blockID] = Block(blockID)
     }
 
-    val block = doctor.blocksOfLongShifts[blockID] ?: throw Exception("longShiftAdded: Block $blockID missing from doctor $doctorID")
+    val block = doctor.blocksOfLongShifts[blockID]
+        ?: throw Exception("longShiftAdded: Block $blockID missing from doctor $doctorID")
 
+    // Removes all infeasibilities associated with the block of long shifts
     clearInfeasibleShiftsLongShiftBlock(solutionData, block, doctorID)
 
     block.addItem(dayID)
     days[dayID].longShiftBlock[doctorID] = blockID
 
+    // Recalculates and implements infeasibilities for the block now that the long shift has been added
     val infeasibilities = identifyLongShiftInfeasibilities(solutionData, block, doctorID)
     implementLongShiftInfeasibilities(solutionData, doctor, infeasibilities)
 
@@ -94,7 +104,8 @@ private fun longShiftRemoved(
     val days = solutionData.days
     val day = days[shift.day]
     val doctor = solutionData.doctors[doctorID]
-    val block = doctor.blocksOfLongShifts[day.longShiftBlock[doctorID]] ?: throw Exception("longShiftRemoved: doctor $doctorID missing long shift block for shift ${shift.id}")
+    val block = doctor.blocksOfLongShifts[day.longShiftBlock[doctorID]]
+        ?: throw Exception("longShiftRemoved: doctor $doctorID missing long shift block for shift ${shift.id}")
 
     clearInfeasibleShiftsLongShiftBlock(solutionData, block, doctorID)
 
@@ -208,10 +219,12 @@ private fun impactShiftRemoved(solutionData: SolutionData, shift: Shift, doctorI
                     val shifts = source.blockAndShifts.second.toMutableSet()
 
                     when(shifts.size == 1) {
+                        // If this was the only shift causing the infeasibility, it can be removed
                         true -> removeRelevantSourceLongShift(
                             solutionData, source, infShift, doctorID
                         )
 
+                        // Shift is removed from the source of infeasibility
                         false -> {
                             val block = source.blockAndShifts.first
                             shifts.remove(shift.id)
@@ -232,10 +245,12 @@ private fun impactShiftRemoved(solutionData: SolutionData, shift: Shift, doctorI
                     val shifts = source.blocksAndShifts.third.toMutableSet()
 
                     when(shifts.size == 1) {
+                        // If this was the only shift causing the infeasibility, it can be removed
                         true -> removeRelevantSourceLongShift(
                             solutionData, source, infShift, doctorID
                         )
 
+                        // Shift is removed from the source of infeasibility
                         false -> {
                             val block1 = source.blocksAndShifts.first
                             val block2 = source.blocksAndShifts.second
@@ -259,6 +274,7 @@ private fun impactShiftRemoved(solutionData: SolutionData, shift: Shift, doctorI
     }
 }
 
+// Removes all infeasibilities caused by a block of long shifts
 private fun clearInfeasibleShiftsLongShiftBlock(
     solutionData: SolutionData,
     block: Block,
@@ -504,6 +520,7 @@ private fun checkToRightLongShift(
     }
 }
 
+// Checks for shifts worked 48 hours after a long shift
 private fun findShiftsWorkedInRestPeriod(
     solutionData: SolutionData,
     shiftID: Int,

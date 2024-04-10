@@ -68,18 +68,27 @@ class ShiftInfeasibility(val cause : Cause) {
                 is Source.ShiftWorked -> "ShiftWorked: ${source.shiftID} "
                 is Source.WeekendWorked -> "WeekendWorked ${source.dayID} "
                 is Source.RowOfNights -> "NightsWorked ${source.days} "
-                is Source.InsufficientRest -> "InsufficientRest: Block ${source.blocks.first}, Block ${source.blocks.second} "
-                is Source.InsufficientRestOverlap -> "InsufficientRestOverlap: Block ${source.blocks.first}, Block ${source.blocks.second} "
                 is Source.RowOfSevenDays -> "RowOfSevenDays: ${source.block} "
-                is Source.WouldCauseRowTooLarge -> "WouldCauseRowTooLarge: ${source.blocks.first}, ${source.blocks.second} "
-                is Source.WouldCauseRowTooLargeOverlap -> "WouldCauseRowTooLargeOverlap: ${source.blocks.first}, ${source.blocks.second} "
-                is Source.RowOfSixOverlap -> "RowOfSixOverlap: Block ${source.block} "
-                is Source.InsufficientRestMid -> "InsufficientRestMid: Block ${source.blocks.first}, Block ${source.blocks.second}, Block ${source.blocks.third} "
-                is Source.InsufficientRestMidOverlap -> "InsufficientRestMidOverlap: Block ${source.blocks.first}, Block ${source.blocks.second}, Block ${source.blocks.third} "
-                is Source.InsufficientRestForRowOfFourLongShifts -> "InsufficientRestForRowOfFourLongShifts: Block ${source.blockAndShifts.first}, Shifts ${source.blockAndShifts.second}"
-                is Source.InsufficientRestForRowOfFourLongShiftsMid -> "InsufficientRestForRowOfFourLongShiftsMid: Block ${source.blocksAndShifts.first}, Block ${source.blocksAndShifts.second}, Shifts ${source.blocksAndShifts.third}"
                 is Source.RowOfFourLongShifts -> "RowOfFourLongShifts: Block ${source.block}"
-                is Source.WouldCauseTooLargeRowOfLongShifts -> "WouldCauseRowTooLargeRowOfLongShifts: Block ${source.blocks.first}, Block ${source.blocks.second}"
+                is Source.RowOfSixOverlap -> "RowOfSixOverlap: Block ${source.block} "
+                is Source.InsufficientRest ->
+                    "InsufficientRest: Block ${source.blocks.first}, Block ${source.blocks.second} "
+                is Source.InsufficientRestOverlap ->
+                    "InsufficientRestOverlap: Block ${source.blocks.first}, Block ${source.blocks.second} "
+                is Source.WouldCauseRowTooLarge ->
+                    "WouldCauseRowTooLarge: ${source.blocks.first}, ${source.blocks.second} "
+                is Source.WouldCauseRowTooLargeOverlap ->
+                    "WouldCauseRowTooLargeOverlap: ${source.blocks.first}, ${source.blocks.second} "
+                is Source.InsufficientRestMid ->
+                    "InsufficientRestMid: Block ${source.blocks.first}, Block ${source.blocks.second}, Block ${source.blocks.third} "
+                is Source.InsufficientRestMidOverlap ->
+                    "InsufficientRestMidOverlap: Block ${source.blocks.first}, Block ${source.blocks.second}, Block ${source.blocks.third} "
+                is Source.InsufficientRestForRowOfFourLongShifts ->
+                    "InsufficientRestForRowOfFourLongShifts: Block ${source.blockAndShifts.first}, Shifts ${source.blockAndShifts.second}"
+                is Source.InsufficientRestForRowOfFourLongShiftsMid ->
+                    "InsufficientRestForRowOfFourLongShiftsMid: Block ${source.blocksAndShifts.first}, Block ${source.blocksAndShifts.second}, Shifts ${source.blocksAndShifts.third}"
+                is Source.WouldCauseTooLargeRowOfLongShifts ->
+                    "WouldCauseRowTooLargeRowOfLongShifts: Block ${source.blocks.first}, Block ${source.blocks.second}"
             }
         return string
     }
@@ -323,9 +332,9 @@ class NightShift(
 class Day(
     val id: Int,
     // IDs of all non-long day shifts on this day
-    val dayShifts: List<Int>,
+    private val dayShifts: List<Int>,
     // IDs of all night shifts on this day that do not overlap to the next
-    val nonOverlappingNightShifts: List<Int>,
+    private val nonOverlappingNightShifts: List<Int>,
     // IDs of all night shifts on this day that overlap to the next
     val overlappingNightShifts: List<Int>,
     val longShifts: List<Int>,
@@ -391,8 +400,10 @@ class Day(
      * entry if no worked shifts remain
      */
     fun removeWorkingDoctor(doctor: Int, shiftID: Int) {
-        val removed = doctorsWorkingDay[doctor]?.remove(shiftID) ?: throw Exception("removeWorkingDoctor: Doctor $doctor has no entry for working on day $id")
-        if(!removed) throw Exception("removeWorkingDoctor: Doctor $doctor has no record of working shift $shiftID on day $id")
+        val removed = doctorsWorkingDay[doctor]?.remove(shiftID)
+            ?: throw Exception("removeWorkingDoctor: Doctor $doctor has no entry for working on day $id")
+        if(!removed)
+            throw Exception("removeWorkingDoctor: Doctor $doctor has no record of working shift $shiftID on day $id")
         if(doctorsWorkingDay[doctor]!!.isEmpty())
             doctorsWorkingDay.remove(doctor)
     }
@@ -493,7 +504,6 @@ class MiddleGrade(
     // Any element of the data class is true, if the doctor has a preference for that aspect
     val preferences = Preferences(dayRange != 1..7,
         nightRange != 1..4, shiftsToAvoid.isNotEmpty())
-    var assignmentLog = ""
 
     fun varianceHoursWorked(): Double { return targetHours - (hoursWorked / averageHoursDenominator) }
 
@@ -514,7 +524,6 @@ class MiddleGrade(
         this.blocksOfDays.forEach { doctor.blocksOfDays[it.key] = it.value.copy() }
         this.blocksOfLongShifts.forEach { doctor.blocksOfLongShifts[it.key] = it.value.copy() }
         doctor.nextBlockID = this.nextBlockID
-        doctor.assignmentLog = this.assignmentLog
         return doctor
     }
 

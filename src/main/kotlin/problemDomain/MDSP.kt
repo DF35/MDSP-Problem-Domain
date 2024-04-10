@@ -10,22 +10,22 @@ class MDSP(
     lateinit var solutionMemory: Array<Solution?>
     lateinit var bestSolution: Solution
     private var bestSolutionValue = Double.MAX_VALUE
-    lateinit var grades: List<String>
-    var averageHours = 0
-    var averageDayShifts = 0
-    var averageNightShifts = 0
-    var numDoctors = 0
-    var numWeeks = 0
+    private lateinit var grades: List<String>
+    private var averageHours = 0
+    private var averageDayShifts = 0
+    private var averageNightShifts = 0
+    private var numDoctors = 0
+    private var numWeeks = 0
     lateinit var doctors: List<MiddleGrade>
-    lateinit var doctorsOfGrade: Map<String, Set<Int>>
-    lateinit var doctorLeave: Map<Int, List<Int>>
-    lateinit var doctorTraining: Map<Int, List<Int>>
+    private lateinit var doctorsOfGrade: Map<String, Set<Int>>
+    private lateinit var doctorLeave: Map<Int, List<Int>>
+    private lateinit var doctorTraining: Map<Int, List<Int>>
     lateinit var days: List<Day>
     lateinit var shifts: List<Shift>
     lateinit var shiftTimes: Map<Int, String>
-    lateinit var assignments: List<Assignment>
-    var searchDepth = 2
-    var mutationStrength = 2
+    private lateinit var assignments: List<Assignment>
+    private var searchDepth = 2
+    private var mutationStrength = 2
 
     override fun toString(): String {
         return "problemDomain.MDSP"
@@ -342,8 +342,6 @@ class MDSP(
         if(solutionSourceIndex !in solutionMemory.indices || solutionDestinationIndex !in solutionMemory.indices)
             throw Exception("applyHeuristic: invalid memory index passed")
 
-        //println(heuristicID)
-
         val startTime = System.currentTimeMillis()
         val objectiveValue = when(heuristicID) {
             0 -> heuristic0(solutionSourceIndex, solutionDestinationIndex)
@@ -384,8 +382,6 @@ class MDSP(
         if(solutionSourceIndex1 !in solutionMemory.indices ||
             solutionSourceIndex2 !in solutionMemory.indices || solutionDestinationIndex !in solutionMemory.indices)
             throw Exception("applyHeuristic: invalid memory index passed")
-
-        //println(heuristicID)
 
         val startTime = System.currentTimeMillis()
         val objectiveValue = when(heuristicID) {
