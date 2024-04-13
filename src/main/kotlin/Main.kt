@@ -31,28 +31,7 @@ fun main(args: Array<String>) {
     val dateFormatter = SimpleDateFormat("ddMMyyyyHHmmss")
     WriteInfo.resultSubFolderName = dateFormatter.format(today)
 
-    val seed = seedGenerator.nextLong()
-    val problem = MDSP(seed)
-    val hyperHeuristic = GIHH(
-        seed, problem.numberOfHeuristics, totalExecutionTime,
-        resultFileName, selectionType, acceptanceType
-    )
-    problem.loadInstance("test")
-    problem.initialiseSolution(0)
-    hyperHeuristic.timeLimit = totalExecutionTime
-    hyperHeuristic.loadProblemDomain(problem)
-    hyperHeuristic.run()
-
-    val writer = BufferedWriter(FileWriter("results/test.txt"))
-    var assignments = ""
-    for (assignment in problem.bestSolution.data.assignments)
-        if (assignment.assignee != null)
-            assignments += "al ${assignment.id} ${assignment.assignee}\n"
-    writer.write(assignments)
-    writer.close()
-    println(problem.bestSolutionValue)
-
-    /*for(minutes in listOf(10)) {
+    /*for(minutes in listOf(15)) {
         val execTime = (minutes * 60000).toLong()
         for(h in 1..2) {
             val seed = seedGenerator.nextLong()
@@ -148,9 +127,9 @@ fun main(args: Array<String>) {
         }
     }*/
 
-    /*val instances = listOf(
+    val instances = listOf(
         "department1_baseline",
-        "department2_baseline",
+        /*"department2_baseline",
         "leave_partTime_mix/department1_20Percent",
         "leave_partTime_mix/department1_40Percent",
         "leave_partTime_mix/department1_60Percent",
@@ -162,36 +141,36 @@ fun main(args: Array<String>) {
         "leave_tests/department1_20PercentLeave",
         "leave_tests/department1_40PercentLeave",
         "leave_tests/department1_60PercentLeave",
-        "leave_tests/department1_80PercentLeave",
+        "leave_tests/department1_80PercentLeave",*/
         "leave_tests/department2_20PercentLeave",
         "leave_tests/department2_40PercentLeave",
         "leave_tests/department2_60PercentLeave",
         "leave_tests/department2_80PercentLeave",
-        "partTime_tests/department1_20PercentPartTime",
+        /*"partTime_tests/department1_20PercentPartTime",
         "partTime_tests/department1_40PercentPartTime",
         "partTime_tests/department1_60PercentPartTime",
-        "partTime_tests/department1_80PercentPartTime",
+        "partTime_tests/department1_80PercentPartTime",*/
         "partTime_tests/department2_20PercentPartTime",
         "partTime_tests/department2_40PercentPartTime",
         "partTime_tests/department2_60PercentPartTime",
         "partTime_tests/department2_80PercentPartTime",
-        "training_schedules/department1_fixedAfternoon2Weeks",
+        /*"training_schedules/department1_fixedAfternoon2Weeks",
         "training_schedules/department1_oneDayPerMonth",
         "training_schedules/department1_oneDayPerWeek",
         "training_schedules/department1_randomDay",
         "training_schedules/department1_twoDaysPerMonth",
-        "training_schedules/department1_weeklyAfternoon",
+        "training_schedules/department1_weeklyAfternoon",*/
         "training_schedules/department2_fixedAfternoon2Weeks",
         "training_schedules/department2_oneDayPerMonth",
         "training_schedules/department2_oneDayPerWeek",
         "training_schedules/department2_randomDay",
         "training_schedules/department2_twoDaysPerMonth",
         "training_schedules/department2_weeklyAfternoon",
-        "understaffing_tests/department1_1Junior",
+        /*"understaffing_tests/department1_1Junior",
         "understaffing_tests/department1_1Junior_1Senior",
         "understaffing_tests/department1_1Senior",
         "understaffing_tests/department1_2Junior",
-        "understaffing_tests/department1_2Senior",
+        "understaffing_tests/department1_2Senior",*/
         "understaffing_tests/department2_1Junior",
         "understaffing_tests/department2_1Junior1Senior",
         "understaffing_tests/department2_1Senior",
@@ -224,10 +203,10 @@ fun main(args: Array<String>) {
             writer.close()
             println(problem.bestSolutionValue)
         }
-    }*/
+    }
 
 
-    for(i in 1..1) {
+    /*for(i in 1..1) {
         val seedGenerator = Random(25022024)
         val seed = seedGenerator.nextLong()
         val problem = MDSP(seed)
@@ -252,7 +231,7 @@ fun main(args: Array<String>) {
         }
         solution.calculateObjectiveValue()
         println(solution.descriptiveObjectiveFunction(true))
-    }
+    }*/
 
     /*val writer = BufferedWriter(FileWriter("results/field_study/graph_data/comparative_descriptive.csv"))
     writer.write("Instance/Method,Total Coverage Contribution,Total Doctor Target Contribution,Total Preference Contribution\n")
