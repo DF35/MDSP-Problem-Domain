@@ -116,13 +116,17 @@ class MDSP(
              * in order to provide an adjusted measure for average hours worked per week that takes
              * the aforementioned leave into account
              */
-            val averageHoursDenominator = (168 * numWeeks - string.toDouble()) / (168 * numWeeks) * numWeeks
+            val hoursOff = string.toDouble()
 
             string = scanner.next()
             leave[id] = when(string) {
                 "NULL" -> emptyList()
                 else -> string.split(",").map { it.toInt() }
             }
+
+            string = scanner.next()
+            val totalHoursToAdjustFor = string.toDouble() + hoursOff
+            val averageHoursDenominator = (168 * numWeeks - totalHoursToAdjustFor) / (168 * numWeeks) * numWeeks
 
             string = scanner.next()
             training[id] = when(string) {
