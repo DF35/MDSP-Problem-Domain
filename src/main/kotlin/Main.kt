@@ -21,16 +21,36 @@ fun main(args: Array<String>) {
         return
     }
 
-
     // Code for Instance Experimentation
-    /*val seedGenerator = Random(22032024)
-    val totalExecutionTime: Long = 60000 * 7 // 15 minutes
+    val seedGenerator = Random(22032024)
+    val totalExecutionTime: Long = 60000 * 15 // 15 minutes
     val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
     val acceptanceType = AcceptanceCriterionType.AdaptiveIterationLimitedListBasedTA
     val resultFileName = "GIHH_"
     val today = Date()
     val dateFormatter = SimpleDateFormat("ddMMyyyyHHmmss")
-    WriteInfo.resultSubFolderName = dateFormatter.format(today)*/
+    WriteInfo.resultSubFolderName = dateFormatter.format(today)
+
+    val seed = seedGenerator.nextLong()
+    val problem = MDSP(seed)
+    val hyperHeuristic = GIHH(
+        seed, problem.numberOfHeuristics, totalExecutionTime,
+        resultFileName, selectionType, acceptanceType
+    )
+    problem.loadInstance("test")
+    problem.initialiseSolution(0)
+    hyperHeuristic.timeLimit = totalExecutionTime
+    hyperHeuristic.loadProblemDomain(problem)
+    hyperHeuristic.run()
+
+    val writer = BufferedWriter(FileWriter("results/test.txt"))
+    var assignments = ""
+    for (assignment in problem.bestSolution.data.assignments)
+        if (assignment.assignee != null)
+            assignments += "al ${assignment.id} ${assignment.assignee}\n"
+    writer.write(assignments)
+    writer.close()
+    println(problem.bestSolutionValue)
 
     /*for(minutes in listOf(10)) {
         val execTime = (minutes * 60000).toLong()
@@ -211,10 +231,10 @@ fun main(args: Array<String>) {
         val seedGenerator = Random(25022024)
         val seed = seedGenerator.nextLong()
         val problem = MDSP(seed)
-        problem.loadInstance("department1_baseline")
+        problem.loadInstance("test")
         val solution = problem.blankSolution()
 
-        val log = File("results/department1_baseline-2.txt")
+        val log = File("results/test.txt")
         val scanner = Scanner(log)
         var lineNum = 0
         while (scanner.hasNextLine()) {
@@ -226,8 +246,10 @@ fun main(args: Array<String>) {
                 "de" -> solution.deallocateAssignment(tokens[1].toInt())
             }
         }
-        for(doctor in solution.data.doctors)
+        for(doctor in solution.data.doctors) {
             println(doctor.hoursWorked)
+            println(doctor.varianceHoursWorked())
+        }
         solution.calculateObjectiveValue()
         println(solution.descriptiveObjectiveFunction(true))
     }
@@ -391,5 +413,8 @@ fun main(args: Array<String>) {
         writer.write("${solution.descriptiveObjectiveFunction(false)}\n")
     }
     writer.close()*/
+
+    /*val generator = InstanceGenerator(Random(12042024))
+    generator.generateInstance("test.txt", 1, 8, 6, 6, 0.2, 0.2, 4)*/
 
 }

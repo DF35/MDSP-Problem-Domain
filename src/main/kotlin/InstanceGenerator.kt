@@ -79,7 +79,7 @@ class InstanceGenerator(private val rand: Random) {
         )
         val doctors = generateDoctorInfo(numJunior, numSenior, percentagePartTime, percentageOnLeave, days, listOf(8.0,8.0,8.0,10.5), numTrainingGroups)
 
-        return "junior senior any\n47\n20 7\n$numWeeks\n${numJunior+numSenior}\n$doctors$shiftInfo"
+        return "junior senior any\n47\n23 12\n$numWeeks\n${numJunior+numSenior}\n$doctors$shiftInfo"
     }
 
     private fun generateDepartment2(
@@ -231,7 +231,7 @@ class InstanceGenerator(private val rand: Random) {
         }
 
         // Generates schedules for each group
-        val trainingSchedules = generateTraining(days, numTrainingGroups)
+        val trainingSchedules = generateTraining(days, numTrainingGroups, shiftDurations)
         val preferences = calculatePreferences(days, numJunior + numSenior, rand)
 
         var doctors = ""
@@ -339,7 +339,8 @@ class InstanceGenerator(private val rand: Random) {
         OneDayPerWeek, TwoDaysPerMonth, OneDayPerMonth, RandomDay, FixedAfternoon2Weeks, WeeklyAfternoon
     }
 
-    fun generateTraining(days: Map<Int, Pair<List<Int>, List<Int>>>, numGroups: Int): List<String> {
+    fun generateTraining(days: Map<Int, Pair<List<Int>, List<Int>>>, numGroups: Int, durations: List<Double>
+    ): List<String> {
         val prob = rand.nextDouble()
         val type = when {
             prob < 0.22 -> TrainingType.OneDayPerWeek
@@ -433,11 +434,14 @@ class InstanceGenerator(private val rand: Random) {
             val trainingShifts = mutableListOf<String>()
             for((trainingDays, increment) in assignedDays.values) {
                 var shifts = ""
+                var hoursTraining = 0.00
                 for((week, day) in trainingDays.withIndex()) {
-                    for(shift in shiftGetter(week * increment + day))
+                    for(shift in shiftGetter(week * increment + day)) {
                         shifts += "$shift,"
+                        hoursTraining += durations[shift % durations.size]
+                    }
                 }
-                shifts = shifts.dropLast(1)
+                shifts = "$hoursTraining " + shifts.dropLast(1)
                 trainingShifts.add(shifts)
             }
 
@@ -447,17 +451,20 @@ class InstanceGenerator(private val rand: Random) {
         val trainingShifts = mutableListOf<String>()
         for((startDays, increment) in assignedDays.values) {
             var shifts = ""
+            var hoursTraining = 0.00
             val bound = days.size
             for(day in startDays) {
                 var currentDay = day
                 // We ensure that the startDays are within the bound when selecting them
                 do {
-                    for(shift in shiftGetter(currentDay))
+                    for(shift in shiftGetter(currentDay)) {
                         shifts += "$shift,"
+                        hoursTraining += durations[shift % durations.size]
+                    }
                     currentDay += increment
                 } while(currentDay < bound)
             }
-            shifts = shifts.dropLast(1)
+            shifts = "$hoursTraining " + shifts.dropLast(1)
             trainingShifts.add(shifts)
         }
 
