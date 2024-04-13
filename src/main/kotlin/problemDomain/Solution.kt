@@ -157,8 +157,8 @@ class Solution(
         // Lower weighting as unsure about correctness of this target
         val dayShiftVariance = doctor.varianceNightShiftsWorked()
         contribution += when(dayShiftVariance < 0) {
-            false -> dayShiftVariance * 5
-            true -> dayShiftVariance * 5
+            false -> dayShiftVariance * 2
+            true -> -dayShiftVariance * 2
         }
 
         val nightVariance = doctor.varianceNightShiftsWorked()
