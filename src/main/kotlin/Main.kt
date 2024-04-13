@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
 
     // Code for Instance Experimentation
     val seedGenerator = Random(22032024)
-    val totalExecutionTime: Long = 60000 * 7 // 15 minutes
+    val totalExecutionTime: Long = 60000 * 15 // 15 minutes
     val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
     val acceptanceType = AcceptanceCriterionType.AdaptiveIterationLimitedListBasedTA
     val resultFileName = "GIHH_"
@@ -129,54 +129,54 @@ fun main(args: Array<String>) {
     }*/
 
     val instances = listOf(
-        "department1_baseline",
+        //"department1_baseline",
         /*"department2_baseline",
         "leave_partTime_mix/department1_20Percent",
         "leave_partTime_mix/department1_40Percent",
         "leave_partTime_mix/department1_60Percent",
         "leave_partTime_mix/department1_80Percent",
-        "leave_partTime_mix/department2_20Percent",
+        "leave_partTime_mix/department2_20Percent",*/
         "leave_partTime_mix/department2_40Percent",
         "leave_partTime_mix/department2_60Percent",
         "leave_partTime_mix/department2_80Percent",
-        "leave_tests/department1_20PercentLeave",
+       /* "leave_tests/department1_20PercentLeave",
         "leave_tests/department1_40PercentLeave",
         "leave_tests/department1_60PercentLeave",
         "leave_tests/department1_80PercentLeave",*/
         "leave_tests/department2_20PercentLeave",
-        "leave_tests/department2_40PercentLeave",
+        /*"leave_tests/department2_40PercentLeave",
         "leave_tests/department2_60PercentLeave",
-        "leave_tests/department2_80PercentLeave",
+        "leave_tests/department2_80PercentLeave",*/
         /*"partTime_tests/department1_20PercentPartTime",
         "partTime_tests/department1_40PercentPartTime",
         "partTime_tests/department1_60PercentPartTime",
         "partTime_tests/department1_80PercentPartTime",*/
-        "partTime_tests/department2_20PercentPartTime",
+        /*"partTime_tests/department2_20PercentPartTime",
         "partTime_tests/department2_40PercentPartTime",
         "partTime_tests/department2_60PercentPartTime",
-        "partTime_tests/department2_80PercentPartTime",
+        "partTime_tests/department2_80PercentPartTime",*/
         /*"training_schedules/department1_fixedAfternoon2Weeks",
         "training_schedules/department1_oneDayPerMonth",
         "training_schedules/department1_oneDayPerWeek",
         "training_schedules/department1_randomDay",
         "training_schedules/department1_twoDaysPerMonth",
         "training_schedules/department1_weeklyAfternoon",*/
-        "training_schedules/department2_fixedAfternoon2Weeks",
+        /*"training_schedules/department2_fixedAfternoon2Weeks",
         "training_schedules/department2_oneDayPerMonth",
         "training_schedules/department2_oneDayPerWeek",
         "training_schedules/department2_randomDay",
         "training_schedules/department2_twoDaysPerMonth",
-        "training_schedules/department2_weeklyAfternoon",
+        "training_schedules/department2_weeklyAfternoon",*/
         /*"understaffing_tests/department1_1Junior",
         "understaffing_tests/department1_1Junior_1Senior",
         "understaffing_tests/department1_1Senior",
         "understaffing_tests/department1_2Junior",
         "understaffing_tests/department1_2Senior",*/
-        "understaffing_tests/department2_1Junior",
+        /*"understaffing_tests/department2_1Junior",
         "understaffing_tests/department2_1Junior1Senior",
         "understaffing_tests/department2_1Senior",
         "understaffing_tests/department2_2Junior",
-        "understaffing_tests/department2_2Senior"
+        "understaffing_tests/department2_2Senior"*/
     )
 
     for(instance in instances) {
