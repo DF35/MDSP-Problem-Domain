@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
 
     // Code for Instance Experimentation
     val seedGenerator = Random(22032024)
-    val totalExecutionTime: Long = 60000 * 15 // 15 minutes
+    val totalExecutionTime: Long = 60000 * 7 // 15 minutes
     val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
     val acceptanceType = AcceptanceCriterionType.AdaptiveIterationLimitedListBasedTA
     val resultFileName = "GIHH_"
@@ -34,7 +34,7 @@ fun main(args: Array<String>) {
 
     /*for(minutes in listOf(15)) {
         val execTime = (minutes * 60000).toLong()
-        for(h in 1..5) {
+        for(h in 1..2) {
             val seed = seedGenerator.nextLong()
             val problem = MDSP(seed)
             val hyperHeuristic = GIHH(
@@ -57,7 +57,7 @@ fun main(args: Array<String>) {
             println(problem.bestSolutionValue)
         }
 
-        for(h in 1..5) {
+        for(h in 1..2) {
             val seed = seedGenerator.nextLong()
             val problem = MDSP(seed)
             val hyperHeuristic = GIHH(
@@ -129,7 +129,7 @@ fun main(args: Array<String>) {
     }*/
 
     val instances = listOf(
-        //"department1_baseline",
+        "department1_baseline",
         /*"department2_baseline",
         "leave_partTime_mix/department1_20Percent",
         "leave_partTime_mix/department1_40Percent",
@@ -207,32 +207,175 @@ fun main(args: Array<String>) {
     }
 
 
-    /*val seedGenerator = Random(25022024)
-    val seed = seedGenerator.nextLong()
-    val problem = MDSP(seed)
-    problem.loadInstance("understaffing_tests/department2_2Junior")
-    val solution = problem.blankSolution()
+    /*for(i in 1..1) {
+        val seedGenerator = Random(25022024)
+        val seed = seedGenerator.nextLong()
+        val problem = MDSP(seed)
+        problem.loadInstance("department1_baseline")
+        val solution = problem.blankSolution()
 
-    val log = File("results/understaffing_tests/department2_2Junior-6.txt")
-    val scanner = Scanner(log)
-    var lineNum = 0
-    while(scanner.hasNextLine()) {
-        lineNum++
-        val line = scanner.nextLine()
-        val tokens = line.split(" ")
-        when(tokens[0]) {
-            "al" -> solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
-            "de" -> solution.deallocateAssignment(tokens[1].toInt())
+        val log = File("results/department1_baseline-2.txt")
+        val scanner = Scanner(log)
+        var lineNum = 0
+        while (scanner.hasNextLine()) {
+            lineNum++
+            val line = scanner.nextLine()
+            val tokens = line.split(" ")
+            when (tokens[0]) {
+                "al" -> solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+                "de" -> solution.deallocateAssignment(tokens[1].toInt())
+            }
         }
-    }
-    solution.calculateObjectiveValue()
-    solution.debug()*/
+        for(doctor in solution.data.doctors)
+            println(doctor.hoursWorked)
+        solution.calculateObjectiveValue()
+        println(solution.descriptiveObjectiveFunction(true))
+    }*/
 
+    /*val writer = BufferedWriter(FileWriter("results/field_study/graph_data/comparative_descriptive.csv"))
+    writer.write("Instance/Method,Total Coverage Contribution,Total Doctor Target Contribution,Total Preference Contribution\n")
+
+    for (i in 1..8) {
+        val problem = MDSP(25032024)
+        problem.loadInstance(2)
+        val solution = problem.blankSolution()
+
+        val log = File("results/field_study/dep1_easy-$i.txt")
+        val scanner = Scanner(log)
+        while (scanner.hasNextLine()) {
+            val line = scanner.nextLine()
+            val tokens = line.split(" ")
+            solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+        }
+        solution.calculateObjectiveValue()
+        println(solution.objectiveValue)
+        writer.write("1-easy-man,${solution.descriptiveObjectiveFunction(false)}\n")
+    }
+
+    for(i in 1..5) {
+        val problem = MDSP(25032024)
+        problem.loadInstance(2)
+        val solution = problem.blankSolution()
+
+        val log = File("results/time_limit/experiment_department1_easy_15_minutes-$i.txt")
+        val scanner = Scanner(log)
+        while (scanner.hasNextLine()) {
+            val line = scanner.nextLine()
+            val tokens = line.split(" ")
+            solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+        }
+        solution.calculateObjectiveValue()
+        println(solution.objectiveValue)
+        writer.write("1-easy-aut,${solution.descriptiveObjectiveFunction(false)}\n")
+    }
+
+    for (i in 1..6) {
+        val problem = MDSP(25032024)
+        problem.loadInstance(3)
+        val solution = problem.blankSolution()
+
+        val log = File("results/field_study/dep1_hard-$i.txt")
+        val scanner = Scanner(log)
+        while (scanner.hasNextLine()) {
+            val line = scanner.nextLine()
+            val tokens = line.split(" ")
+            solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+        }
+        solution.calculateObjectiveValue()
+        println(solution.objectiveValue)
+        writer.write("1-hard-man,${solution.descriptiveObjectiveFunction(false)}\n")
+    }
+
+    for(i in 1..5) {
+        val problem = MDSP(25032024)
+        problem.loadInstance(3)
+        val solution = problem.blankSolution()
+
+        val log = File("results/time_limit/experiment_department1_hard_15_minutes-$i.txt")
+        val scanner = Scanner(log)
+        while (scanner.hasNextLine()) {
+            val line = scanner.nextLine()
+            val tokens = line.split(" ")
+            solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+        }
+        solution.calculateObjectiveValue()
+        println(solution.objectiveValue)
+        writer.write("1-hard-aut,${solution.descriptiveObjectiveFunction(false)}\n")
+    }
+
+    for (i in 1..6) {
+        val problem = MDSP(25032024)
+        problem.loadInstance(4)
+        val solution = problem.blankSolution()
+
+        val log = File("results/field_study/dep2_easy-$i.txt")
+        val scanner = Scanner(log)
+        while (scanner.hasNextLine()) {
+            val line = scanner.nextLine()
+            val tokens = line.split(" ")
+            solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+        }
+        solution.calculateObjectiveValue()
+        println(solution.objectiveValue)
+        writer.write("2-easy-man,${solution.descriptiveObjectiveFunction(false)}\n")
+    }
+
+    for(i in 1..5) {
+        val problem = MDSP(25032024)
+        problem.loadInstance(4)
+        val solution = problem.blankSolution()
+
+        val log = File("results/time_limit/experiment_department2_easy_15_minutes-$i.txt")
+        val scanner = Scanner(log)
+        while (scanner.hasNextLine()) {
+            val line = scanner.nextLine()
+            val tokens = line.split(" ")
+            solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+        }
+        solution.calculateObjectiveValue()
+        println(solution.objectiveValue)
+        writer.write("2-easy-aut,${solution.descriptiveObjectiveFunction(false)}\n")
+    }
+
+    for (i in 1..8) {
+        val problem = MDSP(25032024)
+        problem.loadInstance(5)
+        val solution = problem.blankSolution()
+
+        val log = File("results/field_study/dep2_hard-$i.txt")
+        val scanner = Scanner(log)
+        while (scanner.hasNextLine()) {
+            val line = scanner.nextLine()
+            val tokens = line.split(" ")
+            solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+        }
+        solution.calculateObjectiveValue()
+        println(solution.objectiveValue)
+        writer.write("2-hard-man,${solution.descriptiveObjectiveFunction(false)}\n")
+    }
+
+    for(i in 1..5) {
+        val problem = MDSP(25032024)
+        problem.loadInstance(5)
+        val solution = problem.blankSolution()
+
+        val log = File("results/time_limit/experiment_department2_hard_15_minutes-$i.txt")
+        val scanner = Scanner(log)
+        while (scanner.hasNextLine()) {
+            val line = scanner.nextLine()
+            val tokens = line.split(" ")
+            solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+        }
+        solution.calculateObjectiveValue()
+        println(solution.objectiveValue)
+        writer.write("2-hard-aut,${solution.descriptiveObjectiveFunction(false)}\n")
+    }
+    writer.close()*/
 
     /*val writer = BufferedWriter(FileWriter("results/understaffing_tests/graph_data/department2_2Senior.csv"))
     writer.write("Objective Function, Total Coverage Contribution, Total Doctor Target Contribution, Total Preference Contribution\n")
 
-    for(i in 1..7) {
+    for(i in 1..5) {
         val problem = MDSP(25032024)
         problem.loadInstance("understaffing_tests/department2_2Senior")
         val solution = problem.blankSolution()

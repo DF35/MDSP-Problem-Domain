@@ -59,7 +59,7 @@ class Solution(
 
         for(shiftID in sortedShifts) {
             val shift = shifts[shiftID]
-            val assignmentId = shift.assignmentIDs[0]
+            val assignmentId = shift.assignmentIDs[rand.nextInt(shift.assignmentIDs.size)]
             val feasibleDoctors = shift.feasibleDoctors.subtract(assignments[assignmentId].infeasibleDoctors).toList()
             if(feasibleDoctors.isEmpty()) continue
             val doctor = feasibleDoctors[rand.nextInt(feasibleDoctors.size)]
@@ -82,7 +82,7 @@ class Solution(
          */
         while(doctorsNeedingNightShifts.isNotEmpty() && remainingNightShifts.isNotEmpty()) {
             val shift = remainingNightShifts[rand.nextInt(remainingNightShifts.size)]
-            val assignmentId = shift.assignmentIDs[0]
+            val assignmentId = shift.assignmentIDs[rand.nextInt(shift.assignmentIDs.size)]
             val feasibleDoctors = shift.feasibleDoctors.subtract(assignments[assignmentId].infeasibleDoctors)
             val doctor = feasibleDoctors.firstOrNull { doctorsNeedingNightShifts.contains(it) }
 
@@ -103,7 +103,7 @@ class Solution(
         */
         while(doctorsNeedingDayShifts.isNotEmpty() && remainingDayShifts.isNotEmpty()) {
             val shift = remainingDayShifts[rand.nextInt(remainingDayShifts.size)]
-            val assignmentId = shift.assignmentIDs[0]
+            val assignmentId = shift.assignmentIDs[rand.nextInt(shift.assignmentIDs.size)]
             val feasibleDoctors = shift.feasibleDoctors.subtract(assignments[assignmentId].infeasibleDoctors)
             val doctor = feasibleDoctors.firstOrNull { doctorsNeedingDayShifts.contains(it) }
 
@@ -294,8 +294,8 @@ class Solution(
             val varianceDays = it.varianceDayShiftsWorked()
             totalVarianceDayShifts += varianceDays.absoluteValue
             contributionVarianceDayShifts += when(varianceDays < 0) {
-                false -> varianceDays * 5
-                true -> -varianceDays * 5
+                false -> varianceDays * 2
+                true -> -varianceDays * 2
             }
 
             val varianceNights = it.varianceNightShiftsWorked()
@@ -341,7 +341,7 @@ class Solution(
             }
 
             false -> {
-                description += "$objectiveValue,$totalCoverageContribution,$totalDoctorTargetContribution,$totalPreferenceContribution"
+                description += "$totalCoverageContribution,$totalDoctorTargetContribution,$totalPreferenceContribution"
             }
         }
 
