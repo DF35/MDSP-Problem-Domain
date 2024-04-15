@@ -109,6 +109,42 @@ fun main(args: Array<String>) {
         }
     }*/
 
+    val writer = BufferedWriter(FileWriter("results/understaffing_tests/graph_data/department1_understaffing.csv"))
+    writer.write("Instance,Total Coverage Contribution,Total Doctor Target Contribution,Total Preference Contribution\n")
+
+    val instances = listOf(
+        "department1_1Junior",
+        "department1_1Junior_1Senior",
+        "department1_1Senior",
+        "department1_2Junior",
+        "department1_2Senior"
+    )
+
+    for(instance in instances) {
+        for (i in 1..5) {
+            val seedGenerator = Random(25022024)
+            val seed = seedGenerator.nextLong()
+            val problem = MDSP(seed)
+            problem.loadInstance("understaffing_tests/$instance")
+            val solution = problem.blankSolution()
+
+            val log = File("results/understaffing_tests/$instance-$i.txt")
+            val scanner = Scanner(log)
+            var lineNum = 0
+            while (scanner.hasNextLine()) {
+                lineNum++
+                val line = scanner.nextLine()
+                val tokens = line.split(" ")
+                when (tokens[0]) {
+                    "al" -> solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
+                    "de" -> solution.deallocateAssignment(tokens[1].toInt())
+                }
+            }
+            solution.calculateObjectiveValue()
+            writer.write("$instance,${solution.descriptiveObjectiveFunction(false)}\n")
+        }
+    }
+    writer.close()
 
 }
 
