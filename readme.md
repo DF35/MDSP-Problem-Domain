@@ -10,7 +10,7 @@ The code for the Hyflex interfaces and the hyper-heuristic itself were obtained 
 The Problem Domain will be compatible with any Hyper-Heuristic encoded using the Hyflex interface, see "Main.kt"
 for an example of how the code would be set up to do this.
 
-To run the system as is, with the GIHH hyper-heuristic, simply run the project using Gradle from your command line (within the project folder):
+To run the system as is, with the GIHH hyper-heuristic, ensure you have Java 18 or later installed and simply run the project using Gradle from your command line (within the project folder):
 
  - `./gradlew run` for Linux/macOS
  - `.\gradlew run` for Windows Powershell
