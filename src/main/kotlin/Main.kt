@@ -109,26 +109,28 @@ fun main(args: Array<String>) {
         }
     }*/
 
-    val writer = BufferedWriter(FileWriter("results/understaffing_tests/graph_data/department1_understaffing.csv"))
-    writer.write("Instance,Total Coverage Contribution,Total Doctor Target Contribution,Total Preference Contribution\n")
+    val writer = BufferedWriter(FileWriter("results/time_limit/graph_data/department1_easy.csv"))
+    writer.write("Objective Function, Minutes\n")
 
-    val instances = listOf(
+    /*val instances = listOf(
         "department1_1Junior",
         "department1_1Junior_1Senior",
         "department1_1Senior",
         "department1_2Junior",
         "department1_2Senior"
-    )
+    )*/
+
+    val instances = listOf(5,10,15,20)
 
     for(instance in instances) {
         for (i in 1..5) {
             val seedGenerator = Random(25022024)
             val seed = seedGenerator.nextLong()
             val problem = MDSP(seed)
-            problem.loadInstance("understaffing_tests/$instance")
+            problem.loadInstance("experiment_department1_easy")
             val solution = problem.blankSolution()
 
-            val log = File("results/understaffing_tests/$instance-$i.txt")
+            val log = File("results/time_limit/experiment_department1_easy_${instance}_minutes-$i.txt")
             val scanner = Scanner(log)
             var lineNum = 0
             while (scanner.hasNextLine()) {
@@ -141,10 +143,9 @@ fun main(args: Array<String>) {
                 }
             }
             solution.calculateObjectiveValue()
-            writer.write("$instance,${solution.descriptiveObjectiveFunction(false)}\n")
+            writer.write("${solution.objectiveValue},$instance")
         }
     }
     writer.close()
-
 }
 
