@@ -109,43 +109,12 @@ fun main(args: Array<String>) {
         }
     }*/
 
-    val writer = BufferedWriter(FileWriter("results/time_limit/graph_data/department1_easy.csv"))
-    writer.write("Objective Function, Minutes\n")
-
-    /*val instances = listOf(
-        "department1_1Junior",
-        "department1_1Junior_1Senior",
-        "department1_1Senior",
-        "department1_2Junior",
-        "department1_2Senior"
-    )*/
-
-    val instances = listOf(5,10,15,20)
-
-    for(instance in instances) {
-        for (i in 1..5) {
-            val seedGenerator = Random(25022024)
-            val seed = seedGenerator.nextLong()
-            val problem = MDSP(seed)
-            problem.loadInstance("experiment_department1_easy")
-            val solution = problem.blankSolution()
-
-            val log = File("results/time_limit/experiment_department1_easy_${instance}_minutes-$i.txt")
-            val scanner = Scanner(log)
-            var lineNum = 0
-            while (scanner.hasNextLine()) {
-                lineNum++
-                val line = scanner.nextLine()
-                val tokens = line.split(" ")
-                when (tokens[0]) {
-                    "al" -> solution.allocateAssignment(tokens[1].toInt(), tokens[2].toInt())
-                    "de" -> solution.deallocateAssignment(tokens[1].toInt())
-                }
-            }
-            solution.calculateObjectiveValue()
-            writer.write("${solution.objectiveValue},$instance")
-        }
+    val durations = listOf(9.5,12.0,13.0)
+    var hoursTraining = 0.00
+    for(shift in listOf(16,72,128,184)) {
+        hoursTraining += durations[shift % durations.size]
     }
-    writer.close()
+    println(hoursTraining)
+
 }
 
