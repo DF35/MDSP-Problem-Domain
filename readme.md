@@ -4,7 +4,7 @@ This repository holds the codebase for my Undergraduate Dissertation project "An
 Efficacy of Hyper-Heuristics for Middle Grade Doctor Shift Scheduling" , that I completed as part of my 
 BSc in Computer Science at the University of Nottingham. It includes the Hyflex-compatible Problem
 Domain that I encoded as well as the pre-existing GIHH hyper-heuristic that I applied to it as part of the investigation.
-The code for the Hyflex interfaces and the hyper-heuristic itself were obtained from: [experiment_department2_hard.txt](src%2Fmain%2Fresources%2Finstances%2Fexperiment_department2_hard.txt)
+The code for the Hyflex interfaces and the hyper-heuristic itself were obtained from: https://github.com/seage/hyflex
 
 ## Usage
 The Problem Domain will be compatible with any Hyper-Heuristic encoded using the Hyflex interface, see "Main.kt"
