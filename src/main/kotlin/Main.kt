@@ -22,7 +22,7 @@ fun main(args: Array<String>) {
     }
 
     // Code for Instance Experimentation
-    /*val seedGenerator = Random(22032024)
+    val seedGenerator = Random(22032024)
     val totalExecutionTime: Long = 60000 * 15 // 15 minutes
     val selectionType = SelectionMethodType.AdaptiveLimitedLAassistedDHSMentorSTD
     val acceptanceType = AcceptanceCriterionType.AdaptiveIterationLimitedListBasedTA
@@ -32,8 +32,12 @@ fun main(args: Array<String>) {
     WriteInfo.resultSubFolderName = dateFormatter.format(today)
 
     val instances = listOf(
+        /*"experiment_department1_easy",
+        "experiment_department1_hard",
+        "experiment_department2_easy",
+        "experiment_department2_hard"*/
         "department1_baseline",
-        "department2_baseline",
+        /*"department2_baseline",
         "leave_partTime_mix/department1_20Percent",
         "leave_partTime_mix/department1_40Percent",
         "leave_partTime_mix/department1_60Percent",
@@ -79,12 +83,11 @@ fun main(args: Array<String>) {
         "understaffing_tests/department2_1Junior1Senior",
         "understaffing_tests/department2_1Senior",
         "understaffing_tests/department2_2Junior",
-        "understaffing_tests/department2_2Senior"
+        "understaffing_tests/department2_2Senior"*/
     )
 
     for(instance in instances) {
         println(instance)
-
         for (h in 1..5) {
             val seed = seedGenerator.nextLong()
             val problem = MDSP(seed)
@@ -107,14 +110,6 @@ fun main(args: Array<String>) {
             writer.close()
             println(problem.bestSolutionValue)
         }
-    }*/
-
-    val durations = listOf(9.5,12.0,13.0)
-    var hoursTraining = 0.00
-    for(shift in listOf(16,72,128,184)) {
-        hoursTraining += durations[shift % durations.size]
     }
-    println(hoursTraining)
-
 }
 
