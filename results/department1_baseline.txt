@@ -1,0 +1,1406 @@
+Shifts:
+
+Day: Monday
+
+Shift 0
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7, 9]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 2: Rest ShiftWorked: 3 Doctor 8: Rest ShiftWorked: 3 Doctor 5: Rest ShiftWorked: 2 Doctor 3: Rest ShiftWorked: 1 
+Shift 1
+Time: 14:00-22:00 (Day Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 7: Rest ShiftWorked: 0 ShiftWorked: 4 Doctor 9: Rest ShiftWorked: 0 ShiftWorked: 4 Doctor 2: Rest ShiftWorked: 3 Doctor 8: Rest ShiftWorked: 3 Doctor 5: Rest ShiftWorked: 2 
+Shift 2
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 7: Rest ShiftWorked: 0 ShiftWorked: 8 ShiftWorked: 4 Doctor 9: Rest ShiftWorked: 8 ShiftWorked: 0 ShiftWorked: 4 Doctor 3: Rest ShiftWorked: 5 ShiftWorked: 1 Doctor 4: Rest ShiftWorked: 10 Doctor 2: Rest ShiftWorked: 3 Doctor 8: Rest ShiftWorked: 3 
+Shift 3
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [2, 8]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 7: Rest ShiftWorked: 0 ShiftWorked: 12 ShiftWorked: 8 ShiftWorked: 4 Doctor 9: Rest ShiftWorked: 8 ShiftWorked: 0 ShiftWorked: 4 Doctor 3: Rest ShiftWorked: 5 ShiftWorked: 1 Doctor 5: Rest ShiftWorked: 2 ShiftWorked: 12 Doctor 4: Rest ShiftWorked: 10 
+
+Day: Tuesday
+
+Shift 4
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7, 9]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 8: Rest ShiftWorked: 7 ShiftWorked: 3 Doctor 2: Rest ShiftWorked: 3 ShiftWorked: 7 Doctor 3: Rest ShiftWorked: 5 ShiftWorked: 1 Doctor 6: Rest ShiftWorked: 6 
+Shift 5
+Time: 14:00-22:00 (Day Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 8: Rest ShiftWorked: 7 ShiftWorked: 3 Doctor 7: Rest ShiftWorked: 8 ShiftWorked: 4 Doctor 2: Rest ShiftWorked: 3 ShiftWorked: 7 Doctor 9: Rest ShiftWorked: 8 ShiftWorked: 4 Doctor 6: Rest ShiftWorked: 6 
+Shift 6
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 7: Rest ShiftWorked: 12 ShiftWorked: 8 ShiftWorked: 4 Doctor 8: Rest ShiftWorked: 7 ShiftWorked: 3 Doctor 2: Rest ShiftWorked: 3 ShiftWorked: 7 Doctor 1: Rest ShiftWorked: 9 ShiftWorked: 13 Doctor 9: Rest ShiftWorked: 8 ShiftWorked: 15 ShiftWorked: 4 Doctor 3: Rest ShiftWorked: 5 Doctor 0: Rest ShiftWorked: 15 
+Shift 7
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [8, 2]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 7: Rest ShiftWorked: 12 ShiftWorked: 8 ShiftWorked: 4 Doctor 1: Rest ShiftWorked: 9 ShiftWorked: 13 Doctor 9: Rest ShiftWorked: 8 ShiftWorked: 15 ShiftWorked: 4 Doctor 6: Rest ShiftWorked: 6 Doctor 3: Rest ShiftWorked: 5 ShiftWorked: 16 Doctor 0: Rest ShiftWorked: 15 
+
+Day: Wednesday
+
+Shift 8
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9, 7]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 7 ShiftWorked: 11 ShiftWorked: 3 Doctor 2: Rest ShiftWorked: 3 ShiftWorked: 7 Doctor 6: Rest ShiftWorked: 6 ShiftWorked: 11 Doctor 4: Rest ShiftWorked: 10 Doctor 3: Rest ShiftWorked: 5 Doctor 1: Rest ShiftWorked: 9 Doctor 5: Rest ShiftWorked: 2 
+Shift 9
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 7 ShiftWorked: 11 ShiftWorked: 3 Doctor 7: Rest ShiftWorked: 12 ShiftWorked: 8 Doctor 2: Rest ShiftWorked: 3 ShiftWorked: 7 Doctor 6: Rest ShiftWorked: 6 ShiftWorked: 11 Doctor 5: Rest ShiftWorked: 2 ShiftWorked: 12 Doctor 4: Rest ShiftWorked: 10 Doctor 9: Rest ShiftWorked: 8 
+Shift 10
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 2 ShiftWorked: 12 ShiftWorked: 16 Doctor 7: Rest ShiftWorked: 12 ShiftWorked: 8 Doctor 1: Rest ShiftWorked: 9 ShiftWorked: 17 ShiftWorked: 13 Doctor 8: Rest ShiftWorked: 7 ShiftWorked: 11 Doctor 3: Rest ShiftWorked: 16 Doctor 9: Rest ShiftWorked: 8 Doctor 0: Rest NightsWorked [6, 5, 4, 3] Doctor 6: Rest ShiftWorked: 11 Doctor 2: Rest ShiftWorked: 7 
+Shift 11
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [8, 6]
+Doctors that cannot work the shift:
+Doctor 7: Rest ShiftWorked: 12 ShiftWorked: 8 ShiftWorked: 20 Doctor 5: Rest ShiftWorked: 2 ShiftWorked: 12 ShiftWorked: 16 Doctor 1: Rest ShiftWorked: 9 ShiftWorked: 17 ShiftWorked: 13 Doctor 4: Rest ShiftWorked: 10 ShiftWorked: 14 Doctor 3: Rest ShiftWorked: 16 Doctor 9: Rest ShiftWorked: 8 Doctor 0: Rest NightsWorked [6, 5, 4, 3] RowOfFourLongShifts: Block 2Doctor 2: Rest ShiftWorked: 20 
+
+Day: Thursday
+
+Shift 12
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7, 5]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 8: Rest ShiftWorked: 7 ShiftWorked: 11 ShiftWorked: 3 Doctor 1: Rest ShiftWorked: 9 ShiftWorked: 13 Doctor 6: Rest ShiftWorked: 6 ShiftWorked: 11 Doctor 4: Rest ShiftWorked: 10 ShiftWorked: 14 Doctor 0: Rest ShiftWorked: 15 Doctor 9: Rest ShiftWorked: 15 
+Shift 13
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 8: Rest ShiftWorked: 7 ShiftWorked: 11 Doctor 5: Rest ShiftWorked: 12 ShiftWorked: 16 Doctor 6: Rest ShiftWorked: 6 ShiftWorked: 11 Doctor 4: Rest ShiftWorked: 10 ShiftWorked: 14 Doctor 7: Rest ShiftWorked: 12 Doctor 0: Rest ShiftWorked: 15 Doctor 9: Rest ShiftWorked: 15 
+Shift 14
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 6: Rest ShiftWorked: 11 ShiftWorked: 21 Doctor 8: Rest ShiftWorked: 11 ShiftWorked: 22 Doctor 5: Rest ShiftWorked: 12 ShiftWorked: 16 Doctor 7: Rest ShiftWorked: 12 ShiftWorked: 20 Doctor 1: Rest ShiftWorked: 17 ShiftWorked: 13 Doctor 0: Rest ShiftWorked: 15 Doctor 9: Rest ShiftWorked: 15 
+Shift 15
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [0, 9]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 7: Rest ShiftWorked: 12 ShiftWorked: 24 ShiftWorked: 20 Doctor 5: Rest ShiftWorked: 12 ShiftWorked: 16 Doctor 1: Rest ShiftWorked: 17 ShiftWorked: 13 Doctor 4: Rest ShiftWorked: 14 Doctor 6: Rest ShiftWorked: 21 Doctor 8: Rest ShiftWorked: 22 
+
+Day: Friday
+
+Shift 16
+Time: 08:00-16:00 (Day Shift)
+Assignees: [3, 5]
+Doctors that cannot work the shift:
+Doctor 0: Rest ShiftWorked: 19 ShiftWorked: 15 Doctor 8: Rest ShiftWorked: 7 ShiftWorked: 11 WouldCauseRowTooLarge: 0, 2 Doctor 1: Rest ShiftWorked: 17 ShiftWorked: 13 Doctor 4: Rest ShiftWorked: 10 ShiftWorked: 14 Doctor 6: Rest ShiftWorked: 11 Doctor 9: Rest ShiftWorked: 15 Doctor 2: Rest ShiftWorked: 7 Doctor 7: Rest WouldCauseRowTooLarge: 21973, 21977 
+Shift 17
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 0: Rest ShiftWorked: 19 ShiftWorked: 15 Doctor 4: Rest ShiftWorked: 10 ShiftWorked: 14 Doctor 8: Rest ShiftWorked: 11 WouldCauseRowTooLarge: 0, 2 Doctor 3: Rest ShiftWorked: 16 Doctor 7: Rest ShiftWorked: 20 WouldCauseRowTooLarge: 21973, 21977 Doctor 6: Rest ShiftWorked: 11 Doctor 5: Rest ShiftWorked: 16 Doctor 9: Rest ShiftWorked: 15 Doctor 2: Rest ShiftWorked: 20 
+Shift 18
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 52 ShiftWorked: 16 WeekendWorked 48 Doctor 6: Rest ShiftWorked: 11 ShiftWorked: 25 ShiftWorked: 21 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 15 WeekendWorked 81 Doctor 5: Rest ShiftWorked: 16 WeekendWorked 53 WeekendWorked 49 Doctor 1: Rest WeekendWorked 79 ShiftWorked: 17 WeekendWorked 75 WeekendWorked 83 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 55 Doctor 0: Rest ShiftWorked: 19 ShiftWorked: 15 Doctor 7: Rest ShiftWorked: 24 ShiftWorked: 20 WouldCauseRowTooLarge: 21973, 21977 Doctor 2: Rest ShiftWorked: 26 ShiftWorked: 20 Doctor 8: Rest ShiftWorked: 11 WouldCauseRowTooLarge: 0, 2 
+Shift 19
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 52 ShiftWorked: 28 ShiftWorked: 16 WeekendWorked 48 Doctor 6: Rest ShiftWorked: 11 ShiftWorked: 25 ShiftWorked: 21 Doctor 5: Rest ShiftWorked: 16 WeekendWorked 53 WeekendWorked 49 Doctor 1: Rest WeekendWorked 79 ShiftWorked: 17 WeekendWorked 75 WeekendWorked 83 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 55 Doctor 7: Rest ShiftWorked: 24 ShiftWorked: 20 ShiftWorked: 28 WouldCauseRowTooLarge: 21973, 21977 Doctor 9: Rest WeekendWorked 76 WeekendWorked 81 Doctor 8: Rest ShiftWorked: 11 ShiftWorked: 22 WouldCauseRowTooLarge: 0, 2 Doctor 2: Rest ShiftWorked: 26 ShiftWorked: 20 
+
+Day: Saturday
+
+Shift 20
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7, 2]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 55 ShiftWorked: 14 Doctor 0: Rest ShiftWorked: 23 ShiftWorked: 19 ShiftWorked: 15 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 15 WeekendWorked 81 Doctor 1: Rest WeekendWorked 79 ShiftWorked: 17 WeekendWorked 75 WeekendWorked 83 Doctor 3: Rest WeekendWorked 52 WeekendWorked 48 Doctor 6: Rest ShiftWorked: 11 ShiftWorked: 21 Doctor 8: Rest ShiftWorked: 11 ShiftWorked: 22 Doctor 5: Rest WeekendWorked 53 WeekendWorked 49 
+Shift 21
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 55 ShiftWorked: 14 Doctor 0: Rest ShiftWorked: 23 ShiftWorked: 19 ShiftWorked: 15 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 15 WeekendWorked 81 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 WeekendWorked 83 Doctor 7: Rest ShiftWorked: 24 ShiftWorked: 20 Doctor 3: Rest WeekendWorked 52 WeekendWorked 48 Doctor 5: Rest WeekendWorked 53 WeekendWorked 49 Doctor 8: Rest ShiftWorked: 22 Doctor 2: Rest ShiftWorked: 20 
+Shift 22
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 55 ShiftWorked: 14 Doctor 0: Rest ShiftWorked: 23 ShiftWorked: 19 Doctor 9: Rest ShiftWorked: 29 WeekendWorked 76 ShiftWorked: 15 WouldCauseRowTooLargeOverlap: 27769, 27817 WeekendWorked 81 Doctor 7: Rest ShiftWorked: 24 ShiftWorked: 20 ShiftWorked: 28 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 WeekendWorked 83 Doctor 5: Rest WeekendWorked 53 ShiftWorked: 31 WouldCauseRowTooLargeOverlap: 6774, 22006 WeekendWorked 49 Doctor 3: Rest WeekendWorked 52 ShiftWorked: 28 InsufficientRestMidOverlap: Block 21575, Block 21568, Block 21555 WeekendWorked 48 Doctor 6: Rest ShiftWorked: 25 ShiftWorked: 21 Doctor 2: Rest ShiftWorked: 20 
+Shift 23
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 55 ShiftWorked: 14 Doctor 9: Rest ShiftWorked: 29 WeekendWorked 76 ShiftWorked: 15 WouldCauseRowTooLargeOverlap: 27769, 27817 WeekendWorked 81 Doctor 7: Rest ShiftWorked: 24 ShiftWorked: 20 ShiftWorked: 28 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 WeekendWorked 83 ShiftWorked: 32 Doctor 5: Rest WeekendWorked 53 ShiftWorked: 31 WouldCauseRowTooLargeOverlap: 6774, 22006 WeekendWorked 49 Doctor 6: Rest ShiftWorked: 32 ShiftWorked: 25 ShiftWorked: 21 Doctor 3: Rest WeekendWorked 52 ShiftWorked: 28 InsufficientRestMidOverlap: Block 21575, Block 21568, Block 21555 WeekendWorked 48 Doctor 2: Rest ShiftWorked: 26 ShiftWorked: 20 Doctor 8: Rest ShiftWorked: 22 
+
+Day: Sunday
+
+Shift 24
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 0: Rest ShiftWorked: 23 ShiftWorked: 19 ShiftWorked: 15 ShiftWorked: 27 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 15 WeekendWorked 81 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 55 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 WeekendWorked 83 Doctor 8: Rest ShiftWorked: 27 ShiftWorked: 22 Doctor 3: Rest WeekendWorked 52 WeekendWorked 48 Doctor 6: Rest ShiftWorked: 25 ShiftWorked: 21 Doctor 5: Rest WeekendWorked 53 WeekendWorked 49 Doctor 2: Rest ShiftWorked: 26 
+Shift 25
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 0: Rest ShiftWorked: 23 ShiftWorked: 19 ShiftWorked: 27 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 WeekendWorked 83 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 55 Doctor 3: Rest WeekendWorked 52 ShiftWorked: 28 WeekendWorked 48 Doctor 8: Rest ShiftWorked: 27 ShiftWorked: 22 Doctor 9: Rest WeekendWorked 76 WeekendWorked 81 Doctor 7: Rest ShiftWorked: 24 ShiftWorked: 28 Doctor 5: Rest WeekendWorked 53 WeekendWorked 49 Doctor 2: Rest ShiftWorked: 26 
+Shift 26
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 7: Rest ShiftWorked: 24 ShiftWorked: 35 ShiftWorked: 28 Doctor 9: Rest ShiftWorked: 34 ShiftWorked: 29 WeekendWorked 76 WeekendWorked 81 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 WeekendWorked 83 ShiftWorked: 32 Doctor 3: Rest WeekendWorked 52 ShiftWorked: 28 ShiftWorked: 33 WeekendWorked 48 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 55 Doctor 0: Rest ShiftWorked: 23 ShiftWorked: 27 Doctor 8: Rest ShiftWorked: 27 Doctor 6: Rest ShiftWorked: 32 ShiftWorked: 25 Doctor 5: Rest WeekendWorked 53 WeekendWorked 49 
+Shift 27
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [8, 0]
+Doctors that cannot work the shift:
+Doctor 7: Rest ShiftWorked: 24 ShiftWorked: 35 ShiftWorked: 28 Doctor 6: Rest ShiftWorked: 32 ShiftWorked: 25 ShiftWorked: 36 Doctor 9: Rest ShiftWorked: 34 ShiftWorked: 29 WeekendWorked 76 WeekendWorked 81 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 WeekendWorked 83 ShiftWorked: 32 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 55 ShiftWorked: 36 Doctor 3: Rest WeekendWorked 52 ShiftWorked: 28 ShiftWorked: 33 WeekendWorked 48 Doctor 5: Rest WeekendWorked 53 WeekendWorked 49 Doctor 2: Rest ShiftWorked: 30 ShiftWorked: 26 
+
+Day: Monday
+
+Shift 28
+Time: 08:00-16:00 (Day Shift)
+Assignees: [3, 7]
+Doctors that cannot work the shift:
+Doctor 0: Rest ShiftWorked: 23 ShiftWorked: 19 ShiftWorked: 27 NightsWorked [6, 5, 4, 3] RowOfFourLongShifts: Block 2Doctor 8: Rest ShiftWorked: 27 ShiftWorked: 31 ShiftWorked: 22 Doctor 2: Rest ShiftWorked: 30 ShiftWorked: 26 Doctor 9: Rest ShiftWorked: 29 Doctor 5: Rest ShiftWorked: 31 Doctor 6: Rest ShiftWorked: 25 
+Shift 29
+Time: 14:00-22:00 (Day Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 27 ShiftWorked: 31 ShiftWorked: 22 Doctor 0: Rest ShiftWorked: 23 ShiftWorked: 27 NightsWorked [6, 5, 4, 3] RowOfFourLongShifts: Block 2Doctor 2: Rest ShiftWorked: 30 ShiftWorked: 26 Doctor 3: Rest ShiftWorked: 28 Doctor 6: Rest ShiftWorked: 32 Doctor 1: Rest ShiftWorked: 32 Doctor 5: Rest ShiftWorked: 31 Doctor 7: Rest ShiftWorked: 28 
+Shift 30
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 27 ShiftWorked: 31 Doctor 3: Rest ShiftWorked: 38 ShiftWorked: 28 ShiftWorked: 33 Doctor 1: Rest ShiftWorked: 37 ShiftWorked: 32 Doctor 0: Rest ShiftWorked: 27 NightsWorked [6, 5, 4, 3] RowOfFourLongShifts: Block 2Doctor 6: Rest ShiftWorked: 32 ShiftWorked: 36 Doctor 9: Rest ShiftWorked: 29 Doctor 4: Rest ShiftWorked: 36 RowOfSixOverlap: Block 28174 Doctor 5: Rest ShiftWorked: 31 Doctor 7: Rest ShiftWorked: 28 
+Shift 31
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [8, 5]
+Doctors that cannot work the shift:
+Doctor 6: Rest ShiftWorked: 32 ShiftWorked: 40 ShiftWorked: 36 Doctor 3: Rest ShiftWorked: 38 ShiftWorked: 28 ShiftWorked: 33 Doctor 1: Rest ShiftWorked: 37 ShiftWorked: 32 Doctor 9: Rest ShiftWorked: 34 ShiftWorked: 29 Doctor 0: Rest NightsWorked [6, 5, 4, 3] RowOfFourLongShifts: Block 2ShiftWorked: 40 Doctor 2: Rest ShiftWorked: 30 Doctor 4: Rest ShiftWorked: 36 RowOfSixOverlap: Block 28174 Doctor 7: Rest ShiftWorked: 28 
+
+Day: Tuesday
+
+Shift 32
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 1]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 9: Rest ShiftWorked: 34 ShiftWorked: 29 Doctor 5: Rest ShiftWorked: 35 ShiftWorked: 31 Doctor 2: Rest ShiftWorked: 30 ShiftWorked: 26 Doctor 3: Rest ShiftWorked: 33 Doctor 7: Rest ShiftWorked: 35 
+Shift 33
+Time: 14:00-22:00 (Day Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 5: Rest ShiftWorked: 35 ShiftWorked: 31 Doctor 2: Rest ShiftWorked: 30 ShiftWorked: 26 Doctor 9: Rest ShiftWorked: 34 Doctor 6: Rest ShiftWorked: 32 ShiftWorked: 36 Doctor 4: Rest ShiftWorked: 36 Doctor 1: Rest ShiftWorked: 32 Doctor 7: Rest ShiftWorked: 35 
+Shift 34
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 6: Rest ShiftWorked: 32 ShiftWorked: 40 ShiftWorked: 36 Doctor 1: Rest ShiftWorked: 43 ShiftWorked: 37 ShiftWorked: 32 Doctor 4: Rest ShiftWorked: 42 ShiftWorked: 36 Doctor 5: Rest ShiftWorked: 35 ShiftWorked: 31 Doctor 3: Rest ShiftWorked: 33 Doctor 7: Rest ShiftWorked: 35 
+Shift 35
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [5, 7]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 6: Rest ShiftWorked: 44 ShiftWorked: 32 ShiftWorked: 40 ShiftWorked: 36 Doctor 1: Rest ShiftWorked: 43 ShiftWorked: 37 ShiftWorked: 32 Doctor 4: Rest ShiftWorked: 42 ShiftWorked: 36 Doctor 3: Rest ShiftWorked: 38 ShiftWorked: 33 Doctor 9: Rest ShiftWorked: 34 Doctor 2: Rest ShiftWorked: 44 
+
+Day: Wednesday
+
+Shift 36
+Time: 08:00-16:00 (Day Shift)
+Assignees: [4, 6]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 35 ShiftWorked: 39 ShiftWorked: 31 Doctor 8: Rest ShiftWorked: 27 ShiftWorked: 31 Doctor 3: Rest ShiftWorked: 38 ShiftWorked: 33 Doctor 9: Rest ShiftWorked: 39 ShiftWorked: 34 Doctor 2: Rest ShiftWorked: 30 Doctor 0: Rest ShiftWorked: 27 NightsWorked [6, 5, 4, 3] RowOfFourLongShifts: Block 2Doctor 1: Rest ShiftWorked: 37 Doctor 7: Rest ShiftWorked: 35 
+Shift 37
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 35 ShiftWorked: 39 ShiftWorked: 31 Doctor 9: Rest ShiftWorked: 39 ShiftWorked: 34 Doctor 3: Rest ShiftWorked: 38 Doctor 2: Rest ShiftWorked: 30 Doctor 4: Rest ShiftWorked: 36 Doctor 6: Rest ShiftWorked: 40 ShiftWorked: 36 Doctor 8: Rest ShiftWorked: 31 Doctor 0: Rest ShiftWorked: 40 Doctor 7: Rest ShiftWorked: 35 
+Shift 38
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 6: Rest ShiftWorked: 44 ShiftWorked: 40 ShiftWorked: 36 Doctor 5: Rest ShiftWorked: 35 ShiftWorked: 39 Doctor 8: Rest ShiftWorked: 41 ShiftWorked: 31 Doctor 4: Rest NightsWorked [13, 12, 11, 10] ShiftWorked: 36 Doctor 2: Rest ShiftWorked: 44 ShiftWorked: 30 Doctor 0: Rest ShiftWorked: 40 ShiftWorked: 45 Doctor 9: Rest ShiftWorked: 39 Doctor 1: Rest ShiftWorked: 37 Doctor 7: Rest ShiftWorked: 35 
+Shift 39
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [9, 5]
+Doctors that cannot work the shift:
+Doctor 6: Rest ShiftWorked: 44 ShiftWorked: 40 ShiftWorked: 36 Doctor 8: Rest ShiftWorked: 41 ShiftWorked: 31 Doctor 3: Rest ShiftWorked: 38 ShiftWorked: 48 Doctor 4: Rest ShiftWorked: 42 NightsWorked [13, 12, 11, 10] ShiftWorked: 36 Doctor 2: Rest ShiftWorked: 44 ShiftWorked: 30 Doctor 0: Rest ShiftWorked: 40 ShiftWorked: 45 Doctor 1: Rest ShiftWorked: 37 
+
+Day: Thursday
+
+Shift 40
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 0]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 9: Rest ShiftWorked: 39 ShiftWorked: 34 ShiftWorked: 43 Doctor 5: Rest ShiftWorked: 35 ShiftWorked: 39 ShiftWorked: 31 Doctor 8: Rest ShiftWorked: 41 ShiftWorked: 31 Doctor 1: Rest ShiftWorked: 43 ShiftWorked: 37 Doctor 4: Rest ShiftWorked: 42 Doctor 7: Rest ShiftWorked: 35 
+Shift 41
+Time: 14:00-22:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 9: Rest ShiftWorked: 39 ShiftWorked: 34 ShiftWorked: 43 Doctor 5: Rest ShiftWorked: 35 ShiftWorked: 39 Doctor 6: Rest ShiftWorked: 44 ShiftWorked: 40 Doctor 4: Rest ShiftWorked: 42 Doctor 1: Rest ShiftWorked: 43 Doctor 0: Rest ShiftWorked: 40 Doctor 7: Rest ShiftWorked: 35 
+Shift 42
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 5: Rest ShiftWorked: 39 ShiftWorked: 49 RowOfSevenDays: 24812 Doctor 6: Rest ShiftWorked: 44 ShiftWorked: 40 Doctor 9: Rest ShiftWorked: 39 ShiftWorked: 43 Doctor 0: Rest ShiftWorked: 40 ShiftWorked: 45 Doctor 8: Rest ShiftWorked: 41 Doctor 1: Rest ShiftWorked: 43 Doctor 7: Rest ShiftWorked: 35 
+Shift 43
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [9, 1]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 6: Rest ShiftWorked: 44 ShiftWorked: 40 Doctor 0: Rest ShiftWorked: 40 ShiftWorked: 45 Doctor 4: Rest ShiftWorked: 42 Doctor 8: Rest ShiftWorked: 41 Doctor 7: Rest ShiftWorked: 35 Doctor 5: Rest ShiftWorked: 49 RowOfSevenDays: 24812 
+
+Day: Friday
+
+Shift 44
+Time: 08:00-16:00 (Day Shift)
+Assignees: [2, 6]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 35 ShiftWorked: 39 RowOfSevenDays: 24812 WouldCauseRowTooLarge: 6774, 24812 Doctor 4: Rest ShiftWorked: 47 ShiftWorked: 42 Doctor 9: Rest ShiftWorked: 39 ShiftWorked: 43 Doctor 3: Rest ShiftWorked: 38 WouldCauseRowTooLarge: 21555, 21575 Doctor 8: Rest ShiftWorked: 41 Doctor 1: Rest ShiftWorked: 43 Doctor 7: Rest ShiftWorked: 35 Doctor 0: Rest ShiftWorked: 45 
+Shift 45
+Time: 14:00-22:00 (Day Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 4: Rest ShiftWorked: 47 ShiftWorked: 42 Doctor 3: Rest ShiftWorked: 38 ShiftWorked: 48 WouldCauseRowTooLarge: 21555, 21575 Doctor 9: Rest ShiftWorked: 39 ShiftWorked: 43 Doctor 2: Rest ShiftWorked: 44 Doctor 5: Rest ShiftWorked: 39 RowOfSevenDays: 24812 WouldCauseRowTooLarge: 6774, 24812 Doctor 6: Rest ShiftWorked: 44 Doctor 1: Rest ShiftWorked: 43 
+Shift 46
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 ShiftWorked: 44 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 ShiftWorked: 45 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 ShiftWorked: 44 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 43 WeekendWorked 81 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 ShiftWorked: 43 WeekendWorked 83 Doctor 5: Rest ShiftWorked: 39 ShiftWorked: 53 ShiftWorked: 49 RowOfSevenDays: 24812 WouldCauseRowTooLarge: 6774, 24812 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 3: Rest ShiftWorked: 38 ShiftWorked: 52 ShiftWorked: 48 WouldCauseRowTooLarge: 21555, 21575 Doctor 4: Rest ShiftWorked: 47 Doctor 8: Rest WeekendWorked 27 WeekendWorked 22 
+Shift 47
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 ShiftWorked: 44 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 ShiftWorked: 45 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 ShiftWorked: 44 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 3: Rest ShiftWorked: 38 ShiftWorked: 52 ShiftWorked: 48 WouldCauseRowTooLarge: 21555, 21575 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 WeekendWorked 83 Doctor 5: Rest ShiftWorked: 39 ShiftWorked: 53 ShiftWorked: 49 RowOfSevenDays: 24812 WouldCauseRowTooLarge: 6774, 24812 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 56 WeekendWorked 81 Doctor 8: Rest WeekendWorked 27 ShiftWorked: 56 WeekendWorked 22 
+
+Day: Saturday
+
+Shift 48
+Time: 08:00-16:00 (Day Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 ShiftWorked: 45 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 9: Rest ShiftWorked: 39 WeekendWorked 76 ShiftWorked: 43 WeekendWorked 81 Doctor 4: Rest ShiftWorked: 47 ShiftWorked: 51 ShiftWorked: 42 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 ShiftWorked: 43 WeekendWorked 83 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 5: Rest ShiftWorked: 39 ShiftWorked: 49 Doctor 8: Rest WeekendWorked 27 WeekendWorked 22 
+Shift 49
+Time: 14:00-22:00 (Day Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 4: Rest ShiftWorked: 47 ShiftWorked: 51 ShiftWorked: 42 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 43 WeekendWorked 81 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 ShiftWorked: 43 WeekendWorked 83 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 8: Rest WeekendWorked 27 WeekendWorked 22 Doctor 3: Rest ShiftWorked: 52 ShiftWorked: 48 
+Shift 50
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 ShiftWorked: 57 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 WouldCauseRowTooLargeOverlap: 23494, 23515 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 56 ShiftWorked: 43 WouldCauseRowTooLargeOverlap: 27769, 27808 WeekendWorked 81 Doctor 1: Rest WeekendWorked 79 ShiftWorked: 58 WeekendWorked 75 ShiftWorked: 43 WeekendWorked 83 WouldCauseRowTooLargeOverlap: 13764, 15977 Doctor 5: Rest ShiftWorked: 53 ShiftWorked: 59 ShiftWorked: 49 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 3: Rest ShiftWorked: 52 ShiftWorked: 59 ShiftWorked: 48 Doctor 4: Rest ShiftWorked: 47 ShiftWorked: 51 Doctor 8: Rest WeekendWorked 27 ShiftWorked: 56 WeekendWorked 22 
+Shift 51
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 ShiftWorked: 60 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 ShiftWorked: 57 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 WouldCauseRowTooLargeOverlap: 23494, 23515 Doctor 8: Rest WeekendWorked 27 ShiftWorked: 60 ShiftWorked: 56 WeekendWorked 22 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 56 ShiftWorked: 43 WouldCauseRowTooLargeOverlap: 27769, 27808 WeekendWorked 81 Doctor 1: Rest WeekendWorked 79 ShiftWorked: 58 WeekendWorked 75 ShiftWorked: 43 WeekendWorked 83 WouldCauseRowTooLargeOverlap: 13764, 15977 Doctor 5: Rest ShiftWorked: 53 ShiftWorked: 59 ShiftWorked: 49 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 3: Rest ShiftWorked: 52 ShiftWorked: 59 ShiftWorked: 48 
+
+Day: Sunday
+
+Shift 52
+Time: 08:00-16:00 (Day Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 43 WeekendWorked 81 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 ShiftWorked: 43 WeekendWorked 83 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 4: Rest ShiftWorked: 47 ShiftWorked: 51 ShiftWorked: 55 Doctor 8: Rest WeekendWorked 27 WeekendWorked 22 Doctor 5: Rest ShiftWorked: 53 ShiftWorked: 49 
+Shift 53
+Time: 14:00-22:00 (Day Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 WeekendWorked 83 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 4: Rest ShiftWorked: 47 ShiftWorked: 51 ShiftWorked: 55 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 56 WeekendWorked 81 Doctor 8: Rest WeekendWorked 27 ShiftWorked: 56 WeekendWorked 22 Doctor 3: Rest ShiftWorked: 52 
+Shift 54
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 ShiftWorked: 62 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 ShiftWorked: 60 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 ShiftWorked: 57 WeekendWorked 111 ShiftWorked: 61 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 ShiftWorked: 60 ShiftWorked: 56 WeekendWorked 22 Doctor 1: Rest WeekendWorked 79 WeekendWorked 75 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 56 WeekendWorked 81 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 4: Rest ShiftWorked: 51 ShiftWorked: 55 Doctor 5: Rest ShiftWorked: 53 NightsWorked [14, 15, 16, 17] Doctor 3: Rest ShiftWorked: 52 
+Shift 55
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 ShiftWorked: 62 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 ShiftWorked: 60 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 ShiftWorked: 64 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 ShiftWorked: 57 WeekendWorked 111 ShiftWorked: 61 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 ShiftWorked: 60 ShiftWorked: 56 WeekendWorked 22 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 56 ShiftWorked: 64 WeekendWorked 81 Doctor 1: Rest WeekendWorked 79 ShiftWorked: 58 WeekendWorked 75 WeekendWorked 83 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 5: Rest ShiftWorked: 53 NightsWorked [14, 15, 16, 17] RowOfFourLongShifts: Block 7Doctor 3: Rest ShiftWorked: 52 
+
+Day: Monday
+
+Shift 56
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9, 8]
+Doctors that cannot work the shift:
+Doctor 4: Rest ShiftWorked: 47 ShiftWorked: 51 ShiftWorked: 55 NightsWorked [13, 12, 11, 10] Doctor 5: Rest ShiftWorked: 53 ShiftWorked: 59 Doctor 1: Rest ShiftWorked: 58 Doctor 6: Rest ShiftWorked: 57 Doctor 3: Rest ShiftWorked: 59 
+Shift 57
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 4: Rest ShiftWorked: 51 ShiftWorked: 55 NightsWorked [13, 12, 11, 10] Doctor 8: Rest ShiftWorked: 60 ShiftWorked: 56 Doctor 1: Rest ShiftWorked: 58 Doctor 0: Rest ShiftWorked: 60 Doctor 9: Rest ShiftWorked: 56 Doctor 3: Rest ShiftWorked: 59 Doctor 5: Rest ShiftWorked: 59 
+Shift 58
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 60 ShiftWorked: 65 ShiftWorked: 56 Doctor 0: Rest ShiftWorked: 60 ShiftWorked: 64 Doctor 4: Rest ShiftWorked: 55 NightsWorked [13, 12, 11, 10] InsufficientRestOverlap: Block 28174, Block 26261 Doctor 9: Rest ShiftWorked: 56 ShiftWorked: 64 Doctor 6: Rest ShiftWorked: 57 ShiftWorked: 61 Doctor 3: Rest ShiftWorked: 59 Doctor 7: Rest ShiftWorked: 67 Doctor 5: Rest ShiftWorked: 59 
+Shift 59
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [3, 5]
+Doctors that cannot work the shift:
+Doctor 4: Rest NightsWorked [13, 12, 11, 10] ShiftWorked: 68 InsufficientRestOverlap: Block 28174, Block 26261 Doctor 8: Rest ShiftWorked: 60 ShiftWorked: 65 ShiftWorked: 56 Doctor 0: Rest ShiftWorked: 60 ShiftWorked: 64 Doctor 9: Rest ShiftWorked: 56 ShiftWorked: 64 Doctor 6: Rest ShiftWorked: 57 ShiftWorked: 61 ShiftWorked: 68 Doctor 1: Rest ShiftWorked: 58 Doctor 7: Rest ShiftWorked: 67 Doctor 2: Rest ShiftWorked: 62 
+
+Day: Tuesday
+
+Shift 60
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8, 0]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 5: Rest ShiftWorked: 63 ShiftWorked: 59 Doctor 1: Rest ShiftWorked: 58 ShiftWorked: 63 Doctor 4: Rest ShiftWorked: 51 ShiftWorked: 55 NightsWorked [13, 12, 11, 10] InsufficientRest: Block 28174, Block 26261 Doctor 6: Rest ShiftWorked: 57 ShiftWorked: 61 Doctor 3: Rest ShiftWorked: 59 Doctor 2: Rest ShiftWorked: 62 
+Shift 61
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 5: Rest ShiftWorked: 63 ShiftWorked: 59 Doctor 1: Rest ShiftWorked: 58 ShiftWorked: 63 Doctor 0: Rest ShiftWorked: 60 ShiftWorked: 64 Doctor 8: Rest ShiftWorked: 60 Doctor 3: Rest ShiftWorked: 59 Doctor 4: Rest ShiftWorked: 55 NightsWorked [13, 12, 11, 10] InsufficientRest: Block 28174, Block 26261 Doctor 2: Rest ShiftWorked: 62 
+Shift 62
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 5: Rest ShiftWorked: 63 ShiftWorked: 59 Doctor 4: Rest NightsWorked [13, 12, 11, 10] ShiftWorked: 55 RowOfSixOverlap: Block 28174 ShiftWorked: 68 WouldCauseRowTooLargeOverlap: 26261, 28174 InsufficientRest: Block 28174, Block 26261 Doctor 8: Rest ShiftWorked: 60 ShiftWorked: 65 Doctor 0: Rest ShiftWorked: 60 ShiftWorked: 64 Doctor 6: Rest ShiftWorked: 61 ShiftWorked: 68 Doctor 3: Rest ShiftWorked: 59 Doctor 1: Rest ShiftWorked: 63 
+Shift 63
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [5, 1]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 6: Rest ShiftWorked: 61 ShiftWorked: 72 ShiftWorked: 68 Doctor 2: Rest ShiftWorked: 66 ShiftWorked: 62 Doctor 4: Rest NightsWorked [13, 12, 11, 10] ShiftWorked: 55 RowOfSixOverlap: Block 28174 ShiftWorked: 68 WouldCauseRowTooLargeOverlap: 26261, 28174 InsufficientRest: Block 28174, Block 26261 Doctor 8: Rest ShiftWorked: 60 ShiftWorked: 65 Doctor 0: Rest ShiftWorked: 60 ShiftWorked: 64 Doctor 3: Rest ShiftWorked: 72 
+
+Day: Wednesday
+
+Shift 64
+Time: 08:00-16:00 (Day Shift)
+Assignees: [0, 9]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 67 ShiftWorked: 63 ShiftWorked: 59 Doctor 2: Rest ShiftWorked: 66 ShiftWorked: 62 Doctor 1: Rest ShiftWorked: 58 ShiftWorked: 63 Doctor 8: Rest ShiftWorked: 65 Doctor 3: Rest ShiftWorked: 59 Doctor 4: Rest ShiftWorked: 55 NightsWorked [13, 12, 11, 10] Doctor 7: Rest ShiftWorked: 67 Doctor 6: Rest ShiftWorked: 61 
+Shift 65
+Time: 14:00-22:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 67 ShiftWorked: 63 ShiftWorked: 59 Doctor 2: Rest ShiftWorked: 66 ShiftWorked: 62 Doctor 1: Rest ShiftWorked: 58 ShiftWorked: 63 Doctor 3: Rest ShiftWorked: 59 Doctor 0: Rest ShiftWorked: 64 Doctor 7: Rest ShiftWorked: 67 Doctor 9: Rest ShiftWorked: 64 Doctor 6: Rest ShiftWorked: 68 Doctor 4: Rest ShiftWorked: 68 
+Shift 66
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 67 ShiftWorked: 63 Doctor 4: Rest ShiftWorked: 73 ShiftWorked: 68 Doctor 6: Rest ShiftWorked: 72 ShiftWorked: 68 Doctor 9: Rest ShiftWorked: 69 ShiftWorked: 64 Doctor 1: Rest ShiftWorked: 75 ShiftWorked: 63 Doctor 3: Rest ShiftWorked: 72 ShiftWorked: 59 Doctor 8: Rest ShiftWorked: 65 Doctor 0: Rest ShiftWorked: 64 Doctor 7: Rest ShiftWorked: 67 
+Shift 67
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [5, 7]
+Doctors that cannot work the shift:
+Doctor 4: Rest ShiftWorked: 73 ShiftWorked: 68 Doctor 2: Rest ShiftWorked: 66 ShiftWorked: 70 Doctor 9: Rest ShiftWorked: 76 ShiftWorked: 69 ShiftWorked: 64 Doctor 6: Rest ShiftWorked: 72 ShiftWorked: 68 Doctor 3: Rest ShiftWorked: 72 ShiftWorked: 59 Doctor 8: Rest ShiftWorked: 65 Doctor 1: Rest ShiftWorked: 75 Doctor 0: Rest ShiftWorked: 64 
+
+Day: Thursday
+
+Shift 68
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 4]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 2: Rest ShiftWorked: 66 ShiftWorked: 70 ShiftWorked: 62 Doctor 5: Rest ShiftWorked: 67 ShiftWorked: 63 ShiftWorked: 71 ShiftWorked: 59 Doctor 7: Rest ShiftWorked: 71 ShiftWorked: 67 Doctor 3: Rest ShiftWorked: 59 Doctor 9: Rest ShiftWorked: 69 Doctor 1: Rest ShiftWorked: 63 WouldCauseRowTooLarge: 4, 13764 
+Shift 69
+Time: 14:00-22:00 (Day Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 2: Rest ShiftWorked: 66 ShiftWorked: 70 ShiftWorked: 62 Doctor 5: Rest ShiftWorked: 67 ShiftWorked: 63 ShiftWorked: 71 Doctor 6: Rest ShiftWorked: 72 ShiftWorked: 68 Doctor 7: Rest ShiftWorked: 71 ShiftWorked: 67 Doctor 3: Rest ShiftWorked: 72 Doctor 1: Rest ShiftWorked: 63 WouldCauseRowTooLarge: 4, 13764 Doctor 4: Rest ShiftWorked: 68 
+Shift 70
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 5: Rest ShiftWorked: 67 ShiftWorked: 71 Doctor 4: Rest ShiftWorked: 73 ShiftWorked: 68 Doctor 6: Rest ShiftWorked: 72 ShiftWorked: 68 Doctor 7: Rest ShiftWorked: 71 ShiftWorked: 67 Doctor 9: Rest ShiftWorked: 76 ShiftWorked: 69 RowOfSixOverlap: Block 27818 Doctor 3: Rest ShiftWorked: 72 Doctor 1: Rest ShiftWorked: 63 WouldCauseRowTooLarge: 4, 13764 
+Shift 71
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [7, 5]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 4: Rest ShiftWorked: 73 ShiftWorked: 68 Doctor 6: Rest ShiftWorked: 72 ShiftWorked: 68 Doctor 9: Rest ShiftWorked: 76 ShiftWorked: 69 RowOfSixOverlap: Block 27818 Doctor 3: Rest ShiftWorked: 72 Doctor 2: Rest ShiftWorked: 70 Doctor 1: Rest ShiftWorked: 63 WouldCauseRowTooLarge: 4, 13764 
+
+Day: Friday
+
+Shift 72
+Time: 08:00-16:00 (Day Shift)
+Assignees: [3, 6]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 67 ShiftWorked: 63 ShiftWorked: 71 NightsWorked [14, 15, 16, 17] RowOfFourLongShifts: Block 7RowOfSevenDays: 24812 Doctor 2: Rest ShiftWorked: 66 ShiftWorked: 70 Doctor 1: Rest ShiftWorked: 75 ShiftWorked: 63 Doctor 7: Rest ShiftWorked: 71 ShiftWorked: 67 Doctor 9: Rest ShiftWorked: 69 WouldCauseRowTooLarge: 25846, 27818 Doctor 4: Rest ShiftWorked: 73 
+Shift 73
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 67 ShiftWorked: 71 NightsWorked [14, 15, 16, 17] RowOfFourLongShifts: Block 7RowOfSevenDays: 24812 Doctor 2: Rest ShiftWorked: 66 ShiftWorked: 70 Doctor 7: Rest ShiftWorked: 71 ShiftWorked: 67 Doctor 9: Rest ShiftWorked: 76 WouldCauseRowTooLarge: 25846, 27818 Doctor 3: Rest ShiftWorked: 72 Doctor 1: Rest ShiftWorked: 75 Doctor 6: Rest ShiftWorked: 72 
+Shift 74
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 Doctor 7: Rest ShiftWorked: 71 WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 ShiftWorked: 72 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 WeekendWorked 132 WeekendWorked 136 WeekendWorked 22 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 ShiftWorked: 73 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 ShiftWorked: 72 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest ShiftWorked: 71 WeekendWorked 53 NightsWorked [14, 15, 16, 17] RowOfFourLongShifts: Block 7RowOfSevenDays: 24812 WeekendWorked 49 Doctor 9: Rest ShiftWorked: 76 ShiftWorked: 81 WouldCauseRowTooLarge: 25846, 27818 Doctor 1: Rest ShiftWorked: 75 
+Shift 75
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 ShiftWorked: 84 WeekendWorked 27 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 ShiftWorked: 72 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 WeekendWorked 132 WeekendWorked 136 ShiftWorked: 84 WeekendWorked 22 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 ShiftWorked: 73 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 ShiftWorked: 72 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest WeekendWorked 53 NightsWorked [14, 15, 16, 17] RowOfFourLongShifts: Block 7RowOfSevenDays: 24812 WeekendWorked 49 Doctor 9: Rest ShiftWorked: 76 ShiftWorked: 81 WouldCauseRowTooLarge: 25846, 27818 
+
+Day: Saturday
+
+Shift 76
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 ShiftWorked: 70 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 Doctor 7: Rest ShiftWorked: 71 WeekendWorked 24 WeekendWorked 20 ShiftWorked: 67 WeekendWorked 104 WeekendWorked 108 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 WeekendWorked 132 WeekendWorked 136 WeekendWorked 22 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 ShiftWorked: 73 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest ShiftWorked: 67 ShiftWorked: 71 WeekendWorked 53 NightsWorked [14, 15, 16, 17] RowOfFourLongShifts: Block 7RowOfSevenDays: 24812 WeekendWorked 49 Doctor 1: Rest ShiftWorked: 79 ShiftWorked: 75 
+Shift 77
+Time: 14:00-22:00 (Day Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 ShiftWorked: 70 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 Doctor 7: Rest ShiftWorked: 71 WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 WeekendWorked 132 WeekendWorked 136 WeekendWorked 22 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest ShiftWorked: 71 WeekendWorked 53 NightsWorked [14, 15, 16, 17] RowOfFourLongShifts: Block 7RowOfSevenDays: 24812 WeekendWorked 49 Doctor 1: Rest ShiftWorked: 79 ShiftWorked: 75 Doctor 9: Rest ShiftWorked: 76 
+Shift 78
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 ShiftWorked: 86 WeekendWorked 102 ShiftWorked: 70 WeekendWorked 26 WouldCauseRowTooLargeOverlap: 20606, 20622 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 ShiftWorked: 84 WeekendWorked 27 Doctor 7: Rest ShiftWorked: 71 WeekendWorked 24 WeekendWorked 20 ShiftWorked: 87 WouldCauseRowTooLargeOverlap: 21324, 21835 WeekendWorked 104 WeekendWorked 108 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 WeekendWorked 132 WeekendWorked 136 ShiftWorked: 84 WeekendWorked 22 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 ShiftWorked: 85 Doctor 5: Rest ShiftWorked: 71 WeekendWorked 53 NightsWorked [14, 15, 16, 17] RowOfFourLongShifts: Block 7RowOfSevenDays: 24812 WeekendWorked 49 Doctor 9: Rest ShiftWorked: 87 ShiftWorked: 76 ShiftWorked: 81 Doctor 1: Rest ShiftWorked: 79 ShiftWorked: 75 
+Shift 79
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 ShiftWorked: 86 WeekendWorked 102 ShiftWorked: 70 WeekendWorked 26 WouldCauseRowTooLargeOverlap: 20606, 20622 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 ShiftWorked: 84 WeekendWorked 27 ShiftWorked: 88 Doctor 7: Rest ShiftWorked: 71 WeekendWorked 24 WeekendWorked 20 ShiftWorked: 87 WouldCauseRowTooLargeOverlap: 21324, 21835 WeekendWorked 104 WeekendWorked 108 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 ShiftWorked: 88 WeekendWorked 132 WeekendWorked 136 ShiftWorked: 84 WeekendWorked 22 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 ShiftWorked: 85 Doctor 5: Rest ShiftWorked: 71 WeekendWorked 53 NightsWorked [14, 15, 16, 17] RowOfFourLongShifts: Block 7RowOfSevenDays: 24812 WeekendWorked 49 Doctor 9: Rest ShiftWorked: 87 ShiftWorked: 76 ShiftWorked: 81 
+
+Day: Sunday
+
+Shift 80
+Time: 08:00-16:00 (Day Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 WeekendWorked 27 Doctor 7: Rest ShiftWorked: 71 WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 WeekendWorked 132 WeekendWorked 136 WeekendWorked 22 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest ShiftWorked: 71 WeekendWorked 53 NightsWorked [14, 15, 16, 17] RowOfFourLongShifts: Block 7RowOfSevenDays: 24812 WeekendWorked 49 Doctor 1: Rest ShiftWorked: 79 ShiftWorked: 75 ShiftWorked: 83 Doctor 9: Rest ShiftWorked: 81 
+Shift 81
+Time: 14:00-22:00 (Day Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 ShiftWorked: 84 WeekendWorked 27 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 WeekendWorked 132 WeekendWorked 136 ShiftWorked: 84 WeekendWorked 22 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 Doctor 1: Rest ShiftWorked: 79 ShiftWorked: 75 ShiftWorked: 83 Doctor 5: Rest WeekendWorked 53 WeekendWorked 49 
+Shift 82
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 ShiftWorked: 84 WeekendWorked 27 ShiftWorked: 88 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 ShiftWorked: 88 WeekendWorked 132 WeekendWorked 136 ShiftWorked: 84 WeekendWorked 22 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 ShiftWorked: 90 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 ShiftWorked: 85 ShiftWorked: 89 Doctor 1: Rest ShiftWorked: 79 ShiftWorked: 83 Doctor 5: Rest WeekendWorked 53 WeekendWorked 49 Doctor 9: Rest ShiftWorked: 81 
+Shift 83
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 106 WeekendWorked 110 ShiftWorked: 86 WeekendWorked 102 WeekendWorked 26 WeekendWorked 20 Doctor 0: Rest WeekendWorked 23 WeekendWorked 19 WeekendWorked 109 WeekendWorked 105 ShiftWorked: 84 WeekendWorked 27 ShiftWorked: 88 Doctor 7: Rest WeekendWorked 24 WeekendWorked 20 WeekendWorked 104 WeekendWorked 108 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 111 WeekendWorked 25 WeekendWorked 21 Doctor 8: Rest WeekendWorked 27 ShiftWorked: 88 WeekendWorked 132 ShiftWorked: 92 WeekendWorked 136 ShiftWorked: 84 WeekendWorked 22 Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 ShiftWorked: 90 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 ShiftWorked: 85 ShiftWorked: 89 Doctor 5: Rest ShiftWorked: 92 WeekendWorked 53 WeekendWorked 49 Doctor 9: Rest ShiftWorked: 81 
+
+Day: Monday
+
+Shift 84
+Time: 08:00-16:00 (Day Shift)
+Assignees: [0, 8]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 1: Rest ShiftWorked: 79 ShiftWorked: 75 ShiftWorked: 83 Doctor 9: Rest ShiftWorked: 87 ShiftWorked: 81 Doctor 2: Rest ShiftWorked: 86 Doctor 3: Rest ShiftWorked: 85 Doctor 7: Rest ShiftWorked: 87 
+Shift 85
+Time: 14:00-22:00 (Day Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 1: Rest ShiftWorked: 79 ShiftWorked: 83 Doctor 8: Rest ShiftWorked: 88 ShiftWorked: 84 Doctor 0: Rest ShiftWorked: 84 ShiftWorked: 88 Doctor 9: Rest ShiftWorked: 87 Doctor 2: Rest ShiftWorked: 86 Doctor 7: Rest ShiftWorked: 87 
+Shift 86
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 8: Rest ShiftWorked: 88 ShiftWorked: 92 ShiftWorked: 84 Doctor 0: Rest ShiftWorked: 84 ShiftWorked: 94 ShiftWorked: 88 Doctor 6: Rest ShiftWorked: 93 RowOfSixOverlap: Block 23505 Doctor 9: Rest ShiftWorked: 87 Doctor 3: Rest ShiftWorked: 85 ShiftWorked: 89 Doctor 1: Rest ShiftWorked: 83 Doctor 7: Rest ShiftWorked: 87 
+Shift 87
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [9, 7]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 8: Rest ShiftWorked: 96 ShiftWorked: 88 ShiftWorked: 92 ShiftWorked: 84 Doctor 0: Rest ShiftWorked: 84 ShiftWorked: 94 ShiftWorked: 88 Doctor 6: Rest ShiftWorked: 93 RowOfSixOverlap: Block 23505 Doctor 3: Rest ShiftWorked: 96 ShiftWorked: 85 ShiftWorked: 89 Doctor 2: Rest ShiftWorked: 86 
+
+Day: Tuesday
+
+Shift 88
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8, 0]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 9: Rest ShiftWorked: 91 ShiftWorked: 87 Doctor 7: Rest ShiftWorked: 91 ShiftWorked: 87 Doctor 3: Rest ShiftWorked: 85 ShiftWorked: 89 Doctor 2: Rest ShiftWorked: 86 Doctor 4: Rest ShiftWorked: 90 
+Shift 89
+Time: 14:00-22:00 (Day Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 9: Rest ShiftWorked: 91 ShiftWorked: 87 Doctor 8: Rest ShiftWorked: 88 ShiftWorked: 92 Doctor 7: Rest ShiftWorked: 91 ShiftWorked: 87 Doctor 5: Rest ShiftWorked: 92 Doctor 2: Rest ShiftWorked: 86 Doctor 4: Rest ShiftWorked: 90 Doctor 0: Rest ShiftWorked: 88 
+Shift 90
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 8: Rest ShiftWorked: 96 ShiftWorked: 88 ShiftWorked: 92 Doctor 9: Rest ShiftWorked: 91 ShiftWorked: 87 Doctor 5: Rest ShiftWorked: 92 ShiftWorked: 98 Doctor 7: Rest ShiftWorked: 91 ShiftWorked: 87 Doctor 3: Rest ShiftWorked: 96 ShiftWorked: 89 Doctor 0: Rest ShiftWorked: 88 
+Shift 91
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [9, 7]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 8: Rest ShiftWorked: 96 ShiftWorked: 88 ShiftWorked: 100 ShiftWorked: 92 Doctor 3: Rest ShiftWorked: 96 ShiftWorked: 100 ShiftWorked: 89 Doctor 5: Rest ShiftWorked: 92 ShiftWorked: 98 Doctor 0: Rest ShiftWorked: 94 ShiftWorked: 88 Doctor 4: Rest ShiftWorked: 90 
+
+Day: Wednesday
+
+Shift 92
+Time: 08:00-16:00 (Day Shift)
+Assignees: [5, 8]
+Doctors that cannot work the shift:
+Doctor 9: Rest ShiftWorked: 91 ShiftWorked: 87 ShiftWorked: 95 Doctor 4: Rest ShiftWorked: 95 ShiftWorked: 90 Doctor 7: Rest ShiftWorked: 91 ShiftWorked: 87 Doctor 6: Rest ShiftWorked: 93 Doctor 2: Rest ShiftWorked: 86 Doctor 0: Rest ShiftWorked: 94 Doctor 3: Rest ShiftWorked: 89 Doctor 1: Rest ShiftWorked: 83 
+Shift 93
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 9: Rest ShiftWorked: 91 ShiftWorked: 87 ShiftWorked: 95 Doctor 4: Rest ShiftWorked: 95 ShiftWorked: 90 Doctor 8: Rest ShiftWorked: 96 ShiftWorked: 92 Doctor 7: Rest ShiftWorked: 91 ShiftWorked: 87 Doctor 5: Rest ShiftWorked: 92 Doctor 2: Rest ShiftWorked: 86 Doctor 0: Rest ShiftWorked: 94 Doctor 3: Rest ShiftWorked: 96 
+Shift 94
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 96 ShiftWorked: 100 ShiftWorked: 92 Doctor 4: Rest ShiftWorked: 95 Doctor 9: Rest ShiftWorked: 91 ShiftWorked: 95 Doctor 2: Rest ShiftWorked: 86 ShiftWorked: 102 WouldCauseRowTooLargeOverlap: 20602, 20622 Doctor 3: Rest ShiftWorked: 96 ShiftWorked: 100 Doctor 6: Rest ShiftWorked: 93 NightsWorked [24, 25, 26, 27] Doctor 7: Rest ShiftWorked: 91 Doctor 1: Rest ShiftWorked: 101 ShiftWorked: 97 Doctor 5: Rest ShiftWorked: 92 
+Shift 95
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [4, 9]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 96 ShiftWorked: 100 ShiftWorked: 92 Doctor 2: Rest ShiftWorked: 86 ShiftWorked: 102 WouldCauseRowTooLargeOverlap: 20602, 20622 Doctor 3: Rest ShiftWorked: 96 ShiftWorked: 100 Doctor 6: Rest ShiftWorked: 93 NightsWorked [24, 25, 26, 27] RowOfFourLongShifts: Block 8Doctor 5: Rest ShiftWorked: 92 ShiftWorked: 98 Doctor 1: Rest ShiftWorked: 101 ShiftWorked: 97 Doctor 0: Rest ShiftWorked: 94 Doctor 7: Rest ShiftWorked: 104 
+
+Day: Thursday
+
+Shift 96
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8, 3]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 4: Rest ShiftWorked: 95 ShiftWorked: 99 ShiftWorked: 90 Doctor 6: Rest ShiftWorked: 93 ShiftWorked: 99 Doctor 0: Rest ShiftWorked: 94 Doctor 1: Rest ShiftWorked: 97 Doctor 5: Rest ShiftWorked: 98 
+Shift 97
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 4: Rest ShiftWorked: 95 ShiftWorked: 99 ShiftWorked: 90 Doctor 8: Rest ShiftWorked: 96 ShiftWorked: 100 Doctor 3: Rest ShiftWorked: 96 ShiftWorked: 100 Doctor 6: Rest ShiftWorked: 99 Doctor 0: Rest ShiftWorked: 94 Doctor 5: Rest ShiftWorked: 98 
+Shift 98
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 4: Rest ShiftWorked: 95 ShiftWorked: 99 Doctor 8: Rest ShiftWorked: 96 ShiftWorked: 100 Doctor 3: Rest ShiftWorked: 96 ShiftWorked: 100 Doctor 1: Rest ShiftWorked: 101 ShiftWorked: 97 Doctor 6: Rest ShiftWorked: 99 Doctor 0: Rest ShiftWorked: 105 RowOfSevenDays: 20678 Doctor 2: Rest NightsWorked [28, 27, 26, 25] 
+Shift 99
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [4, 6]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 8: Rest ShiftWorked: 96 ShiftWorked: 100 Doctor 3: Rest ShiftWorked: 96 ShiftWorked: 100 Doctor 1: Rest ShiftWorked: 101 ShiftWorked: 97 Doctor 0: Rest ShiftWorked: 105 RowOfSevenDays: 20678 Doctor 2: Rest ShiftWorked: 102 NightsWorked [28, 27, 26, 25] Doctor 5: Rest ShiftWorked: 98 
+
+Day: Friday
+
+Shift 100
+Time: 08:00-16:00 (Day Shift)
+Assignees: [3, 8]
+Doctors that cannot work the shift:
+Doctor 4: Rest ShiftWorked: 95 ShiftWorked: 99 Doctor 6: Rest ShiftWorked: 103 ShiftWorked: 99 Doctor 9: Rest ShiftWorked: 91 ShiftWorked: 95 Doctor 0: Rest ShiftWorked: 94 RowOfSevenDays: 20678 WouldCauseRowTooLarge: 20678, 20679 Doctor 7: Rest ShiftWorked: 91 Doctor 1: Rest ShiftWorked: 101 ShiftWorked: 97 Doctor 2: Rest ShiftWorked: 102 Doctor 5: Rest ShiftWorked: 98 
+Shift 101
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 4: Rest ShiftWorked: 95 ShiftWorked: 99 Doctor 6: Rest ShiftWorked: 103 ShiftWorked: 99 Doctor 0: Rest ShiftWorked: 94 RowOfSevenDays: 20678 WouldCauseRowTooLarge: 20678, 20679 Doctor 2: Rest ShiftWorked: 102 Doctor 3: Rest ShiftWorked: 100 Doctor 8: Rest ShiftWorked: 100 Doctor 5: Rest ShiftWorked: 98 Doctor 9: Rest ShiftWorked: 95 Doctor 7: Rest ShiftWorked: 104 
+Shift 102
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 ShiftWorked: 99 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 ShiftWorked: 100 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 WeekendWorked 53 WeekendWorked 49 Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 ShiftWorked: 101 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 95 RowOfSixOverlap: Block 27818 WeekendWorked 81 Doctor 0: Rest ShiftWorked: 109 ShiftWorked: 105 ShiftWorked: 94 RowOfSevenDays: 20678 WouldCauseRowTooLarge: 20678, 20679 Doctor 8: Rest WeekendWorked 132 ShiftWorked: 100 WeekendWorked 136 Doctor 6: Rest ShiftWorked: 103 ShiftWorked: 99 Doctor 7: Rest ShiftWorked: 104 ShiftWorked: 108 
+Shift 103
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 ShiftWorked: 100 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 112 WeekendWorked 53 WeekendWorked 49 Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 ShiftWorked: 101 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 95 RowOfSixOverlap: Block 27818 WeekendWorked 81 Doctor 0: Rest ShiftWorked: 109 ShiftWorked: 105 ShiftWorked: 94 RowOfSevenDays: 20678 WouldCauseRowTooLarge: 20678, 20679 Doctor 8: Rest WeekendWorked 132 ShiftWorked: 100 WeekendWorked 136 Doctor 7: Rest ShiftWorked: 112 ShiftWorked: 104 ShiftWorked: 108 Doctor 2: Rest ShiftWorked: 106 ShiftWorked: 102 
+
+Day: Saturday
+
+Shift 104
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 ShiftWorked: 95 WeekendWorked 51 ShiftWorked: 99 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 WeekendWorked 53 ShiftWorked: 98 WeekendWorked 49 Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 ShiftWorked: 101 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 95 WeekendWorked 81 Doctor 6: Rest ShiftWorked: 107 ShiftWorked: 103 ShiftWorked: 99 Doctor 2: Rest ShiftWorked: 106 ShiftWorked: 102 Doctor 8: Rest WeekendWorked 132 WeekendWorked 136 Doctor 0: Rest ShiftWorked: 105 
+Shift 105
+Time: 14:00-22:00 (Day Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 ShiftWorked: 99 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 WeekendWorked 53 ShiftWorked: 98 WeekendWorked 49 Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 WeekendWorked 81 Doctor 6: Rest ShiftWorked: 107 ShiftWorked: 103 ShiftWorked: 99 Doctor 2: Rest ShiftWorked: 106 ShiftWorked: 102 Doctor 8: Rest WeekendWorked 132 WeekendWorked 136 Doctor 7: Rest ShiftWorked: 104 ShiftWorked: 108 
+Shift 106
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 ShiftWorked: 99 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 112 WeekendWorked 53 ShiftWorked: 98 WeekendWorked 49 Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 115 WeekendWorked 81 Doctor 6: Rest ShiftWorked: 107 ShiftWorked: 103 Doctor 8: Rest ShiftWorked: 113 WeekendWorked 132 WeekendWorked 136 WouldCauseRowTooLargeOverlap: 19940, 20855 Doctor 0: Rest ShiftWorked: 109 ShiftWorked: 105 ShiftWorked: 114 Doctor 7: Rest ShiftWorked: 112 ShiftWorked: 104 ShiftWorked: 108 
+Shift 107
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 ShiftWorked: 99 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 ShiftWorked: 116 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 112 WeekendWorked 53 ShiftWorked: 98 WeekendWorked 49 Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 115 WeekendWorked 81 Doctor 2: Rest ShiftWorked: 106 ShiftWorked: 110 Doctor 7: Rest ShiftWorked: 116 ShiftWorked: 112 ShiftWorked: 104 ShiftWorked: 108 Doctor 8: Rest ShiftWorked: 113 WeekendWorked 132 WeekendWorked 136 WouldCauseRowTooLargeOverlap: 19940, 20855 Doctor 0: Rest ShiftWorked: 109 ShiftWorked: 105 ShiftWorked: 114 
+
+Day: Sunday
+
+Shift 108
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 ShiftWorked: 99 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 WeekendWorked 53 WeekendWorked 49 Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 WeekendWorked 81 Doctor 6: Rest ShiftWorked: 107 ShiftWorked: 103 ShiftWorked: 111 ShiftWorked: 99 Doctor 2: Rest ShiftWorked: 106 ShiftWorked: 110 ShiftWorked: 102 Doctor 0: Rest ShiftWorked: 109 ShiftWorked: 105 Doctor 8: Rest WeekendWorked 132 WeekendWorked 136 
+Shift 109
+Time: 14:00-22:00 (Day Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 112 WeekendWorked 53 WeekendWorked 49 Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 WeekendWorked 81 Doctor 2: Rest ShiftWorked: 106 ShiftWorked: 110 ShiftWorked: 102 Doctor 6: Rest ShiftWorked: 107 ShiftWorked: 103 ShiftWorked: 111 Doctor 8: Rest WeekendWorked 132 WeekendWorked 136 Doctor 7: Rest ShiftWorked: 112 ShiftWorked: 108 
+Shift 110
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 ShiftWorked: 116 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 112 WeekendWorked 53 WeekendWorked 49 Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 ShiftWorked: 117 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 NightsWorked [28, 29, 30, 31] WeekendWorked 81 Doctor 7: Rest ShiftWorked: 116 ShiftWorked: 112 ShiftWorked: 108 Doctor 8: Rest ShiftWorked: 113 ShiftWorked: 118 WeekendWorked 132 WeekendWorked 136 Doctor 6: Rest ShiftWorked: 107 ShiftWorked: 111 Doctor 0: Rest ShiftWorked: 109 NightsWorked [28, 29, 30, 31] 
+Shift 111
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 4: Rest WeekendWorked 47 WeekendWorked 51 WeekendWorked 137 WeekendWorked 55 WeekendWorked 133 Doctor 3: Rest WeekendWorked 134 WeekendWorked 139 WeekendWorked 52 ShiftWorked: 116 ShiftWorked: 120 WeekendWorked 130 WeekendWorked 48 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 112 WeekendWorked 53 WeekendWorked 49 Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 ShiftWorked: 117 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 NightsWorked [28, 29, 30, 31] RowOfFourLongShifts: Block 12WeekendWorked 81 Doctor 7: Rest ShiftWorked: 120 ShiftWorked: 116 ShiftWorked: 112 ShiftWorked: 108 Doctor 8: Rest ShiftWorked: 113 ShiftWorked: 118 WeekendWorked 132 WeekendWorked 136 Doctor 2: Rest ShiftWorked: 110 Doctor 0: Rest ShiftWorked: 109 ShiftWorked: 114 NightsWorked [28, 29, 30, 31] 
+
+Day: Monday
+
+Shift 112
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7, 5]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 2: Rest ShiftWorked: 106 ShiftWorked: 110 ShiftWorked: 115 Doctor 0: Rest ShiftWorked: 109 ShiftWorked: 114 Doctor 8: Rest ShiftWorked: 113 Doctor 9: Rest ShiftWorked: 115 
+Shift 113
+Time: 14:00-22:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 2: Rest ShiftWorked: 106 ShiftWorked: 110 ShiftWorked: 115 Doctor 7: Rest ShiftWorked: 116 ShiftWorked: 112 Doctor 3: Rest ShiftWorked: 116 Doctor 5: Rest ShiftWorked: 112 Doctor 0: Rest ShiftWorked: 114 Doctor 9: Rest ShiftWorked: 115 
+Shift 114
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 7: Rest ShiftWorked: 120 ShiftWorked: 116 ShiftWorked: 112 Doctor 8: Rest ShiftWorked: 113 Doctor 3: Rest ShiftWorked: 116 ShiftWorked: 120 Doctor 5: Rest ShiftWorked: 112 Doctor 2: Rest ShiftWorked: 115 Doctor 4: Rest ShiftWorked: 122 Doctor 9: Rest ShiftWorked: 115 
+Shift 115
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [2, 9]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 7: Rest ShiftWorked: 120 ShiftWorked: 124 ShiftWorked: 116 ShiftWorked: 112 Doctor 8: Rest ShiftWorked: 113 ShiftWorked: 118 Doctor 5: Rest ShiftWorked: 124 ShiftWorked: 112 Doctor 3: Rest ShiftWorked: 116 ShiftWorked: 120 Doctor 0: Rest ShiftWorked: 114 Doctor 4: Rest ShiftWorked: 122 
+
+Day: Tuesday
+
+Shift 116
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7, 3]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 9: Rest ShiftWorked: 119 ShiftWorked: 115 Doctor 6: Rest ShiftWorked: 107 ShiftWorked: 111 NightsWorked [24, 25, 26, 27] InsufficientRest: Block 23505, Block 23502 RowOfFourLongShifts: Block 8Doctor 2: Rest ShiftWorked: 110 ShiftWorked: 115 NightsWorked [28, 27, 26, 25] Doctor 8: Rest ShiftWorked: 113 ShiftWorked: 118 Doctor 0: Rest ShiftWorked: 119 ShiftWorked: 114 Doctor 1: Rest ShiftWorked: 117 
+Shift 117
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 9: Rest ShiftWorked: 119 ShiftWorked: 115 Doctor 2: Rest ShiftWorked: 110 ShiftWorked: 115 NightsWorked [28, 27, 26, 25] Doctor 0: Rest ShiftWorked: 119 ShiftWorked: 114 Doctor 7: Rest ShiftWorked: 120 ShiftWorked: 116 Doctor 8: Rest ShiftWorked: 118 Doctor 6: Rest ShiftWorked: 111 NightsWorked [24, 25, 26, 27] InsufficientRest: Block 23505, Block 23502 RowOfFourLongShifts: Block 8Doctor 3: Rest ShiftWorked: 116 ShiftWorked: 120 
+Shift 118
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 7: Rest ShiftWorked: 120 ShiftWorked: 124 ShiftWorked: 116 Doctor 1: Rest ShiftWorked: 117 ShiftWorked: 121 ShiftWorked: 125 Doctor 9: Rest ShiftWorked: 119 ShiftWorked: 115 Doctor 0: Rest ShiftWorked: 119 Doctor 6: Rest ShiftWorked: 126 ShiftWorked: 111 NightsWorked [24, 25, 26, 27] RowOfSixOverlap: Block 23505 WouldCauseRowTooLargeOverlap: 23502, 23505 InsufficientRest: Block 23505, Block 23502 RowOfFourLongShifts: Block 8Doctor 3: Rest ShiftWorked: 116 ShiftWorked: 120 Doctor 2: Rest ShiftWorked: 115 NightsWorked [28, 27, 26, 25] 
+Shift 119
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [9, 0]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 7: Rest ShiftWorked: 120 ShiftWorked: 124 ShiftWorked: 116 Doctor 1: Rest ShiftWorked: 117 ShiftWorked: 121 ShiftWorked: 125 Doctor 8: Rest ShiftWorked: 118 ShiftWorked: 128 Doctor 6: Rest ShiftWorked: 126 ShiftWorked: 111 NightsWorked [24, 25, 26, 27] RowOfSixOverlap: Block 23505 WouldCauseRowTooLargeOverlap: 23502, 23505 InsufficientRest: Block 23505, Block 23502 RowOfFourLongShifts: Block 8Doctor 3: Rest ShiftWorked: 116 ShiftWorked: 120 Doctor 2: Rest NightsWorked [28, 27, 26, 25] 
+
+Day: Wednesday
+
+Shift 120
+Time: 08:00-16:00 (Day Shift)
+Assignees: [7, 3]
+Doctors that cannot work the shift:
+Doctor 9: Rest ShiftWorked: 119 ShiftWorked: 123 ShiftWorked: 115 Doctor 0: Rest ShiftWorked: 119 ShiftWorked: 123 ShiftWorked: 114 Doctor 1: Rest ShiftWorked: 117 ShiftWorked: 121 Doctor 8: Rest ShiftWorked: 118 Doctor 6: Rest ShiftWorked: 111 NightsWorked [24, 25, 26, 27] RowOfFourLongShifts: Block 8Doctor 2: Rest ShiftWorked: 115 NightsWorked [28, 27, 26, 25] Doctor 4: Rest ShiftWorked: 122 
+Shift 121
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 9: Rest ShiftWorked: 119 ShiftWorked: 123 ShiftWorked: 115 Doctor 0: Rest ShiftWorked: 119 ShiftWorked: 123 ShiftWorked: 114 Doctor 7: Rest ShiftWorked: 120 ShiftWorked: 124 Doctor 5: Rest ShiftWorked: 124 Doctor 8: Rest ShiftWorked: 118 Doctor 3: Rest ShiftWorked: 120 Doctor 2: Rest ShiftWorked: 115 NightsWorked [28, 27, 26, 25] Doctor 4: Rest ShiftWorked: 122 
+Shift 122
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 9: Rest ShiftWorked: 119 ShiftWorked: 123 Doctor 0: Rest ShiftWorked: 119 ShiftWorked: 123 Doctor 7: Rest ShiftWorked: 120 ShiftWorked: 124 Doctor 5: Rest ShiftWorked: 124 ShiftWorked: 128 Doctor 1: Rest ShiftWorked: 121 ShiftWorked: 125 Doctor 2: Rest NightsWorked [28, 27, 26, 25] ShiftWorked: 115 ShiftWorked: 129 WouldCauseRowTooLargeOverlap: 20602, 20629 Doctor 3: Rest ShiftWorked: 120 ShiftWorked: 130 Doctor 8: Rest ShiftWorked: 128 
+Shift 123
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [9, 0]
+Doctors that cannot work the shift:
+Doctor 7: Rest ShiftWorked: 120 ShiftWorked: 124 Doctor 5: Rest ShiftWorked: 124 ShiftWorked: 128 Doctor 8: Rest ShiftWorked: 128 ShiftWorked: 132 Doctor 1: Rest ShiftWorked: 121 ShiftWorked: 125 Doctor 2: Rest NightsWorked [28, 27, 26, 25] ShiftWorked: 115 ShiftWorked: 129 WouldCauseRowTooLargeOverlap: 20602, 20629 Doctor 6: Rest ShiftWorked: 126 Doctor 3: Rest ShiftWorked: 120 ShiftWorked: 130 Doctor 4: Rest ShiftWorked: 122 
+
+Day: Thursday
+
+Shift 124
+Time: 08:00-16:00 (Day Shift)
+Assignees: [5, 7]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 9: Rest ShiftWorked: 119 ShiftWorked: 123 ShiftWorked: 127 ShiftWorked: 115 Doctor 0: Rest ShiftWorked: 119 ShiftWorked: 123 ShiftWorked: 127 Doctor 1: Rest ShiftWorked: 121 ShiftWorked: 125 Doctor 8: Rest ShiftWorked: 118 WouldCauseRowTooLarge: 19940, 20857 Doctor 6: Rest ShiftWorked: 126 Doctor 4: Rest ShiftWorked: 122 
+Shift 125
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 9: Rest ShiftWorked: 119 ShiftWorked: 123 ShiftWorked: 127 Doctor 0: Rest ShiftWorked: 119 ShiftWorked: 123 ShiftWorked: 127 Doctor 8: Rest ShiftWorked: 118 ShiftWorked: 128 WouldCauseRowTooLarge: 19940, 20857 Doctor 5: Rest ShiftWorked: 124 ShiftWorked: 128 Doctor 7: Rest ShiftWorked: 124 Doctor 6: Rest ShiftWorked: 126 Doctor 4: Rest ShiftWorked: 122 
+Shift 126
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 8: Rest ShiftWorked: 118 ShiftWorked: 128 ShiftWorked: 132 WouldCauseRowTooLarge: 19940, 20857 Doctor 5: Rest ShiftWorked: 124 ShiftWorked: 128 Doctor 9: Rest ShiftWorked: 123 ShiftWorked: 127 Doctor 0: Rest ShiftWorked: 123 ShiftWorked: 127 Doctor 7: Rest ShiftWorked: 124 Doctor 4: Rest ShiftWorked: 133 RowOfSixOverlap: Block 28184 Doctor 1: Rest ShiftWorked: 125 
+Shift 127
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [0, 9]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 8: Rest ShiftWorked: 118 ShiftWorked: 128 ShiftWorked: 132 ShiftWorked: 136 WouldCauseRowTooLarge: 19940, 20857 Doctor 5: Rest ShiftWorked: 124 ShiftWorked: 128 Doctor 7: Rest ShiftWorked: 124 Doctor 6: Rest ShiftWorked: 126 Doctor 4: Rest ShiftWorked: 133 RowOfSixOverlap: Block 28184 Doctor 1: Rest ShiftWorked: 125 
+
+Day: Friday
+
+Shift 128
+Time: 08:00-16:00 (Day Shift)
+Assignees: [5, 8]
+Doctors that cannot work the shift:
+Doctor 9: Rest ShiftWorked: 119 ShiftWorked: 123 ShiftWorked: 127 NightsWorked [28, 29, 30, 31] RowOfFourLongShifts: Block 12Doctor 0: Rest ShiftWorked: 119 ShiftWorked: 123 ShiftWorked: 127 NightsWorked [28, 29, 30, 31] RowOfSevenDays: 20678 Doctor 6: Rest ShiftWorked: 126 Doctor 3: Rest ShiftWorked: 130 Doctor 4: Rest ShiftWorked: 122 WouldCauseRowTooLarge: 28182, 28184 Doctor 2: Rest ShiftWorked: 129 Doctor 1: Rest ShiftWorked: 125 
+Shift 129
+Time: 14:00-22:00 (Day Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 9: Rest ShiftWorked: 123 ShiftWorked: 127 NightsWorked [28, 29, 30, 31] RowOfFourLongShifts: Block 12Doctor 8: Rest ShiftWorked: 128 ShiftWorked: 132 Doctor 0: Rest ShiftWorked: 123 ShiftWorked: 127 NightsWorked [28, 29, 30, 31] RowOfSevenDays: 20678 Doctor 6: Rest ShiftWorked: 126 Doctor 5: Rest ShiftWorked: 128 Doctor 3: Rest ShiftWorked: 130 Doctor 4: Rest ShiftWorked: 122 WouldCauseRowTooLarge: 28182, 28184 
+Shift 130
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 127 NightsWorked [28, 29, 30, 31] RowOfFourLongShifts: Block 12WeekendWorked 81 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 ShiftWorked: 129 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest WeekendWorked 109 WeekendWorked 105 ShiftWorked: 127 WeekendWorked 188 WeekendWorked 192 NightsWorked [28, 29, 30, 31] RowOfSevenDays: 20678 Doctor 8: Rest ShiftWorked: 128 ShiftWorked: 132 ShiftWorked: 136 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 128 Doctor 4: Rest ShiftWorked: 137 ShiftWorked: 122 ShiftWorked: 133 WouldCauseRowTooLarge: 28182, 28184 Doctor 7: Rest WeekendWorked 104 RowOfSixOverlap: Block 21978 WeekendWorked 108 
+Shift 131
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 NightsWorked [28, 29, 30, 31] RowOfFourLongShifts: Block 12WeekendWorked 81 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 ShiftWorked: 129 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 WeekendWorked 111 ShiftWorked: 140 Doctor 0: Rest WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 NightsWorked [28, 29, 30, 31] RowOfSevenDays: 20678 Doctor 8: Rest ShiftWorked: 140 ShiftWorked: 128 ShiftWorked: 132 ShiftWorked: 136 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 128 Doctor 4: Rest ShiftWorked: 137 ShiftWorked: 122 ShiftWorked: 133 WouldCauseRowTooLarge: 28182, 28184 Doctor 3: Rest ShiftWorked: 134 ShiftWorked: 130 Doctor 7: Rest WeekendWorked 104 RowOfSixOverlap: Block 21978 WeekendWorked 108 
+
+Day: Saturday
+
+Shift 132
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest ShiftWorked: 123 WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 127 NightsWorked [28, 29, 30, 31] RowOfFourLongShifts: Block 12WeekendWorked 81 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 ShiftWorked: 129 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 ShiftWorked: 126 WeekendWorked 111 Doctor 0: Rest ShiftWorked: 123 WeekendWorked 109 WeekendWorked 105 ShiftWorked: 127 WeekendWorked 188 WeekendWorked 192 NightsWorked [28, 29, 30, 31] RowOfSevenDays: 20678 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 3: Rest ShiftWorked: 134 ShiftWorked: 130 Doctor 7: Rest WeekendWorked 104 WeekendWorked 108 Doctor 4: Rest ShiftWorked: 133 
+Shift 133
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 127 NightsWorked [28, 29, 30, 31] RowOfFourLongShifts: Block 12WeekendWorked 81 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 ShiftWorked: 126 WeekendWorked 111 Doctor 0: Rest WeekendWorked 109 WeekendWorked 105 ShiftWorked: 127 WeekendWorked 188 WeekendWorked 192 NightsWorked [28, 29, 30, 31] RowOfSevenDays: 20678 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 3: Rest ShiftWorked: 134 ShiftWorked: 130 Doctor 8: Rest ShiftWorked: 132 ShiftWorked: 136 Doctor 7: Rest WeekendWorked 104 WeekendWorked 108 
+Shift 134
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 127 NightsWorked [28, 29, 30, 31] InsufficientRestOverlap: Block 11, Block 27812 RowOfFourLongShifts: Block 12WeekendWorked 81 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 ShiftWorked: 142 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 ShiftWorked: 126 WeekendWorked 111 ShiftWorked: 140 WouldCauseRowTooLargeOverlap: 23502, 23510 Doctor 0: Rest WeekendWorked 109 WeekendWorked 105 ShiftWorked: 127 WeekendWorked 188 WeekendWorked 192 NightsWorked [28, 29, 30, 31] RowOfSevenDays: 20678 Doctor 4: Rest ShiftWorked: 141 ShiftWorked: 137 ShiftWorked: 133 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 8: Rest ShiftWorked: 140 ShiftWorked: 132 ShiftWorked: 136 Doctor 7: Rest ShiftWorked: 143 WeekendWorked 104 WeekendWorked 108 
+Shift 135
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 127 ShiftWorked: 144 NightsWorked [28, 29, 30, 31] InsufficientRestOverlap: Block 11, Block 27812 RowOfFourLongShifts: Block 12WeekendWorked 81 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 ShiftWorked: 142 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 ShiftWorked: 126 WeekendWorked 111 ShiftWorked: 140 WouldCauseRowTooLargeOverlap: 23502, 23510 Doctor 0: Rest WeekendWorked 109 WeekendWorked 105 ShiftWorked: 127 WeekendWorked 188 WeekendWorked 192 NightsWorked [28, 29, 30, 31] RowOfSevenDays: 20678 Doctor 4: Rest ShiftWorked: 141 ShiftWorked: 137 ShiftWorked: 133 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 144 Doctor 8: Rest ShiftWorked: 140 ShiftWorked: 132 ShiftWorked: 136 Doctor 7: Rest ShiftWorked: 143 WeekendWorked 104 WeekendWorked 108 Doctor 3: Rest ShiftWorked: 134 
+
+Day: Sunday
+
+Shift 136
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 127 NightsWorked [28, 29, 30, 31] RowOfFourLongShifts: Block 12WeekendWorked 81 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest WeekendWorked 109 WeekendWorked 105 ShiftWorked: 127 WeekendWorked 188 WeekendWorked 192 NightsWorked [28, 29, 30, 31] RowOfSevenDays: 20678 Doctor 3: Rest ShiftWorked: 134 ShiftWorked: 139 ShiftWorked: 130 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 4: Rest ShiftWorked: 137 ShiftWorked: 133 Doctor 7: Rest WeekendWorked 104 WeekendWorked 108 
+Shift 137
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 WeekendWorked 81 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 WeekendWorked 111 ShiftWorked: 140 Doctor 0: Rest WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 3: Rest ShiftWorked: 134 ShiftWorked: 139 ShiftWorked: 130 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 8: Rest ShiftWorked: 140 ShiftWorked: 136 Doctor 7: Rest WeekendWorked 104 WeekendWorked 108 
+Shift 138
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 144 RowOfSevenDays: 27812 WeekendWorked 81 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 WeekendWorked 111 ShiftWorked: 140 ShiftWorked: 147 Doctor 0: Rest WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 7: Rest NightsWorked [35, 36, 37, 38] WeekendWorked 104 WeekendWorked 108 Doctor 4: Rest ShiftWorked: 141 ShiftWorked: 137 ShiftWorked: 145 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 144 Doctor 3: Rest ShiftWorked: 139 Doctor 8: Rest ShiftWorked: 140 ShiftWorked: 136 
+Shift 139
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 1: Rest WeekendWorked 158 WeekendWorked 79 WeekendWorked 162 ShiftWorked: 148 WeekendWorked 75 WeekendWorked 166 WeekendWorked 83 Doctor 9: Rest WeekendWorked 76 ShiftWorked: 148 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 144 RowOfSevenDays: 27812 WeekendWorked 81 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 ShiftWorked: 142 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 WeekendWorked 111 ShiftWorked: 140 ShiftWorked: 147 Doctor 0: Rest WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 4: Rest ShiftWorked: 141 ShiftWorked: 137 ShiftWorked: 145 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 144 Doctor 7: Rest NightsWorked [35, 36, 37, 38] RowOfFourLongShifts: Block 10WeekendWorked 104 WeekendWorked 108 Doctor 8: Rest ShiftWorked: 140 ShiftWorked: 136 
+
+Day: Monday
+
+Shift 140
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8, 6]
+Doctors that cannot work the shift:
+Doctor 3: Rest ShiftWorked: 134 ShiftWorked: 139 ShiftWorked: 143 Doctor 4: Rest ShiftWorked: 141 ShiftWorked: 137 Doctor 7: Rest ShiftWorked: 143 Doctor 9: Rest RowOfSevenDays: 27812 Doctor 2: Rest ShiftWorked: 142 
+Shift 141
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 3: Rest ShiftWorked: 134 ShiftWorked: 139 ShiftWorked: 143 Doctor 8: Rest ShiftWorked: 140 Doctor 5: Rest ShiftWorked: 144 Doctor 6: Rest ShiftWorked: 140 Doctor 7: Rest ShiftWorked: 143 Doctor 9: Rest ShiftWorked: 144 RowOfSevenDays: 27812 Doctor 2: Rest ShiftWorked: 142 
+Shift 142
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 4: Rest ShiftWorked: 141 ShiftWorked: 149 ShiftWorked: 145 Doctor 9: Rest ShiftWorked: 148 ShiftWorked: 144 RowOfSevenDays: 27812 Doctor 3: Rest ShiftWorked: 139 ShiftWorked: 143 Doctor 8: Rest ShiftWorked: 140 Doctor 1: Rest ShiftWorked: 148 RowOfSixOverlap: Block 15966 Doctor 5: Rest ShiftWorked: 144 Doctor 6: Rest ShiftWorked: 140 Doctor 0: Rest ShiftWorked: 150 Doctor 7: Rest ShiftWorked: 143 
+Shift 143
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [3, 7]
+Doctors that cannot work the shift:
+Doctor 4: Rest ShiftWorked: 141 ShiftWorked: 149 ShiftWorked: 145 Doctor 9: Rest ShiftWorked: 148 ShiftWorked: 152 ShiftWorked: 144 RowOfSevenDays: 27812 Doctor 5: Rest ShiftWorked: 152 ShiftWorked: 144 Doctor 8: Rest ShiftWorked: 140 Doctor 1: Rest ShiftWorked: 148 RowOfSixOverlap: Block 15966 Doctor 6: Rest ShiftWorked: 140 Doctor 2: Rest ShiftWorked: 146 ShiftWorked: 142 Doctor 0: Rest ShiftWorked: 150 
+
+Day: Tuesday
+
+Shift 144
+Time: 08:00-16:00 (Day Shift)
+Assignees: [5, 9]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 7: Rest ShiftWorked: 147 ShiftWorked: 143 Doctor 3: Rest ShiftWorked: 139 ShiftWorked: 143 NightsWorked [32, 33, 34, 35] Doctor 4: Rest ShiftWorked: 141 ShiftWorked: 145 Doctor 6: Rest ShiftWorked: 147 Doctor 2: Rest ShiftWorked: 146 ShiftWorked: 142 Doctor 1: Rest InsufficientRest: Block 15966, Block 15924 
+Shift 145
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 7: Rest ShiftWorked: 147 ShiftWorked: 143 Doctor 9: Rest ShiftWorked: 148 ShiftWorked: 144 Doctor 3: Rest ShiftWorked: 139 ShiftWorked: 143 NightsWorked [32, 33, 34, 35] Doctor 1: Rest ShiftWorked: 148 InsufficientRest: Block 15966, Block 15924 Doctor 5: Rest ShiftWorked: 144 Doctor 6: Rest ShiftWorked: 147 Doctor 2: Rest ShiftWorked: 146 ShiftWorked: 142 
+Shift 146
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 9: Rest ShiftWorked: 148 ShiftWorked: 152 ShiftWorked: 144 Doctor 4: Rest ShiftWorked: 149 ShiftWorked: 145 ShiftWorked: 153 Doctor 7: Rest ShiftWorked: 147 ShiftWorked: 143 Doctor 5: Rest ShiftWorked: 152 RowOfSixOverlap: Block 24804 ShiftWorked: 144 Doctor 1: Rest ShiftWorked: 148 ShiftWorked: 154 InsufficientRest: Block 15966, Block 15924 Doctor 3: Rest ShiftWorked: 143 NightsWorked [32, 33, 34, 35] Doctor 6: Rest ShiftWorked: 147 
+Shift 147
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [7, 6]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 9: Rest ShiftWorked: 156 ShiftWorked: 148 ShiftWorked: 152 ShiftWorked: 144 Doctor 4: Rest ShiftWorked: 149 ShiftWorked: 145 ShiftWorked: 153 Doctor 5: Rest ShiftWorked: 152 RowOfSixOverlap: Block 24804 ShiftWorked: 144 Doctor 3: Rest NightsWorked [32, 33, 34, 35] ShiftWorked: 156 Doctor 1: Rest ShiftWorked: 148 ShiftWorked: 154 InsufficientRest: Block 15966, Block 15924 Doctor 2: Rest ShiftWorked: 146 
+
+Day: Wednesday
+
+Shift 148
+Time: 08:00-16:00 (Day Shift)
+Assignees: [1, 9]
+Doctors that cannot work the shift:
+Doctor 7: Rest ShiftWorked: 151 ShiftWorked: 147 ShiftWorked: 143 Doctor 3: Rest ShiftWorked: 139 ShiftWorked: 143 NightsWorked [32, 33, 34, 35] Doctor 6: Rest ShiftWorked: 151 ShiftWorked: 147 Doctor 4: Rest ShiftWorked: 149 ShiftWorked: 145 Doctor 5: Rest InsufficientRest: Block 24804, Block 24789 WouldCauseRowTooLarge: 24779, 24804 Doctor 2: Rest ShiftWorked: 146 ShiftWorked: 142 Doctor 0: Rest ShiftWorked: 150 
+Shift 149
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 7: Rest ShiftWorked: 151 ShiftWorked: 147 ShiftWorked: 143 Doctor 9: Rest ShiftWorked: 148 ShiftWorked: 152 Doctor 6: Rest ShiftWorked: 151 ShiftWorked: 147 Doctor 1: Rest ShiftWorked: 148 Doctor 3: Rest ShiftWorked: 143 NightsWorked [32, 33, 34, 35] Doctor 5: Rest ShiftWorked: 152 InsufficientRest: Block 24804, Block 24789 WouldCauseRowTooLarge: 24779, 24804 Doctor 2: Rest ShiftWorked: 146 ShiftWorked: 142 Doctor 0: Rest ShiftWorked: 150 
+Shift 150
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 7: Rest ShiftWorked: 151 ShiftWorked: 147 Doctor 9: Rest ShiftWorked: 156 ShiftWorked: 148 ShiftWorked: 152 Doctor 3: Rest ShiftWorked: 143 NightsWorked [32, 33, 34, 35] ShiftWorked: 156 WouldCauseRowTooLargeOverlap: 9, 21574 Doctor 4: Rest ShiftWorked: 149 ShiftWorked: 153 Doctor 6: Rest ShiftWorked: 151 ShiftWorked: 147 Doctor 5: Rest ShiftWorked: 152 ShiftWorked: 159 InsufficientRest: Block 24804, Block 24789 WouldCauseRowTooLarge: 24779, 24804 Doctor 1: Rest ShiftWorked: 148 NightsWorked [41, 40, 39, 38] Doctor 2: Rest ShiftWorked: 157 
+Shift 151
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [7, 6]
+Doctors that cannot work the shift:
+Doctor 9: Rest ShiftWorked: 156 ShiftWorked: 148 ShiftWorked: 152 ShiftWorked: 160 Doctor 3: Rest ShiftWorked: 143 NightsWorked [32, 33, 34, 35] ShiftWorked: 156 WouldCauseRowTooLargeOverlap: 9, 21574 Doctor 4: Rest ShiftWorked: 149 ShiftWorked: 153 Doctor 5: Rest ShiftWorked: 152 ShiftWorked: 159 InsufficientRest: Block 24804, Block 24789 WouldCauseRowTooLarge: 24779, 24804 Doctor 1: Rest ShiftWorked: 148 ShiftWorked: 154 NightsWorked [41, 40, 39, 38] Doctor 2: Rest ShiftWorked: 157 Doctor 0: Rest ShiftWorked: 150 
+
+Day: Thursday
+
+Shift 152
+Time: 08:00-16:00 (Day Shift)
+Assignees: [5, 9]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 7: Rest ShiftWorked: 151 ShiftWorked: 147 ShiftWorked: 155 ShiftWorked: 143 Doctor 0: Rest ShiftWorked: 155 ShiftWorked: 150 Doctor 4: Rest ShiftWorked: 149 ShiftWorked: 153 Doctor 6: Rest ShiftWorked: 151 ShiftWorked: 147 Doctor 1: Rest ShiftWorked: 154 
+Shift 153
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 7: Rest ShiftWorked: 151 ShiftWorked: 147 ShiftWorked: 155 Doctor 0: Rest ShiftWorked: 155 ShiftWorked: 150 Doctor 9: Rest ShiftWorked: 156 ShiftWorked: 152 Doctor 6: Rest ShiftWorked: 151 ShiftWorked: 147 Doctor 1: Rest ShiftWorked: 154 Doctor 5: Rest ShiftWorked: 152 
+Shift 154
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 7: Rest ShiftWorked: 151 ShiftWorked: 155 Doctor 9: Rest ShiftWorked: 156 ShiftWorked: 152 ShiftWorked: 160 Doctor 5: Rest ShiftWorked: 152 NightsWorked [39, 40, 41, 42] Doctor 6: Rest ShiftWorked: 151 Doctor 0: Rest ShiftWorked: 155 Doctor 4: Rest ShiftWorked: 153 
+Shift 155
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [7, 0]
+Doctors that cannot work the shift:
+Doctor 2: Training Doctor 3: Training Doctor 9: Rest ShiftWorked: 156 ShiftWorked: 152 ShiftWorked: 160 ShiftWorked: 164 Doctor 1: Rest ShiftWorked: 158 ShiftWorked: 154 Doctor 5: Rest ShiftWorked: 152 NightsWorked [39, 40, 41, 42] RowOfFourLongShifts: Block 13Doctor 4: Rest ShiftWorked: 153 
+
+Day: Friday
+
+Shift 156
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9, 3]
+Doctors that cannot work the shift:
+Doctor 7: Rest ShiftWorked: 151 ShiftWorked: 147 ShiftWorked: 155 NightsWorked [35, 36, 37, 38] RowOfFourLongShifts: Block 10Doctor 1: Rest ShiftWorked: 158 ShiftWorked: 154 Doctor 0: Rest ShiftWorked: 155 ShiftWorked: 150 Doctor 6: Rest ShiftWorked: 151 ShiftWorked: 147 Doctor 2: Rest ShiftWorked: 157 Doctor 5: Rest ShiftWorked: 159 Doctor 4: Rest ShiftWorked: 153 
+Shift 157
+Time: 14:00-22:00 (Day Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 1: Rest ShiftWorked: 158 ShiftWorked: 154 Doctor 7: Rest ShiftWorked: 151 ShiftWorked: 155 NightsWorked [35, 36, 37, 38] RowOfFourLongShifts: Block 10Doctor 0: Rest ShiftWorked: 155 ShiftWorked: 150 Doctor 9: Rest ShiftWorked: 156 ShiftWorked: 160 Doctor 6: Rest ShiftWorked: 151 Doctor 5: Rest ShiftWorked: 159 Doctor 3: Rest ShiftWorked: 156 
+Shift 158
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 ShiftWorked: 157 WeekendWorked 186 WeekendWorked 102 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 ShiftWorked: 151 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest ShiftWorked: 155 WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 ShiftWorked: 156 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 ShiftWorked: 155 WeekendWorked 223 NightsWorked [35, 36, 37, 38] RowOfFourLongShifts: Block 10WeekendWorked 104 WeekendWorked 215 WeekendWorked 108 Doctor 4: Rest WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 RowOfSixOverlap: Block 28184 Doctor 9: Rest ShiftWorked: 156 ShiftWorked: 160 ShiftWorked: 164 Doctor 5: Rest ShiftWorked: 159 
+Shift 159
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 ShiftWorked: 157 WeekendWorked 186 WeekendWorked 102 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 ShiftWorked: 151 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 ShiftWorked: 156 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 NightsWorked [35, 36, 37, 38] RowOfFourLongShifts: Block 10WeekendWorked 104 WeekendWorked 215 WeekendWorked 108 Doctor 4: Rest ShiftWorked: 168 WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 RowOfSixOverlap: Block 28184 Doctor 9: Rest ShiftWorked: 156 ShiftWorked: 168 ShiftWorked: 160 ShiftWorked: 164 Doctor 1: Rest ShiftWorked: 158 ShiftWorked: 162 
+
+Day: Saturday
+
+Shift 160
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 ShiftWorked: 157 WeekendWorked 186 WeekendWorked 102 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 ShiftWorked: 151 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest ShiftWorked: 155 WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest ShiftWorked: 151 WeekendWorked 219 ShiftWorked: 155 WeekendWorked 223 NightsWorked [35, 36, 37, 38] RowOfFourLongShifts: Block 10WeekendWorked 104 WeekendWorked 215 WeekendWorked 108 Doctor 4: Rest WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 Doctor 1: Rest ShiftWorked: 158 ShiftWorked: 162 ShiftWorked: 154 Doctor 5: Rest ShiftWorked: 163 ShiftWorked: 159 
+Shift 161
+Time: 14:00-22:00 (Day Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest ShiftWorked: 155 WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 ShiftWorked: 155 WeekendWorked 223 NightsWorked [35, 36, 37, 38] RowOfFourLongShifts: Block 10WeekendWorked 104 WeekendWorked 215 WeekendWorked 108 Doctor 4: Rest WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 Doctor 1: Rest ShiftWorked: 158 ShiftWorked: 162 ShiftWorked: 154 Doctor 9: Rest ShiftWorked: 160 ShiftWorked: 164 Doctor 5: Rest ShiftWorked: 163 ShiftWorked: 159 
+Shift 162
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 ShiftWorked: 170 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest ShiftWorked: 155 WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest ShiftWorked: 171 WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 ShiftWorked: 169 WouldCauseRowTooLargeOverlap: 21548, 21574 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 ShiftWorked: 155 WeekendWorked 223 NightsWorked [35, 36, 37, 38] RowOfFourLongShifts: Block 10WeekendWorked 104 WeekendWorked 215 WeekendWorked 108 Doctor 4: Rest ShiftWorked: 168 WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 Doctor 9: Rest ShiftWorked: 168 ShiftWorked: 160 ShiftWorked: 164 Doctor 5: Rest ShiftWorked: 163 ShiftWorked: 159 
+Shift 163
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 ShiftWorked: 170 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 ShiftWorked: 172 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest ShiftWorked: 155 WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest ShiftWorked: 171 WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 ShiftWorked: 169 WouldCauseRowTooLargeOverlap: 21548, 21574 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 ShiftWorked: 155 WeekendWorked 223 NightsWorked [35, 36, 37, 38] RowOfFourLongShifts: Block 10WeekendWorked 104 WeekendWorked 215 WeekendWorked 108 Doctor 4: Rest ShiftWorked: 168 WeekendWorked 137 WeekendWorked 223 ShiftWorked: 172 WeekendWorked 219 WeekendWorked 133 Doctor 9: Rest ShiftWorked: 168 ShiftWorked: 160 ShiftWorked: 164 Doctor 1: Rest ShiftWorked: 162 ShiftWorked: 166 
+
+Day: Sunday
+
+Shift 164
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest ShiftWorked: 155 WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 ShiftWorked: 155 WeekendWorked 223 NightsWorked [35, 36, 37, 38] RowOfFourLongShifts: Block 10WeekendWorked 104 WeekendWorked 215 WeekendWorked 108 Doctor 4: Rest WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 Doctor 5: Rest ShiftWorked: 167 ShiftWorked: 163 ShiftWorked: 159 Doctor 1: Rest ShiftWorked: 158 ShiftWorked: 162 ShiftWorked: 166 
+Shift 165
+Time: 14:00-22:00 (Day Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 WeekendWorked 104 WeekendWorked 215 WeekendWorked 108 Doctor 4: Rest ShiftWorked: 168 WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 Doctor 5: Rest ShiftWorked: 167 ShiftWorked: 163 ShiftWorked: 159 Doctor 1: Rest ShiftWorked: 158 ShiftWorked: 162 ShiftWorked: 166 Doctor 9: Rest ShiftWorked: 168 ShiftWorked: 164 
+Shift 166
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 WeekendWorked 195 ShiftWorked: 172 RowOfSevenDays: 23484 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest ShiftWorked: 173 WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 ShiftWorked: 174 WeekendWorked 130 ShiftWorked: 169 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 WeekendWorked 104 WeekendWorked 215 WeekendWorked 108 Doctor 4: Rest ShiftWorked: 168 WeekendWorked 137 WeekendWorked 223 ShiftWorked: 172 WeekendWorked 219 WeekendWorked 133 Doctor 5: Rest ShiftWorked: 167 ShiftWorked: 163 Doctor 9: Rest ShiftWorked: 168 ShiftWorked: 164 
+Shift 167
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [5]
+Doctors that cannot work the shift:
+Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 106 WeekendWorked 110 WeekendWorked 186 WeekendWorked 102 ShiftWorked: 170 Doctor 6: Rest WeekendWorked 107 WeekendWorked 103 WeekendWorked 191 ShiftWorked: 176 WeekendWorked 195 ShiftWorked: 172 RowOfSevenDays: 23484 WeekendWorked 187 WeekendWorked 111 Doctor 0: Rest ShiftWorked: 173 WeekendWorked 109 WeekendWorked 105 WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 ShiftWorked: 174 WeekendWorked 130 ShiftWorked: 169 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 WeekendWorked 104 WeekendWorked 215 WeekendWorked 108 Doctor 4: Rest ShiftWorked: 168 WeekendWorked 137 WeekendWorked 223 ShiftWorked: 172 WeekendWorked 219 ShiftWorked: 176 WeekendWorked 133 Doctor 9: Rest ShiftWorked: 168 ShiftWorked: 164 Doctor 1: Rest ShiftWorked: 166 NightsWorked [41, 40, 39, 38] 
+
+Day: Monday
+
+Shift 168
+Time: 08:00-16:00 (Day Shift)
+Assignees: [4, 9]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 167 ShiftWorked: 163 ShiftWorked: 171 ShiftWorked: 159 Doctor 1: Rest ShiftWorked: 162 ShiftWorked: 166 NightsWorked [41, 40, 39, 38] Doctor 6: Rest RowOfSevenDays: 23484 Doctor 8: Rest ShiftWorked: 171 Doctor 3: Rest ShiftWorked: 169 Doctor 2: Rest ShiftWorked: 170 
+Shift 169
+Time: 14:00-22:00 (Day Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 167 ShiftWorked: 163 ShiftWorked: 171 Doctor 1: Rest ShiftWorked: 162 ShiftWorked: 166 NightsWorked [41, 40, 39, 38] Doctor 4: Rest ShiftWorked: 168 ShiftWorked: 172 Doctor 6: Rest ShiftWorked: 172 RowOfSevenDays: 23484 Doctor 8: Rest ShiftWorked: 171 Doctor 9: Rest ShiftWorked: 168 RowOfSevenDays: 27812 Doctor 2: Rest ShiftWorked: 170 
+Shift 170
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 1: Rest ShiftWorked: 179 NightsWorked [41, 40, 39, 38] Doctor 4: Rest ShiftWorked: 168 ShiftWorked: 172 ShiftWorked: 176 Doctor 5: Rest ShiftWorked: 167 ShiftWorked: 171 Doctor 6: Rest ShiftWorked: 176 ShiftWorked: 172 RowOfSevenDays: 23484 Doctor 0: Rest ShiftWorked: 173 ShiftWorked: 177 Doctor 8: Rest ShiftWorked: 171 Doctor 9: Rest ShiftWorked: 168 RowOfSevenDays: 27812 Doctor 3: Rest ShiftWorked: 169 
+Shift 171
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [5, 8]
+Doctors that cannot work the shift:
+Doctor 6: Rest ShiftWorked: 176 ShiftWorked: 180 ShiftWorked: 172 RowOfSevenDays: 23484 Doctor 1: Rest ShiftWorked: 179 NightsWorked [41, 40, 39, 38] Doctor 9: Rest ShiftWorked: 180 ShiftWorked: 168 RowOfSevenDays: 27812 Doctor 4: Rest ShiftWorked: 168 ShiftWorked: 172 ShiftWorked: 176 Doctor 0: Rest ShiftWorked: 173 ShiftWorked: 177 Doctor 3: Rest ShiftWorked: 174 ShiftWorked: 169 Doctor 2: Rest ShiftWorked: 170 
+
+Day: Tuesday
+
+Shift 172
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 4]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 5: Rest ShiftWorked: 167 ShiftWorked: 163 ShiftWorked: 171 NightsWorked [39, 40, 41, 42] RowOfFourLongShifts: Block 13Doctor 8: Rest ShiftWorked: 175 ShiftWorked: 171 Doctor 2: Rest ShiftWorked: 175 ShiftWorked: 170 Doctor 0: Rest ShiftWorked: 173 Doctor 3: Rest ShiftWorked: 174 ShiftWorked: 169 Doctor 1: Rest ShiftWorked: 166 NightsWorked [41, 40, 39, 38] WouldCauseRowTooLarge: 15924, 15966 
+Shift 173
+Time: 14:00-22:00 (Day Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 8: Rest ShiftWorked: 175 ShiftWorked: 171 Doctor 5: Rest ShiftWorked: 167 ShiftWorked: 171 NightsWorked [39, 40, 41, 42] RowOfFourLongShifts: Block 13Doctor 4: Rest ShiftWorked: 172 ShiftWorked: 176 Doctor 6: Rest ShiftWorked: 176 ShiftWorked: 172 Doctor 2: Rest ShiftWorked: 175 ShiftWorked: 170 Doctor 3: Rest ShiftWorked: 174 Doctor 1: Rest ShiftWorked: 166 NightsWorked [41, 40, 39, 38] WouldCauseRowTooLarge: 15924, 15966 
+Shift 174
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 4: Rest ShiftWorked: 172 ShiftWorked: 181 ShiftWorked: 176 Doctor 5: Rest ShiftWorked: 171 ShiftWorked: 183 NightsWorked [39, 40, 41, 42] RowOfFourLongShifts: Block 13Doctor 6: Rest ShiftWorked: 176 ShiftWorked: 180 ShiftWorked: 172 Doctor 8: Rest ShiftWorked: 175 ShiftWorked: 171 Doctor 0: Rest ShiftWorked: 173 ShiftWorked: 177 Doctor 2: Rest ShiftWorked: 175 Doctor 1: Rest NightsWorked [41, 40, 39, 38] ShiftWorked: 166 RowOfSixOverlap: Block 15966 WouldCauseRowTooLarge: 15924, 15966 
+Shift 175
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [8, 2]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 4: Rest ShiftWorked: 172 ShiftWorked: 181 ShiftWorked: 176 Doctor 3: Rest ShiftWorked: 178 ShiftWorked: 174 Doctor 0: Rest ShiftWorked: 184 ShiftWorked: 173 ShiftWorked: 177 Doctor 6: Rest ShiftWorked: 176 ShiftWorked: 180 ShiftWorked: 172 Doctor 5: Rest ShiftWorked: 183 NightsWorked [39, 40, 41, 42] RowOfFourLongShifts: Block 13Doctor 1: Rest NightsWorked [41, 40, 39, 38] ShiftWorked: 166 RowOfSixOverlap: Block 15966 WouldCauseRowTooLarge: 15924, 15966 
+
+Day: Wednesday
+
+Shift 176
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 4]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 175 ShiftWorked: 171 ShiftWorked: 179 Doctor 3: Rest ShiftWorked: 178 ShiftWorked: 174 Doctor 5: Rest ShiftWorked: 167 ShiftWorked: 171 NightsWorked [39, 40, 41, 42] WouldCauseRowTooLarge: 24789, 24804 RowOfFourLongShifts: Block 13Doctor 2: Rest ShiftWorked: 175 ShiftWorked: 170 Doctor 0: Rest ShiftWorked: 173 ShiftWorked: 177 Doctor 1: Rest ShiftWorked: 179 Doctor 9: Rest RowOfSevenDays: 27812 
+Shift 177
+Time: 14:00-22:00 (Day Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 175 ShiftWorked: 171 ShiftWorked: 179 Doctor 3: Rest ShiftWorked: 178 ShiftWorked: 174 Doctor 6: Rest ShiftWorked: 176 ShiftWorked: 180 Doctor 9: Rest ShiftWorked: 180 RowOfSevenDays: 27812 Doctor 2: Rest ShiftWorked: 175 ShiftWorked: 170 Doctor 5: Rest ShiftWorked: 171 NightsWorked [39, 40, 41, 42] WouldCauseRowTooLarge: 24789, 24804 RowOfFourLongShifts: Block 13Doctor 1: Rest ShiftWorked: 179 Doctor 4: Rest ShiftWorked: 176 
+Shift 178
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 175 ShiftWorked: 179 Doctor 4: Rest ShiftWorked: 185 ShiftWorked: 181 ShiftWorked: 176 Doctor 6: Rest ShiftWorked: 176 ShiftWorked: 180 ShiftWorked: 187 Doctor 9: Rest ShiftWorked: 184 ShiftWorked: 180 Doctor 0: Rest ShiftWorked: 184 ShiftWorked: 177 RowOfSevenDays: 20677 Doctor 2: Rest ShiftWorked: 175 ShiftWorked: 186 InsufficientRestOverlap: Block 147, Block 20630 Doctor 5: Rest ShiftWorked: 171 NightsWorked [39, 40, 41, 42] RowOfSixOverlap: Block 24804 WouldCauseRowTooLarge: 24789, 24804 RowOfFourLongShifts: Block 13Doctor 1: Rest ShiftWorked: 179 
+Shift 179
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [1, 8]
+Doctors that cannot work the shift:
+Doctor 4: Rest ShiftWorked: 185 ShiftWorked: 181 ShiftWorked: 176 Doctor 6: Rest ShiftWorked: 176 ShiftWorked: 180 ShiftWorked: 187 Doctor 9: Rest ShiftWorked: 184 ShiftWorked: 180 Doctor 0: Rest ShiftWorked: 184 ShiftWorked: 177 ShiftWorked: 188 RowOfSevenDays: 20677 Doctor 3: Rest ShiftWorked: 178 ShiftWorked: 182 Doctor 5: Rest ShiftWorked: 171 NightsWorked [39, 40, 41, 42] RowOfSixOverlap: Block 24804 WouldCauseRowTooLarge: 24789, 24804 RowOfFourLongShifts: Block 13Doctor 2: Rest ShiftWorked: 186 InsufficientRestOverlap: Block 147, Block 20630 
+
+Day: Thursday
+
+Shift 180
+Time: 08:00-16:00 (Day Shift)
+Assignees: [6, 9]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 3: Rest ShiftWorked: 178 ShiftWorked: 182 ShiftWorked: 174 Doctor 5: Rest ShiftWorked: 171 ShiftWorked: 183 NightsWorked [39, 40, 41, 42] RowOfFourLongShifts: Block 13Doctor 1: Rest ShiftWorked: 179 ShiftWorked: 183 Doctor 2: Rest ShiftWorked: 175 WouldCauseRowTooLarge: 147, 20543 Doctor 4: Rest ShiftWorked: 181 
+Shift 181
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 3: Rest ShiftWorked: 178 ShiftWorked: 182 ShiftWorked: 174 Doctor 9: Rest ShiftWorked: 184 ShiftWorked: 180 Doctor 1: Rest ShiftWorked: 179 ShiftWorked: 183 Doctor 6: Rest ShiftWorked: 180 Doctor 5: Rest ShiftWorked: 183 Doctor 2: Rest ShiftWorked: 175 WouldCauseRowTooLarge: 147, 20543 
+Shift 182
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 4: Rest ShiftWorked: 185 ShiftWorked: 181 Doctor 9: Rest ShiftWorked: 184 ShiftWorked: 180 Doctor 2: Rest ShiftWorked: 175 NightsWorked [49, 48, 47, 46] WouldCauseRowTooLarge: 147, 20543 Doctor 1: Rest ShiftWorked: 179 ShiftWorked: 183 Doctor 6: Rest ShiftWorked: 180 Doctor 5: Rest ShiftWorked: 183 
+Shift 183
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [5, 1]
+Doctors that cannot work the shift:
+Doctor 0: Training Doctor 8: Training Doctor 4: Rest ShiftWorked: 185 ShiftWorked: 181 Doctor 9: Rest ShiftWorked: 184 ShiftWorked: 180 Doctor 2: Rest ShiftWorked: 175 ShiftWorked: 186 NightsWorked [49, 48, 47, 46] WouldCauseRowTooLarge: 147, 20543 Doctor 6: Rest ShiftWorked: 180 Doctor 3: Rest ShiftWorked: 182 
+
+Day: Friday
+
+Shift 184
+Time: 08:00-16:00 (Day Shift)
+Assignees: [9, 0]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 175 ShiftWorked: 179 Doctor 4: Rest ShiftWorked: 185 ShiftWorked: 181 Doctor 3: Rest ShiftWorked: 178 ShiftWorked: 182 Doctor 2: Rest ShiftWorked: 175 ShiftWorked: 186 Doctor 1: Rest ShiftWorked: 179 ShiftWorked: 183 Doctor 6: Rest ShiftWorked: 187 Doctor 5: Rest ShiftWorked: 183 
+Shift 185
+Time: 14:00-22:00 (Day Shift)
+Assignees: [4]
+Doctors that cannot work the shift:
+Doctor 3: Rest ShiftWorked: 178 ShiftWorked: 182 Doctor 0: Rest ShiftWorked: 184 ShiftWorked: 188 Doctor 1: Rest ShiftWorked: 179 ShiftWorked: 183 Doctor 9: Rest ShiftWorked: 184 Doctor 6: Rest ShiftWorked: 187 Doctor 5: Rest ShiftWorked: 183 Doctor 2: Rest ShiftWorked: 186 Doctor 8: Rest ShiftWorked: 179 
+Shift 186
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 WeekendWorked 215 Doctor 4: Rest WeekendWorked 137 ShiftWorked: 185 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 ShiftWorked: 183 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 ShiftWorked: 183 WeekendWorked 159 Doctor 8: Rest WeekendWorked 221 ShiftWorked: 179 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 9: Rest ShiftWorked: 184 WeekendWorked 160 WeekendWorked 164 Doctor 0: Rest ShiftWorked: 184 ShiftWorked: 188 ShiftWorked: 192 Doctor 6: Rest ShiftWorked: 187 
+Shift 187
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 WeekendWorked 215 Doctor 4: Rest WeekendWorked 137 ShiftWorked: 185 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 9: Rest ShiftWorked: 184 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 196 Doctor 8: Rest ShiftWorked: 196 WeekendWorked 221 ShiftWorked: 179 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 Doctor 0: Rest ShiftWorked: 184 ShiftWorked: 188 ShiftWorked: 192 Doctor 2: Rest ShiftWorked: 190 ShiftWorked: 186 
+
+Day: Saturday
+
+Shift 188
+Time: 08:00-16:00 (Day Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 ShiftWorked: 182 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 WeekendWorked 215 Doctor 4: Rest WeekendWorked 137 ShiftWorked: 185 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 ShiftWorked: 179 WeekendWorked 166 ShiftWorked: 183 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 ShiftWorked: 183 WeekendWorked 159 Doctor 8: Rest WeekendWorked 221 ShiftWorked: 179 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 2: Rest ShiftWorked: 190 ShiftWorked: 186 Doctor 6: Rest ShiftWorked: 191 ShiftWorked: 187 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 
+Shift 189
+Time: 14:00-22:00 (Day Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 ShiftWorked: 182 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 WeekendWorked 215 Doctor 4: Rest WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 ShiftWorked: 183 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 ShiftWorked: 183 WeekendWorked 159 Doctor 8: Rest WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 2: Rest ShiftWorked: 190 ShiftWorked: 186 Doctor 6: Rest ShiftWorked: 191 ShiftWorked: 187 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 Doctor 0: Rest ShiftWorked: 188 ShiftWorked: 192 
+Shift 190
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 ShiftWorked: 197 ShiftWorked: 182 WeekendWorked 130 WouldCauseRowTooLargeOverlap: 21544, 21548 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 ShiftWorked: 199 WeekendWorked 215 Doctor 4: Rest WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 InsufficientRestOverlap: Block 28178, Block 28185 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 ShiftWorked: 183 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 ShiftWorked: 183 WeekendWorked 159 Doctor 8: Rest ShiftWorked: 196 WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 0: Rest ShiftWorked: 198 ShiftWorked: 188 ShiftWorked: 192 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 ShiftWorked: 196 WouldCauseRowTooLargeOverlap: 25316, 27737 Doctor 6: Rest ShiftWorked: 191 ShiftWorked: 187 
+Shift 191
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 ShiftWorked: 197 ShiftWorked: 182 WeekendWorked 130 WouldCauseRowTooLargeOverlap: 21544, 21548 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 ShiftWorked: 199 WeekendWorked 215 Doctor 4: Rest WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 ShiftWorked: 200 WeekendWorked 133 InsufficientRestOverlap: Block 28178, Block 28185 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 ShiftWorked: 183 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 ShiftWorked: 183 WeekendWorked 159 ShiftWorked: 200 Doctor 2: Rest ShiftWorked: 194 ShiftWorked: 190 Doctor 8: Rest ShiftWorked: 196 WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 0: Rest ShiftWorked: 198 ShiftWorked: 188 ShiftWorked: 192 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 ShiftWorked: 196 WouldCauseRowTooLargeOverlap: 25316, 27737 
+
+Day: Sunday
+
+Shift 192
+Time: 08:00-16:00 (Day Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 WeekendWorked 215 Doctor 4: Rest WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 ShiftWorked: 183 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 ShiftWorked: 183 WeekendWorked 159 Doctor 6: Rest ShiftWorked: 191 ShiftWorked: 195 ShiftWorked: 187 Doctor 2: Rest ShiftWorked: 194 ShiftWorked: 190 ShiftWorked: 186 Doctor 8: Rest WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 
+Shift 193
+Time: 14:00-22:00 (Day Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 WeekendWorked 215 Doctor 4: Rest WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 WeekendWorked 133 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 2: Rest ShiftWorked: 194 ShiftWorked: 190 ShiftWorked: 186 Doctor 6: Rest ShiftWorked: 191 ShiftWorked: 195 ShiftWorked: 187 Doctor 8: Rest ShiftWorked: 196 WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 WeekendWorked 136 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 ShiftWorked: 196 Doctor 0: Rest ShiftWorked: 192 
+Shift 194
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [2]
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 ShiftWorked: 197 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 WeekendWorked 215 Doctor 4: Rest WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 ShiftWorked: 200 WeekendWorked 133 RowOfSixOverlap: Block 28185 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 200 Doctor 8: Rest ShiftWorked: 196 WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 ShiftWorked: 203 WeekendWorked 136 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 Doctor 9: Rest ShiftWorked: 201 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 196 Doctor 6: Rest ShiftWorked: 191 ShiftWorked: 195 Doctor 0: Rest ShiftWorked: 192 
+Shift 195
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 3: Rest WeekendWorked 134 WeekendWorked 218 WeekendWorked 214 WeekendWorked 139 ShiftWorked: 197 WeekendWorked 130 WeekendWorked 222 Doctor 7: Rest WeekendWorked 219 WeekendWorked 223 WeekendWorked 215 Doctor 4: Rest WeekendWorked 137 WeekendWorked 223 WeekendWorked 219 ShiftWorked: 200 WeekendWorked 133 ShiftWorked: 204 RowOfSixOverlap: Block 28185 Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 ShiftWorked: 204 WeekendWorked 159 ShiftWorked: 200 Doctor 8: Rest ShiftWorked: 196 WeekendWorked 221 WeekendWorked 132 WeekendWorked 217 ShiftWorked: 203 WeekendWorked 136 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 Doctor 2: Rest ShiftWorked: 194 Doctor 9: Rest ShiftWorked: 201 WeekendWorked 160 WeekendWorked 164 ShiftWorked: 196 Doctor 0: Rest ShiftWorked: 198 ShiftWorked: 192 
+
+Day: Monday
+
+Shift 196
+Time: 08:00-16:00 (Day Shift)
+Assignees: [8, 9]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 6: Rest ShiftWorked: 191 ShiftWorked: 195 ShiftWorked: 187 RowOfSevenDays: 23484 Doctor 2: Rest ShiftWorked: 194 ShiftWorked: 190 ShiftWorked: 199 Doctor 0: Rest ShiftWorked: 198 Doctor 3: Rest ShiftWorked: 197 Doctor 7: Rest ShiftWorked: 199 
+Shift 197
+Time: 14:00-22:00 (Day Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 2: Rest ShiftWorked: 194 ShiftWorked: 190 ShiftWorked: 199 Doctor 6: Rest ShiftWorked: 191 ShiftWorked: 195 RowOfSevenDays: 23484 Doctor 0: Rest ShiftWorked: 198 Doctor 7: Rest ShiftWorked: 199 Doctor 8: Rest ShiftWorked: 196 Doctor 9: Rest ShiftWorked: 196 
+Shift 198
+Time: 17:00-01:00 (Tuesday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 9: Rest ShiftWorked: 201 ShiftWorked: 207 ShiftWorked: 196 Doctor 6: Rest ShiftWorked: 195 RowOfSevenDays: 23484 ShiftWorked: 205 Doctor 3: Rest ShiftWorked: 197 Doctor 7: Rest ShiftWorked: 199 Doctor 2: Rest ShiftWorked: 199 Doctor 8: Rest ShiftWorked: 196 
+Shift 199
+Time: 22:00-08:30 (Tuesday) (Night Shift)
+Assignees: [7, 2]
+Doctors that cannot work the shift:
+Doctor 4: Training Doctor 5: Training Doctor 9: Rest ShiftWorked: 201 ShiftWorked: 207 ShiftWorked: 196 Doctor 0: Rest ShiftWorked: 202 ShiftWorked: 198 Doctor 6: Rest RowOfSevenDays: 23484 ShiftWorked: 205 Doctor 3: Rest ShiftWorked: 197 Doctor 8: Rest ShiftWorked: 196 
+
+Day: Tuesday
+
+Shift 200
+Time: 08:00-16:00 (Day Shift)
+Assignees: [4, 5]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 2: Rest ShiftWorked: 194 ShiftWorked: 199 NightsWorked [49, 48, 47, 46] Doctor 0: Rest ShiftWorked: 202 ShiftWorked: 198 Doctor 7: Rest ShiftWorked: 199 ShiftWorked: 203 Doctor 9: Rest ShiftWorked: 201 Doctor 3: Rest ShiftWorked: 197 Doctor 8: Rest ShiftWorked: 203 
+Shift 201
+Time: 14:00-22:00 (Day Shift)
+Assignees: [9]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 2: Rest ShiftWorked: 194 ShiftWorked: 199 NightsWorked [49, 48, 47, 46] Doctor 0: Rest ShiftWorked: 202 ShiftWorked: 198 Doctor 4: Rest ShiftWorked: 200 ShiftWorked: 204 Doctor 7: Rest ShiftWorked: 199 ShiftWorked: 203 Doctor 5: Rest ShiftWorked: 204 ShiftWorked: 200 Doctor 8: Rest ShiftWorked: 203 
+Shift 202
+Time: 17:00-01:00 (Wednesday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 5: Rest ShiftWorked: 204 ShiftWorked: 208 ShiftWorked: 200 Doctor 4: Rest ShiftWorked: 200 ShiftWorked: 208 ShiftWorked: 204 Doctor 7: Rest ShiftWorked: 199 ShiftWorked: 203 Doctor 2: Rest ShiftWorked: 199 NightsWorked [49, 48, 47, 46] ShiftWorked: 211 Doctor 9: Rest ShiftWorked: 201 Doctor 3: Rest ShiftWorked: 210 Doctor 8: Rest ShiftWorked: 203 
+Shift 203
+Time: 22:00-08:30 (Wednesday) (Night Shift)
+Assignees: [7, 8]
+Doctors that cannot work the shift:
+Doctor 1: Training Doctor 6: Training Doctor 5: Rest ShiftWorked: 204 ShiftWorked: 212 ShiftWorked: 208 ShiftWorked: 200 Doctor 0: Rest ShiftWorked: 202 ShiftWorked: 206 Doctor 4: Rest ShiftWorked: 212 ShiftWorked: 200 ShiftWorked: 208 ShiftWorked: 204 Doctor 2: Rest NightsWorked [49, 48, 47, 46] ShiftWorked: 211 Doctor 9: Rest ShiftWorked: 201 Doctor 3: Rest ShiftWorked: 210 
+
+Day: Wednesday
+
+Shift 204
+Time: 08:00-16:00 (Day Shift)
+Assignees: [5, 4]
+Doctors that cannot work the shift:
+Doctor 0: Rest ShiftWorked: 202 ShiftWorked: 198 ShiftWorked: 206 Doctor 8: Rest ShiftWorked: 207 ShiftWorked: 203 Doctor 7: Rest ShiftWorked: 199 ShiftWorked: 203 Doctor 9: Rest ShiftWorked: 201 ShiftWorked: 207 Doctor 6: Rest ShiftWorked: 195 RowOfSevenDays: 23484 ShiftWorked: 205 Doctor 2: Rest ShiftWorked: 199 NightsWorked [49, 48, 47, 46] WouldCauseRowTooLarge: 147, 20630 
+Shift 205
+Time: 14:00-22:00 (Day Shift)
+Assignees: [6]
+Doctors that cannot work the shift:
+Doctor 0: Rest ShiftWorked: 202 ShiftWorked: 198 ShiftWorked: 206 Doctor 8: Rest ShiftWorked: 207 ShiftWorked: 203 Doctor 7: Rest ShiftWorked: 199 ShiftWorked: 203 Doctor 5: Rest ShiftWorked: 204 ShiftWorked: 208 Doctor 4: Rest ShiftWorked: 208 ShiftWorked: 204 Doctor 2: Rest ShiftWorked: 199 NightsWorked [49, 48, 47, 46] WouldCauseRowTooLarge: 147, 20630 Doctor 9: Rest ShiftWorked: 207 
+Shift 206
+Time: 17:00-01:00 (Thursday) (Night Shift)
+Assignees: [0]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 204 ShiftWorked: 212 ShiftWorked: 208 Doctor 4: Rest ShiftWorked: 212 ShiftWorked: 208 ShiftWorked: 204 Doctor 1: Rest ShiftWorked: 213 ShiftWorked: 209 Doctor 8: Rest ShiftWorked: 207 ShiftWorked: 203 Doctor 7: Rest ShiftWorked: 203 ShiftWorked: 215 Doctor 6: Rest ShiftWorked: 205 Doctor 2: Rest NightsWorked [49, 48, 47, 46] ShiftWorked: 199 WouldCauseRowTooLarge: 147, 20630 Doctor 9: Rest ShiftWorked: 207 Doctor 3: Rest NightsWorked [55, 54, 53, 52] 
+Shift 207
+Time: 22:00-08:30 (Thursday) (Night Shift)
+Assignees: [9, 8]
+Doctors that cannot work the shift:
+Doctor 5: Rest ShiftWorked: 204 ShiftWorked: 212 ShiftWorked: 208 Doctor 4: Rest ShiftWorked: 212 ShiftWorked: 208 ShiftWorked: 204 Doctor 1: Rest ShiftWorked: 213 ShiftWorked: 209 Doctor 6: Rest ShiftWorked: 205 Doctor 0: Rest ShiftWorked: 206 RowOfSevenDays: 20677 Doctor 3: Rest ShiftWorked: 210 NightsWorked [55, 54, 53, 52] Doctor 2: Rest NightsWorked [49, 48, 47, 46] ShiftWorked: 199 WouldCauseRowTooLarge: 147, 20630 Doctor 7: Rest ShiftWorked: 215 
+
+Day: Thursday
+
+Shift 208
+Time: 08:00-16:00 (Day Shift)
+Assignees: [5, 4]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 0: Rest ShiftWorked: 202 ShiftWorked: 206 RowOfSevenDays: 20677 Doctor 8: Rest ShiftWorked: 207 ShiftWorked: 203 Doctor 2: Rest ShiftWorked: 199 NightsWorked [49, 48, 47, 46] ShiftWorked: 211 Doctor 6: Rest ShiftWorked: 205 ShiftWorked: 211 Doctor 1: Rest ShiftWorked: 209 Doctor 3: Rest ShiftWorked: 210 
+Shift 209
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 0: Rest ShiftWorked: 202 ShiftWorked: 206 RowOfSevenDays: 20677 Doctor 8: Rest ShiftWorked: 207 ShiftWorked: 203 Doctor 5: Rest ShiftWorked: 212 ShiftWorked: 208 Doctor 4: Rest ShiftWorked: 212 ShiftWorked: 208 Doctor 3: Rest ShiftWorked: 210 Doctor 6: Rest ShiftWorked: 211 Doctor 2: Rest ShiftWorked: 211 
+Shift 210
+Time: 17:00-01:00 (Friday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 4: Rest ShiftWorked: 219 ShiftWorked: 212 ShiftWorked: 208 Doctor 5: Rest ShiftWorked: 212 ShiftWorked: 208 Doctor 1: Rest ShiftWorked: 213 ShiftWorked: 209 Doctor 8: Rest ShiftWorked: 207 ShiftWorked: 217 Doctor 0: Rest RowOfSevenDays: 20677 Doctor 6: Rest ShiftWorked: 211 Doctor 2: Rest ShiftWorked: 211 
+Shift 211
+Time: 22:00-08:30 (Friday) (Night Shift)
+Assignees: [6, 2]
+Doctors that cannot work the shift:
+Doctor 7: Training Doctor 9: Training Doctor 4: Rest ShiftWorked: 219 ShiftWorked: 212 ShiftWorked: 208 Doctor 3: Rest ShiftWorked: 214 ShiftWorked: 210 Doctor 5: Rest ShiftWorked: 212 ShiftWorked: 208 Doctor 1: Rest ShiftWorked: 213 ShiftWorked: 209 Doctor 0: Rest RowOfSevenDays: 20677 Doctor 8: Rest ShiftWorked: 217 
+
+Day: Friday
+
+Shift 212
+Time: 08:00-16:00 (Day Shift)
+Assignees: [5, 4]
+Doctors that cannot work the shift:
+Doctor 8: Rest ShiftWorked: 207 ShiftWorked: 203 Doctor 3: Rest ShiftWorked: 214 ShiftWorked: 210 Doctor 7: Rest ShiftWorked: 203 ShiftWorked: 215 Doctor 1: Rest ShiftWorked: 213 ShiftWorked: 209 Doctor 0: Rest ShiftWorked: 206 RowOfSevenDays: 20677 Doctor 9: Rest ShiftWorked: 207 Doctor 6: Rest ShiftWorked: 211 Doctor 2: Rest ShiftWorked: 211 
+Shift 213
+Time: 14:00-22:00 (Day Shift)
+Assignees: [1]
+Doctors that cannot work the shift:
+Doctor 3: Rest ShiftWorked: 214 ShiftWorked: 210 Doctor 0: Rest ShiftWorked: 206 RowOfSevenDays: 20677 Doctor 5: Rest ShiftWorked: 212 Doctor 4: Rest ShiftWorked: 212 Doctor 9: Rest ShiftWorked: 207 Doctor 6: Rest ShiftWorked: 211 Doctor 8: Rest ShiftWorked: 207 Doctor 2: Rest ShiftWorked: 211 Doctor 7: Rest ShiftWorked: 215 
+Shift 214
+Time: 17:00-01:00 (Saturday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 212 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 ShiftWorked: 207 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 186 ShiftWorked: 211 Doctor 6: Rest WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 ShiftWorked: 211 Doctor 8: Rest ShiftWorked: 221 ShiftWorked: 207 ShiftWorked: 217 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 ShiftWorked: 213 WeekendWorked 166 Doctor 0: Rest WeekendWorked 188 ShiftWorked: 206 RowOfSevenDays: 20677 WeekendWorked 192 Doctor 4: Rest ShiftWorked: 212 Doctor 7: Rest ShiftWorked: 215 
+Shift 215
+Time: 22:00-08:30 (Saturday) (Night Shift)
+Assignees: [7]
+Doctors that cannot work the shift:
+Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 ShiftWorked: 212 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 ShiftWorked: 207 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 186 Doctor 6: Rest WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 Doctor 8: Rest ShiftWorked: 221 ShiftWorked: 207 ShiftWorked: 217 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 ShiftWorked: 213 WeekendWorked 166 Doctor 0: Rest WeekendWorked 188 ShiftWorked: 206 RowOfSevenDays: 20677 WeekendWorked 192 Doctor 3: Rest ShiftWorked: 218 ShiftWorked: 214 Doctor 4: Rest ShiftWorked: 212 
+
+Day: Saturday
+
+Shift 216
+Time: 08:00-16:00 (Day Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 ShiftWorked: 207 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 186 ShiftWorked: 211 Doctor 6: Rest WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 ShiftWorked: 211 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 ShiftWorked: 213 WeekendWorked 166 Doctor 3: Rest ShiftWorked: 218 ShiftWorked: 214 ShiftWorked: 210 Doctor 7: Rest ShiftWorked: 219 ShiftWorked: 215 Doctor 8: Rest ShiftWorked: 207 ShiftWorked: 217 Doctor 0: Rest WeekendWorked 188 WeekendWorked 192 Doctor 4: Rest ShiftWorked: 219 
+Shift 217
+Time: 14:00-22:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 186 ShiftWorked: 211 Doctor 6: Rest WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 ShiftWorked: 211 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 Doctor 3: Rest ShiftWorked: 218 ShiftWorked: 214 ShiftWorked: 210 Doctor 7: Rest ShiftWorked: 219 ShiftWorked: 215 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 Doctor 0: Rest WeekendWorked 188 WeekendWorked 192 Doctor 4: Rest ShiftWorked: 219 
+Shift 218
+Time: 17:00-01:00 (Sunday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 186 ShiftWorked: 211 Doctor 6: Rest WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 ShiftWorked: 211 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 Doctor 8: Rest ShiftWorked: 221 ShiftWorked: 217 Doctor 7: Rest ShiftWorked: 219 ShiftWorked: 215 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 Doctor 0: Rest WeekendWorked 188 WeekendWorked 192 Doctor 4: Rest ShiftWorked: 219 
+Shift 219
+Time: 22:00-08:30 (Sunday) (Night Shift)
+Assignees: [7, 4]
+Doctors that cannot work the shift:
+Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 186 ShiftWorked: 211 Doctor 6: Rest WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 ShiftWorked: 211 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 Doctor 3: Rest ShiftWorked: 218 ShiftWorked: 222 Doctor 8: Rest ShiftWorked: 221 ShiftWorked: 217 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 Doctor 0: Rest WeekendWorked 188 WeekendWorked 192 
+
+Day: Sunday
+
+Shift 220
+Time: 08:00-16:00 (Day Shift)
+Assignees: []
+Doctors that cannot work the shift:
+Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 186 ShiftWorked: 211 Doctor 6: Rest WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 ShiftWorked: 211 Doctor 7: Rest ShiftWorked: 219 ShiftWorked: 223 ShiftWorked: 215 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 Doctor 3: Rest ShiftWorked: 218 ShiftWorked: 214 ShiftWorked: 222 Doctor 8: Rest ShiftWorked: 221 ShiftWorked: 217 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 Doctor 4: Rest ShiftWorked: 223 ShiftWorked: 219 Doctor 0: Rest WeekendWorked 188 WeekendWorked 192 
+Shift 221
+Time: 14:00-22:00 (Day Shift)
+Assignees: [8]
+Doctors that cannot work the shift:
+Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 186 Doctor 6: Rest WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 Doctor 7: Rest ShiftWorked: 219 ShiftWorked: 223 ShiftWorked: 215 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 Doctor 3: Rest ShiftWorked: 218 ShiftWorked: 214 ShiftWorked: 222 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 Doctor 4: Rest ShiftWorked: 223 ShiftWorked: 219 Doctor 0: Rest WeekendWorked 188 WeekendWorked 192 
+Shift 222
+Time: 17:00-01:00 (Monday) (Night Shift)
+Assignees: [3]
+Doctors that cannot work the shift:
+Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 186 Doctor 6: Rest WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 Doctor 7: Rest ShiftWorked: 219 ShiftWorked: 223 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 Doctor 4: Rest ShiftWorked: 223 ShiftWorked: 219 Doctor 0: Rest WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest ShiftWorked: 221 
+Shift 223
+Time: 22:00-08:30 (Monday) (Night Shift)
+Assignees: [7, 4]
+Doctors that cannot work the shift:
+Doctor 5: Rest WeekendWorked 167 WeekendWorked 163 WeekendWorked 159 Doctor 2: Rest WeekendWorked 194 WeekendWorked 190 WeekendWorked 186 Doctor 6: Rest WeekendWorked 191 WeekendWorked 195 WeekendWorked 187 Doctor 1: Rest WeekendWorked 158 WeekendWorked 162 WeekendWorked 166 Doctor 9: Rest WeekendWorked 160 WeekendWorked 164 Doctor 0: Rest WeekendWorked 188 WeekendWorked 192 Doctor 8: Rest ShiftWorked: 221 Doctor 3: Rest ShiftWorked: 222 NightsWorked [55, 54, 53, 52] 
+Doctors:
+Doctor: 0
+Grade: junior
+Target Hours: 47.0
+Target Day Shifts: 23
+Target Night Shifts: 12
+Hours Worked: 236.0
+Average Hours Worked (Adjusted for leave) 32.875621890547265
+Day Shifts Worked: 13
+Night Shifts Worked: 14
+Preferred day stretch length: 4-7, Violations: 4
+Preferred night stretch length: 3-4, Violations: 2
+
+Doctor: 1
+Grade: junior
+Target Hours: 47.0
+Target Day Shifts: 23
+Target Night Shifts: 12
+Hours Worked: 217.5
+Average Hours Worked (Adjusted for leave) 30.298507462686565
+Day Shifts Worked: 13
+Night Shifts Worked: 12
+Preferred day stretch length: 3-4, Violations: 3
+Preferred night stretch length: 2-3, Violations: 2
+
+Doctor: 2
+Grade: junior
+Target Hours: 47.0
+Target Day Shifts: 23
+Target Night Shifts: 12
+Hours Worked: 215.0
+Average Hours Worked (Adjusted for leave) 29.950248756218905
+Day Shifts Worked: 4
+Night Shifts Worked: 21
+Preferred night stretch length: 1-3, Violations: 2
+
+Doctor: 3
+Grade: junior
+Target Hours: 47.0
+Target Day Shifts: 23
+Target Night Shifts: 12
+Hours Worked: 247.5
+Average Hours Worked (Adjusted for leave) 34.47761194029851
+Day Shifts Worked: 17
+Night Shifts Worked: 13
+Preferred night stretch length: 2-4, Violations: 2
+
+Doctor: 4
+Grade: junior
+Target Hours: 47.0
+Target Day Shifts: 23
+Target Night Shifts: 12
+Hours Worked: 257.5
+Average Hours Worked (Adjusted for leave) 35.87064676616915
+Day Shifts Worked: 18
+Night Shifts Worked: 12
+Preferred day stretch length: 4-6, Violations: 3
+Preferred night stretch length: 2-3, Violations: 2
+
+Doctor: 5
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 23
+Target Night Shifts: 12
+Hours Worked: 254.0
+Average Hours Worked (Adjusted for leave) 35.383084577114424
+Day Shifts Worked: 14
+Night Shifts Worked: 14
+Preferred night stretch length: 1-3, Violations: 2
+
+Doctor: 6
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 23
+Target Night Shifts: 12
+Hours Worked: 259.5
+Average Hours Worked (Adjusted for leave) 36.14925373134328
+Day Shifts Worked: 16
+Night Shifts Worked: 13
+Preferred night stretch length: 1-2, Violations: 2
+Shifts preferably avoided: [20, 44, 60, 84, 116, 152, 168, 220], Violations: 1
+
+Doctor: 7
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 23
+Target Night Shifts: 12
+Hours Worked: 251.0
+Average Hours Worked (Adjusted for leave) 34.96517412935323
+Day Shifts Worked: 13
+Night Shifts Worked: 14
+Preferred day stretch length: 4-6, Violations: 4
+Preferred night stretch length: 2-3, Violations: 2
+
+Doctor: 8
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 23
+Target Night Shifts: 12
+Hours Worked: 257.0
+Average Hours Worked (Adjusted for leave) 35.80099502487562
+Day Shifts Worked: 17
+Night Shifts Worked: 12
+Preferred day stretch length: 4-7, Violations: 4
+Preferred night stretch length: 3-4, Violations: 2
+
+Doctor: 9
+Grade: senior
+Target Hours: 47.0
+Target Day Shifts: 23
+Target Night Shifts: 12
+Hours Worked: 283.5
+Average Hours Worked (Adjusted for leave) 39.492537313432834
+Day Shifts Worked: 20
+Night Shifts Worked: 12
+Preferred day stretch length: 4-7, Violations: 3
+Preferred night stretch length: 3-4, Violations: 2
